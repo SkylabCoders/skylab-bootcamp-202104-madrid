@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Monoton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="toda-pagina">
+
+        <div class="left">
+            <div class="donut-container">
+                <span class="letras unanswered" id="a">A</span>
+                <span class="letras unanswered" id="b">B</span>
+                <span class="letras unanswered" id="c">C</span>
+                <span class="letras unanswered" id="d">D</span>
+                <span class="letras unanswered" id="e">E</span>
+                <span class="letras unanswered" id="f">F</span>
+                <span class="letras unanswered" id="g">G</span>
+                <span class="letras unanswered" id="h">H</span>
+                <span class="letras unanswered" id="i">I</span>
+                <span class="letras unanswered" id="j">J</span>
+                <span class="letras unanswered" id="k">K</span>
+                <span class="letras unanswered" id="l">L</span>
+                <span class="letras unanswered" id="m">M</span>
+                <span class="letras unanswered" id="n">N</span>
+                <span class="letras unanswered" id="ñ">Ñ</span>
+                <span class="letras unanswered" id="o">O</span>
+                <span class="letras unanswered" id="p">P</span>
+                <span class="letras unanswered" id="q">Q</span>
+                <span class="letras unanswered" id="r">R</span>
+                <span class="letras unanswered" id="s">S</span>
+                <span class="letras unanswered" id="t">T</span>
+                <span class="letras unanswered" id="u">U</span>
+                <span class="letras unanswered" id="v">V</span>
+                <span class="letras unanswered" id="w">W</span>
+                <span class="letras unanswered" id="x">X</span>
+                <span class="letras unanswered" id="y">Y</span>
+                <span class="letras unanswered" id="z">Z</span>
+            </div>
+            <div class="timer-container">200</div>
+        </div>  
+        <div class="right">
+            <div class="right1">
+                <div class="normas">
+                    <h1>WELCOME TO JURASSIC PASAPALABRARK</h1>
+                    <p class="textoNormas">
+                        PARA DESPITAR AL REX, TENDRÁS QUE ADIVINAR EL MÁXIMO DE PREGUNTAS ANTES DE QUE EL TEMPORIZADOR MARQUE CERO. SI NO SABES QUE HACER PUEDES LLAMAR AL HELICOPTERO Y ABANDONAS AUTOMATICAMENTE SIN ENTRAR EN EL RANKING O USAR LA BENGALA PARA DESPISTARLO TEMPORALMENTE( ES DECIR, ESCRIBE PASAPALABRA EN TU RESPUESTA Y PASARÁ A LA SIGUIENTE PREGUNTA. AL FINAL DE LA RONDA SE TE VOLVERÁ A PREGUNTAR)
+                    </p>
+                    <p>SE CONTABILIZARÁN LOS ACIERTOS Y SE ALMACENARÁN EN UN RANKING. EL JEEP SOLO TIENE 1 PLAZA. HUIRÁ SÓLO LA PERSONA CON MAYOR PUNTUACIÓN</p>
+                </div>
+                <div class="preguntaNombre">
+                    <form id="name-form">
+                        <div>
+                            <label for="nombre">SURVIVOR</label>
+                            <input type="text" placeholder="Escribe tu nombre..." name="nombre" id="name-button" required/>
+                        </div>
+                        <div>
+                            <button type="submit" id="boton"> A por el Jeep!!!</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+
+            <div class="right2">
+                <h1>PREGUNTA</h1>
+                    <p class="textoPregunta">
+                        
+                    </p>
+                <div class="answer">
+                    <form id="answer-form">
+                        <div>
+                            <label for="respuesta">RESPUESTA</label>
+                            <input type="text" placeholder="Escribe tu respuesta..." name="respuesta" id="answer-button" />
+                        </div>
+                        <div>
+                            <button type="submit" id="boton">ENVIAR</button>
+                        </div>
+                    </form>
+                    
+                </div> 
+                <span class="end">
+                    <input class="helicoptero" type="button" value="☎️">HELICÓPTERO</input>
+                </span>  
+            </div>
+
+            <div class="right3">
+                <div class="puntuacion">
+                    <h1>RANKING</h1>
+                    <ol class="ranking"></ol>
+                </div>
+                <div class="again">
+                    <div>
+                        <h3 class="again">JUGAR DE NUEVO</h3>
+                    </div>
+                    <div>
+                        <button class="si">SI</button>
+                        <button class="no">NO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right4">
+                <div class="enunciado">
+                    <h1>Quien se lleva el Jeep es...</h1>
+                </div>
+                <div class="ganador">
+                    <h2 class="winner">T-REX</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="main.js"></script>    
+</body>
+</html>

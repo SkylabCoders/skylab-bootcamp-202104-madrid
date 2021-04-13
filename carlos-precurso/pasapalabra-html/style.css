@@ -1,0 +1,294 @@
+* {
+    font-family: 'Monoton', cursive;
+}
+
+h1, h3{
+    color: rgb(252, 231, 86);
+}
+
+button:hover{
+    background-color: rgb(196, 84, 77);
+    cursor: pointer;
+    color: white;
+}
+
+.toda-pagina {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-image: url(https://static.vix.com/es/sites/default/files/styles/4x3/public/btg/cine.batanga.com/files/Los-10-momentos-de-Jurassic-Park-que-es-imposible-olvidar.jpg);
+    background-size: cover;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    width: 80vh;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 80vh;
+    width: 80vh;
+}
+
+
+.donut-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60vh;
+    height: 60vh;
+    background-image: url(https://seeklogo.net/wp-content/uploads/2013/03/jurassic-park-vector-logo-400x400.png);
+    background-position: center;
+    border-radius: 1000px;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.unanswered {
+    background-color: rgb(252, 231, 86);
+    color: black;
+}
+
+.success {
+    background-color: green;
+    color: black;
+}
+
+.failure {
+    background-color: rgb(196, 84, 77);
+    color: black;
+}
+
+.letras {
+    display: flex;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.letras:nth-child(1) {
+    transform: translateY(-30vh);
+}
+
+.letras:nth-child(2) {
+    transform: rotate(13.3deg) translateY(-30vh) rotate(-13.3deg);
+}
+
+.letras:nth-child(3) {
+    transform: rotate(26.6deg) translateY(-30vh) rotate(-26.6deg);
+}
+
+.letras:nth-child(4) {
+    transform: rotate(39.9deg) translateY(-30vh) rotate(-39.9deg);
+}
+
+.letras:nth-child(5) {
+    transform: rotate(53.2deg) translateY(-30vh) rotate(-53.2deg);
+}
+
+.letras:nth-child(6) {
+    transform: rotate(66.5deg) translateY(-30vh) rotate(-66.5deg);
+}
+
+.letras:nth-child(7) {
+    transform: rotate(79.8deg) translateY(-30vh) rotate(-79.8deg);
+}
+
+.letras:nth-child(8) {
+    transform: rotate(93.1deg) translateY(-30vh) rotate(-93.1deg);
+}
+
+.letras:nth-child(9) {
+    transform: rotate(106.4deg) translateY(-30vh) rotate(-106.4deg);
+}
+
+.letras:nth-child(10) {
+    transform: rotate(119.7deg) translateY(-30vh) rotate(-119.7deg);
+}
+
+.letras:nth-child(11) {
+    transform: rotate(133deg) translateY(-30vh) rotate(-133deg);
+}
+
+.letras:nth-child(12) {
+    transform: rotate(146.3deg) translateY(-30vh) rotate(-146.3deg);
+}
+
+.letras:nth-child(13) {
+    transform: rotate(159.6deg) translateY(-30vh) rotate(-159.6deg);
+}
+
+.letras:nth-child(14) {
+    transform: rotate(172.9deg) translateY(-30vh) rotate(-172.9deg);
+}
+
+.letras:nth-child(15) {
+    transform: rotate(186.2deg) translateY(-30vh) rotate(-186.2deg) ;
+}
+
+.letras:nth-child(16) {
+    transform: rotate(199.5deg) translateY(-30vh) rotate(-199.5deg);
+}
+
+.letras:nth-child(17) {
+    transform: rotate(212.8deg) translateY(-30vh) rotate(-212.8deg);
+}
+
+.letras:nth-child(18) {
+    transform: rotate(226.1deg) translateY(-30vh) rotate(-226.1deg);
+}
+
+.letras:nth-child(19) {
+    transform: rotate(239.4deg) translateY(-30vh) rotate(-239.4deg);
+}
+
+.letras:nth-child(20) {
+    transform: rotate(252.7deg) translateY(-30vh) rotate(-252.7deg);
+}
+
+.letras:nth-child(21) {
+    transform: rotate(266deg) translateY(-30vh) rotate(-266deg);
+}
+
+.letras:nth-child(22) {
+    transform: rotate(279.3deg) translateY(-30vh) rotate(-279.3deg);
+}
+
+.letras:nth-child(23) {
+    transform: rotate(292.6deg) translateY(-30vh) rotate(-292.6deg);
+}
+
+.letras:nth-child(24) {
+    transform: rotate(305.9deg) translateY(-30vh) rotate(-305.9deg);
+}
+
+.letras:nth-child(25) {
+    transform: rotate(319.2deg) translateY(-30vh) rotate(-319.2deg);
+}
+
+.letras:nth-child(26) {
+    transform: rotate(332.5deg) translateY(-30vh) rotate(-332.5deg);
+}
+
+.letras:nth-child(27) {
+    transform: rotate(345.9deg) translateY(-30vh) rotate(-345.9deg);
+}
+
+.timer-container {
+    display: flex;
+    color: white;
+    font-size: xx-large;
+    height: 10vh;
+    align-items: center;
+}
+
+.right1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.normas{
+    color: white;
+    word-spacing: 0.5em;
+}
+
+.preguntaNombre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: small;
+    height: 10vh;
+    word-spacing: 0.5em;
+}
+
+.right2 {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.textoPregunta {
+    color: white;
+    word-spacing: 0.5em;
+}
+
+.answer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: small;
+    height: 10vh;
+    word-spacing: 0.5em;
+}
+
+.end {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: rgb(252, 231, 86);
+    font-size: small;
+    height: 10vh;
+    word-spacing: 0.5em;
+    height: fit-content;
+}
+
+.right3 {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    word-spacing: 0.5em;
+}
+
+.ranking {
+    color: white;
+    word-spacing: 0.5em;
+}
+
+.puntuacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    word-spacing: 0.5em;
+}
+
+.again {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    word-spacing: 0.5em;
+}
+
+.right4{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    word-spacing: 0.5em;
+}

@@ -1,0 +1,42 @@
+$breakpoints: (
+  small: 375px,
+  medium: 768px,
+  large: 1020px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+
+//Responsive Function
+@mixin rwd($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (min-width: map-get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}
+
+%button {
+  border: none;
+  outline: none;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: green;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+
+  &:active {
+    box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+      inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  }
+}

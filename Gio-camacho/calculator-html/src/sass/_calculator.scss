@@ -1,0 +1,87 @@
+.wrapper {
+  background-color: $brand-500;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 1rem;
+}
+
+.box {
+  animation: backInDown 1s;
+  width: 32.2rem;
+  height: 42rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "display display display display"
+    "clear clear reset division"
+    "seven eight nine multiplier"
+    "four five six substraction"
+    "one two three add"
+    "zero zero comma equal";
+
+  .box__display {
+    grid-area: display;
+    background-color: #2b3244;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-right: 2rem;
+  }
+  .box__previousNum {
+    font-size: 2rem;
+    text-align: right;
+    opacity: 0.7;
+  }
+  .box__currentNum {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  &__AC {
+    grid-area: clear;
+  }
+
+  &__number--zero {
+    grid-area: zero;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  &__equal {
+    border-bottom-right-radius: 0.5rem;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+}
+
+.fas {
+  font-size: 2rem;
+}
+
+#division,
+#multiplier,
+#substraction,
+#add,
+#equal {
+  background-color: $brand-300;
+  color: white;
+}

@@ -1,0 +1,7 @@
+input:focus:invalid {
+    background-color: red;
+  }
+
+  input:required:valid {
+    background-color: lightgreen;
+  }

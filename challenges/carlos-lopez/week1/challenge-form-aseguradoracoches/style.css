@@ -1,0 +1,3 @@
+input:required:invalid {
+    border: 2px solid coral;
+  }

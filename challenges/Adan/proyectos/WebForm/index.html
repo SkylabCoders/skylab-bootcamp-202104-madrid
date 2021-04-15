@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <section class="Nombre">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" required>
+          </section>
+          <section class="Apellidos">
+            <label for="lastName">Apellidos</label>
+            <input type="text" name="lastName" id="lastName" required>
+          </section>
+          <section class="Direccion">
+            <label for="address">Direccion</label>
+            <input type="text" name="address" id="address" maxlength="150">
+          </section>
+          <section class="Edad">
+            <label for="age">Edad</label>
+            <input type="number" size="6" name="age" min="0" max="100"><br>
+          </section>
+          <section class="Dni">
+            <label for="cedula">Dni/Nie</label>
+            <input type="text" name="cedula" id="cedula" maxlength="9">
+          </section>
+          <section class="carros">
+          <label for="coches">¿Cuantos Coches tienes?</label>
+          <br>
+          <span>1</span>
+          <input type="range" name="coches" id="coches" value="1" min="1" max="20">
+          <span>20</span>
+        </section>
+        <section class="Color-coche">
+            <label for="colorCoche">¿Que color de coche quieres?</label>
+            <input list="colores" id="colorCoche" name="colorCoche">
+            <datalist id="colores-Disponibles">
+              <option value="verde"></option>
+              <option value="amarillo"></option>
+              <option value="rojo"></option>
+            </datalist>
+          </section>
+          <section class="movil">
+            <label for="movilNum">Número de móvil</label>
+            <input type="tel"name="movilNum" id="movilNum" maxlength="9" placeholder="opcional">
+          </section>
+          <section class="correoElectronico">
+            <label for="email">Email</label>
+            <input type="email" size="9" name="email" id="email" placeholder="opcional">
+          </section>
+          <section class="primaSeguro">
+            <label for="prima">Prima</label>
+            <input type="number" size="6" min="0" max="1400" name="prima" id="prima">
+          </section>
+          <section class="First-driver">
+            <span>¿Eres el conductor principal?</span>
+            <br>
+            <input type="radio" name="firstDr" id="yes" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="firstDr" id="no" value="no">
+            <label for="no">No</label>
+          </section>
+          <section class="Como-nos-has-conocido">
+            <label for="how">¿Como nos has conocido?</label>
+            <select name="how" id="how">
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Anuncios en autobuses">Anuncios</option>
+              <option value="TV">TV</option>
+            </select>
+          </section>
+          <section class="submission">
+            <input type="submit" value="Enviar">
+          </section>
+          <section class="submission">
+            <input type="reset" value="Reset">
+          </section>
+
+   </form>
+</body>
+</html>

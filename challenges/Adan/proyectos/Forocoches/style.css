@@ -1,0 +1,13 @@
+.index {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    ;
+}
+h1 {
+   text-align: center;
+}
+.ads {
+display: flex;
+flex-direction: row-reverse;
+}

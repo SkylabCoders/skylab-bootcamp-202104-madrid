@@ -1,0 +1,124 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #f8f5f1;
+}
+header {
+    background-color: #f8a488;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.web-name {
+    color: #45526c;
+    padding: 2rem;
+}
+
+nav {
+    background-color: #5aa897;
+    height: 6rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    color: #45526c;
+    align-self: center;
+    margin-top: 5rem;
+    border: 0.5rem solid #5aa897;
+    padding: 2rem;
+}
+
+p {
+    text-align: justify;
+    max-width: 80rem;
+    margin-top: 5rem;
+}
+
+#img-future, #img-past {
+    max-width: 80rem;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+figcaption{
+    text-align: center;
+    font-style: italic;
+}
+
+.publi {
+    align-self: center;
+    width: fit-content;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+ul {
+    margin-top: 5rem;
+}
+
+#last-p {
+    margin-bottom: 10rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8a488;
+    height: 15rem;
+}
+
+h4 {
+    margin-top: 1rem;
+    margin-left: 10rem;
+}
+
+#tlf, #address, #email {
+    margin-top: 1rem;
+    margin-bottom: auto;
+    margin-left: 10rem;
+}
+
+.link {
+    text-decoration: none;
+    color: #45526c;
+    width: -webkit-fill-available;
+}
+
+.link:hover {
+    cursor: pointer;
+    background-color: #8da09c;
+    display: flex;
+    flex-direction: column;
+}
+
+

@@ -1,0 +1,18 @@
+@import "_var.scss";
+@import "mixin.scss";
+
+.cuadrado {
+  background-color: $verde;
+  color: $blanco;
+  @include cuadraditos;
+  @include cuadradosredondos(200px);
+}
+
+@media screen and (max-width: 800px) {
+  .cuadrado {
+    background-color: $negro;
+  }
+  .frase {
+    color: $amarillo;
+  }
+}

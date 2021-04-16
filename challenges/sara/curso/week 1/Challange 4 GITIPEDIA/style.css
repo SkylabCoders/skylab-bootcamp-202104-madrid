@@ -1,0 +1,78 @@
+#main-top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#userInput {
+  display: flex;
+  justify-content: center;
+}
+
+#header-right {
+  display: flex;
+  align-self: auto;
+}
+#wiki-logo {
+  max-width: 10rem;
+}
+.container-md {
+  margin: 2rem auto;
+}
+
+p {
+  text-align: justify;
+}
+
+#first-git-img {
+  max-width: 20rem;
+}
+
+#form {
+  margin: 2rem 5rem;
+}
+
+#text-area {
+  min-height: 10rem;
+}
+
+#members {
+  margin: 2rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.members-card {
+  margin: 1rem 1rem;
+}
+
+#ourm-container {
+  margin: 2rem auto;
+}
+
+#button-mod {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-botton: 3rem;
+}
+
+.art-news {
+  margin: 2rem 2rem;
+  padding: 1rem auto;
+}
+
+.img-news {
+  max-height: 15rem;
+}
+
+.container-md-n {
+  margin: 2rem 2rem;
+}
+
+.img-news {
+  margin: 1rem auto;
+}
+
+footer {
+  background-color: rgb(248, 249, 250);
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASEGURADORA</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+    <form action="submission.html" method="POST">
+        <h1>ASEGURATE</h1>
+        <section>
+            <label for="nombre">Nombre</label>
+            <br>
+                <input type="text" name="nombre" required>
+        </section>
+
+
+        <section>
+            <label for="apellidos">Apellidos</label>
+            <br>
+            <input type="text" name="apellidos" required>
+        </section>
+
+
+        <section>
+            <label for="direccion">Dirección</label>
+            <br>
+            <input type="text" name="direccion" maxlength="150">
+            </section>
+
+        <section>
+            <label for="edad">Edad</label>
+            <br>
+            <input type="number" name="edad" max="100">
+        </section>
+
+        <section>
+            <label for="dni">DNI</label>
+            <br>
+            <input type="text" name="dni" size="9" max="9" required>
+        </section>
+
+        <br>
+        <br>
+        <section >
+            <label for="coches">¿Cuántos coches tiene tu hogar?</label>
+            <br>
+            <input type="number" size="6" name="coches" min="1" max="20" value="1">
+            <br>
+            <span>1</span>
+            <input type="range" name="coches" value="1" min="1" max="20">
+            <span>20</span>
+        </section>
+
+        <br>
+        <br>
+        <section>
+            <span>¿Cuál es el color de tu coche?</span>
+            <br>
+            <input type="checkbox" name="color" >
+            <label for="rojo">Rojo</label>
+            <input type="checkbox" name="color" >
+            <label for="azul">Azul</label>
+            <input type="checkbox" name="color" >
+            <label for="hotpink">Hotpink</label>
+        </section>
+        <br>
+        <br>
+        <section>
+            <label for="telf">Teléfono</label>
+            <br>
+            <input type="tel" name="telf" required>
+        </section>
+        <br>
+        <br>
+        <section>
+            <label for="email">E-mail</label>
+            <br>
+            <input type="email" name="email" required placeholder="Introduce un email existente" required>
+        </section>
+        <br>
+        <br>
+        <section>
+            <label for="prima">Prima actual seguros</label>
+            <br>
+            <input type="number" name="prima" max="1400">
+        </section>
+
+        <br>
+        <br>
+        <section>
+            <span>¿Eres el principal conductor?</span>
+            <br>
+            <input type="radio" name="conductor" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="conductor" value="no">
+            <label for="no">No</label>
+        </section>
+        <br>
+        <br>
+        <section>
+            <label for="know">¿Cómo nos conociste?</label>
+            <select name="know">
+            <option value="Boca a boca">Boca a boca</option>
+            <option value="Redes Sociales">Redes Sociales</option>
+            <option value="La tita Pili">La tita Pili</option>
+            </select>
+        </section>
+        <br>
+        <section class="submission">
+            <input type="submit" value="Submit">
+        </section>
+        <section class="submission">
+            <input type="reset" value="reset">
+        </section>
+        </form>
+        </body>
+        </html>

@@ -1,0 +1,46 @@
+.footer-container {
+  &__terms {
+    display: flex;
+    padding: 3.5rem 5.5rem 1.5rem;
+
+    @include rwd(large) {
+      display: none;
+    }
+
+    //   @include rwd(1020) {
+    //     display: none;
+    //   }
+  }
+
+  &__terms-img {
+    width: 12.2rem;
+  }
+
+  &__terms-list {
+    display: flex;
+  }
+
+  &__terms-item {
+    color: $white;
+    margin-left: 1.5rem;
+    list-style: none;
+    font-size: 1.4rem;
+    color: $color-icon;
+    cursor: pointer;
+    transition: hover 200ms ease-in-out;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__date {
+    padding: 3.5rem 5.5rem;
+    padding-top: 0;
+  }
+
+  &__date-description {
+    color: $color-icon;
+    font-size: 1.4rem;
+  }
+}

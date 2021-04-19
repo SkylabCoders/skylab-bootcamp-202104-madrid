@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta property="description" content="Calculator - Home Page." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator-Html</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5c59843ad4.js" crossorigin="anonymous"></script>
+  <script defer src="./index.ts"></script>
+</head>
+
+<body>
+
+  <h1 class="sr-only">Calculator</h1>
+
+  <section class="wrapper">
+    <!-- START - CALCULATOR BOX -->
+
+    <article class="box">
+
+      <div class="box__display">
+        <div class="box__previousNum"></div>
+        <div class="box__currentNum">0</div>
+      </div>
+
+      <!-- FIRST LINE -->
+      <button id="AC" class="box__AC" type="button" aria-label="all clear">AC</button>
+
+      <button id="reset" class="box__reset" type="button" aria-label="reset">
+        <i class="fas fa-redo"></i>
+      </button>
+
+      <button id="division" class="box__operator" type="button" aria-label="division">÷</button>
+
+      <!-- SECOND LINE -->
+      <button class="box__number" type="button" aria-label="number sever" value="7" >
+        7
+      </button>
+
+      <button class="box__number" type="button" aria-label="number eight" value="8">
+        8
+      </button>
+
+      <button class="box__number" type="button" aria-label="number nine" value="9">
+        9
+     </button>
+
+      <button id="multiplier" class="box__operator" type="button" aria-label="multiplier">x</button>
+
+      <!-- THIRD LINE -->
+      <button class="box__number" type="button" aria-label="number four" value="4">
+        4
+      </button>
+
+      <button class="box__number" type="button" aria-label="number five" value="5">
+        5
+      </button>
+
+      <button class="box__number" type="button" aria-label="number six" value="6">
+        6
+      </button>
+
+      <button id="substraction" class="box__operator" type="button" aria-label="substraction">-</button>
+      
+      <!-- FOURTH LINE -->
+      <button class="box__number" type="button" aria-label="number one" value="1">
+        1
+      </button>
+
+      <button class="box__number" type="button" aria-label="number two" value="2">
+        2
+      </button>
+
+      <button class="box__number" type="button" aria-label="number three" value="3">
+        3
+      </button>
+
+      <button id="add" class="box__operator" type="button" aria-label="add">+</button>
+
+      <!-- FIFTH LINE -->
+      <button class="box__number box__number--zero" type="button" aria-label="number zero" value="0">
+
+        0
+      </button>
+
+      <button id="comma" class="box__number" type="button" aria-label="comma" value=".">.</button>
+
+      <button id="equal" class="box__equal" type="button" aria-label="equal">=</button>
+      <!-- end - calculator box -->
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+// FONT
+$main-font: "Noto Sans", sans-serif;
+
+// TEXT COLORS
+$color-icon: hsl(0, 0%, 60%);
+$color-btn: hsl(0, 0%, 0%);
+$bg-input: hsl(0, 0%, 20%);
+$white: hsl(0, 0%, 100%);
+$yellow: hsl(53, 100%, 50%);
+$bg-main-container: #0f0f0f;
+$bg-banner: #181818;
+$bg-footer-info: #212121;
+
+// EXTENDS BTN
+%btn {
+  min-height: 3.2rem;
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+//Responsive Variables.
+$breakpoints: (
+  medium: 600px,
+  large: 1240px,
+);
+
+//Responsive Function
+@mixin rwd($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (max-width: map-get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $bp) {
+      @content;
+    }
+  }
+}

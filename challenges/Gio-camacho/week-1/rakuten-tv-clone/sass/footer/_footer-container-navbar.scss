@@ -1,0 +1,43 @@
+.footer-container {
+  &__navbar-rwd {
+    display: none;
+    width: 100%;
+    background-color: black;
+
+    @include rwd(large) {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__navbar-list {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__navbar-item {
+    color: $color-icon;
+    list-style: none;
+    text-align: center;
+    font-size: 1rem;
+    transition: all 200 ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  &__icon {
+    font-size: 1.7rem;
+    padding-bottom: 0.6rem;
+  }
+
+  &__span {
+    text-transform: uppercase;
+  }
+}

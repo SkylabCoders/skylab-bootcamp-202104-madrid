@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    border: 0.3rem solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: #f8f5f1;
+    max-width: 70rem;
+}
+
+section {
+    margin: 0.7rem 1rem;
+    text-align: center;
+}
+
+#email {
+    width: 30rem;
+}
+
+#submit {
+    height: 3.2rem;
+    width: 5rem;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 10%;
+}
+
+input:invalid {
+    border: 2px solid darkred;
+}

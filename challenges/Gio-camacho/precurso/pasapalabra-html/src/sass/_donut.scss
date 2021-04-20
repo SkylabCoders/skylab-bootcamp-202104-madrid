@@ -1,0 +1,76 @@
+.donutWrapper {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  max-width: 70%;
+  min-height: 100vh;
+}
+
+.timer {
+  width: 20rem;
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-top: 3rem;
+}
+
+.donut {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  list-style: none;
+  margin: 45px auto;
+}
+
+.title {
+  position: absolute;
+  top: 34vh;
+  left: 31vw;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  @include rwd(500px) {
+    left: 35vw;
+  }
+  @include rwd(medium) {
+    left: 40vw;
+  }
+  @include rwd(large) {
+    left: 43vw;
+  }
+  @include rwd(xlarge) {
+    left: 44vw;
+  }
+  @include rwd(xxlarge) {
+    left: 45vw;
+  }
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 2px solid white;
+  background: radial-gradient(
+    circle,
+    rgba(126, 164, 251, 1) 0%,
+    rgba(42, 0, 255, 1) 100%
+  );
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.right {
+  background: radial-gradient(circle, #8ecc88 0%, #01522b 100%);
+}
+
+.wrong {
+  background: radial-gradient(circle, #fb9c9c 0%, red 100%);
+}
+
+.pasapalabra {
+  background: radial-gradient(circle, #7ea4fb 0%, #2a00ff 100%);
+}

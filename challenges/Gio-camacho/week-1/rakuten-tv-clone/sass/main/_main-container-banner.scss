@@ -1,0 +1,40 @@
+.main-container {
+  &__banner {
+    background-color: $bg-banner;
+  }
+
+  &__banner-figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include rwd(1120px) {
+      display: -webkit-box;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+  }
+
+  &__wrapper-img {
+    margin: 0.5rem;
+    margin-top: 3rem;
+  }
+
+  &__img-banner {
+    width: 100%;
+    cursor: pointer;
+    transition: 100ms all ease-in-out;
+    border: 0.4rem solid transparent;
+
+    &:hover {
+      border: 0.4rem solid $yellow;
+      border-radius: 0.2rem;
+    }
+  }
+}

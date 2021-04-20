@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <section class="userName">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" required>
+            <label for="surname">Apellidos:</label>
+            <input type="text" name="name" id="surname" required>
+        </section>
+        <section class="userAddress">
+            <label for="address">Dirección:</label>
+            <br>
+            <textarea id="address" name="address" rows="4" cols="50" maxlength = "150"></textarea>
+        </section>
+        <section class="userAge">
+            <label for="age">Edad:</label>
+            <br>
+            <input type="number" id="age" name="age" min="1" max="100">
+        </section>
+        <section class="userDNI">
+            <label for="dni">DNI:</label>
+            <br>
+            <input type="text" id="dni" name="dni" minlength="9" maxlength = "9" required>
+        </section>
+        <section class="userTlf">
+            <label for="tlf">Teléfono:</label>
+            <br>
+            <input type="text" id="tlf" name="tlf">
+        </section>
+        <section class="userMail">
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email">
+        </section>
+        <section class="userNumCars">
+            <label for="numCars">Número de coches:</label>
+            <br>
+            <input type="range" id="numCars" name="numCars" value="1" min="1" max="20">
+        </section>
+        <section class="userColorCar">
+            <span>Color de tu coche:</span>
+            <br>
+            <input type="radio" id="rojo" name="color">
+            <label for="rojo">Rojo</label>
+            <input type="radio" id="azul" name="color">
+            <label for="azul">Azul</label>
+            <input type="radio" id="blanco" name="color">
+            <label for="blanco">Blanco</label>
+            <input type="radio" id="negro" name="color">
+            <label for="negro">Negro</label>
+            <input type="radio" id="gris" name="color">
+            <label for="gris">Gris</label>
+        </section>
+        <section class="userActualPay">
+            <label for="paying">Prima actual de tu seguro:</label>
+            <br>
+            <input type="number" id="paying" name="paying" max="1400">
+        </section>
+        <section class="userDriver">
+            <span>¿Eres el conductor principal?:</span>
+            <br>
+            <input type="radio" id="yes" name="answer">
+            <label for="yes">Si</label>
+            <input type="radio" id="no" name="answer">
+            <label for="no">No</label>
+        </section>
+        <section class="UserWayToMetUs">
+            <label for="wayToMetUs">¿Cómo nos has conocido?</label>
+            <select name="wayToMetUs" id="wayToMetUs">
+                <option value="internet">Internet</option>
+                <option value="radio">Radio</option>
+                <option value="otros">Otros</option>
+            </select>
+        </section>
+        <section>
+            <label for="submit">Enviar:</label>
+            <br>
+            <input type="submit" id="submit">
+        </section>
+    </form>
+</body>
+</html>

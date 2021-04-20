@@ -1,0 +1,106 @@
+.description {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
+
+  &__name {
+    color: $title-color;
+    font-size: 3.5rem;
+    font-weight: 300;
+  }
+
+  &__profession {
+    font-size: 2rem;
+    color: $text;
+    font-weight: 300;
+  }
+}
+
+.about {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $title-color;
+  }
+
+  &__description {
+    color: $text;
+    padding-top: 1rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
+
+.skills {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $title-color;
+  }
+
+  &__items {
+    list-style: none;
+    color: $text;
+    padding-bottom: 1rem;
+  }
+
+  .fab {
+    color: $brand-100;
+  }
+
+  &__html,
+  &__css,
+  &__js,
+  &__react,
+  &__node {
+    margin-left: 1rem;
+  }
+}
+
+.experience {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $title-color;
+    padding-bottom: 1.5rem;
+  }
+
+  &__company {
+    margin-bottom: 1.5rem;
+  }
+
+  &__company-name {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: $title-color;
+    padding-bottom: 0.5rem;
+  }
+
+  &__date {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $span-date;
+  }
+
+  &__description {
+    margin-bottom: 1.5rem;
+    color: $text;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+}

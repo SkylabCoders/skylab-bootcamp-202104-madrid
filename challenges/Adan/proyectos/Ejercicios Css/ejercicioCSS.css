@@ -1,0 +1,60 @@
+#div1, #div2, #div3, #div4 {
+    width:200px;
+    height:200px;
+    border: 2px solid black;
+}
+#div1>div {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    top: 20px;
+    left: 30px;
+}
+
+#div2:hover {
+    background-color: deeppink;
+}
+#div3:hover{
+    background-color:firebrick;
+}
+#div1 {
+    background-color: red;
+    bottom: 10px;
+    right: 10px;
+}
+#div2 {
+    background-color: hotpink;
+    top: 10px;
+    right: 10px;
+}
+#div3 {
+    background-color: yellow;
+    left: 10px;
+    bottom: 10px;
+}
+#div4 {
+    background-color: blue;
+    left: 10px;
+}
+#texto{
+    position: absolute;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    #div3{
+        background-color: brown;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    #div1,#div2,#div3{
+        display: none;
+    }
+  }
+  @media screen and (min-height: 400px) {
+    #div2{
+        background-color: goldenrod;
+    }
+    #div1{
+        display: none;
+    }
+  }

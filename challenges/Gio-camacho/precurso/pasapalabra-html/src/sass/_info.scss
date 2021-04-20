@@ -1,0 +1,46 @@
+.info {
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: 5rem 0;
+
+  &__description {
+    max-width: 80rem;
+    padding: 0 5rem;
+    text-align: center;
+  }
+
+  &__title {
+    letter-spacing: 0.1rem;
+  }
+
+  &__rules {
+    padding-bottom: 2rem;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__input {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  &__btn {
+    @extend %button;
+    padding: 0.5rem 0;
+  }
+}

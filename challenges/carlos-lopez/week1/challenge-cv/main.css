@@ -1,0 +1,112 @@
+/*
+GLOBAL VARIABLES FOR CSS
+*/
+* {
+  font-family: "Press Start 2P", cursive;
+}
+
+.header__name {
+  background-color: #f3df75;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  border: 2px solid #928023;
+  box-shadow: 7px 7px 15px #928023;
+  text-shadow: 2px 2px 2px #616015;
+}
+
+.main__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #f3df75;
+  box-shadow: 7px 7px 15px #928023;
+}
+
+.main__photo,
+.main__contact,
+.main__achievments {
+  display: flex; 
+  justify-content: center;
+  text-decoration: none;
+}
+
+.main__info--right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 3%;
+  text-shadow: 2px 2px 2px #616015;
+}
+
+.main__info--left {
+  background-color: #f3df75;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  border: 2px solid #928023;
+}
+
+/* ELEMENT'S 
+SELECTORS */
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: #616015;
+}
+
+h3 {
+  color: #4c4136;
+}
+
+img {
+  width: 60%;
+  box-shadow: 7px 7px 15px #928023;
+}
+
+a {
+  text-decoration: none;
+  color: #4c4136;
+  display: block;
+}
+
+body {
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+/*MEDIA 
+QUERY*/
+@media screen and (max-width: 400px) {
+  body {
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .main__info--right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main__info--right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

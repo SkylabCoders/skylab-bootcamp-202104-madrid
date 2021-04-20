@@ -1,0 +1,9 @@
+input:required:valid {
+    /* insert your own styles for invalid form input */
+    background-color: green;
+  }
+
+  input:required:invalid {
+    /* insert your own styles for invalid form input */
+    background-color: red;
+  }

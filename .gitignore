@@ -313,7 +313,7 @@ temp/
 
 auth-data.js
 
-# Firebase
+# Firebase
 .firebase/
 
 # expo/

@@ -1,0 +1,103 @@
+@import "variables.scss";
+
+* {
+  font-family: $font-family-name;
+}
+
+.header__name {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  border: 2px solid #928023;
+  box-shadow: 7px 7px 15px #928023;
+  text-shadow: 2px 2px 2px $text-color;
+}
+
+.main__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: $background-color;
+  box-shadow: 7px 7px 15px #928023;
+}
+.main__photo, .main__contact, .main__achievments {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.main__info--right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 3%;
+  text-shadow: 2px 2px 2px $text-color;
+}
+.main__info--left {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  border: 2px solid #928023;
+}
+
+/* ELEMENT'S 
+SELECTORS */
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: $text-color;
+}
+
+h3 {
+  color: $text-color-subtitle;
+}
+
+img {
+  width: 60%;
+  box-shadow: 7px 7px 15px #928023;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color-subtitle;
+  display: block;
+}
+body {
+  height: 100%;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+/*MEDIA 
+QUERY*/
+
+@media screen and (max-width: 400px) {
+  body {
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+  .main__info--right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main__info--right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7%;
+  }
+}

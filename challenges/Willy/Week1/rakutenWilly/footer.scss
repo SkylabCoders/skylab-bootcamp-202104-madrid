@@ -1,0 +1,148 @@
+.container__footer{
+    display: flex;
+    background-color:rgb(33,33,33);
+    flex-direction: column;
+ }   
+
+ .footer__info {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+    
+.info__rakuten{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    width: 400px;
+    margin-top: 20px;
+}
+
+.info__rakuten > h2{
+    color: white;
+    text-align: center;
+   
+}
+
+.info__rakuten > p{
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+.info__rakuten2 {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 60px;
+    justify-content: space-around;
+    
+}
+
+
+.rakuten__work {
+    
+    width: 400px;
+}
+
+.rakuten__work > a {
+    color: white;
+    text-align: center;
+   // padding-left: 80px;
+}
+
+.rakuten__work > p {
+    
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+}
+
+#HowItWokrs {
+    width: 100px;
+    height: 100px;
+}
+
+.rakuten__pay {
+    
+    width: 300px;
+}
+
+.rakuten__pay > a {
+    color: white;
+    text-align: center;
+    //padding-left: 80px;
+}
+
+.rakuten__pay > p {
+    
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+}
+
+#Payment {
+    width: 150px;
+    height: 50px;
+    
+}
+
+.rakuten__support {
+    justify-content: center;
+    width: 300px;
+}
+
+.rakuten__support > a {
+    color: white;
+    text-align: center;
+   // padding-left: 80px;
+}
+
+.rakuten__support > p {
+    
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+}
+
+#Support {
+    width: 100px;
+    height: 100px;
+
+}
+
+.footer__policy {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(23,23,23);
+    
+}
+
+.policy__info {
+    display: flex;
+    flex-wrap: nowrap;
+   justify-content: space-around;
+    margin-top: 20px;
+    font-size: 14px;
+    
+
+}
+
+.policy__info > a{
+    color:rgb(192,204,198)
+}
+
+
+.policy__info > svg {
+    margin-right: 10px;
+}
+
+.policy__info a:hover  {
+    color:white;
+}
+
+.policy__copyright {
+    margin-left: 15px;
+    color:rgba(128, 128, 128, 0.815);
+
+}

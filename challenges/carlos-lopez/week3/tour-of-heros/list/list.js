@@ -1,26 +1,22 @@
-// let list = document.getElementById("list");
-// let dashboard = document.getElementById("dashboard");
-// let names = document.querySelector(".names");
+let listNames = document.querySelector(".div--listNames");
 
 //Functions
-
 function createAnchor() {
-  let newAnchor = document.createElement('a');
-  
+  for(let i = 0; i < heroes.length; i++){
+    let newAnchor = document.createElement('a');
+    listNames.appendChild(newAnchor);
+    console.log(heroes[i].name)
+    newAnchor.innerText = heroes[i].name;
+  };
 };
 
-
 function goToDashboard(){
-  window.location.href = "http://127.0.0.1:5500/dashboard/dashboard.html";
+  window.location.href ="http://127.0.0.1:5500/skylab-bootcamp-202104-madrid/challenges/carlos-lopez/week3/tour-of-heros/dashboard/dashboard.html";
 }
 function goToList(){
-  window.location.href = "http://127.0.0.1:5500/list/list.html";
-}
-// dashboard.addEventListener("click", () => {
-//   window.location.href = "http://127.0.0.1:5500/dashboard/dashboard.html";
-// });
-// list.addEventListener("click", () => {
-//   window.location.href = "http://127.0.0.1:5500/list/list.html";
-// });
+  window.location.href = "http://127.0.0.1:5500/skylab-bootcamp-202104-madrid/challenges/carlos-lopez/week3/tour-of-heros/list/list.html";
 
-module.exports = {createAnchor:createAnchor}
+}
+ 
+createAnchor();
+

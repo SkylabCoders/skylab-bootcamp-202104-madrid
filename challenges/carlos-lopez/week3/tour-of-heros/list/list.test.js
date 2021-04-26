@@ -14,14 +14,3 @@ describe('Given a function createAnchor()', () => {
     })
 })
 
-//arrange
-// let newAnchor;
-// // function createAnchor(){
-// //     newAnchor = document.createElement();
-// //     return newAnchor;
-// // };
-// console.log(newAnchor);
-// //act
-// let result = newAnchor
-// //assert
-// expect(result).toBe(undefined);

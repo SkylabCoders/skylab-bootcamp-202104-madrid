@@ -6,7 +6,7 @@
 
 function createAnchor() {
   let newAnchor = document.createElement('a');
-}
+};
 
 
 function goToDashboard(){

@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+  height: 420px;
+  width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(122, 125, 101);
+}
+.grid div {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(148, 124, 105);
+}
+div:hover{
+  cursor: pointer;
+  background-color: palevioletred;
+}
+
+.bomb {
+  background-color:orange;
+}
+
+.hidden {
+  font-size: 0;
+  background-color: rgb(237, 221, 173);
+}
+

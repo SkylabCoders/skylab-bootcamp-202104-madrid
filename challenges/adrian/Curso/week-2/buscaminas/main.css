@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board__cell--empty {
+  border: solid 1px black;
+  background-color: #99c2c2;
+  height: 38px;
+  width: 38px;
+  margin: 0;
+}
+
+.board__cell--mine {
+  border: solid 1px black;
+  background-color: #bd6464;
+  height: 38px;
+  width: 38px;
+}
+
+.main__section--board {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.board__cell--checked {
+  background-color: #80d0df;
+  border: solid 1px black;
+}
+
+.board__cell--mine:hover {
+  background-color: blueviolet;
+}
+
+.board__cell--empty:hover {
+  background-color: blueviolet;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,35 @@
+@import "./style_nav.scss";
+@import "./style_carousel_principal.scss";
+@import "./variables.scss";
+@import "./style_banner_list.scss";
+@import "./style_film_list.scss";
+@import "./style_nav_bot.scss";
+@import "./style_modal";
+
+body{
+    display:flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    background-color: $backgroundGeneral;
+} 
+
+.lupa__svg{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    z-index: 2;
+    display: none;
+}
+
+@media screen and(max-width: 1100px){
+    .lupa__svg{
+        display: inline;
+    }
+}
+    
+

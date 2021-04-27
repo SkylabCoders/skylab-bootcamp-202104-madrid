@@ -12,7 +12,6 @@ const FIND = function (arr, callback) {
   for (let i = 0; i < arrLengths; i++) {
     let result = callback(arr[i]);
     if (result) {
-      // return arr[i];
       newArray[i] = arr[i];
     }
   }

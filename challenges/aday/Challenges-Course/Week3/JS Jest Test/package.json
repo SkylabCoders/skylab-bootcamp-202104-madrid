@@ -1,0 +1,14 @@
+{
+  "name": "ejercicio",
+  "version": "1.0.0",
+  "description": "semana3",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Aday",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

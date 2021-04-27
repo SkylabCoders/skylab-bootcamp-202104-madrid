@@ -1,4 +1,6 @@
 const heroMock = [{id:'1',name:'Bombasto'}]
+
+
 test('it should render a heroes list', () => {
     // Set up our document bodyç
     beforeEach(()=>{

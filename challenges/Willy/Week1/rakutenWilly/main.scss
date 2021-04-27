@@ -1,0 +1,23 @@
+@import "./header.scss";
+@import "./body.scss";
+@import "./footer.scss";
+
+* {
+        font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+}
+
+
+
+@media screen and (max-width: 600px) { 
+
+.container__header {
+        display: none;
+}
+
+}

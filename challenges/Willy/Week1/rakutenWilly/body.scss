@@ -1,0 +1,189 @@
+.container__main {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(23,23,23);
+}
+
+// carrusel
+.main__carrusel {
+    
+    overflow: hidden;
+}
+
+.main__carrusel figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 15s main__carrusel infinite;
+
+} .main__carrusel figure img {
+    width: 20%;
+    float: left;
+    cursor: pointer; 
+}
+
+@keyframes main__carrusel {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%
+    }
+}
+//banner
+.banner__container {
+    display: flex; 
+    
+ }
+
+ .container__img {
+    padding: 10px 10px 10px;
+    min-width: 217px; //borrar esto si no funciona el scroll
+    border: 2px solid transparent;
+    
+ }
+
+ .container__img > img:hover {
+     border: 1px solid yellow;
+     cursor: pointer;
+ }
+
+ .container__img > img {
+    width: 100%;
+}
+
+//recomendaciones
+
+.recommended__container {
+    display: flex; 
+    flex-wrap: nowrap; // borrar si no funciona el scroll
+    overflow-x: scroll;
+    width:1500px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+ }
+/*
+ ::-webkit-scrollbar {
+
+    width: 0;  /* Remove scrollbar space 
+    background: transparent;  /* Optional: just make scrollbar invisible 
+}
+*/
+
+.recommended__subtitle {
+     color: white;
+     padding-left: 7px;
+
+ }
+
+.img__info{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(241, 241, 241, 0.72);
+    color: #fff;
+    opacity: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+/*
+ .img__info::after {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+    background: rgba(241, 241, 241, 0.72);
+    color: #fff;
+    overflow: hidden;
+    opacity: 0;
+  }
+  */
+.container__img:hover .img__info {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  //novedades
+.new__container {
+    display: flex; 
+    flex-wrap: nowrap; //borrar si no funciona el scroll
+    overflow-x: auto;
+    width:1500px;
+   
+ }
+
+.new__subtitle {
+     color:white;
+     padding-left: 7px;
+
+ }
+ // generos
+
+
+
+.genre__container {
+    display: flex; 
+    justify-content: center;
+   
+ }
+
+.genre__subtitle {
+     color:white;
+     padding-left: 7px;
+
+ }
+
+.genre_class {
+     color: white;
+     text-align: center;
+     margin-top: 3px;
+     padding-top: 5px;
+ }
+
+ .container__ico {
+    padding: 10px 10px 10px;
+    
+ }
+
+ .container__ico > img:hover {
+     cursor: pointer;
+ }
+
+ .container__ico > img {
+     min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+#all {
+    padding-left: 25%;
+    width: 50%;
+   
+}

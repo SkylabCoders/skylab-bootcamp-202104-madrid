@@ -444,7 +444,12 @@ a:hover {
   font-size: 14px;
 }
 
+.rakuten__support > img {
+  justify-self: center;
+}
+
 #Support {
+  margin-bottom: 10px;
   width: 100px;
   height: 100px;
 }

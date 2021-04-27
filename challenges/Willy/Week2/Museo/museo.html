@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Museo de mierda</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-9">Museo de los Ojos Sangrantes</div>
+          <div class="col-4">
+            <form>
+                <label for="titulo">Título <br><input id="title" type="text" placeholder="Introduce el título" name="titulo"></label>
+                
+                <label for="fechaSalida">Fecha de publicación<br><input id="releaseDate" type="text" placeholder="Introduce la fecha" name="fechaSalida"></label>
+                <label for="description">Añade una descripción<br><textarea name="" id="description" cols="30" rows="5" placeholder="Añade una descripción"></textarea></label>
+                
+                <button type="submit" onclick="add(event)">Enviar</button>
+                <input type="reset" value="Limpiar">
+            </form>
+          </div>
+          <div class="col-6">
+            <input id="cuadro" type="url">
+            </div>
+        </div>
+    </div>
+    <div id="catalog" class="main">
+        <div id="main__data"></div>
+        <div id="main__picture"></div>
+        <div id="main__buttons"></div>
+    </div>
+
+        
+
+          
+    
+    <script src="" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@font-face{
+    font-family: "Star Jedi";
+    src: url("Starjedi.ttf") format("truetype");
+    
+    
+  }
+
+#container {
+    display: grid;
+    justify-content: center;
+    background-image: url("https://img.unocero.com/2020/10/nasa-sonidos-espacio-halloween-1200x600.jpg");
+    background-repeat: repeat;
+    
+}
+
+#container__titulo {
+    font-family: 'Star Jedi',Arial, Helvetica, sans-serif;
+    text-align:center;
+    color: yellow;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+#container__introduction {
+    display: grid;
+    justify-content: center;
+    text-align:center;
+}
+
+#container__introduction > p{
+    font-family: 'Star Jedi',Arial, Helvetica, sans-serif;
+    text-align:justify;
+    color: yellow;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    font-size: 20px;
+    text-shadow: 4px 4px 4px #aaa;
+    
+}
+
+
+#container__mesa {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    background-color: darkgray;
+    width: 500px;
+    height: 500px;
+   
+    
+    
+}
+
+#container__mesa > div {
+    background-color: darkgray;
+    border: 1px solid black;
+    
+}
+
+#container__mesa >  div:hover {
+    background-color: yellow;
+    cursor: url('x-wing2.png'), default;
+ 
+}
+
+
+
+.bomb {
+    background-color: chartreuse;
+}
+

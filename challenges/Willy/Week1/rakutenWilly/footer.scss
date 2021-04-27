@@ -105,9 +105,15 @@
     font-size: 14px;
 }
 
-#Support {
+.rakuten__support > img {
+    justify-self: center;
+}
+
+#Support { 
+    margin-bottom: 10px;
     width: 100px;
     height: 100px;
+
 
 }
 

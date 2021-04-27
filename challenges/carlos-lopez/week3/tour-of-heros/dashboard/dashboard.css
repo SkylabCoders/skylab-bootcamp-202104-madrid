@@ -1,10 +1,40 @@
+main{
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4.5vh;
+}
+
+.main--div{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main--div > *{
+    background-color: rgb(100, 122, 136);
+    color: white;
+    width: 30vh;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 h1{
     color: rgb(156, 156, 156);
 }
+
 button{
     background-color: rgb(238, 238, 238);
     color: rgb(77, 159, 227);
 }
+
 button:hover{
     background-color: rgb(161, 139, 139);
     color: white;

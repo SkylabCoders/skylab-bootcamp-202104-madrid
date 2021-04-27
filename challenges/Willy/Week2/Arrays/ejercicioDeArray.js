@@ -218,17 +218,7 @@ function comprobacion(num){
     }
 }
 
-//solo funciona cuando no tiene en cuenta el array vacio xD
-
-// reduce
-
-function reducer(accumulator, currentValue)
-
-comprobarLength(){
-    let theLenght() = 0
-    for (let element of ar)
 
 
-}
 
-module.exports = {mapa:mapa, callbackFunct: multiplicar}
+//module.exports = {mapa:mapa, callbackFunct: multiplicar}

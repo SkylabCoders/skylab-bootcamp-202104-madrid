@@ -1,0 +1,32 @@
+ .main {
+    display: flex;
+    background-color: grey;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#main__data {
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(36, 30, 124);
+    color: yellow
+}
+
+#main__picture {
+    display:flex;
+    flex-direction: column;
+    
+
+}
+
+#main__buttons {
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(19, 102, 26);
+
+} 
+
+.pictures {
+    width: 400px;
+    height: 400px;
+}

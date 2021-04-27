@@ -1,0 +1,93 @@
+* {
+  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flex-container--navegador {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: burlywood;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.flex-container--navegador div {
+  background-color: gainsboro;
+  width: 25%;
+  margin: 10px;
+  text-align: left;
+  font-size: 30px;
+  border: 2px solid black;
+}
+
+.carrusel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: gainsboro;
+  padding: 100px;
+  border: 2px solid black;
+}
+
+.novedades {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: burlywood;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.novedades div {
+  background-color: gainsboro;
+  width: 20%;
+  margin: 10px;
+  text-align: center;
+  font-size: 30px;
+  border: 2px solid black;
+}
+
+.carruselmultiple {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: gainsboro;
+  padding: 100px;
+  border: 2px solid black;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: burlywood;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.footer div {
+  background-color: gainsboro;
+  width: 20%;
+  margin: 10px;
+  text-align: center;
+  font-size: 30px;
+  border: 2px solid black;
+}
+/*# sourceMappingURL=style-main2.css.map */

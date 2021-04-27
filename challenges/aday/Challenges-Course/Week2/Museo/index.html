@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>M U S E O</title>
+</head>
+<body>
+
+    <form onsubmit="crear(event)">
+
+
+        <input class="form" type="text" placeholder="Introduce el nombre de la obra" required>
+        <input class="form" type="text" placeholder="Introduce la descripción de la obra" required>
+        <input class="form" type="url" placeholder="Introduce la URL de la imagen" required>
+        <input class="boton" type="submit" value="ENVIAR">
+        <input class="boton" type="reset" value="LIMPIAR">
+
+    </form>
+
+
+
+        <div id="maincontent">
+
+
+
+        </div>
+
+    
+
+<script src="./index.js"></script>
+</body>
+</html>
+
+
+<!--
+
+
+const museo = { titulo: 3, }
+
+
+
+para copiar objeto -> int.JSON stringify
+
+eliminar array -> .splice
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            .oculto{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="prueba">
+        <input type="number" id="numero1" name="numero1" placeholder="Introduce un número" />
+        <input type="number" id="numero2" name="numero2" placeholder="Introduce otro número"/>
+        <button id="lanzar" onclick="lanzar()">SUMAR</button>
+        <div>
+            <p id="resultado"></p>
+        </div>
+    </div>
+    <button id="ocultar" onclick="toggle()">OCULTAR</button>
+        <script>
+            function lanzar(){
+                let numero1 = document.getElementById("numero1");
+                numero1.classList.add("oculto")
+                let numero2 = document.getElementById("numero2");
+                const resultado = parseInt(numero1.value) + parseInt(numero2.value);
+                let renderResult = document.getElementById("resultado");
+                renderResult.innerText = "la suma es:" + resultado;
+            }
+            function toggle(){
+                let container = document.getElementById("prueba");
+                if(container.classList.contains("oculto")){
+                    container.classList.remove("oculto");
+                }else{
+                    container.classList.add("oculto");
+                }
+        }
+        </script>
+    </body>
+</html>

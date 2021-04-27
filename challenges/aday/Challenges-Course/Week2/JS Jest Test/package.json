@@ -1,0 +1,14 @@
+{
+  "name": "pruebatesting",
+  "version": "1.0.0",
+  "description": "week2 prueba para ver como funciona jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Aday",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "buscaminastest",
+  "version": "1.0.0",
+  "description": "'testing minesweeper'",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "carlos",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

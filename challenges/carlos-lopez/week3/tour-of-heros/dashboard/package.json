@@ -1,0 +1,14 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "'testing'",
+  "main": "dashboard.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "carlos",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

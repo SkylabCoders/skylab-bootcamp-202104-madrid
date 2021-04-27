@@ -22,6 +22,6 @@ function loadPage(arr, id, index) {
   heroId.innerText = id;
 }
 
-// loadPage(HEROES, idHero, indexHero);
+loadPage(HEROES, idHero, indexHero);
 
 module.exports = { loadPage };

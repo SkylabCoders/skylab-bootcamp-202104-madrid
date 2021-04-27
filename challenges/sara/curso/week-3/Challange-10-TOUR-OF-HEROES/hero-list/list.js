@@ -28,6 +28,6 @@ function createTheList(arr) {
   }
 }
 
-// createTheList(HEROES);
+createTheList(HEROES);
 
 module.exports = { createTheList };

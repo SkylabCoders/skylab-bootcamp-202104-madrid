@@ -1,0 +1,11 @@
+a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid black;
+  width: 30%;
+  margin: 1vh;
+  padding: 1vh;
+  color: white;
+  background-color: rgb(103, 103, 155);
+}

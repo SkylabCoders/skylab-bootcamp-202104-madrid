@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let results;
+      // peticiones sincronas
+      function getInfoFromServer(myCallback) {
+        let req = new XMLHttpRequest();
+        req.open("GET", "https://swapi.dev/api/people/");
+        req.onload = function () {
+          if (req.status == 200) {
+            results = req.responseText;
+            myCallback(req.responseText);
+          } else {
+            myCallback("Error: " + req.status);
+          }
+        };
+        req.send();
+      }
+      function paintResult(result) {
+        console.log(result);
+      }
+      // using promises for asynchronus
+      const retrieveDataUsingPromise = async ()=> {
+        return new Promise(function (myResolve, myReject) {
+          let req = new XMLHttpRequest();
+          req.open("GET", "https://swapi.dev/api/people/");
+          req.onload = function () {
+            if (req.status === 200) {
+              myResolve(req.response);
+            } else {
+              myReject("File not found");
+            }
+          };
+          req.send();
+        });
+      }
+      function retrieveDataNow(){
+          retrieveDataUsingPromise().then(
+        (val)=>{console.log(val)},
+        (err)=>{console.log(err)}
+          )
+      }
+      function retrieveDataUsingPromise2() {
+        return new Promise(function (myResolve, myReject) {
+          let req = new XMLHttpRequest();
+          req.open("GET", "https://swapi.dev/api/starships/");
+          req.onload = function () {
+            if (req.status === 200) {
+              myResolve(req.response);
+            } else {
+              myReject("File not found");
+            }
+          };
+          req.send();
+        });
+      }
+      function retrieveDataNow2(){
+          retrieveDataUsingPromise2().then(
+        (val)=>{console.log(val)},
+        (err)=>{console.log(err)}
+          )
+      }
+      
+    </script>
+  </body>
+</html>

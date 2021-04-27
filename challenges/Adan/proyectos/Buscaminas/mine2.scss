@@ -1,0 +1,31 @@
+.div__cuadricula {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    .row {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .bomba {
+      height: 40px;
+      width: 40px;
+      border: 5px solid;
+      border-color:orange #bab7a9  orange #bab7a9;
+      box-sizing: border-box;
+    } 
+.ok {
+  height: 40px;
+  width: 40px;
+  border: 5px solid;
+  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  box-sizing: border-box;
+}
+.ok:hover{
+  background-color: red;
+}
+}
+}

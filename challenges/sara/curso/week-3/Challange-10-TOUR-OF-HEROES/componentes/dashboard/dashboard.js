@@ -2,11 +2,23 @@ let mainContainer = document.querySelector(".main__container");
 let arrOfNum = [];
 
 function getToDashBoard() {
-  window.location.href = "http://127.0.0.1:5500/dashboard/dashboard.html";
+  window.location.href =
+    "http://127.0.0.1:5500/componentes/dashboard/dashboard.html";
 }
 
 function getToList() {
-  window.location.href = "http://127.0.0.1:5500/hero-list/list.html";
+  window.location.href =
+    "http://127.0.0.1:5500/componentes/hero-list/list.html";
+}
+
+//geting info from the JSON
+
+const herosUrl = "./../../store/superHeroData.json";
+
+function fetchInfo(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => selectRandoNum(arrOfNum, data));
 }
 
 function selectRandoNum(newArr, originalArr) {
@@ -23,7 +35,7 @@ function selectRandoNum(newArr, originalArr) {
       newArr.push(randNum);
     }
   }
-  addRandomHeroes(arrOfNum, HEROES);
+  addRandomHeroes(arrOfNum, originalArr);
 }
 
 function addRandomHeroes(newArr, originalArr) {
@@ -33,7 +45,7 @@ function addRandomHeroes(newArr, originalArr) {
     newCardHero.classList.add("main-container__anchor--card");
     newCardHero.innerText = hero;
     newCardHero.href =
-      "http://127.0.0.1:5500/hero-detail/detail.html?id=" +
+      "http://127.0.0.1:5500/componentes/hero-detail/detail.html?id=" +
       originalArr[element]["id"] +
       "&index=" +
       element;
@@ -41,4 +53,4 @@ function addRandomHeroes(newArr, originalArr) {
   });
 }
 
-selectRandoNum(arrOfNum, HEROES);
+fetchInfo(herosUrl);

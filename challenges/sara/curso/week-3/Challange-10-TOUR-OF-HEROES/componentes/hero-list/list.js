@@ -3,11 +3,13 @@ let mainContainerList = document.querySelector(".list-main__container--first");
 
 //onclick functions
 function getToDashBoard() {
-  window.location.href = "http://127.0.0.1:5500/dashboard/dashboard.html";
+  window.location.href =
+    "http://127.0.0.1:5500/componentes/dashboard/dashboard.html";
 }
 
 function getToList() {
-  window.location.href = "http://127.0.0.1:5500/hero-list/list.html";
+  window.location.href =
+    "http://127.0.0.1:5500/componentes/hero-list/list.html";
 }
 
 //geting info from the JSON
@@ -27,7 +29,7 @@ function createList(arr) {
     let newAnchor = document.createElement("a");
     newAnchor.innerText = arr[i]["id"] + " " + arr[i]["name"];
     newAnchor.href =
-      "http://127.0.0.1:5500/hero-detail/detail.html?id=" +
+      "http://127.0.0.1:5500/componentes/hero-detail/detail.html?id=" +
       arr[i]["id"] +
       "&index=" +
       i;

@@ -11,17 +11,23 @@ function getToList() {
 }
 
 //functions
-function createTheList() {
-  for (let i = 0; i < HEROES.length; i++) {
-    let newAnchor = document.createElement("a");
-    newAnchor.innerText = HEROES[i]["id"] + " " + HEROES[i]["name"];
-    newAnchor.href =
-      "http://127.0.0.1:5500/hero-detail/detail.html?id=" +
-      HEROES[i]["id"] +
-      "&index=" +
-      i;
-    mainContainerList.appendChild(newAnchor);
+function createElement(element, index) {
+  let newAnchor = document.createElement("a");
+  newAnchor.innerText = element.id + " " + element.name;
+  newAnchor.href =
+    "http://127.0.0.1:5500/hero-detail/detail.html?id=" +
+    element.id +
+    "&index=" +
+    index;
+  mainContainerList.appendChild(newAnchor);
+}
+
+function createTheList(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    createElement(arr[i], i);
   }
 }
 
-createTheList();
+// createTheList(HEROES);
+
+module.exports = { createTheList };

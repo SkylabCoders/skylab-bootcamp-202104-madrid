@@ -13,13 +13,15 @@ const params = new URLSearchParams(window.location.search);
 let idHero = params.get("id");
 let indexHero = params.get("index");
 
-function loadPage() {
+function loadPage(arr, id, index) {
   let heroName = document.createElement("h1");
   let heroId = document.createElement("h3");
   nameContainer.appendChild(heroName);
   idContainer.appendChild(heroId);
-  heroName.innerText = HEROES[indexHero]["name"];
-  heroId.innerText = idHero;
+  heroName.innerText = arr[index]["name"];
+  heroId.innerText = id;
 }
 
-loadPage();
+// loadPage(HEROES, idHero, indexHero);
+
+module.exports = { loadPage };

@@ -1,0 +1,15 @@
+{
+  "name": "domejercicios",
+  "version": "1.0.0",
+  "description": "pruebas de testing en array methods",
+  "main": "ChallengeArrayMethods.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Adan",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3",
+    "save-dev": "*"
+  }
+}

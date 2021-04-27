@@ -1,64 +1,49 @@
-# Creado por https://www.toptal.com/developers/gitignore/api/sonarqube
-# Edite en https://www.toptal.com/developers/gitignore?templates=sonarqube
-# ## SonarQube ###
-# SonarQube ignora los archivos.
+# Created by https://www.toptal.com/developers/gitignore/api/sonarqube
+# Edit at https://www.toptal.com/developers/gitignore?templates=sonarqube
+### SonarQube ###
+# SonarQube ignore files.
 #
 # https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
-# Directorios de trabajo de Sonar Scanner
-.sonar /
-.scannerwork /
-
+# Sonar Scanner working directories
+.sonar/
+.scannerwork/
 # http://www.sonarlint.org/commandline/
-# Directorios de trabajo de SonarLint, archivos de configuración (incluidas las credenciales)
-.sonarlint /
-
-# Fin de https://www.toptal.com/developers/gitignore/api/sonarqube
-
-# ## Windows ###
-# Archivos de caché de miniaturas de Windows
+# SonarLint working directories, configuration files (including credentials)
+.sonarlint/
+# End of https://www.toptal.com/developers/gitignore/api/sonarqube
+### Windows ###
+# Windows thumbnail cache files
 Thumbs.db
-Thumbs.db: encriptable
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
-
-# Archivo de volcado
-* .stackdump
-
-# Archivo de configuración de carpeta
-[ Dd ] esktop.ini
-
-# Papelera de reciclaje utilizada en archivos compartidos
-$ RECICLAJE.BIN /
-
-# Archivos de Windows Installer
-* .cab
-* .msi
-* .msix
-* .msm
-* .msp
-
-# Accesos directos de Windows
-* .lnk
-
-# Fin de https://www.gitignore.io/api/windows
-
-
-# Creado por https://www.gitignore.io/api/macos
-# Edite en https://www.gitignore.io/?templates=macos
-
-# ## macOS ###
+# Dump file
+*.stackdump
+# Folder config file
+[Dd]esktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+# Windows shortcuts
+*.lnk
+# End of https://www.gitignore.io/api/windows
+# Created by https://www.gitignore.io/api/macos
+# Edit at https://www.gitignore.io/?templates=macos
+### macOS ###
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# El icono debe terminar con dos \ r
-Icono
-
-# Miniaturas
-._ *
-
-# Archivos que pueden aparecer en la raíz de un volumen
+# Icon must end with two \r
+Icon
+# Thumbnails
+._*
+# Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
@@ -66,257 +51,207 @@ Icono
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-# Directorios potencialmente creados en recursos compartidos de AFP remotos
+# Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
- Carpeta de basura de  red
- Elementos temporales
+Network Trash Folder
+Temporary Items
 .apdisk
-
-# Fin de https://www.gitignore.io/api/macos
-
-
-# Creado por https://www.gitignore.io/api/linux
-# Edite en https://www.gitignore.io/?templates=linux
-
-# ## Linux ###
-* ~
-
-# archivos temporales que se pueden crear si un proceso todavía tiene un identificador abierto de un archivo eliminado
-.fuse_hidden *
-
-# Preferencias del directorio de KDE
-.directorio
-
-# Carpeta de basura de Linux que puede aparecer en cualquier partición o disco
-.Trash- *
-
-# Los archivos .nfs se crean cuando se elimina un archivo abierto pero aún se está accediendo
-.nfs *
-
-# Fin de https://www.gitignore.io/api/linux
-
-# Creado por https://www.gitignore.io/api/visualstudiocode
-# Edite en https://www.gitignore.io/?templates=visualstudiocode
-
-# ## VisualStudioCode ###
+# End of https://www.gitignore.io/api/macos
+# Created by https://www.gitignore.io/api/linux
+# Edit at https://www.gitignore.io/?templates=linux
+### Linux ###
+*~
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+# KDE directory preferences
+.directory
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+# End of https://www.gitignore.io/api/linux
+# Created by https://www.gitignore.io/api/visualstudiocode
+# Edit at https://www.gitignore.io/?templates=visualstudiocode
+### VisualStudioCode ###
 .vscode
-
-# ## Parche VisualStudioCode ###
-# Ignorar todo el historial local de archivos
-.historia
-
-# Fin de https://www.gitignore.io/api/visualstudiocode
-
-
-# Creado por https://www.gitignore.io/api/compressed
-# Edite en https://www.gitignore.io/?templates=compressed
-
-# ## Comprimido ###
-* .7z
-* .deb
-* .gz
-* .pkg
-* .rar
-* .rpm
-* .sit
-* .sitx
-* .tar
-* .zip
-* .zipx
-* .tgz
-
-# Fin de https://www.gitignore.io/api/compressed
-
-
-# Creado por https://www.gitignore.io/api/node
-# Edite en https://www.gitignore.io/?templates=node
-
-# ## Nodo ###
-# Registros
-registros
-* .log
-npm-debug.log *
-yarn-debug.log *
-yarn-error.log *
-lerna-debug.log *
-# Informes de diagnóstico (https://nodejs.org/api/report.html)
-informe. [ 0-9 ] * . [ 0-9 ] * . [ 0-9 ] * . [ 0-9 ] * .json
-# Datos en tiempo de ejecución
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+# End of https://www.gitignore.io/api/visualstudiocode
+# Created by https://www.gitignore.io/api/compressed
+# Edit at https://www.gitignore.io/?templates=compressed
+### Compressed ###
+*.7z
+*.deb
+*.gz
+*.pkg
+*.rar
+*.rpm
+*.sit
+*.sitx
+*.tar
+*.zip
+*.zipx
+*.tgz
+# End of https://www.gitignore.io/api/compressed
+# Created by https://www.gitignore.io/api/node
+# Edit at https://www.gitignore.io/?templates=node
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+# Runtime data
 pids
-* .pid
-* .seed
-* .pid.lock
-# Directorio para librerías instrumentadas generadas por jscoverage / JSCover
+*.pid
+*.seed
+*.pid.lock
+# Directory for instrumented libs generated by jscoverage/JSCover
 lib-cov
-# Directorio de cobertura utilizado por herramientas como estambul
-cobertura
-* .lcov
-# cobertura de prueba de Nueva York
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+# nyc test coverage
 .nyc_output
-# Almacenamiento intermedio Grunt (https://gruntjs.com/creating-plugins#storing-task-files)
-.gruñido
-# Directorio de dependencias de Bower (https://bower.io/)
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+# Bower dependency directory (https://bower.io/)
 bower_components
-# configuración de node-waf
+# node-waf configuration
 .lock-wscript
-# Complementos binarios compilados (https://nodejs.org/api/addons.html)
-construir / liberar
-# dependencias
-/ node_modules
-/ .pnp
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+# dependencies
+/node_modules
+/.pnp
 .pnp.js
-módulos_nodo /
-
-# prueba
-/ cobertura
-
-# producción
-/ construir
-
-# misceláneo
+node_modules/
+# testing
+/coverage
+# production
+/build
+# misc
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-npm-debug.log *
-yarn-debug.log *
-yarn-error.log *
-jspm_packages /
-# Archivos de declaración de TypeScript v1
-mecanografia /
-# Caché de TypeScript
-* .tsbuildinfo
-# Directorio de caché npm opcional
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+jspm_packages/
+# TypeScript v1 declaration files
+typings/
+# TypeScript cache
+*.tsbuildinfo
+# Optional npm cache directory
 .npm
-# Caché eslint opcional
+# Optional eslint cache
 .eslintcache
-# Historial de REPL opcional
+# Optional REPL history
 .node_repl_history
-# Salida de 'paquete npm'
-* .tgz
-# Archivo de integridad del hilo
-.yarn-integridad
-# archivo de variables de entorno dotenv
+# Output of 'npm pack'
+*.tgz
+# Yarn Integrity file
+.yarn-integrity
+# dotenv environment variables file
 .env
 .env.test
-# caché del paquete de paquetes (https://parceljs.org/)
+# parcel-bundler cache (https://parceljs.org/)
 .cache
-
 # next.js build output
-.Siguiente
-
-# nuxt.js generar salida
+.next
+# nuxt.js build output
 .nuxt
-
-# rollup.js salida de compilación predeterminada
-dist /
-
-# Descomente la línea pública si su proyecto usa Gatsby
+# rollup.js default build output
+dist/
+# Uncomment the public line if your project uses Gatsby
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # https://create-react-app.dev/docs/using-the-public-folder/#docsNav
-# público
-
-# Resultados de la construcción del libro de cuentos
-.fuera
+# public
+# Storybook build outputs
+.out
 .storybook-out
-
-# salida de compilación de vuepress
-.vuepress / dist
-# Directorios sin servidor
-.servidor /
-# Caché de FuseBox
-.fusebox /
-# Archivos locales de DynamoDB
-.dynamodb /
-
-# Carpetas temporales
-tmp /
-temp /
-
-# Fin de https://www.gitignore.io/api/node
-
-# archivos multimedia
-# ## Imágenes ###
+# vuepress build output
+.vuepress/dist
+# Serverless directories
+.serverless/
+# FuseBox cache
+.fusebox/
+# DynamoDB Local files
+.dynamodb/
+# Temporary folders
+tmp/
+temp/
+# End of https://www.gitignore.io/api/node
+#media files
+### Images ###
 # JPEG
-* .jpg
-* .jpeg
-* .jpe
-* .jif
-* .jfif
-* .jfi
+*.jpg
+*.jpeg
+*.jpe
+*.jif
+*.jfif
+*.jfi
 # JPEG 2000
-* .jp2
-* .j2k
-* .jpf
-* .jpx
-* .jpm
-* .mj2
+*.jp2
+*.j2k
+*.jpf
+*.jpx
+*.jpm
+*.mj2
 # JPEG XR
-* .jxr
-* .hdp
-* .wdp
-
-# Formato de intercambio de gráficos
-* .gif
-
+*.jxr
+*.hdp
+*.wdp
+# Graphics Interchange Format
+*.gif
 # RAWf
-* .raw
-
+*.raw
 # Web P
-* .webp
-
-# Gráficos de red portátiles
-* .png
-
-# Gráficos de red portátiles animados
-* .apng
-
-# Gráficos de red de múltiples imágenes
-* .mng
-
-# Formato de archivo de imagen etiquetado
-* .tiff
-* .tif
-
-# Formato de documento portátil
-* .pdf
-
+*.webp
+# Portable Network Graphics
+*.png
+# Animated Portable Network Graphics
+*.apng
+# Multiple-image Network Graphics
+*.mng
+# Tagged Image File Format
+*.tiff
+*.tif
+# Portable Document Format
+*.pdf
 # X BitMap
-* .xbm
-
+*.xbm
 # BMP
-* .bmp
-* .dib
-
+*.bmp
+*.dib
 # ICO
-* .ico
-
-# Imágenes 3D
-* .3dm
-* .max
-
+*.ico
+# 3D Images
+*.3dm
+*.max
 # Videos
-* .mp4
-* .avi
-* .m4v
-* .mov
-* .mpg
-* .mpeg
-* .wmv
-* .asf
-* .wma
-* .wav
-
-# Fin de https://www.toptal.com/developers/gitignore/api/images
-
+*.mp4
+*.avi
+*.m4v
+*.mov
+*.mpg
+*.mpeg
+*.wmv
+*.asf
+*.wma
+*.wav
+# End of https://www.toptal.com/developers/gitignore/api/images
 auth-data.js
-
-#  Firebase
-.base de fuego /
-
-# expo /
-
-/ .expo
-.expo /
+# Firebase
+.firebase/
+# expo/
+/.expo
+.expo/

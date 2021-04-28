@@ -39,3 +39,6 @@ button:hover{
     background-color: rgb(161, 139, 139);
     color: white;
 }
+a{
+    text-decoration: none;
+}

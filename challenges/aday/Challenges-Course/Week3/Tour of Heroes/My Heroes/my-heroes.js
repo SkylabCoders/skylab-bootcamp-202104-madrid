@@ -5,7 +5,7 @@ top.addEventListener('click', topHeroes);
      for(let i = 0; i < list.length; i++) {
          let container = document.getElementById('heroes');
          let link = document.createElement('a');
-         link.href = "file:///Users/aday/Documents/aday/Challenges-Course/Week3/Tour%20of%20Heroes/Heroe%20Details/details.html?id="+list[i].id+"&name="+list[i].name
+         link.href = "file:///Users/aday/Documents/bootcamp/skylab-bootcamp-202104-madrid/challenges/aday/Challenges-Course/Week3/Tour%20of%20Heroes/Heroe%20Details/details.html"+list[i].id+"&name="+list[i].name
          link.innerText = 'ID: ' + list[i].id + ' Nombre: ' + list[i].name;
          container.appendChild(link);
      }
@@ -14,6 +14,6 @@ top.addEventListener('click', topHeroes);
  printList(HEROES);
 
 function topHeroes() {
-    window.location.href = "file:///Users/aday/Documents/aday/Challenges-Course/Week3/Tour%20of%20Heroes/Top%20Heroes/top.html";
+    window.location.href = "file:///Users/aday/Documents/bootcamp/skylab-bootcamp-202104-madrid/challenges/aday/Challenges-Course/Week3/Tour%20of%20Heroes/Top%20Heroes/top.html";
 };
 

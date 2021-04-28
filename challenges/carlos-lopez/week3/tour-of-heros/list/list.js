@@ -1,33 +1,31 @@
 let listNames = document.querySelector(".div--listNames");
-let newAnchor;
 
 //Functions
-function createAnchor() {
-  for(let i = 0; i < heroes.length; i++){
-    let newAnchor = document.createElement('a');
+const url =
+  "http://127.0.0.1:5500/challenges/carlos-lopez/week3/tour-of-heros/superHeroData.json";
+
+function fetchInfo(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => renderListHeroes(data));
+}
+
+function renderListHeroes(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let newAnchor = document.createElement("a");
+    newAnchor.className = "div__listNames--anchor";
     listNames.appendChild(newAnchor);
-    renderHero(heroes[i], i)
-  };
-};
-
-function renderHero(hero,i){
-  let mainContainerList = document.querySelector(".div--listNames");
-    newAnchor.innerText = hero.id + " " + hero.name;
-    newAnchor.href =
-      "http://127.0.0.1:5500/hero-detail/detail.html?id=" +
-      hero.id +
-      "&index=" +i
-    mainContainerList.appendChild(newAnchor);
-};
-
-function goToDashboard(){
-  window.location.href ="http://127.0.0.1:5500/skylab-bootcamp-202104-madrid/challenges/carlos-lopez/week3/tour-of-heros/dashboard/dashboard.html";
+    newAnchor.href = "http://127.0.0.1:5500/challenges/carlos-lopez/week3/tour-of-heros/detail/detail.html?index=" + i
+    newAnchor.innerText = `${arr[i].id}  ${arr[i].name}`;
+  }
 }
-function goToList(){
-  window.location.href = "http://127.0.0.1:5500/skylab-bootcamp-202104-madrid/challenges/carlos-lopez/week3/tour-of-heros/list/list.html";
 
+function goToDashboard() {
+  window.location.href =
+    "http://127.0.0.1:5500/challenges/carlos-lopez/week3/tour-of-heros/dashboard/dashboard.html";
 }
- 
-//createAnchor();
-module.exports = {createAnchor:createAnchor, renderHero:renderHero}
-
+function goToList() {
+  window.location.href =
+    "http://127.0.0.1:5500/challenges/carlos-lopez/week3/tour-of-heros/list/list.html";
+}
+fetchInfo(url);

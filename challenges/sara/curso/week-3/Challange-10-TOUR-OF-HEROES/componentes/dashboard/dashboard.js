@@ -43,7 +43,7 @@ function addRandomHeroes(newArr, originalArr) {
     let hero = originalArr[element]["name"];
     let newCardHero = document.createElement("a");
     newCardHero.classList.add("main-container__anchor--card");
-    newCardHero.innerText = hero;
+    newCardHero.innerHTML = hero;
     newCardHero.href =
       "http://127.0.0.1:5500/componentes/hero-detail/detail.html?id=" +
       originalArr[element]["id"] +

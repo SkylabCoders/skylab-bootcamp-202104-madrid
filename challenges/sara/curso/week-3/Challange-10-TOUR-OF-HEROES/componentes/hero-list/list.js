@@ -27,7 +27,7 @@ function fetchInfo(url) {
 function createList(arr) {
   for (let i = 0; i < arr.length; i++) {
     let newAnchor = document.createElement("a");
-    newAnchor.innerText = arr[i]["id"] + " " + arr[i]["name"];
+    newAnchor.innerHTML = arr[i]["id"] + " " + arr[i]["name"];
     newAnchor.href =
       "http://127.0.0.1:5500/componentes/hero-detail/detail.html?id=" +
       arr[i]["id"] +
@@ -38,5 +38,3 @@ function createList(arr) {
 }
 
 fetchInfo(herosUrl);
-
-module.exports = { createTheList };

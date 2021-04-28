@@ -29,4 +29,29 @@ describe('given a renderNames()', () => {
 })
 
 
+//Test in progress
+
+function renderListHeroes() {
+    let newAnchor = document.createElement("newAnchor");
+    newAnchor.id = "hola";
+    newAnchor.innerHTML = "frase + frase";
+    let result = newAnchor.innerHTML;
+    document.body.appendChild(newAnchor);
+    return result;
+  };
+
+describe("Given function renderListHeroes", () => {
+  describe("When calling renderListHeroes", () => {
+    test("It should return <newAnchor id=hola>frase + frase</newAnchor>", () => {
+      let newAnchor = document.createElement("newAnchor");
+      document.body.innerHTML = `<div id="contenedor"></div>`;
+      let div1 = document.getElementById("contenedor");
+      renderListHeroes();
+      console.log(div1.innerHTML)
+      console.log(newAnchor.innerHTML)
+      expect(div1.innerHTML).toContain(newAnchor.innerHTML);
+    });
+  });
+});
+
 

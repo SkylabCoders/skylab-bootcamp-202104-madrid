@@ -25,6 +25,10 @@ main{
     align-items: center;
     
 }
+a:hover{
+    background-color: rgb(161, 139, 139);
+    color: white
+}
 
 h1{
     color: rgb(156, 156, 156);
@@ -41,4 +45,5 @@ button:hover{
 }
 a{
     text-decoration: none;
+    font-size: 1.5rem;
 }

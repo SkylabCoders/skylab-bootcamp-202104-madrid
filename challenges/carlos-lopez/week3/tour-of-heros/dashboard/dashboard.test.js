@@ -1,5 +1,5 @@
 
-
+//Test passed
 describe('given a prinRandomNumbers()', () => {
     describe('when calling it', () => {
         test('then it should return 1', () => {
@@ -8,6 +8,28 @@ describe('given a prinRandomNumbers()', () => {
         })
     })
 })
+
+// Test passed
+
+function renderNames(arr,num1){
+   return arr[num1];
+  }
+
+describe('given a renderNames()', () => {
+    describe('when calling it with 2 parameters (arr, 3)', () => {
+        test('then it should log 4', () => {
+            //arrange
+            let arr = [1, 2, 3, 4];
+            //act
+            let result = renderNames(arr, 3);
+            //assert
+            expect(result).toBe(4);
+        })
+    })
+})
+
+
+
 
 
 // describe('Given a ', () => {

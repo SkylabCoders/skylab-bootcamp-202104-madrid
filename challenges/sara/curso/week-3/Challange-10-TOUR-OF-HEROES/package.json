@@ -1,0 +1,15 @@
+{
+  "name": "Challange-10-TOUR-OF-HEROES",
+  "version": "1.0.0",
+  "description": "",
+  "main": "obj-hero.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}

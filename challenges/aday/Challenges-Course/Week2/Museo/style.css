@@ -1,0 +1,28 @@
+.imagen {
+    width: 500px;
+    height: 250px;
+}
+
+.imagen:hover,
+.boton:hover,
+.form:hover,
+.ocultar:hover,
+.modificar:hover,
+.eliminar:hover {
+    cursor: pointer;
+}
+
+/* .boton:hover {
+    cursor: pointer;
+}
+
+.form:hover {
+    cursor: pointer;
+}
+
+
+
+.nuevoColor {
+    color: hotpink;
+    background-color: ivory;
+} */

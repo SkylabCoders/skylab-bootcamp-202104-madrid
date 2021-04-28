@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            .oculto{
+                display:none;
+            }
+        </style>
+           <script>
+            let x = alert("HIII")
+            function lanzar(){
+                let numero1 = document.getElementById("numero1");
+                numero1.classList.add("oculto")
+                let numero2 = document.getElementById("numero2");
+                const resultado = parseInt(numero1.value) + parseInt(numero2.value);
+                let renderResult = document.getElementById("resultado");
+                renderResult.innerText = "la suma es:" + resultado;
+            }
+            function toggle(){
+                let container = document.getElementById("prueba");
+                if(container.classList.contains("oculto")){
+                    container.classList.remove("oculto");
+                }else{
+                    container.classList.add("oculto");
+                }
+        }
+        </script>
+    </head>
+    </html>
+    <body>
+        <div id="prueba">
+        <input type="number" id="numero1" name="numero1" placeholder="Introduce un número" />
+        <input type="number" id="numero2" name="numero2" placeholder="Introduce otro número"/>
+        <button id="lanzar" onclick="lanzar()">SUMAR</button>
+        <div>
+            <p id="resultado"></p>
+        </div>
+    </div>
+    <button id="ocultar" onclick="toggle()">OCULTAR</button>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+@mixin cuadraditos {
+    padding: 50px;
+    border: 3px solid;
+    margin-top: 100px;
+  }
+
+  @mixin cuadradosredondos($size) {
+      width: $size;
+      height: $size;
+  }

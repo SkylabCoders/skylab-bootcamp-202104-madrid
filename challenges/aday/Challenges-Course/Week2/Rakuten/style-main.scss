@@ -1,0 +1,91 @@
+* {
+    font-family: sans-serif;
+    background-color: black;
+}
+
+/* N A V E G A D O R */
+
+.main-nav {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    padding: 15px 0px;
+}
+
+.main-nav__option {
+    
+    display: flex;
+
+    a {
+        color: white;
+        padding: 18px 10px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    a:hover {
+        color: yellow;
+    }
+}
+
+.search {
+
+    input {
+        background-color: #333;
+        padding: 5px 8px;
+        font-size: 15px;
+        font-family: Arial;
+        margin-top: 10px;
+    }
+
+    input:hover {
+
+        background-color: white;
+    }
+
+    i {
+        color: white;
+    }
+
+    i:hover {
+        color: #333;
+    }
+}
+
+.main-nav__option2 {
+
+    display: flex;
+    
+    a {
+        color: white;
+        padding: 18px 10px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    a:hover {
+        color: yellow;
+    }
+
+    #help {
+        color: grey;
+    }
+    // REVISAR
+    #registrar {
+        color: yellow;
+    }
+}
+
+@media (max-width: 1025px) {
+    .main-nav__option {
+        display:none;
+    }
+
+    .search {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+}

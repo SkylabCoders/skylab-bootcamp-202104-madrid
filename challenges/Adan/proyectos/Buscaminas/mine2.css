@@ -1,0 +1,33 @@
+.div__cuadricula {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+}
+.div__cuadricula .row {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.div__cuadricula .row .bomba {
+  height: 40px;
+  width: 40px;
+  border: 5px solid;
+  border-color: orange #bab7a9 orange #bab7a9;
+  box-sizing: border-box;
+}
+.div__cuadricula .row .ok {
+  height: 40px;
+  width: 40px;
+  border: 5px solid;
+  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  box-sizing: border-box;
+}
+.div__cuadricula .row .ok:hover {
+  background-color: red;
+}
+
+/*# sourceMappingURL=mine2.css.map */

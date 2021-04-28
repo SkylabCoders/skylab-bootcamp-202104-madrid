@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-direction: row-reverse;
+}
+
+#logo {
+    width: 120px;
+    height: 150px;
+}
+
+.art1 {
+    text-align: justify;
+}
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input:required:valid {
+   background-color: rgb(64, 247, 64);
+}
+
+input:required:invalid {
+    border: rgb(238, 13, 13);
+}

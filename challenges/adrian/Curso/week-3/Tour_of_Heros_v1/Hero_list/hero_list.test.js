@@ -1,15 +1,14 @@
-const heroMock = [{id:'1',name:'Bombasto'}]
+
+/*describe('given a function createHrosList', ()=>{
+    describe('the should return '
+        
+    )
+}
 
 
-test('it should render a heroes list', () => {
-    // Set up our document bodyç
-    beforeEach(()=>{
-        document.body.innerHTML = '';
-    });
-    document.body.innerHTML = '<div class="main__list"></div>';
-    const list = require('./hero_list');
-    const container = document.querySelector('.main__list')
-    list.createHerosList(heroMock);
-    expect(container.innerHTML).toBe('<a href="http://127.0.0.1:5500/hero-detail/detail.html?id=1&amp;index=0"></a>');
-    expect(container.children[0].innerText).toBe('1 Bombasto')
-    });
+test('it should return a number not equal to zero',()=>{
+    const num1 = 10;
+    const num2 = 1;
+    expect(list.minus(num1,num2)).not.toBe(0);
+});*/
+

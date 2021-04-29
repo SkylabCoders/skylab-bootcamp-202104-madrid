@@ -11,7 +11,7 @@ button:hover{
     background-color:red;
     color: white;
 }
-.div--listNames{
+.div--list-names{
     display: flex;
     flex-direction: column;
 }

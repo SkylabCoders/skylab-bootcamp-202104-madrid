@@ -1,4 +1,4 @@
-let listNames = document.querySelector(".div--listNames");
+let listNames = document.querySelector(".div--list-names");
 
 //Functions
 const url =

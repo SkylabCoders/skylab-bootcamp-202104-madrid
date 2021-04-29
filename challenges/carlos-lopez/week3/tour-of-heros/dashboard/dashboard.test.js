@@ -45,11 +45,11 @@ describe("Given function renderListHeroes", () => {
     test("Then it should return <newAnchor id=hola>frase + frase</newAnchor>", () => {
       let newAnchor = document.createElement("newAnchor");
       document.body.innerHTML = `<div id="contenedor"></div>`;
-      let div1 = document.getElementById("contenedor");
+      let containerList = document.getElementById("contenedor");
       renderListHeroes();
-      console.log(div1.innerHTML)
+      console.log(containerList.innerHTML)
       console.log(newAnchor.innerHTML)
-      expect(div1.innerHTML).toContain(newAnchor.innerHTML);
+      expect(containerList.innerHTML).toContain(newAnchor.innerHTML);
     });
   });
 });

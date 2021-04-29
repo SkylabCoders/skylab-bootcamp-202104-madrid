@@ -24,12 +24,12 @@ button:hover {
   
 }
 
-.main__div--id {
+.main__div-id {
     font-size: 2rem;
     color: rgb(156, 156, 156);
 }
 
-.main__div--name {
+.main__div-name {
     font-size: 2rem;
     color: rgb(156, 156, 156);
 }

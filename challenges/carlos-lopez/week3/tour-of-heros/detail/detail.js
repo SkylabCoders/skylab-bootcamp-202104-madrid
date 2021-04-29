@@ -18,7 +18,7 @@ function makingDetails(arr) {
   hTag.innerText = arr[index].connections.groupAffiliation
 
   let divDetailsName = document.createElement("div");
-  divDetailsName.className = "main__div--name";
+  divDetailsName.className = "main__div-name";
   mainDiv.appendChild(divDetailsName);
   divDetailsName.innerText = `Name:  ${arr[index].name}`;
 

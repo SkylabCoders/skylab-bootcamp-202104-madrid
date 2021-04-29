@@ -42,7 +42,7 @@ function renderListHeroes() {
 
 describe("Given function renderListHeroes", () => {
   describe("When calling renderListHeroes", () => {
-    test("It should return <newAnchor id=hola>frase + frase</newAnchor>", () => {
+    test("Then it should return <newAnchor id=hola>frase + frase</newAnchor>", () => {
       let newAnchor = document.createElement("newAnchor");
       document.body.innerHTML = `<div id="contenedor"></div>`;
       let div1 = document.getElementById("contenedor");

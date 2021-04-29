@@ -1,6 +1,6 @@
 let mainDiv = document.querySelector(".main__div");
 const params = new URLSearchParams(window.location.search);
-let index = params.get("index");
+const index = params.get("index");
 
 const url =
   "http://127.0.0.1:5500/challenges/carlos-lopez/week3/tour-of-heros/superHeroData.json";

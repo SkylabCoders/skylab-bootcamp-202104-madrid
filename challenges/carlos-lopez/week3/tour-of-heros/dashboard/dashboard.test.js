@@ -29,7 +29,7 @@ describe('given a renderNames()', () => {
 })
 
 
-//Test in progress
+//Test passed
 
 function renderListHeroes() {
     let newAnchor = document.createElement("newAnchor");

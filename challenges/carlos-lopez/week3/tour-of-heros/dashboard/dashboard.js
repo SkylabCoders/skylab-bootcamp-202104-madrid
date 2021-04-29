@@ -1,4 +1,4 @@
-let listNamesDash = document.querySelector('.main--div');
+let listNamesDash = document.querySelector('.main__div');
 const params = new URLSearchParams(window.location.search);
 let index = params.get("index");
 

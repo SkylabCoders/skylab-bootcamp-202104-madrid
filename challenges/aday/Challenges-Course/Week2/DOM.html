@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="parentContainer">
+            <div id="childrenContainer">
+                <ul class="listed">
+                    <li>ITEM 1</li>
+                    <li>ITEM 2</li>
+                </ul>
+            </div>
+        </div>
+        <!-- SE REQUIERE:
+        LISTAR TODOS LOS HIJOS DEL ELEMENTO PARENTCONTAINER
+        LISTAR LOS HIJOS DEL ELEMENTO CHILDRENCONTAINER
+        LISTAR LOS ELEMENTOS DE LOS ELEMENTOS QUE CONTENGAN LA CLAS LISTED
+        MODIFICAR EL PRIMER HIJO DE LA UL QUE CONTIENE LA CLASE LISTED Y SUSTITUIR EL VALOR DEL TEXTO "ITEM 1 " POR "MODIFICADO"
+        -->
+        <script>
+
+            let padre = document.getElementById('parentContainer');
+            let hijo = document.getElementById('childrenContainer');
+            let lista = document.getElementsByClassName('listed');
+
+        //    console.log(padre.children);
+        //    console.log(hijo.children);
+        //    console.log(lista.children);
+           console.log(lista[0]);
+            lista[0].children[0].innerText = 'Modificado';
+
+
+
+        </script>
+    </body>
+</html>
+
+<!-- const ul = document.createElement('ul');
+const li = document.createElement('li');
+ul.appendChild(li) -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <style>
+            .oculto{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="prueba">
+        <input type="number" id="numero1" name="numero1" placeholder="Introduce un número" />
+        <input type="number" id="numero2" name="numero2" placeholder="Introduce otro número"/>
+        <button id="lanzar" onclick="lanzar()">SUMAR</button>
+        <div>
+            <p id="resultado"></p>
+        </div>
+    </div>
+    <button id="ocultar" onclick="toggle()">OCULTAR</button>
+        <script>
+            function lanzar(){
+                let numero1 = document.getElementById("numero1");
+                numero1.classList.add("oculto")
+                let numero2 = document.getElementById("numero2");
+                const resultado = parseInt(numero1.value) + parseInt(numero2.value);
+                let renderResult = document.getElementById("resultado");
+                renderResult.innerText = "la suma es:" + resultado;
+            }
+            function toggle(){
+                let container = document.getElementById("prueba");
+                if(container.classList.contains("oculto")){
+                    container.classList.remove("oculto");
+                }else{
+                    container.classList.add("oculto");
+                }
+        }
+        </script>
+    </body>
+</html>
+

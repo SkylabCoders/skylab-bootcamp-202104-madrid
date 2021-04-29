@@ -1,4 +1,44 @@
-.main__list{
-    display: flex;
-    flex-direction: column;
+.body__footer {
+  display: flex;
+  flex-direction: column;
+  background-color: f7f3e9;
+  height: 2%;
+}
+
+h1 {
+  align-self: center;
+}
+
+#main__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.div__anchor--hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+  height: 60px;
+  width: 120px;
+  background-color: rgb(255, 93, 93);
+  color: rgb(0, 0, 0);
+  border: solid 1px black;
+  font-size: large;
+  border-radius: 5px;
+}
+
+.main__buttons {
+  display: flex;
+  background-color: f7f3e9;
+  height: 75px;
+  margin: 2%;
+  align-items: center;
+}
+
+.nav__button {
+  align-self: flex-start;
+  height: 60px;
+  width: 60%;
+  margin: 2%;
 }

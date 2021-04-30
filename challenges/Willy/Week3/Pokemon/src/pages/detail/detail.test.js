@@ -1,4 +1,4 @@
-
+/*
 const detail = require('./detail')
 
 describe('given a detail class', () => {
@@ -7,3 +7,4 @@ describe('given a detail class', () => {
         test(`then return an object`)
     })
 })
+*/

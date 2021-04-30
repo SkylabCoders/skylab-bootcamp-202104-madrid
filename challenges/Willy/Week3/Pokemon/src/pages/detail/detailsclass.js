@@ -1,4 +1,3 @@
-/*
 
 const { getPokemon } = require("../../services/pokemon");
 
@@ -22,6 +21,8 @@ class Detail {
     }
 }
 
+module.exports = Detail
+/*
 getPokemon(url).then((res) =>{
     detailPage = new Detail()
 })

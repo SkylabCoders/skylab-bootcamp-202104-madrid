@@ -1,9 +1,7 @@
 (function listPage() {
     getPokes(20,0).then(pokeResponse => {
         console.log(pokeResponse)
-
-       // const [countSpan] = document.getElementsByClassName('total-pokes')
-        //countSpan.textContent = pokeResponse.count;
+     
         
         const pokeList = document.getElementById('poke__list')   
         pokeResponse.results.forEach(poke => {
@@ -14,9 +12,6 @@
             pokeList.appendChild(element);
         })
         
-      
-
-
        
     });
 }());

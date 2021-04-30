@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../../services/Pokemon\ Solid.ttf');
+}
+
+#header__title {
+    display: flex;
+    justify-content: center;
+    font-size: 75px;
+    font-family: 'Pokemon';
+    color: yellow;
+    -webkit-text-stroke: 3px blue;
+    background-color: red;
+
+}
+
+#title__header--button {
+    visibility: hidden;
+}
+
+#main__anchor > a {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Pokemon';
+    color: yellow;
+    -webkit-text-stroke: 3px blue;
+    background-color: red;
+}
+
+#poke__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+   
+}    
+
+.poke__list--pokemon {
+   text-decoration: none;
+   color: black;
+   text-transform:capitalize; 
+   cursor: url('../../services/pokeicon.png'), default;
+}
+

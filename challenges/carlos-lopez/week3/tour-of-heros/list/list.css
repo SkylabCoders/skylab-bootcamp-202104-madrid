@@ -1,0 +1,25 @@
+h1{
+    color: rgb(156, 156, 156);
+}
+
+button{
+    background-color: rgb(238, 238, 238);
+    color: rgb(77, 159, 227);
+}
+
+button:hover{
+    background-color: rgb(161, 139, 139);
+    color: white;
+}
+.div--listNames--container{
+    display: flex;
+    flex-direction: column;
+}
+.div__listNames--anchor{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(77, 159, 227);
+    margin-top: 1vh;
+    width: fit-content;
+    
+}

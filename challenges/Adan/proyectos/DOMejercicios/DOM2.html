@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parentContainer">
+        <div id="childrenContainer">
+            <ul class="listed">
+                <li>ITEM 1</li>
+                <li>ITEM 2</li>
+            </ul>
+        </div>
+    </div>
+    <!-- SE REQUIERE:
+    LISTAR TODOS LOS HIJOS DEL ELEMENTO PARENTCONTAINER
+    LISTAR LOS HIJOS DEL ELEMENTO CHILDRENCONTAINER
+    LISTAR LOS ELEMENTOS DE LOS ELEMENTOS QUE CONTENGAN LA CLAS LISTED
+    MODIFICAR EL PRIMER HIJO DE LA UL QUE CONTIENE LA CLASE LISTED Y SUSTITUIR EL VALOR DEL TEXTO "ITEM 1 " POR "MODIFICADO"
+    -->
+</body>
+<script>
+    let parent = document.getElementById("parentContainer");
+    console.log(parent.children);
+    let kid = document.getElementById("childrenContainer");
+    console.log(kid.children);
+    let list = document.getElementsByClassName("listed")
+    list[0].children[0].innerHTML = "modificado"
+</script>

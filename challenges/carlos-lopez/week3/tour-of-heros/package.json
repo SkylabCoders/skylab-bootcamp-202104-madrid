@@ -1,0 +1,14 @@
+{
+  "name": "tour-of-heros",
+  "version": "1.0.0",
+  "description": "tour of heroes",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "carlos",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

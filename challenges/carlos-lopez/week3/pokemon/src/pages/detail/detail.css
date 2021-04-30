@@ -6,7 +6,11 @@ body{
     background-size: cover;
     overflow: hidden;
 }
-#poke-list{
+.div__details{
     display: flex;
     flex-direction: column;
+}
+img {
+    width: 17rem;
+    height: auto;
 }

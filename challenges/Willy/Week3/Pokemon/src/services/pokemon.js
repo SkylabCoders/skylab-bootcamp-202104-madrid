@@ -4,7 +4,7 @@ function getPokes(limit, offset){
 }
 
 function getPokemon(url){
-    return fetch(`https://pokeapi.co/api/v2/pokemon/charizard`)
+    return fetch(url)
     .then((response) => response.json())
 }
 

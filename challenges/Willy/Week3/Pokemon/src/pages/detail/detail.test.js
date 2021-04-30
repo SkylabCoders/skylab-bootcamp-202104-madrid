@@ -1,4 +1,4 @@
-/
+
 const detail = require('./detail')
 
 describe('given a detail class', () => {

@@ -1,13 +1,14 @@
-// const { getPokes, getPokemon } = require('../../services/pokemon');
+(function papa() {
+  const param = new URLSearchParams(location.search);
+  const pokemonName = param.get('name');
 
-// (function () {
-//   getPokes().then(((pokemon) => {
-
-//   }
-
-//  const ditto = 'https://pokeapi.co/api/v2/pokemon/ditto'
-//   getPokemon(dito).then((pokeRes) => {
-//     console.log(pokeRes);
-//     });
-//   }); ));
-// }());
+  getPokemon(pokemonName).then((pokemito) => {
+    const container = document.querySelector('.container');
+    const description = document.createElement('p');
+    description.innerText = pokemito.name;
+    container.appendChild(description);
+    const pokeImg = document.createElement('img');
+    pokeImg.setAttribute('src', pokemito.sprites.front_shiny);
+    container.appendChild(pokeImg);
+  });
+}());

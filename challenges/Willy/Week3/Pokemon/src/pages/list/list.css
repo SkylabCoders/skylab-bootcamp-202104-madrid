@@ -18,6 +18,16 @@
     visibility: hidden;
 }
 
+#main__anchor > a {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Pokemon';
+    color: yellow;
+    -webkit-text-stroke: 3px blue;
+    background-color: red;
+}
+
 #poke__list {
     display: flex;
     flex-direction: column;

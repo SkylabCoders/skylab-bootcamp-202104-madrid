@@ -1,3 +1,5 @@
+/*
+
 const { getPokemon } = require("../../services/pokemon");
 
 class Detail {
@@ -30,3 +32,4 @@ function init (){
     detailPage = new Detail();
 
 }
+*/

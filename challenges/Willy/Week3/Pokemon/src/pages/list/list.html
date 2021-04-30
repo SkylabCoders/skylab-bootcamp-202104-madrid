@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poke List</title>
+    <link rel="stylesheet" href="list.css">
+    <link rel="icon" href="../../services/Poké_Ball_icon.svg.png" type="image/x-icon"/>
 </head>
 <body>
-    <a href="../detail/detail.html">Detalle</a>
-    <span class="total-pokes">0</span>
-    <button onclick="getPokes()">next</button>
-    <ul id="poke-list"></ul>
+    <header>
+        <div id="header__title">Pokémon by Willy</div>
+            <div>
+                <audio id="header__title--button" controls autoplay src="../../services/pkm_theme.mp3"></audio>
+            </div>
+    </header>
+    <main>
+        <a href="../detail/detail.html">Detalle</a>
+        <span class="total-pokes"></span>
+        <button onclick="getPokes()">next</button>
+        <div id="poke__list"></div>
+    </main>
     <script src="../../services/pokemon.js"></script>
     <script src="list.js"> </script>
 </body>

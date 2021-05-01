@@ -51,3 +51,11 @@ describe('Given a getPokemonInfo function', () => {
     });
   });
 });
+
+describe('Given a pagination function', () => {
+  describe('When is invoked', () => {
+    test('Then return a new url', () => {
+      expect();
+    });
+  });
+});

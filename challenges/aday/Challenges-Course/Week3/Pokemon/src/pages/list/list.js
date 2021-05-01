@@ -1,9 +1,8 @@
 // IIEF (no hace falta invocarla, se invoca automáticamente) función de ejecución inmediata
 (function ListPage() {
   // eslint-disable-next-line no-undef
-  getPokemon(10, 0).then((response) => {
-    // console.log(response);
-    // const list = document.getElementById('list').addEventListener('click', movePage);
+  getPokemon(url).then((response) => {
+    console.log(response);
     const pokeList = document.getElementById('poke-list');
     response.results.forEach((pokemon) => {
       const element = document.createElement('a');

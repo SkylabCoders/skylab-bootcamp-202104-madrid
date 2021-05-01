@@ -1,5 +1,7 @@
+
+
 (function listPage() {
-    getPokes(20,0).then(pokeResponse => {
+    getPokes(100,0).then(pokeResponse => {
         console.log(pokeResponse)
      
         
@@ -11,8 +13,31 @@
             element.innerText = poke.name
             pokeList.appendChild(element);
         })
-        
-       
+
+        let buttonContainer = document.querySelector('.footer__container')
+        let nextButton = document.querySelector('.btn_next')
+        let prevButton = document.querySelector('.btn_prev')
+        nextButton.addEventListener('click', nextPage);
+        prevButton.addEventListener('click', nextPage);
+            
+
+        buttonContainer.appendChild(prevPage);
+        buttonContainer.appendChild(nextPage);
     });
+    
+    let prevPage = pokeResponse.previous ? `<a href=${pokeResponse.next}>⏮️</a>` : "";
+    //let nextPageBtn = document.querySelector('.btn_next')
+    //let prevPageBtn = document.querySelector('.btn_prev')
+    
+    let nextPage = pokeResponse.previous ? `<a href=${pokeResponse.next}>⏭️</a>` : "";
+    function nextPage(){
+        let nextButton = document.querySelector('.btn_next')
+        pokeList.innerHTML = "";
+        
+        
+
+
+    }
 }());
+
 

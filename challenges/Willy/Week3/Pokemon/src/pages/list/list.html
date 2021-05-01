@@ -12,7 +12,7 @@
     <header class="header-container">
         <h1 id="header__title">Pokémon by Willy</h1>
             <div class="header__container-audio">
-                <audio  class="header__audio" controls autoplay src="../../services/pkm_theme.mp3"></audio>
+                <audio  class="header__audio" controls  src="../../services/pkm_theme.mp3"></audio>
             </div>
     </header>
     <main>
@@ -20,9 +20,12 @@
             <a href="../detail/detail.html">Detalle</a>
         </div>
         <span class="total-pokes"></span>
-        <button onclick="getPokes()">next</button>
         <div id="poke__list"></div>
     </main>
+    <footer class="footer__container">
+        <button class="btn_prev">⏮️</button>
+        <button class="btn_next">⏭️</button>
+    </footer>
     <script src="../../services/pokemon.js"></script>
     <script src="list.js"> </script>
 </body>

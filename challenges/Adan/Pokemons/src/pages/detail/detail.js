@@ -1,16 +1,15 @@
-(function printPokemon() {
-  const urlDitto = 'https://pokeapi.co/api/v2/pokemon/ditto';
-  getPokemon(urlDitto).then((pokeResponse) => {
-    console.log(pokeResponse);
-    const [countSpan] = document.getElementsByClassName('total-pokes');
-    countSpan.textContent = pokeResponse.count;
-
-    const pokeList = document.getElementById('poke-list');
-
-    pokeResponse.results.forEach((poke) => {
-      const element = document.createElement('li');
-      element.innerText = poke.name;
-      pokeList.appendChild(element);
-    });
+(async function ListPage() {
+  const params = new URLSearchParams(window.location.search);
+  const pokemonName = params.get('name');
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+  const pokemon = await getPokemon(url);
+  getPokemon(url).then((response) => {
+    const pokemonDetail = document.querySelector('.pokemonDetail');
+    const pokemon = document.createElement('div');
+    pokemon.innerText = `\tName: ${response.name} \n\tHeight: ${response.height} \n\tWeight: ${response.weight}`;
+    const imagen = document.createElement('img');
+    imagen.src = response.sprites.front_default;
+    pokemonDetail.appendChild(pokemon);
+    pokemonDetail.appendChild(imagen);
   });
 }());

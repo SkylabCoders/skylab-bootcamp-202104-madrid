@@ -24,8 +24,9 @@ class PokemonDetail {
 
   appendElements(pokeNameContainer, pokeImg, pokeImgBack, pokeId, pokeHeight, pokeWeight) {
     const pokeDetailContainer = document.querySelector('.div__details');
-    pokeDetailContainer.appendChild(this.pokeImg);
-    pokeDetailContainer.appendChild(this.pokeImgBack);
+    const pokeImgContainer = document.querySelector('.details__img');
+    pokeImgContainer.appendChild(this.pokeImg);
+    pokeImgContainer.appendChild(this.pokeImgBack);
     pokeDetailContainer.appendChild(this.pokeId);
     pokeDetailContainer.appendChild(this.pokeHeight);
     pokeDetailContainer.appendChild(this.pokeWeight);

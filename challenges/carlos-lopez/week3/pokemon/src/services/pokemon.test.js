@@ -1,3 +1,4 @@
+const PokemonDetail = require('../pages/detail/detail');
 const { getPokes, getPokemon } = require('./pokemon');
 
 describe('Given a getPokes', () => {
@@ -32,23 +33,35 @@ describe('Given a getPokes', () => {
   });
 });
 
-describe('Given a getPokemon function', () => {
-  describe('When is invoked with argument containing pokemon/ditto', () => {
-    test('Then return object containing { name: `ditto` }', async () => {
-      global.fetch = jest.fn()
-        .mockReturnValueOnce(
-          Promise.resolve({
-            json: jest.fn()
-              .mockReturnValueOnce(
-                Promise.resolve({
-                  name: 'ditto',
-                }),
-              ),
-          }),
-        );
-
-      const pokemon = await getPokemon();
-      expect(pokemon).toEqual({ name: 'ditto' });
+describe('Given an instance of PokemonDetail', () => {
+  describe('When it is declared with squirtle as an argument', () => {
+    const newLocal = 'squirtle';
+    let pokemon = new PokemonDetail(newLocal);
+    beforeEach(async () => {
+      global.fetch = jest.fn().mockReturnValueOnce(
+        Promise.resolve({
+          json: jest.fn()
+            .mockReturnValueOnce(Promise.resolve({
+              id: 7, height: 5, weight: 90, pokemon: 'squirtle', img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png',
+            })),
+        }),
+      );
+      pokemon = await getPokemon();
+    });
+    test('Then the object has contain a propertie {pokemon: `squirtle`}', () => {
+      expect(pokemon.pokemon).toBe('squirtle');
+    });
+    test('Then the id is 7', () => {
+      expect(pokemon.id).toBe(7);
+    });
+    test('Then the height is 5', () => {
+      expect(pokemon.height).toBe(5);
+    });
+    test('Then the weight is 90', () => {
+      expect(pokemon.weight).toBe(90);
+    });
+    test('Then the img is an URL', () => {
+      expect(pokemon.img).toBe('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png');
     });
   });
 });

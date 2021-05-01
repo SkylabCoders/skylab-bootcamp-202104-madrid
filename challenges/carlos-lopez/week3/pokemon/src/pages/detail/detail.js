@@ -4,7 +4,6 @@ class PokemonDetail {
   }
 
   renderDetails() {
-    debugger;
     const pokeNameContainer = document.querySelector('.poke-name');
     const pokeImg = document.querySelector('.details__img--front');
     const pokeImgBack = document.querySelector('.details__img--back');
@@ -32,5 +31,4 @@ class PokemonDetail {
     pokeDetailContainer.appendChild(this.pokeWeight);
   }
 }
-
-// getPokemon(`https://pokeapi.co/api/v2/pokemon/${this.pokeName}`).then((pokemon) => {
+module.exports = PokemonDetail;

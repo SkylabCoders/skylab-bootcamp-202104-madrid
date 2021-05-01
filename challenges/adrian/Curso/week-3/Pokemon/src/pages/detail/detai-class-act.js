@@ -6,5 +6,6 @@ const pokeName = params.get('name');
   getPokemon(`https://pokeapi.co/api/v2/pokemon/${pokeName}`).then((pokemon) => {
     currentPokemon = new DetailPages(pokemon);
     currentPokemon.drawName();
+    currentPokemon.drawImage();
   });
 }());

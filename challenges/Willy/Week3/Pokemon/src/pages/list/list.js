@@ -28,6 +28,7 @@
 }());
 
 
+
 /*
 let buttonContainer = document.querySelector('.footer__container')
         let nextButton = document.querySelector('.btn_next')

@@ -4,6 +4,7 @@
     const pokeRef = window.location.search.substr(6);
     const pokeUrl =  `https://pokeapi.co/api/v2/pokemon/${pokeRef}`
     const getPokeFetch = await getPokemon(pokeUrl)
+    console.log(getPokeFetch)
     
     const PokeContainer = document.getElementById('pokemon__container') 
     const pokeDetail = document.createElement('p')
@@ -14,6 +15,7 @@
 
     pokeImg.onmouseenter = function(){
       pokeImg.src = getPokeFetch.sprites.back_default;
+      sound()
     }
 
     pokeImg.onmouseout = function(){
@@ -25,7 +27,12 @@
       
   }());
 
-
+  function sound(){
+    
+    let pokeSound = new Audio()
+    pokeSound.src = 'pokeSound.mp3'
+    pokeSound.play()
+  }
     
     
 

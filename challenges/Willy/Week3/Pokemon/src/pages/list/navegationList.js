@@ -1,41 +1,14 @@
+let importList = require('./list')
 
-
-(function listPage() {
-    getPokes(20,0).then(pokeResponse => {
-        console.log(pokeResponse)
-     
-        const button = document.querySelector('.footer__container')
-        const pokeList = document.getElementById('poke__list')   
-        pokeResponse.results.forEach(poke => {
-            const element = document.createElement('a')
-            element.classList.add('poke__list--pokemon') 
-            element.href = `http://127.0.0.1:5500/src/pages/detail/detail.html?name=${poke.name}` 
-            element.innerText = poke.name
-            pokeList.appendChild(element);
-        })
-
-        button.innerHTML = (pokeResponse.previous) ? `<button onclick="getPokes('${pokeResponse.previous}')">⏮️</button>` : "";
-        button.innerHTML += (pokeResponse.next) ? `<button onclick="getPokes('${pokeResponse.next}')">⏭️</button>` : "";
-  
-
-
-    });
-   
-        
-
-
-    
-}());
-
-
-/*
 let buttonContainer = document.querySelector('.footer__container')
-        let nextButton = document.querySelector('.btn_next')
-        let prevButton = document.querySelector('.btn_prev')
-        nextButton.addEventListener('click', nextPage(`${pokeResponse.next}`));
-        prevButton.addEventListener('click', prevPage(`${pokeResponse.previous}`));
-        buttonContainer.appendChild(prevButton);
-        buttonContainer.appendChild(nextButton);
+let nextButton = document.querySelector('.btn_next')
+let prevButton = document.querySelector('.btn_prev')
+nextButton.addEventListener('click', nextPage(`${pokeResponse.next}`));
+prevButton.addEventListener('click', prevPage(`${pokeResponse.previous}`));
+buttonContainer.appendChild(prevButton);
+buttonContainer.appendChild(nextButton);
+
+
 function nextPage (){
     if (pokeResponse.next !== null){
         updatePokemons(`https://pokeapi.co/api/v2/pokemon?next=${pokeResponse.next}`)
@@ -85,6 +58,5 @@ function updatePokemons(url) {debugger
     }
   
   }
-<button class="btn_prev">⏮️</button>
-        <button class="btn_next">⏭️</button>
-*/
+  
+ // updatePokemons("https://pokeapi.co/api/v2/pokemon");

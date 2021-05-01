@@ -24,11 +24,11 @@ describe('Given a function', () =>{
 
 describe('Given a function', () =>{
     describe('When is invoked', () =>{
-        let mockPokemon2 = {name: "charmander", sprites:{front_default:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"} }
+        let mockPokemon = {name: "charmander", sprites:{front_default:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"} }
         test('Then return an object "img" with a src', () =>{
             document.body.innerHTML = '<div id="pokemon__container"></div>'
             let container = document.querySelector('#pokemon__container')
-            let prueba = new Detail(mockPokemon2);
+            let prueba = new Detail(mockPokemon);
             prueba.drawImg();
 
             

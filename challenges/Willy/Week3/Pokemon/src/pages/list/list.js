@@ -1,11 +1,13 @@
 
 
 (function listPage() {
-    getPokes(20,0).then(pokeResponse => {
+    const pkmUrl = "https://pokeapi.co/api/v2/pokemon"
+    getPokes(pkmUrl).then(pokeResponse => {
         console.log(pokeResponse)
      
         const button = document.querySelector('.footer__container')
-        const pokeList = document.getElementById('poke__list')   
+        const pokeList = document.querySelector('.main__poke__list')   
+        pokeList.innerHTML = "";
         pokeResponse.results.forEach(poke => {
             const element = document.createElement('a')
             element.classList.add('poke__list--pokemon') 
@@ -13,12 +15,10 @@
             element.innerText = poke.name
             pokeList.appendChild(element);
         })
-
+        
         button.innerHTML = (pokeResponse.previous) ? `<button onclick="getPokes('${pokeResponse.previous}')">⏮️</button>` : "";
-        button.innerHTML += (pokeResponse.next) ? `<button onclick="getPokes('${pokeResponse.next}')">⏭️</button>` : "";
-  
-
-
+        button.innerHTML = (pokeResponse.next) ? `<button onclick="getPokes('${pokeResponse.next}')">⏭️</button>` : "";
+      
     });
    
         

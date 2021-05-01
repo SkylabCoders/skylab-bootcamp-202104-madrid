@@ -34,18 +34,44 @@
     background-color: red;
 }
 
-#poke__list {
+#main__pkm {
+    display: flex;
+    justify-content: center;
+    
+}
+.main__pokemon__izq {
+padding-right: 180px;
+padding-top: 25px;
+background-repeat: repeat;
+}
+.main__poke__list {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 25px;
+    width: 200px;
+    padding-top: 27px;
+    
    
 }    
 
 .poke__list--pokemon {
    text-decoration: none;
-   color: black;
+   color: rgb(0, 0, 0);
+   font-size: 18px;
+  
    text-transform:capitalize; 
    cursor: url('../../services/pokeicon.png'), default;
 }
 
+.main__pokemon__dcha {
+    background-repeat: repeat;
+    align-items: flex-end;
+    padding-left: 150px;
+    padding-top: 27px;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+}

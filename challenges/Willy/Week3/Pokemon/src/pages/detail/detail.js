@@ -1,4 +1,4 @@
-//const { getPokemon } = require("../../services/pokemon");
+
 
 (async function detailPage() {
     const pokeRef = window.location.search.substr(6);

@@ -17,7 +17,7 @@
       const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
 
       const link = new Helper('a');
-      const a = link.htmlTagGenerator(pokemon.name, 'wrapper-list__link', `http://127.0.0.1:5500/src/pages/detail/detail.html?name=${pokemon.name}`, null);
+      const a = link.htmlTagGenerator(pokemon.name, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/detalles.html?name=${pokemon.name}`, null);
 
       li.appendChild(a);
       ul.appendChild(li);
@@ -30,5 +30,4 @@
 
   const buttonPrevious = btn.htmlTagGenerator('Previous', 'wrapper-list__previous', null, null);
   wrapperList.appendChild(buttonPrevious);
-}()
-);
+}());

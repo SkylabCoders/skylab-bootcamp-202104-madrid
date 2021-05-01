@@ -1,5 +1,6 @@
 (function listPage() {
-  getPokes(10, 0).then((pokeResponse) => {
+  const urlApi = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0';
+  getPokes(urlApi).then((pokeResponse) => {
     const [countSpan] = document.getElementsByClassName('total-pokes');
     countSpan.textContent = pokeResponse.count;
     const pokeList = document.getElementById('poke-list');

@@ -16,7 +16,7 @@ class Detail {
     drawImg () {
         const parent = document.getElementById('pokemon__container');
         const child = document.createElement('img');
-        child.src = this.pokemon.sprites.shiny.front_default;
+        child.src = this.pokemon.sprites.front_default;
         parent.appendChild(child)
     }
 }

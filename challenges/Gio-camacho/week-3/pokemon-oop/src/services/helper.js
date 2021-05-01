@@ -1,7 +1,6 @@
 class Helper {
-  constructor(tag, parent) {
+  constructor(tag) {
     this.tag = tag;
-    this.parent = parent;
   }
 
   htmlTagGenerator(innerText, className, href, src) {
@@ -14,4 +13,4 @@ class Helper {
   }
 }
 
-module.exports = Helper;
+// module.exports = Helper;

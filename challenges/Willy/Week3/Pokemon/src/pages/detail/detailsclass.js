@@ -22,15 +22,3 @@ class Detail {
 }
 
 module.exports = Detail
-/*
-getPokemon(url).then((res) =>{
-    detailPage = new Detail()
-})
-
-function init (){
-    detailPage;
-    getPokemon(url).then((pokemon) =>
-    detailPage = new Detail();
-
-}
-*/

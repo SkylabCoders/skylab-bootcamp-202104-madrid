@@ -1,11 +1,11 @@
-
-
-(function listPage() {
-    const pkmUrl = "https://pokeapi.co/api/v2/pokemon"
-    getPokes(pkmUrl).then(pokeResponse => {
+const pkmUrl = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
+listPage(pkmUrl)
+function listPage(url) {
+    
+    getPokes(url).then(pokeResponse => {
         console.log(pokeResponse)
      
-        const button = document.querySelector('.footer__container')
+        
         const pokeList = document.querySelector('.main__poke__list')   
         pokeList.innerHTML = "";
         pokeResponse.results.forEach(poke => {
@@ -15,17 +15,36 @@
             element.innerText = poke.name
             pokeList.appendChild(element);
         })
-        
-        button.innerHTML = (pokeResponse.previous) ? `<button onclick="getPokes('${pokeResponse.previous}')">⏮️</button>` : "";
-        button.innerHTML = (pokeResponse.next) ? `<button onclick="getPokes('${pokeResponse.next}')">⏭️</button>` : "";
+       
+        const button = document.querySelector('.footer__container')
+        const button2 = document.querySelector('.footer__container')
+         if (pokeResponse.previous !== null){
+            button.innerHTML = '<button>⏮️</button>'
+            button.addEventListener('click', () => {
+            return listPage(pokeResponse.previous)
+            });
+         } else {
+          button.innerHTML = ""
+         }
+
+         if  (pokeResponse.next !== null){
+          button2.innerHTML = '<button>⏭️</button>'
+          button2.addEventListener('click', () => {
+            return listPage(pokeResponse.next)
+            });
+       } else {
+        button.innerHTML = ""
+       }
       
+        //button.innerHTML = (pokeResponse.previous) ? `<button onclick="getPokes('${pokeResponse.previous}')">⏮️</button>` : "";
+       // button.innerHTML = (pokeResponse.next) ?  `<button onclick="getPokes('${pokeResponse.next}')">⏭️</button>` : "";
+           
     });
-   
+};
         
-
-
     
-}());
+
+//
 
 
 

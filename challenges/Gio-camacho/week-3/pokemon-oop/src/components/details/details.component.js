@@ -3,9 +3,8 @@
   const pokeName = paras.get('name');
 
   const services = new Services(pokeName);
-  const getPokemon = services.getPokemon()
+  services.getPokemon()
     .then((pokemon) => {
-      console.log(pokemon);
       const wrapperDetails = document.querySelector('.wrapper-details');
 
       const card = new Helper('article');
@@ -61,5 +60,12 @@
       const ability = pokemon.abilities[0].ability.name;
       const spanAbilityDescription = abilityDescription.htmlTagGenerator(ability);
       thirdLi.appendChild(spanAbilityDescription);
+
+      const link = new Helper('a');
+      const anchorDashboard = link.htmlTagGenerator('Back to dashboard', 'wrapper-details__back-dashboard', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html', null);
+      article.appendChild(anchorDashboard);
+
+      const anchorList = link.htmlTagGenerator('Back to list', 'wrapper-details__back-list', 'http://127.0.0.1:5500/src/components/list/list.html');
+      article.appendChild(anchorList);
     });
 }());

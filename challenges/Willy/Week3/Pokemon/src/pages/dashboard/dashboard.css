@@ -21,3 +21,18 @@
 .header__audio {
     visibility: hidden;
 }
+
+.header__nav > a {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Pokemon';
+    color: yellow;
+    -webkit-text-stroke: 2px blue;
+    background-color: red;
+    text-decoration: none;
+}
+
+.main-container__anchor > img {
+    cursor: url('../../services/pokedex.png'), default;
+}

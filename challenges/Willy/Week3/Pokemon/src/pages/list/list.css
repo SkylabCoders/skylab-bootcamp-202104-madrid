@@ -23,6 +23,11 @@
     visibility: hidden;
 }
 
+.main__anchor {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
 
 .main__anchor > a {
     display: flex;
@@ -30,8 +35,9 @@
     font-size: 25px;
     font-family: 'Pokemon';
     color: yellow;
-    -webkit-text-stroke: 3px blue;
+    -webkit-text-stroke: 2px blue;
     background-color: red;
+    text-decoration: none;
 }
 
 #main__pkm {
@@ -62,6 +68,15 @@ background-repeat: repeat;
   
    text-transform:capitalize; 
    cursor: url('../../services/pokeicon.png'), default;
+}
+
+.poke__list--pokemon:hover{
+    transform: scale(1.5);
+    font-size: 20px;
+    font-family: 'Pokemon';
+    color: yellow;
+    -webkit-text-stroke: 1px blue;
+
 }
 
 .main__pokemon__dcha {

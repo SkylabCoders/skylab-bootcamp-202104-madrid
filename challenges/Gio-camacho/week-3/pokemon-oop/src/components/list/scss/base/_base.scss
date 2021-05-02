@@ -1,0 +1,22 @@
+// FONT
+@font-face {
+    font-family:'Pokemon-Solid' ;
+    src: url('../../../fonts/Pokemon-Solid.ttf');
+}
+$main-font: "Roboto", sans-serif;
+
+// TEXT COLORS
+$brand-100: hsl(56, 97%, 52%);
+$brand-200: hsl(218, 50%, 44%);
+$brand-300: hsl(1, 83%, 63%);
+
+// EXTENDS BTN
+%btn {
+  min-height: 3.2rem;
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+

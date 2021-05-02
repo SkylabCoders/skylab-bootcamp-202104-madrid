@@ -33,8 +33,8 @@ describe('Given an getAllPokemons Object Method', () => {
               Promise.resolve({
                 count: 1118,
                 next: 'limit=10',
-                previous: null,
-                result: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                previous: 'limit=10',
+                results: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
               })
             )
           })
@@ -43,9 +43,24 @@ describe('Given an getAllPokemons Object Method', () => {
         const allServices = new Services();
         allPokemons = await allServices.getAllPokemons(null, 10, 0);
       });
+      const countResult = 1118;
+      test('Then should return { count: 1118 }', () => {
+        expect(allPokemons.count).toBe(countResult);
+      });
 
-      test('Then should return ...', () => {
-        expect(allPokemons.count).toBe(1118);
+      const nextResult = 'limit=10';
+      test('Then should return { next: "limit=10" }', () => {
+        expect(allPokemons.next).toBe(nextResult);
+      });
+
+      const previousResult = 'limit=10';
+      test('Then should return { previous: "limit=10" }', () => {
+        expect(allPokemons.previous).toBe(previousResult);
+      });
+
+      const results = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      test('Then should return { results: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }', () => {
+        expect(allPokemons.results).toEqual(results);
       });
     });
   });

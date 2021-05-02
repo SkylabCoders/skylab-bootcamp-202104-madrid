@@ -10,8 +10,8 @@
   wrapperDashboard.appendChild(nav);
 
   const title = new Helper('a');
-  const h1 = title.htmlTagGenerator('Dashboard', 'wrapper-dashboard__title', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html');
-  nav.appendChild(h1);
+  const anchorLogo = title.htmlTagGenerator('Dashboard', 'wrapper-dashboard__title', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html');
+  nav.appendChild(anchorLogo);
 
   const navbarList = new Helper('ul');
   const navbarUl = navbarList.htmlTagGenerator(null, 'wrapper-dashboard__navbar-list');
@@ -36,13 +36,7 @@
       const ul = list.htmlTagGenerator(null, 'wrapper-dashboard__list', null, null);
       wrapperDashboard.appendChild(ul);
 
-      // randomPokemons.forEach((poke) => {
-      //   const getPokemonServices = new Services(poke.name);
-      //   getPokemonServices.getPokemon().then((data) => {
-      //     console.log(data.sprites.front_default);
-      //   });
-      // });
-
+      /* Iterating every pokemon and rendering on the DOM */
       randomPokemons.slice(0, 4).forEach((pokemon) => {
         const getPokemonServices = new Services(pokemon.name);
         getPokemonServices.getPokemon()

@@ -5,10 +5,28 @@
 
   const wrapperList = document.querySelector('.wrapper-list');
 
-  const title = new Helper('h1');
-  const h1 = title.htmlTagGenerator('PokeList', 'wrapper-list__title', null, null);
-  wrapperList.appendChild(h1);
+  /* Creating the Navbar */
+  const navbar = new Helper('nav');
+  const nav = navbar.htmlTagGenerator(null, 'wrapper-list__navbar');
+  wrapperList.appendChild(nav);
 
+  const title = new Helper('a');
+  const anchorLogo = title.htmlTagGenerator('PokeList', 'wrapper-list__title', null, null);
+  nav.appendChild(anchorLogo);
+
+  const navbarList = new Helper('ul');
+  const navbarUl = navbarList.htmlTagGenerator(null, 'wrapper-list__navbar-list');
+  nav.appendChild(navbarUl);
+
+  const navbarItem = new Helper('li');
+  const navbarLi = navbarItem.htmlTagGenerator(null, 'wrapper-list__navbar-item');
+  navbarUl.appendChild(navbarLi);
+
+  const navbarLink = new Helper('a');
+  const navbarListAnchor = navbarLink.htmlTagGenerator('Dashboard', 'wrapper-list__navbar-link', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html');
+  navbarLi.appendChild(navbarListAnchor);
+
+  /* Rendering the list */
   const list = new Helper('ul');
   const ul = list.htmlTagGenerator(null, 'wrapper-list__list', null, null);
   wrapperList.appendChild(ul);

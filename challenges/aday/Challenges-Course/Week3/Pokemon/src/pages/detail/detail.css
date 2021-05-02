@@ -23,6 +23,7 @@ header {
 a {
     text-decoration: none;
     padding: 25px;
+    font-size: 35px;
     border-radius: 25px;
     text-shadow: 5px 5px rgb(237,70,54);
 }
@@ -38,5 +39,10 @@ h2 {
 }
 
 img {
-    width: 100px; height: 100px;
+    width: 250px; height: 250px;
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;
 }

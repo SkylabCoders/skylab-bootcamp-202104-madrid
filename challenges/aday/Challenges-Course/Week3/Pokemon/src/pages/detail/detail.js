@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-// IIEF (no hace falta invocarla, se invoca automáticamente) función de ejecución inmediata
 (async function ListPage() {
   const params = new URLSearchParams(window.location.search);
   const pokemonName = params.get('name');
@@ -12,5 +10,4 @@
   const pokemonData = document.createElement('h1');
   pokemonData.innerText = `\tName: ${pokemon.name} \n\tHeight: ${pokemon.height} \n\tWeight: ${pokemon.weight}`;
   container.appendChild(pokemonData);
-  console.log(pokemon);
 }());

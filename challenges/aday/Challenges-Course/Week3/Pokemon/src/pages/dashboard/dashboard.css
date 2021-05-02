@@ -9,26 +9,26 @@ body {
     text-shadow: 5px 5px rgb(250,204,51);
 }
 
+#botonera {
+    display: flex;
+    justify-content: center;
+}
+
 header {
     display: flex;
     justify-content: center;
     height: 200px;
 }
 
-#logo {
-    width: 500px;
-    margin-top: auto;
-}
-
-#botonera {
-    display: flex;
-    justify-content: space-between;
-}
-
 .foto {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#logo {
+    width: 500px;
+    margin-top: auto;
 }
 
 button {
@@ -45,24 +45,37 @@ button {
     cursor: pointer;
   }
 
-  #top-poke {
+  a {
+    text-decoration: none;
+    padding: 25px;
+    border-radius: 25px;
+    text-shadow: 5px 5px rgb(237,70,54);
+}
+
+a:hover {
+    background-color: rgb(237,70,54);
+    text-shadow: 5px 5px rgb(55,92,170);
+    transition-duration: 0.8s;
+}
+
+#pokedex {
     text-decoration: none;
     text-shadow: 5px 5px rgb(55,92,170);
     color: rgb(250,204,51);
     padding: 25px;
     font-size: 35px;
     border-radius: 25px;
-  }
+}
 
-  #top-poke:hover {
+#pokedex:hover {
     background-color: rgb(55,92,170);
     text-shadow: 5px 5px rgb(237,70,54);
     transition-duration: 0.8s; 
-  }
+}
 
-#poke-list {
+#top-pokemon {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .foto > a {
@@ -72,7 +85,7 @@ button {
     text-transform: capitalize;
     background-color: rgb(237,70,54);
     color: rgb(250,204,51);
-    text-shadow: 5px 5px rgb(55,92,170);
+    text-shadow: 5px 5px rgb(55 92 170);
     padding: 25px;
     font-size: 25px;
     border-radius: 25px;

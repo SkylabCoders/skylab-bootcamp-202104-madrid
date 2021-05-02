@@ -24,12 +24,13 @@
     }
 
     &__navbar-link {
+        font-family: 'Pokemon-Solid', Arial, Helvetica, sans-serif;
         font-size: 1.8rem;
-        color: white;
+        color: $white;
     }
 
     &__title {
-        font-family: 'Pokemon-Solid';
+        font-family: 'Pokemon-Solid',Arial, Helvetica, sans-serif;
         font-size: 2.5rem;
         margin: 0;
         padding: .5rem;
@@ -41,28 +42,59 @@
     }
 
     &__list {
-        border: .1rem solid rgba(151, 151, 151, 0.308);
+        border: .1rem solid rgba(151, 151, 151, 0.108);
         border-radius: 1rem;
-        background-color: white;
+        background-color: $white;
         display: flex;
         justify-content: space-evenly;
-        margin-top: 20rem;
-
+        margin: 0 8rem;
+        margin-top: 10rem;
     }
 
     &__item {
         list-style: none;
         padding: 5rem;
+        transition: transform .2s; /* Animation */
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__link {
         display: block; 
-        color: white;
-        background-color: $brand-300;
+        color: $white;
+        background-color: #F2F2F2;
         padding: 3rem;
         border-radius: .6rem;
         font-size: 2rem;
         font-family: 'Pokemon-Solid', sans-serif;
         letter-spacing: 2px;
+        box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.322);
+    }
+
+    &__img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    &__subtitle {
+        margin-top: 1rem;
+        color: #313131;
+        text-transform: capitalize;
+        font-size: 1.84rem;
+    }
+
+    &__span {
+        display: block;
+        border-radius: 0.3rem;
+        width: 10rem;
+        background-color: $brand-200;
+        color: $white;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        padding: 0.2rem 1rem;
+        text-transform: capitalize;
+        margin-top: 1rem;
     }
 }

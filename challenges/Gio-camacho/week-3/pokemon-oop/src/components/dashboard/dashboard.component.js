@@ -27,8 +27,8 @@
 
   /* Rendering PokeList */
   const services = new Services(null, limit, offset);
-  services.getAllPokemons()
 
+  services.getAllPokemons()
     .then((listDashboard) => {
       const randomPokemons = listDashboard.results.sort(() => Math.random() - 0.5);
 
@@ -36,14 +36,41 @@
       const ul = list.htmlTagGenerator(null, 'wrapper-dashboard__list', null, null);
       wrapperDashboard.appendChild(ul);
 
-      randomPokemons.slice(0, 4).forEach((pokemon) => {
-        const item = new Helper('li');
-        const li = item.htmlTagGenerator(null, 'wrapper-dashboard__item', null, null);
-        ul.appendChild(li);
+      // randomPokemons.forEach((poke) => {
+      //   const getPokemonServices = new Services(poke.name);
+      //   getPokemonServices.getPokemon().then((data) => {
+      //     console.log(data.sprites.front_default);
+      //   });
+      // });
 
-        const link = new Helper('a');
-        const anchor = link.htmlTagGenerator(pokemon.name, 'wrapper-dashboard__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`);
-        li.appendChild(anchor);
+      randomPokemons.slice(0, 4).forEach((pokemon) => {
+        const getPokemonServices = new Services(pokemon.name);
+        getPokemonServices.getPokemon()
+          .then((pokemito) => {
+            console.log(pokemito);
+
+            const item = new Helper('li');
+            const li = item.htmlTagGenerator(null, 'wrapper-dashboard__item', null, null);
+            ul.appendChild(li);
+
+            const link = new Helper('a');
+            const anchor = link.htmlTagGenerator(null, 'wrapper-dashboard__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`);
+            li.appendChild(anchor);
+
+            const pokemonImage = new Helper('img');
+            const urlPokemon = pokemito.sprites.other.dream_world.front_default;
+            const pokemonImg = pokemonImage.htmlTagGenerator(null, 'wrapper-dashboard__img', null, urlPokemon);
+            anchor.appendChild(pokemonImg);
+
+            const pokeTitle = new Helper('h2');
+            const h2 = pokeTitle.htmlTagGenerator(pokemito.name, 'wrapper-dashboard__subtitle');
+            li.appendChild(h2);
+
+            const spanAbility = new Helper('span');
+            const ability = pokemito.abilities[0].ability.name;
+            const span = spanAbility.htmlTagGenerator(ability, 'wrapper-dashboard__span');
+            li.appendChild(span);
+          });
       });
     });
 }());

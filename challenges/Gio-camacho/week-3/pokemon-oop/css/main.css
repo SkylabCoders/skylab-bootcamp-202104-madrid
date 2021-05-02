@@ -411,12 +411,13 @@ img {
 }
 
 .wrapper-dashboard__navbar-link {
+  font-family: 'Pokemon-Solid', Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
   color: white;
 }
 
 .wrapper-dashboard__title {
-  font-family: 'Pokemon-Solid';
+  font-family: 'Pokemon-Solid',Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   margin: 0;
   padding: .5rem;
@@ -428,7 +429,7 @@ img {
 }
 
 .wrapper-dashboard__list {
-  border: 0.1rem solid rgba(151, 151, 151, 0.308);
+  border: 0.1rem solid rgba(151, 151, 151, 0.108);
   border-radius: 1rem;
   background-color: white;
   display: -webkit-box;
@@ -437,22 +438,60 @@ img {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-top: 20rem;
+  margin: 0 8rem;
+  margin-top: 10rem;
 }
 
 .wrapper-dashboard__item {
   list-style: none;
   padding: 5rem;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+  /* Animation */
+}
+
+.wrapper-dashboard__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .wrapper-dashboard__link {
   display: block;
   color: white;
-  background-color: #ef5552;
+  background-color: #F2F2F2;
   padding: 3rem;
   border-radius: .6rem;
   font-size: 2rem;
   font-family: 'Pokemon-Solid', sans-serif;
   letter-spacing: 2px;
+  -webkit-box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.322);
+          box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.322);
+}
+
+.wrapper-dashboard__img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.wrapper-dashboard__subtitle {
+  margin-top: 1rem;
+  color: #313131;
+  text-transform: capitalize;
+  font-size: 1.84rem;
+}
+
+.wrapper-dashboard__span {
+  display: block;
+  border-radius: 0.3rem;
+  width: 10rem;
+  background-color: #3861a8;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  padding: 0.2rem 1rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

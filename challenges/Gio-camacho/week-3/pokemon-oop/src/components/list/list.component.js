@@ -27,24 +27,43 @@
   navbarLi.appendChild(navbarListAnchor);
 
   /* Rendering the list */
+  const pokemons = new Services(null, limit, offset);
+
   const list = new Helper('ul');
   const ul = list.htmlTagGenerator(null, 'wrapper-list__list', null, null);
   wrapperList.appendChild(ul);
 
-  const pokemons = new Services(null, limit, offset);
+  pokemons.getAllPokemons()
+    .then((dataList) => {
+      /* Iterating every pokemon and rendering on the DOM */
+      dataList.results.forEach((pokemon) => {
+        const getPokemonServices = new Services(pokemon.name);
+        getPokemonServices.getPokemon()
+          .then((pokemito) => {
+            const item = new Helper('li');
+            const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
+            ul.appendChild(li);
 
-  pokemons.getAllPokemons().then((dataList) => {
-    dataList.results.forEach((pokemon) => {
-      const item = new Helper('li');
-      const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
+            const link = new Helper('a');
+            const anchor = link.htmlTagGenerator(null, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`, null);
+            li.appendChild(anchor);
 
-      const link = new Helper('a');
-      const a = link.htmlTagGenerator(pokemon.name, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`, null);
+            const pokemonImage = new Helper('img');
+            const urlPokemon = pokemito.sprites.other.dream_world.front_default;
+            const pokemonImg = pokemonImage.htmlTagGenerator(null, 'wrapper-list__img', null, urlPokemon);
+            anchor.appendChild(pokemonImg);
 
-      li.appendChild(a);
-      ul.appendChild(li);
+            const pokeTitle = new Helper('h2');
+            const h2 = pokeTitle.htmlTagGenerator(pokemito.name, 'wrapper-list__subtitle');
+            li.appendChild(h2);
+
+            const spanAbility = new Helper('span');
+            const ability = pokemito.abilities[0].ability.name;
+            const span = spanAbility.htmlTagGenerator(ability, 'wrapper-list__span');
+            li.appendChild(span);
+          });
+      });
     });
-  });
 
   const btn = new Helper('button');
 
@@ -65,21 +84,39 @@
       .then((dataList) => {
         ul.innerHTML = '';
 
+        /* Iterating every pokemon and rendering on the DOM */
         dataList.results.forEach((pokemon) => {
-          const item = new Helper('li');
-          const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
+          const getNextPokemons = new Services(pokemon.name);
+          getNextPokemons.getPokemon()
+            .then((nextPokemito) => {
+              const item = new Helper('li');
+              const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
+              ul.appendChild(li);
 
-          const link = new Helper('a');
-          const a = link.htmlTagGenerator(pokemon.name, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`, null);
+              const link = new Helper('a');
+              const anchorNext = link.htmlTagGenerator(null, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`, null);
+              li.appendChild(anchorNext);
 
-          li.appendChild(a);
-          ul.appendChild(li);
+              const pokemonImage = new Helper('img');
+              const urlPokemon = nextPokemito.sprites.other.dream_world.front_default;
+              const pokemonImg = pokemonImage.htmlTagGenerator(null, 'wrapper-list__img', null, urlPokemon);
+              anchorNext.appendChild(pokemonImg);
+
+              const pokeTitle = new Helper('h2');
+              const h2 = pokeTitle.htmlTagGenerator(nextPokemito.name, 'wrapper-list__subtitle');
+              li.appendChild(h2);
+
+              const spanAbility = new Helper('span');
+              const ability = nextPokemito.abilities[0].ability.name;
+              const span = spanAbility.htmlTagGenerator(ability, 'wrapper-list__span');
+              li.appendChild(span);
+            });
         });
       });
   });
 
   buttonPrevious.addEventListener('click', () => {
-    if (offset >= 10) {
+    if (offset >= 0) {
       offset -= limit;
     }
 
@@ -89,15 +126,33 @@
       .then((dataList) => {
         ul.innerHTML = '';
 
+        /* Iterating every pokemon and rendering on the DOM */
         dataList.results.forEach((pokemon) => {
-          const item = new Helper('li');
-          const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
+          const getPreviousPokemons = new Services(pokemon.name);
+          getPreviousPokemons.getPokemon()
+            .then((previousPokemito) => {
+              const item = new Helper('li');
+              const li = item.htmlTagGenerator(null, 'wrapper-list__item', null, null);
+              ul.appendChild(li);
 
-          const link = new Helper('a');
-          const a = link.htmlTagGenerator(pokemon.name, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/detalles.html?name=${pokemon.name}`, null);
+              const link = new Helper('a');
+              const anchorPrevious = link.htmlTagGenerator(null, 'wrapper-list__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`, null);
+              li.appendChild(anchorPrevious);
 
-          li.appendChild(a);
-          ul.appendChild(li);
+              const pokemonImage = new Helper('img');
+              const urlPokemon = previousPokemito.sprites.other.dream_world.front_default;
+              const pokemonImg = pokemonImage.htmlTagGenerator(null, 'wrapper-list__img', null, urlPokemon);
+              anchorPrevious.appendChild(pokemonImg);
+
+              const pokeTitle = new Helper('h2');
+              const h2 = pokeTitle.htmlTagGenerator(previousPokemito.name, 'wrapper-list__subtitle');
+              li.appendChild(h2);
+
+              const spanAbility = new Helper('span');
+              const ability = previousPokemito.abilities[0].ability.name;
+              const span = spanAbility.htmlTagGenerator(ability, 'wrapper-list__span');
+              li.appendChild(span);
+            });
         });
       });
   });

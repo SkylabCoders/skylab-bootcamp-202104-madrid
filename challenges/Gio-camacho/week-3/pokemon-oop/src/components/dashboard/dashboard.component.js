@@ -41,8 +41,6 @@
         const getPokemonServices = new Services(pokemon.name);
         getPokemonServices.getPokemon()
           .then((pokemito) => {
-            console.log(pokemito);
-
             const item = new Helper('li');
             const li = item.htmlTagGenerator(null, 'wrapper-dashboard__item', null, null);
             ul.appendChild(li);

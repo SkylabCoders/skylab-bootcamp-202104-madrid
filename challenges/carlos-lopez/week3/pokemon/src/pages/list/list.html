@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poke list</title>
+    <title>Poke List</title>
     <link rel="stylesheet" href="list.css">
 </head>
 <body>
-    <a href="../detail/detail.html">detalle</a>
-    <span class="total-pokes">0</span>
-    <button onclick="getPokes()">NEXT</button>
-    <div id="poke-list"></div>
+    <header>
+        <div class="header__logo">LOGO</div>
+        <a class="anchor__dashboard" href="../detail/Detail.html">Dashboard</a>
+    </header>
+    <main>
+        <div class="main__container">
+            <button class="button__prev">Prev</button>
+            <ul id="poke-list">
+            </ul>
+            <button class="button__next">Next</button>
+        </div>
+        <div class="main__pagination">
+            <span id="0" class="pages thisTimePage">1</span>
+            <span id="100" class="pages">2</span>
+            <span id="200" class="pages">3</span>
+            <span id="300" class="pages">4</span>
+            <span id="400" class="pages">5</span>
+            <span id="500" class="pages">6</span>
+            <span id="600" class="pages">7</span>
+            <span id="700" class="pages">8</span>
+            <span id="800" class="pages">9</span>
+            <span id="900" class="pages">10</span>
+            <span id="1000" class="pages">11</span>
+        </div>
+    </main>
+    <footer>
+    </footer>
     <script src="../../services/pokemon.js"></script>
     <script src="./list.js"></script>
+    <script src="list-act.js"></script>
 </body>
 </html>

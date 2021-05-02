@@ -1,4 +1,4 @@
-const CreateTopPokemons = require('./detailPrueba');
+const CreateTopPokemons = require('./dashboard');
 const { getPokes, getPokemon } = require('../../services/pokemon');
 
 describe('Given a method paintTopPokemons', () => {
@@ -15,11 +15,20 @@ describe('Given a method paintTopPokemons', () => {
         Promise.resolve({
           json: jest.fn()
             .mockReturnValueOnce(Promise.resolve({
-              id: 7, height: 5, weight: 90, name: 'squirtle', img: 'http://pokeapi.it/',
+              id: 7, height: 5, weight: 90, name: 'squirtle', img: 'http://pokeapi.it/', results: ['aqua', 'green', 'yellow'],
             })),
         }),
       );
       pokemon = await getPokemon();
+    });
+    test('Then prueba should contain an array of 3 elements', () => {
+      const prueba = pokemon.results;
+      expect(prueba.length).toBe(3);
+    });
+    test('Then newOrdenOfPokemon should contain a new array of 3 elements', () => {
+      const prueba = pokemon.results;
+      const newOrdenOfPokemon = prueba.sort(() => Math.random() - 0.5);
+      expect(newOrdenOfPokemon.length).toBe(3);
     });
 
     test('Then it should contain a new anchor', () => {
@@ -40,6 +49,12 @@ describe('Given a method paintTopPokemons', () => {
     test('Then the new span tag has the name of squirtle" ', () => {
       pokeName.innerHTML = pokemon.name;
       expect(pokeName.innerHTML).toContain('squirtle');
+    });
+    test('Then the anchor should contain a new span tag', () => {
+      document.body.innerHTML = '<a class="dashboard__poke"></a>';
+      const dashboardAnchor = document.querySelector('.dashboard__poke');
+      dashboardAnchor.appendChild(pokeName);
+      expect(dashboardAnchor.innerHTML).toContain('<span>');
     });
   });
 });

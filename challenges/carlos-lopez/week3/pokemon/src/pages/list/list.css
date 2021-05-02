@@ -4,9 +4,6 @@ body{
     background-image: url("https://images5.alphacoders.com/531/531970.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-#poke-list{
-    display: flex;
-    flex-direction: column;
-}
+

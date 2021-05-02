@@ -23,7 +23,7 @@ function listPage(url = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0') 
 }
 buttonPrev.addEventListener('click', () => {
   const newUrl = thisTimePokemons.previous;
-  if (newUrl !== 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0') {
+  if (newUrl !== 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0') {
     return listPage(newUrl);
   }
 });

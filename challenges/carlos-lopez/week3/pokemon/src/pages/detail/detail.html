@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poke Detail</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="detail.css">
 </head>
 <body>
-    <a href="../list/list.html">lista</a>
+    <header>
+        <div class="header__logo"><img src="https://1000marcas.net/wp-content/uploads/2020/01/Pok%C3%A9mon-Logo.png" alt="Poke-logo" id="logo"></div>
+        <a href="../list/list.html" class="anchor__lista">Lista</a>
+    </header>
+    <main>
     <h1 class="poke-name"></h1>
     <div class="div__details">
         <div class="details__img">
@@ -19,6 +25,7 @@
         <div class="details__height"></div>
         <div class="details__weight"></div>
     </div>
+    </main>
     <script src="../../services/pokemon.js"></script>
     <script src="./detail.js"></script>
     <script src="./detail-act.js"></script>

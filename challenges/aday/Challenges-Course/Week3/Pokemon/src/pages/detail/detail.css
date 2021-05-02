@@ -1,0 +1,17 @@
+* {
+    background-color: rgb(55,92,170);
+    color: rgb(250,204,51)
+}
+
+.body__main-container {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    text-transform: capitalize;
+}
+
+img {
+    width: 100px; height: 100px;
+}

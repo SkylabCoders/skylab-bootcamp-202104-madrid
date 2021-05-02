@@ -13,6 +13,7 @@
     background-color: red;
     margin-top: 0;
     margin-bottom: 0;
+    text-shadow: 10px 10px grey;
 
 }
 .header__container-audio {
@@ -38,6 +39,7 @@
     -webkit-text-stroke: 2px blue;
     background-color: red;
     text-decoration: none;
+    text-shadow: 5px 5px grey;
 }
 
 .header__nav > a:hover {
@@ -51,10 +53,20 @@
     
 }
 
+.main-container {
+    display: flex;
+    justify-content: space-around;
+}
+
 .main-container__anchor > img {
+    width: 200px;
+    margin-top: 50px;
     cursor: url('../../services/pokedex.png'), default;
 }
 
 .main-container__anchor > img:hover {
    transform: scale(1.5);
+   border-radius: 100px;
+   border: 3px solid black;
+   background-color: red;
 }

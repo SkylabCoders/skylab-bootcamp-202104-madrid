@@ -13,6 +13,7 @@
     background-color: red;
     margin-top: 0;
     margin-bottom: 0;
+    text-shadow: 10px 10px grey;
 
 }
 
@@ -39,6 +40,7 @@
     -webkit-text-stroke: 2px blue;
     background-color: red;
     text-decoration: none;
+    text-shadow: 5px 5px grey;
 }
 
 .main__anchor > a:hover {
@@ -50,6 +52,7 @@
     border: 4px solid black;
     
     
+    
 }
 
 #main__pkm {
@@ -57,51 +60,58 @@
     justify-content: center;
     
 }
-.main__pokemon__izq {
-padding-right: 180px;
-padding-top: 25px;
-background-repeat: repeat;
-}
+
 .main__poke__list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    font-size: 25px;
-    width: 200px;
     padding-top: 27px;
+    gap: 25px;
     
    
 }    
 
 .poke__list--pokemon {
+    flex-grow: 1;
    text-decoration: none;
    color: rgb(0, 0, 0);
-   font-size: 18px;
+   padding-left: 25px;
+   font-family:'Press Start 2P', cursive;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-size: 20px;
    text-transform:capitalize; 
    cursor: url('../../services/pokeicon.png'), default;
+   flex: 0 1 calc(25% - 8px)
 }
 
 .poke__list--pokemon:hover{
-    transform: scale(1.5);
-    font-size: 20px;
+    transform: scale(1);
+    font-size: 40px;
     font-family: 'Pokemon';
     color: yellow;
     -webkit-text-stroke: 1px blue;
+    text-shadow: 5px 5px grey;
 
 }
 
 .main__pokemon__dcha {
-    background-repeat: repeat;
     align-items: flex-end;
-    padding-left: 150px;
     padding-top: 27px;
+    
 }
+
 
 .footer__container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .footer__container > button {
-    background-color: black;
+    margin-top: 50px;
+    margin-left: 13%;
+    background-color: red;
+    border-radius: 100px;
+    border: 5px solid black;
+
 }

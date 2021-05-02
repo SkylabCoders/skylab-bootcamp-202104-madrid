@@ -1,4 +1,4 @@
-.wrapper-dashboard {
+.wrapper-list {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -46,6 +46,7 @@
         border-radius: 1rem;
         background-color: $white;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         margin: 0 8rem;
         margin-top: 10rem;
@@ -96,5 +97,26 @@
         padding: 0.2rem 1rem;
         text-transform: capitalize;
         margin-top: 1rem;
+    }
+
+    &__container {
+        padding: 4rem 0 6rem;
+    }
+
+    &__previous,
+    &__next {
+        border: none;
+        margin-right: 2rem;
+        padding: 1rem 3rem;
+        background-color: $brand-button;
+        color: $white;
+        border-radius: .4rem;
+        outline: none;
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }

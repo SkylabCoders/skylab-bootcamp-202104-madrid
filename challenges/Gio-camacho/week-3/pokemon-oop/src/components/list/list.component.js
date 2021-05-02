@@ -1,5 +1,5 @@
 (function () {
-  const limit = 10;
+  const limit = 12;
   let offset;
   offset = 0;
 
@@ -65,13 +65,17 @@
       });
     });
 
+  const containerBtn = new Helper('div');
+  const containerButton = containerBtn.htmlTagGenerator(null, 'wrapper-list__container');
+  wrapperList.appendChild(containerButton);
+
   const btn = new Helper('button');
 
   const buttonPrevious = btn.htmlTagGenerator('Previous', 'wrapper-list__previous', null, null);
-  wrapperList.appendChild(buttonPrevious);
+  containerButton.appendChild(buttonPrevious);
 
   const buttonNext = btn.htmlTagGenerator('Next', 'wrapper-list__next', null, null);
-  wrapperList.appendChild(buttonNext);
+  containerButton.appendChild(buttonNext);
 
   buttonNext.addEventListener('click', () => {
     if (offset >= 0) {

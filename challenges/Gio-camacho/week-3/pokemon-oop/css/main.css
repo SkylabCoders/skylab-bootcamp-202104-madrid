@@ -494,4 +494,150 @@ img {
   text-transform: capitalize;
   margin-top: 1rem;
 }
+
+.wrapper-list {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper-list__navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 7rem;
+  background-color: #ef5552;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.301);
+}
+
+.wrapper-list__navbar-item {
+  list-style: none;
+}
+
+.wrapper-list__navbar-link {
+  font-family: 'Pokemon-Solid', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.wrapper-list__title {
+  font-family: 'Pokemon-Solid',Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: .5rem;
+  text-align: center;
+  color: #fbeb0e;
+  letter-spacing: .1rem;
+  -webkit-text-stroke: 1px #3861a8;
+  cursor: pointer;
+}
+
+.wrapper-list__list {
+  border: 0.1rem solid rgba(151, 151, 151, 0.108);
+  border-radius: 1rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0 8rem;
+  margin-top: 10rem;
+}
+
+.wrapper-list__item {
+  list-style: none;
+  padding: 5rem;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+  /* Animation */
+}
+
+.wrapper-list__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.wrapper-list__link {
+  display: block;
+  color: white;
+  background-color: #F2F2F2;
+  padding: 3rem;
+  border-radius: .6rem;
+  font-size: 2rem;
+  font-family: 'Pokemon-Solid', sans-serif;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.322);
+          box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.322);
+}
+
+.wrapper-list__img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.wrapper-list__subtitle {
+  margin-top: 1rem;
+  color: #313131;
+  text-transform: capitalize;
+  font-size: 1.84rem;
+}
+
+.wrapper-list__span {
+  display: block;
+  border-radius: 0.3rem;
+  width: 10rem;
+  background-color: #3861a8;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  padding: 0.2rem 1rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
+}
+
+.wrapper-list__container {
+  padding: 4rem 0 6rem;
+}
+
+.wrapper-list__previous, .wrapper-list__next {
+  border: none;
+  margin-right: 2rem;
+  padding: 1rem 3rem;
+  background-color: #31a9d8;
+  color: white;
+  border-radius: .4rem;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.wrapper-list__previous:hover, .wrapper-list__next:hover {
+  opacity: 0.8;
+}
 /*# sourceMappingURL=main.css.map */

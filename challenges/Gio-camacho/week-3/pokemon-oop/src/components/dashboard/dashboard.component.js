@@ -9,8 +9,8 @@
   const nav = navbar.htmlTagGenerator(null, 'wrapper-dashboard__navbar');
   wrapperDashboard.appendChild(nav);
 
-  const title = new Helper('h1');
-  const h1 = title.htmlTagGenerator('Dashboard', 'wrapper-dashboard__title');
+  const title = new Helper('a');
+  const h1 = title.htmlTagGenerator('Dashboard', 'wrapper-dashboard__title', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html');
   nav.appendChild(h1);
 
   const navbarList = new Helper('ul');
@@ -42,8 +42,8 @@
         ul.appendChild(li);
 
         const link = new Helper('a');
-        const a = link.htmlTagGenerator(pokemon.name, 'wrapper-dashboard__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`);
-        li.appendChild(a);
+        const anchor = link.htmlTagGenerator(pokemon.name, 'wrapper-dashboard__link', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokemon.name}`);
+        li.appendChild(anchor);
       });
     });
 }());

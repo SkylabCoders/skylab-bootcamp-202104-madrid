@@ -4,6 +4,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &__navbar {
         display: flex;
@@ -17,16 +20,17 @@
 
     &__navbar-item {
         list-style: none;
+
     }
 
     &__navbar-link {
+        font-size: 1.8rem;
         color: white;
-        transition: all 200s ease-in-out;
     }
 
     &__title {
         font-family: 'Pokemon-Solid';
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin: 0;
         padding: .5rem;
         text-align: center;
@@ -37,11 +41,28 @@
     }
 
     &__list {
+        border: .1rem solid rgba(151, 151, 151, 0.308);
+        border-radius: 1rem;
+        background-color: white;
         display: flex;
+        justify-content: space-evenly;
+        margin-top: 20rem;
+
     }
 
     &__item {
         list-style: none;
-        width: 30rem;
+        padding: 5rem;
+    }
+
+    &__link {
+        display: block; 
+        color: white;
+        background-color: $brand-300;
+        padding: 3rem;
+        border-radius: .6rem;
+        font-size: 2rem;
+        font-family: 'Pokemon-Solid', sans-serif;
+        letter-spacing: 2px;
     }
 }

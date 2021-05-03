@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(55,92,170);
+    color: rgb(250,204,51);
+    font-family: sans-serif;
+}
+
+img {
+    width: 500px;
+    margin-top: auto;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    font-size: 75px;
+   
+}
+
+#poke-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: x-large;
+}
+
+#poke-list > a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(250,204,51);
+    padding: 10px;
+    font-size: 40px;
+}

@@ -11,7 +11,7 @@
   wrapperList.appendChild(nav);
 
   const title = new Helper('a');
-  const anchorLogo = title.htmlTagGenerator('PokeList', 'wrapper-list__title', null, null);
+  const anchorLogo = title.htmlTagGenerator('PokeList', 'wrapper-list__title', 'http://127.0.0.1:5500/src/components/list/list.html', null);
   nav.appendChild(anchorLogo);
 
   const navbarList = new Helper('ul');

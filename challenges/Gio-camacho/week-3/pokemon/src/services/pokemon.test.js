@@ -1,18 +1,21 @@
 const { getPokes, getPokemon } = require('./pokemon');
+const principal = require('./pokemon');
 
 describe('Given a function getPokes', () => {
   describe('When is invoked', () => {
     describe('And ...', () => {
       let pokemons;
       beforeEach(async () => {
-        global.fetch = jest.fn().mockReturnValueOnce(Promise.resolve({
-          json: jest.fn().mockReturnValueOnce({
-            count: 3,
-            result: [1, 1, 1],
-            next: 'limit=3',
-            previous: 'limit=3'
+        global.fetch = jest.fn().mockReturnValueOnce(
+          Promise.resolve({
+            json: jest.fn().mockReturnValueOnce({
+              count: 3,
+              result: [1, 1, 1],
+              next: 'limit=3',
+              previous: 'limit=3'
+            })
           })
-        }));
+        );
         pokemons = await getPokes();
       });
       test('Then should return an array of tree pokemos', () => {
@@ -34,19 +37,16 @@ describe('Given a function getPokes', () => {
 describe('Given a getPokemon function', () => {
   describe('When is invoked with argument containing pokemon/charizard', () => {
     test('Then return object containing { name: "ditto" }', async () => {
-      global.fetch = jest.fn()
-        .mockReturnValueOnce(
-          Promise.resolve({ // la promesa se resuelve con un objeto con una propiedad json
-            json: jest.fn()
-              .mockReturnValueOnce(
-                Promise.resolve(
-                  {
-                    name: 'ditto'
-                  }
-                )
-              )
-          })
-        );
+      global.fetch = jest.fn().mockReturnValueOnce(
+        Promise.resolve({
+          // la promesa se resuelve con un objeto con una propiedad json
+          json: jest.fn().mockReturnValueOnce(
+            Promise.resolve({
+              name: 'ditto'
+            })
+          )
+        })
+      );
       const pokemon = await getPokemon();
       expect(pokemon).toEqual({ name: 'ditto' });
     });
@@ -56,13 +56,18 @@ describe('Given a getPokemon function', () => {
 describe('Given an function createElement', () => {
   describe('When in is ivoked', () => {
     test('Then is should return a HTMLElement', () => {
-      const principal = require('./pokemon');
       document.body.innerHTML = `
       <div class="wrapper"></div>
       `;
       const parent = document.querySelector('.wrapper');
 
-      principal.createElement('a', parent, 'Hello', 'wrapper__greeting', 'https://pokeapi.co/');
+      principal.createElement(
+        'a',
+        parent,
+        'Hello',
+        'wrapper__greeting',
+        'https://pokeapi.co/'
+      );
 
       const elementHTML = '<a class="wrapper__greeting" href="https://pokeapi.co/">Hello</a>';
       expect(parent.innerHTML).toContain(elementHTML);

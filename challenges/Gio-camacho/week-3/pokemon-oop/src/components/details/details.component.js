@@ -2,11 +2,36 @@
   const paras = new URLSearchParams(window.location.search);
   const pokeName = paras.get('name');
 
+  const wrapperDetails = document.querySelector('.wrapper-details');
+
+  /* Creating the Navbar */
+  const navbar = new Helper('navbar');
+  const nav = navbar.htmlTagGenerator(null, 'wrapper-details__navbar');
+  wrapperDetails.appendChild(nav);
+
+  const title = new Helper('a');
+  const anchorLogo = title.htmlTagGenerator('Details', 'wrapper-details__title', `http://127.0.0.1:5500/src/components/details/details.html?name=${pokeName}`);
+  nav.appendChild(anchorLogo);
+
+  const navbarList = new Helper('ul');
+  const navbarUl = navbarList.htmlTagGenerator(null, 'wrapper-details__navbar-list');
+  nav.appendChild(navbarUl);
+
+  const navbarItem = new Helper('li');
+  const navbarLi = navbarItem.htmlTagGenerator(null, 'wrapper-details__navbar-item');
+  navbarUl.appendChild(navbarLi);
+
+  const navbarLink = new Helper('a');
+
+  const navbarDashboardAnchor = navbarLink.htmlTagGenerator('Dashboard', 'wrapper-details__navbar-link', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html');
+  navbarUl.appendChild(navbarDashboardAnchor);
+
+  const navbarListAnchor = navbarLink.htmlTagGenerator('List', 'wrapper-details__navbar-link', 'http://127.0.0.1:5500/src/components/list/list.html');
+  navbarUl.appendChild(navbarListAnchor);
+
   const services = new Services(pokeName);
   services.getPokemon()
     .then((pokemon) => {
-      const wrapperDetails = document.querySelector('.wrapper-details');
-
       const card = new Helper('article');
       const article = card.htmlTagGenerator(null, 'wrapper-details__card', null, null);
       wrapperDetails.appendChild(article);

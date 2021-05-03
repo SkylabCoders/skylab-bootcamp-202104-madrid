@@ -24,12 +24,7 @@ function listPage(url) {
             element.innerText = poke.name
             pokeList.appendChild(element);
         })
-       
-       
-        
-        
-      
-           
+                
     });
 };
 
@@ -53,3 +48,11 @@ buttonPrev.addEventListener('click', (e) => {
       buttonPrev.innerHTML = ""
     }
     
+let profOak = document.querySelector('.main__pokemon__dcha--oak');
+profOak.onmouseenter = function(){
+    profOak.src = '../../services/ok2.png'
+  }
+
+profOak.onmouseout = function(){
+    profOak.src = '../../services/ok.png'
+  }

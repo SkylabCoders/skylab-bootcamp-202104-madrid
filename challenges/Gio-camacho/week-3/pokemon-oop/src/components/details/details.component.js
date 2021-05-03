@@ -29,32 +29,41 @@
   const navbarListAnchor = navbarLink.htmlTagGenerator('List', 'wrapper-details__navbar-link', 'http://127.0.0.1:5500/src/components/list/list.html');
   navbarUl.appendChild(navbarListAnchor);
 
+  /* Rendering the pokemon */
   const services = new Services(pokeName);
   services.getPokemon()
     .then((pokemon) => {
       const card = new Helper('article');
-      const article = card.htmlTagGenerator(null, 'wrapper-details__card', null, null);
+      const article = card.htmlTagGenerator(null, 'wrapper-details__card');
       wrapperDetails.appendChild(article);
+
+      const imageFigure = new Helper('figure');
+      const figure = imageFigure.htmlTagGenerator(null, 'wrapper-details__figure');
+      article.appendChild(figure);
 
       const img = new Helper('img');
       const svgImage = pokemon.sprites.other.dream_world.front_default;
       const image = img.htmlTagGenerator(null, 'wrapper-details__img', null, svgImage);
-      article.appendChild(image);
+      figure.appendChild(image);
 
-      const title = new Helper('h1');
-      const h1 = title.htmlTagGenerator(pokemon.name.toUpperCase(), 'wrapper-details__title', null, null);
-      article.appendChild(h1);
+      const detailsContainer = new Helper('div');
+      const div = detailsContainer.htmlTagGenerator(null, 'wrapper-details__container');
+      article.appendChild(div);
+
+      const title = new Helper('h2');
+      const h2 = title.htmlTagGenerator(pokemon.name, 'wrapper-details__subtitle', null, null);
+      div.appendChild(h2);
 
       const list = new Helper('ul');
       const ul = list.htmlTagGenerator(null, 'wrapper-details__list', null, null);
-      article.appendChild(ul);
+      div.appendChild(ul);
 
       const firstItem = new Helper('li');
       const firstLi = firstItem.htmlTagGenerator(null, 'wrapper-details__item');
       ul.appendChild(firstLi);
 
       const heightSubtitle = new Helper('span');
-      const spanHight = heightSubtitle.htmlTagGenerator('Height');
+      const spanHight = heightSubtitle.htmlTagGenerator('Height :');
       firstLi.appendChild(spanHight);
 
       const heightDescription = new Helper('span');
@@ -66,7 +75,7 @@
       ul.appendChild(secondLi);
 
       const weightSubtitle = new Helper('span');
-      const spanWeight = weightSubtitle.htmlTagGenerator('Weight');
+      const spanWeight = weightSubtitle.htmlTagGenerator('Weight :');
       secondLi.appendChild(spanWeight);
 
       const weightDescription = new Helper('span');
@@ -78,19 +87,12 @@
       ul.appendChild(thirdLi);
 
       const abilitySubtitle = new Helper('span');
-      const spanAbility = abilitySubtitle.htmlTagGenerator('Ability');
+      const spanAbility = abilitySubtitle.htmlTagGenerator('Ability :');
       thirdLi.appendChild(spanAbility);
 
       const abilityDescription = new Helper('span');
       const ability = pokemon.abilities[0].ability.name;
       const spanAbilityDescription = abilityDescription.htmlTagGenerator(ability);
       thirdLi.appendChild(spanAbilityDescription);
-
-      const link = new Helper('a');
-      const anchorDashboard = link.htmlTagGenerator('Back to dashboard', 'wrapper-details__back-dashboard', 'http://127.0.0.1:5500/src/components/dashboard/dashboard.html', null);
-      article.appendChild(anchorDashboard);
-
-      const anchorList = link.htmlTagGenerator('Back to list', 'wrapper-details__back-list', 'http://127.0.0.1:5500/src/components/list/list.html');
-      article.appendChild(anchorList);
     });
 }());

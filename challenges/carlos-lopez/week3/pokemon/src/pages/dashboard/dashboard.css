@@ -5,6 +5,38 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html{
   font-family: 'Press Start 2P', cursive;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://www.itl.cat/pngfile/big/31-312807_pokemon-charmander-desktop-background-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+}
+img {
+  width: 15rem;
+  height: auto;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo{
+  width: 15rem;
+}
+
+.dashboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }

@@ -14,9 +14,9 @@ class PokemonDetail {
     pokeImgBack.setAttribute('src', this.pokemon.sprites.back_default);
 
     pokeNameContainer.innerHTML = this.pokemon.name;
-    pokeId.innerText = `ID: ${this.pokemon.id}`;
-    pokeHeight.innerText = `Height: ${this.pokemon.height} rem`;
-    pokeWeight.innerText = `Weight: ${this.pokemon.weight} rem`;
+    pokeId.innerText = `#${this.pokemon.id}`;
+    pokeHeight.innerText = `Height: ${this.pokemon.height} km`;
+    pokeWeight.innerText = `Weight: ${this.pokemon.weight} lbs`;
 
     appendElements(pokeNameContainer, pokeImg, pokeImgBack, pokeId, pokeHeight, pokeWeight);
   }

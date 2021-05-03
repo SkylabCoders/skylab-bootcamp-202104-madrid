@@ -29,7 +29,9 @@ buttonPrev.addEventListener('click', () => {
 });
 buttonNext.addEventListener('click', () => {
   const newUrl = thisTimePokemons.next;
-  return listPage(newUrl);
+  if (newUrl !== 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=1100') {
+    return listPage(newUrl);
+  }
 });
 paginationNumbers.forEach((number) => {
   number.addEventListener('click', (event) => {

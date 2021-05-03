@@ -37,6 +37,7 @@ const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
         detailPage.printImage();
     })
 }
-// init();
+init()
 
-module.exports = Detailpage
+
+

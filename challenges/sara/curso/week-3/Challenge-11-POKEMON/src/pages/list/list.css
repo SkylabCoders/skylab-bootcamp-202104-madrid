@@ -1,0 +1,30 @@
+a{
+    text-decoration: none;
+}
+
+ul a {
+    color: black; 
+    height: 3rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+li:hover {
+    background-color: rgb(226, 175, 109);
+}
+
+li {
+    list-style: none;
+    height: 3rem;
+    width: 10rem;
+    background-color: burlywood;
+    margin: 1rem;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}

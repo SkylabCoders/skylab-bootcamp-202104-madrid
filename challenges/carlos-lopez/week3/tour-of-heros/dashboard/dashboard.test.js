@@ -29,20 +29,29 @@ describe('given a renderNames()', () => {
 })
 
 
+//Test passed
+
+function renderListHeroes() {
+    let newAnchor = document.createElement("newAnchor");
+    newAnchor.id = "hola";
+    newAnchor.innerHTML = "frase + frase";
+    let result = newAnchor.innerHTML;
+    document.body.appendChild(newAnchor);
+    return result;
+  };
+
+describe("Given function renderListHeroes", () => {
+  describe("When calling renderListHeroes", () => {
+    test("Then it should return <newAnchor id=hola>frase + frase</newAnchor>", () => {
+      let newAnchor = document.createElement("newAnchor");
+      document.body.innerHTML = `<div id="contenedor"></div>`;
+      let containerList = document.getElementById("contenedor");
+      renderListHeroes();
+      console.log(containerList.innerHTML)
+      console.log(newAnchor.innerHTML)
+      expect(containerList.innerHTML).toContain(newAnchor.innerHTML);
+    });
+  });
+});
 
 
-
-// describe('Given a ', () => {
-//     describe('when a ', () => {
-//         test('It should return', () => {
-//             document.body.innerHTML = <div class='wrapper'></div>
-//             //arrange 
-//             let div = document.querySelector('.wrapper');
-//             let tag = 'a';
-//             let parent = div;
-//             let innerHTML = 'heroes';
-//             let className = 'link';
-//             let href = 'https://www.google.es/'
-//         })
-//     })
-// })

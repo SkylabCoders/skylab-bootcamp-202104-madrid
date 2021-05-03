@@ -1,4 +1,4 @@
-let listNames = document.querySelector(".div--listNames");
+let listNames = document.querySelector(".div--list-names");
 
 //Functions
 const url =
@@ -12,13 +12,22 @@ function fetchInfo(url) {
 
 function renderListHeroes(arr) {
   for (let i = 0; i < arr.length; i++) {
+    let divAnchor = document.createElement("div");
+    divAnchor.className = 'div__listNames--div';
+    let divId = document.createElement("div");
+    divId.className = "div__listNames--id"
     let newAnchor = document.createElement("a");
     newAnchor.className = "div__listNames--anchor";
-    listNames.appendChild(newAnchor);
+
+    listNames.appendChild(divAnchor);
+    divAnchor.appendChild(divId);
+    divAnchor.appendChild(newAnchor)
     newAnchor.href = "http://127.0.0.1:5500/challenges/carlos-lopez/week3/tour-of-heros/detail/detail.html?index=" + i
-    newAnchor.innerText = `${arr[i].id}  ${arr[i].name}`;
+    newAnchor.innerText = `${arr[i].name}`;
+    divId.innerText = `${arr[i].id} `; 
   }
 }
+
 
 function goToDashboard() {
   window.location.href =

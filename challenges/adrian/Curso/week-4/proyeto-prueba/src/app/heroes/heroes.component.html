@@ -1,1 +1,17 @@
 
+<ul *ngIf='show' class="list-heroes">
+    <li *ngFor='let heroe of heroes' (click)="getHeroDetails(heroe)">
+        ID: {{heroe.id}}, NAME: {{heroe.name}}, SUPEPOWER: {{heroe.superPower}}
+    </li>
+</ul>
+<button (click)="toggleList()" class="button">{{ textToShow }}</button>
+<div [ngSwitch]='city'>
+    <span *ngSwitchCase="'Madrid'">Estoy en la ciudad de {{city}} </span>
+    <span *ngSwitchCase="'Barcelona'">Estoy en la ciudad de {{city}}</span>
+</div>
+<div *ngIf="hero">
+    <span>El heroe seleccionado es {{hero.name}}</span>
+</div>
+<div>
+    <app-hero-details [hero]="hero" (heroMod)="getHeroMod($event)"></app-hero-details>
+</div>

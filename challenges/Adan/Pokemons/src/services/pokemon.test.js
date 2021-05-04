@@ -1,4 +1,4 @@
-const { getPokes, getPokemon } = require('./pokemon');
+// const { getPokes, getPokemon } = require('./pokemon');
 
 describe('Given an getPokes function', () => {
   describe('when its invoked', () => {
@@ -49,3 +49,8 @@ describe('Given a getPokemon function', () => {
     });
   });
 });
+// (async function ListPage() {
+//   //   const params = new URLSearchParams(window.location.search);
+//   //   const pokemonName = params.get('name');
+//   //   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+//   //   const pokemon = await getPokemon(url);

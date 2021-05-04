@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="list.css">
     <title>Poke List</title>
 </head>
 <body>
-    <a href="../detail/detail.html">detalle</a>
-    <span class="total-pokes"></span>
-    <button onclick="getPokes()">next</button>
-    <ul id="poke-list"></ul>
-    <script src="../../services/pokemon.js"></script>
-    <script src='../list/list.js'></script>
+        <header>
+            <div class="header__logo"><img src="https://cdn.worldvectorlogo.com/logos/pokemon-23.svg" alt="PokemonLogo"></div>
+            <a class="anchor__dashboard" href="../dashboard/dashboard.html">Dashboard</a>
+            
+        </header>
+        <main>
+            <div class="main__container">
+                <button class="button__prev">Prev</button>
+                <ul id="poke-list">
+                </ul>
+                <button class="button__next">Next</button>
+            </div>
+            <div class="main__pagination">
+                <span id="0" class="pages thisTimePage"></span>
+                <span id="100" class="pages"></span>
+                <span id="200" class="pages"></span>
+                <span id="300" class="pages"></span>
+                <span id="400" class="pages"></span>
+                <span id="500" class="pages"></span>
+                <span id="600" class="pages"></span>
+                <span id="700" class="pages"></span>
+                <span id="800" class="pages"></span>
+                <span id="900" class="pages"></span>
+                <span id="1000" class="pages"></span>
+            </div>
+        </main>
+        <footer>
+        </footer>
+        <script src="../../services/pokemon.js"></script>
+        <script src="list.js"></script>
+        <script src="./list-act.js"></script>
+
 </body>
+
 </html>
+
+
+
+    

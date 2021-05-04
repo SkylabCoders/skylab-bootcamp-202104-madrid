@@ -16,6 +16,12 @@ class DetailPages {
     pokeImage.src = this.pokemon.sprites.front_default;
     divDetail.appendChild(pokeImage);
   }
-}
 
-module.exports = DetailPages;
+  drawHeigth() {
+    const divDetail = document.getElementById('poke-details');
+    const pokeHeigth = document.createElement('p');
+    pokeHeigth.innerHTML = this.pokemon.id;
+    divDetail.appendChild(pokeHeigth);
+  }
+}
+// module.exports = DetailPages;

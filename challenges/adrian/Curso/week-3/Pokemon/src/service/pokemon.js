@@ -8,4 +8,5 @@ function getPokemon(url) {
     .then((response) => response.json());
 }
 
-// module.exports = { getPokes };
+/* module.exports = { getPokes };
+module.exports = { getPokemon }; */

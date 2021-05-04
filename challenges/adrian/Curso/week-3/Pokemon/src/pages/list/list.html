@@ -5,22 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poke List</title>
+    <link rel="stylesheet" href="../../service/header.css">
     <link rel="stylesheet" href="list.css">
 </head>
 <body>
-    <header>
-        <div>LOGO</div>
-        <a href="../detail/Detail.html">Dashboard</a>
+    <header class="header">
+        <img class="pokemon-logo" src="../../service/1280px-International_Pokémon_logo.svg.png" alt="Pokemon-logo">
+        <a class="anchor__navigator" href="../dashboard/dashboard.html">Dashboard</a>
     </header>
     <main>
-        <div class="main-container">
-            <button class="prev">Prev</button>
+        <div class="main__container">
+            <button class="main__navigation-button" id="button__prev">Prev</button>
             <ul id="poke-list">
             </ul>
-            <button class="next">Next</button>
+            <button class="main__navigation-button" id="button__next">Next</button>
         </div>
-        <div class="numbers">
-            <span id="0" class="pages">1</span>
+        <div class="main__pagination">
+            <span id="0" class="pages thisTimePage">1</span>
             <span id="100" class="pages">2</span>
             <span id="200" class="pages">3</span>
             <span id="300" class="pages">4</span>
@@ -37,5 +38,5 @@
     </footer>
     <script src="../../service/pokemon.js"></script>
     <script src="./list.js"></script>
+    <script src="./lis-act.js"></script>
 </body>
-</html>

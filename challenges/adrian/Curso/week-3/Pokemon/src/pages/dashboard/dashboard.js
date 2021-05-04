@@ -22,7 +22,10 @@ class CreateTopPokemons {
         const pokeName = document.createElement('span');
         pokeName.innerHTML = poke.name;
         newAnchor.appendChild(pokeName);
+        newAnchor.href = `http://127.0.0.1:5500/challenges/adrian/Curso/week-3/Pokemon/src/pages/detail/detail.html?name=${poke.name}`;
       });
     }
   }
 }
+
+module.exports = CreateTopPokemons;

@@ -5,12 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deatail</title>
+    <link rel="stylesheet" href="../../service/header.css">
+    <link rel="stylesheet" href="detail.css">
 </head>
 <body>
-    <a href="../list/list.html">List</a>
-    <div id="poke-details"></div>
-    <script src="../../service/pokemon.js"></script>
-    <script src="./detail-class.js"></script>
-    <script src="./detail-class-act.js"></script>
+    <header>
+        <header class="header">
+            <img class="pokemon-logo" src="../../service/1280px-International_Pokémon_logo.svg.png" alt="Pokemon-logo">
+            <div class="header__navs">
+                <a class="anchor__navigator" href="../dashboard/dashboard.html">Dashboard</a>
+                <a  class="anchor__navigator" href="../list/list.html">List</a>
+            </div>
+        </header>
+    </header>
+    <main>
+        <div id="poke-details"></div>
+        <script src="../../service/pokemon.js"></script>
+        <script src="./detail-class.js"></script>
+        <script src="./detail-class-act.js"></script>
+    </main>
+   
 </body>
 </html>

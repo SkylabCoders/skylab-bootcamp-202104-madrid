@@ -8,5 +8,6 @@ const pokeName = params.get('name');
     currentPokemon = new DetailPages(pokemon);
     currentPokemon.drawName();
     currentPokemon.drawImage();
+    // currentPokemon.drawHeigth();
   });
 }());

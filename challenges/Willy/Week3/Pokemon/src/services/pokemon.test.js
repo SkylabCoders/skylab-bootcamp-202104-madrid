@@ -52,10 +52,3 @@ describe('Given a getPokemon function', () =>{
   })
 })
 
-describe('Give a pagination function', () => {
-  describe('When is invoked', () => {
-    test('Then return a new data list', () =>{
-      
-    })
-  })
-})

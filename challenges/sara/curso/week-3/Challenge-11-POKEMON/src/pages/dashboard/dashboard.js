@@ -3,14 +3,11 @@ class CreateTopPokemons {
     this.pokemons = pokemons;
   }
 
-  paintTopPOkemons() {
-    console.log(this.pokemons);
+  paintTopPokemons() {
     const prueba = this.pokemons.results;
     const newOrdenOfPokemon = prueba.sort(() => Math.random() - 0.5);
-    console.log(newOrdenOfPokemon);
     for (let i = 0; i < 4; i++) {
       const currentPokeUrl = newOrdenOfPokemon[i].url;
-      console.log(currentPokeUrl);
       getPokemon(currentPokeUrl).then((poke) => {
         const newAnchor = document.createElement('a');
         newAnchor.classList.add('dasboard__poke');
@@ -21,8 +18,11 @@ class CreateTopPokemons {
         newAnchor.appendChild(pokeImg);
         const pokeName = document.createElement('span');
         pokeName.innerHTML = poke.name;
+        newAnchor.href = `http://127.0.0.1:5500/src/pages/detail/detail.html?name=${poke.name}`;
         newAnchor.appendChild(pokeName);
       });
     }
   }
 }
+
+module.exports = CreateTopPokemons;

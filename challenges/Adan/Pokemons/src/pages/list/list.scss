@@ -1,0 +1,95 @@
+body{
+    background-image: url('https://www.nintendo.com/content/dam/noa/en_US/wallpapers/pokemon/pokemon-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+header {
+display: flex;
+flex-direction: column;
+justify-content: center;
+.anchor__dashboard {
+    color: black;
+    text-decoration: none;
+    font-size: 2vw;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+    .header__logo{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 20%;
+            height: 20%;
+        }
+    }
+}
+.main__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+}
+li{
+    list-style: none;
+}
+
+.thisTimePage {
+    padding: 20px;
+    cursor: pointer;
+    background-image: url('https://i.pinimg.com/originals/1e/eb/8f/1eeb8fcfdbbbae6b392779718f5d7701.png');
+    background-repeat: no-repeat;
+    height:10px;
+  width:10px;
+    background-position:center;
+    background-size: 100% 100%;
+ 
+}
+.pages{
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+    background-image: url('https://i.pinimg.com/originals/1e/eb/8f/1eeb8fcfdbbbae6b392779718f5d7701.png');
+    background-repeat: no-repeat;
+    height:10px;
+    width:10px;
+    background-position:center;
+    background-size: 100% 100%;
+
+}
+.pages:hover{
+    background-image: url('https://lh3.googleusercontent.com/proxy/meJvQTfPY1TOuwJKsChj8ZoHi7i4fkJm0z5HlaB277sX4O00BpCYBVeQFFYW0G9kaLqIz0qd8TAvHHQiOAixTHvraL9enQcLdhejpXk9OnKHWntk-39HGec0qwlz5dkA3vby');
+}
+.thisTimePage:hover{
+    background-image: url('https://lh3.googleusercontent.com/proxy/meJvQTfPY1TOuwJKsChj8ZoHi7i4fkJm0z5HlaB277sX4O00BpCYBVeQFFYW0G9kaLqIz0qd8TAvHHQiOAixTHvraL9enQcLdhejpXk9OnKHWntk-39HGec0qwlz5dkA3vby');
+}
+
+.main__container {
+display: flex;
+justify-content:space-between;
+align-items: center;
+justify-content: center;
+button{
+ padding:0.35em 1.2em;
+ border:0.1em solid #FFFFFF;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ font-family:'Roboto',sans-serif;
+ font-weight:300;
+ text-align:center;
+ transition: all 0.2s;
+color: rgb(255, 255, 19);
+background-color: blue;
+
+    
+}
+
+    #poke-list{
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+  
+}

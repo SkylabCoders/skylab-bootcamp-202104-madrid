@@ -5,20 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poke List</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/color/452/pokeball-2.png"/>
     <link rel="stylesheet" href="list.css">
 </head>
 <body>
     <header>
-        <div>LOGO</div>
-        <a href="../detail/Detail.html">Dashboard</a>
+        <img id="logo" class="header__logo" src="https://1000marcas.net/wp-content/uploads/2020/01/Pok%C3%A9mon-Logo.png">
+        <a class="anchor__dashboard" href="../dashboard/dashboard.html">Dashboard</a>
 
     </header>
     <main>
-        <ul id="poke-list">
-            
-        </ul>
-        <button class="prev">Prev</button>
-        <button class="next">Next</button>
+        <div class="main__container">
+            <img class="button__prev" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png">
+            <ul id="poke-list">
+                
+            </ul>
+            <img class="button__next" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png">
+        </div>
+        <div class="main__pagination">
+            <span id="0" class="pages thisTimePage">1</span>
+            <span id="100" class="pages">2</span>
+            <span id="200" class="pages">3</span>
+            <span id="300" class="pages">4</span>
+            <span id="400" class="pages">5</span>
+            <span id="500" class="pages">6</span>
+            <span id="600" class="pages">7</span>
+            <span id="700" class="pages">8</span>
+            <span id="800" class="pages">9</span>
+            <span id="900" class="pages">10</span>
+            <span id="1000" class="pages">11</span>
+        </div>
     </main>
     <footer>
 

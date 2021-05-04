@@ -5,11 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poke Detail</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/color/452/pokeball-2.png"/>
+    <link rel="stylesheet" href="detail.css">
 </head>
 <body>
-    <a href="./../list/list.html">Lista</a>
-    <h1 class="poke-name"></h1>
-    <img id='poke-img'>
+    <header>
+        <img id="logo" class="header__logo" src="https://1000marcas.net/wp-content/uploads/2020/01/Pok%C3%A9mon-Logo.png">
+        <a class="anchor__list" href="./../list/list.html">Lista</a>
+    </header>
+    <main>
+        <h1 class="poke-name"></h1>
+        <div>
+            <img id='poke-img'>
+            <img id='poke-img-back'>
+        </div>
+    </main>
     <script src="../../services/pokemon.js"></script>
     <script src="./detail.js"></script>
     <script src="./detail-act.js"></script>

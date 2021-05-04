@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: heebo;
+}
+
+header {
+    background-color:  rgb(189, 52, 48);;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#logo {
+    height: 12rem;
+}
+
+.anchor__list {
+    background: white;
+    color: rgb(189, 52, 48);
+    border-radius: 15%;
+    height: 5rem;
+    width: 10rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.anchor__list:hover {
+    background: rgb(248, 203, 70);
+    color: rgb(61, 111, 177);
+
+}
+
+.dasboard__poke {
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem;
+    align-items: center;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: rgb(189, 52, 48);
+}

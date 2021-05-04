@@ -13,8 +13,8 @@
 <ul class="list">
   <li *ngFor="let tarea of tareas; let i = index">
     Tarea: {{ tarea.tarea}}, Responsable: {{tarea.responsable}}, Fecha: {{tarea.date}}, Estado: {{tarea.status}}
-    <button (click)="delete(i)">Borrar</button>
-    <button>Modificar</button>
+    <button class="remove" (click)="delete(i)">Borrar</button>
+    <button class="modify">Modificar</button>
   </li>
   
 </ul>

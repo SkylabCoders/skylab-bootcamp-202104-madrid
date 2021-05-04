@@ -1,20 +1,22 @@
-<h1>Lista de tareas para hacer</h1>
+<h1 class="header">Lista de tareas para hacer</h1>
 
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-  <input name="tarea" ngModel  #tarea="ngModel" placeholder="tarea">
-  <input name="responsable" ngModel #responsable="ngModel">
+<form class="form"#form="ngForm" (ngSubmit)="onSubmit(form)">
+  <input name="tarea" ngModel  #tarea="ngModel" placeholder="introduce la tarea">
+  <input name="responsable" ngModel #responsable="ngModel" placeholder="¿quién la hara?">
   <input type="date" name="date" ngModel #date="ngModel">
   <select name="status" ngModel #status="ngModel">
     <option *ngFor="let option of taskStatus" >{{option}}</option>
   </select>
-  <button>Submit</button>
+  <button>Añadir tarea</button>
 </form>
-
-<ul >
-  <li *ngFor="let tarea of tareas">{{ tarea.tarea}}, {{tarea.responsable}}, {{tarea.date}}, {{tarea.status}}</li>
-  <button (click)="delete(tarea)">Borrar</button>
-  <button>Modificar</button>
-  <button>Añadir</button>
+<h2 class="subHeader">Tu lista</h2>
+<ul class="list">
+  <li *ngFor="let tarea of tareas; let i = index">
+    Tarea: {{ tarea.tarea}}, Responsable: {{tarea.responsable}}, Fecha: {{tarea.date}}, Estado: {{tarea.status}}
+    <button (click)="delete(i)">Borrar</button>
+    <button>Modificar</button>
+  </li>
+  
 </ul>
 
 

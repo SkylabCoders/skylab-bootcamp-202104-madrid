@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form {
+    display: flex;
+    //justify-content: center;
+    //align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form > input{
+    display: flex;
+    
+    width: 25%;
+}
+
+.form > button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.subHeader {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

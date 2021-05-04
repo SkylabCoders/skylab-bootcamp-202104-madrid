@@ -8,9 +8,10 @@ import {NgForm} from '@angular/forms';
 })
 export class TaskComponent implements OnInit {
 
-task = [{tarea: 'ir a skylab', responsable: 'Willy', fecha:'martes', estado:"pendiente"}]
+
 tareas:any = []
 taskStatus = ["Pendiente", "Terminada", "Delego en Santi"]
+deleting = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -20,11 +21,12 @@ taskStatus = ["Pendiente", "Terminada", "Delego en Santi"]
     console.log(form.value)
     this.tareas = [form.value,...this.tareas]
     console.log(this.tareas)
-   
   }
 
-  delete(tarea:string){
-    
+  delete(index:number){
+    if(index > -1){
+      this.tareas.splice(index,1)
+    }
   }
 
 }

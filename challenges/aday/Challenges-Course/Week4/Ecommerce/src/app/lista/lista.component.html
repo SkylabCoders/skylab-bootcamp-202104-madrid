@@ -1,0 +1,62 @@
+<div>
+    <h1>Farmacia eCommerce</h1>
+    <form (ngSubmit)="onSubmit(shopForm)" #shopForm="ngForm">
+        <div class="form-group">
+            <label for="product">Producto</label>
+            <input type="text" class="form-control" id="product"
+                   required
+                   [(ngModel)]="model.product" name="product"
+                   #product="ngModel">
+            <div [hidden]="product.valid || product.pristine"
+                 class="alert alert-danger">
+              Producto es obligatorio
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price"
+                   required
+                   [(ngModel)]="model.price" name="price"
+                   #price="ngModel">
+            <div [hidden]="price.valid || price.pristine"
+                 class="alert alert-danger">
+              Precio es obligatorio
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="stock">Buy</label>
+            <select class="form-control" id="stock"
+                    required
+                    [(ngModel)]="model.stock" name="stock"
+                    #stock="ngModel">
+              <option *ngFor="let status of stockStatus" [value]="status">{{status}}</option>
+            </select>
+            <div [hidden]="stock.valid || stock.pristine" class="alert alert-danger">
+              Stock es obligatorio
+            </div>
+          </div>
+          <button type="submit">Añadir a la lista de deseos</button>
+    </form>
+    <h2>Lista de Deseos</h2>
+    <table> 
+        <thead>
+            <tr>
+                <th></th>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of shopList; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{item.product}}</td>
+                  <td>{{item.price}}</td>
+                  <td>{{item.stock}}</td>
+                  <button (click)="remove(i)" type="submit">Eliminar del carrito</button>
+                  <button (click)="goBuy(i)" type="submit">Añadir al carrito</button>
+              </tr>
+              <tbody></tbody>
+    </table>
+</div>
+<app-basket [basketList]="basketList"></app-basket>

@@ -40,5 +40,13 @@
      
     <h2>Api</h2>
     <button (click)="getData()">Api SW</button>
+    <button (click)="getUrl()">Cambiar URL</button>
+    <ul>
+      <li *ngFor="let item of dataApiSw">
+        Name: {{ item.name }}
+        Hair: {{ item.hair_color }}
+      
+      </li>
+    </ul>
   
       

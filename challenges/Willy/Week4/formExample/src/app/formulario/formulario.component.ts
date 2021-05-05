@@ -14,7 +14,7 @@ export class FormularioComponent implements OnInit {
 
   model = new Person(this.mainSrv.getName(), 'Skywalker', 19,); //asi se llama a los servicios
   url = 'https://swapi.dev/api/people';
-  
+  dataApiSw:any
   constructor(private mainSrv: MainService, private httpSrv: HttpService) { }
 
   onSubmit() { 
@@ -32,7 +32,16 @@ export class FormularioComponent implements OnInit {
   }
 
   getData(){
-    this.httpSrv.getData(this.url).then(res => console.log(res))
+    this.httpSrv.getData(this.url).then((res:any) => 
+    {this.dataApiSw = res['results'];
+    });
+  
   }
+getUrl(){
+  const newUrl = prompt('introduce una nueva url');
+  if (newUrl){
+    this.url = newUrl;
+  }
+}
 
 }

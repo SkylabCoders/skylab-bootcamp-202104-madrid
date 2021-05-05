@@ -1,0 +1,23 @@
+<div *ngIf="heroe && heroCopy">
+    <h1>DATOS DEL SUPERHÉROE SELECCIONADO</h1>
+    <div>NOMBRE: {{heroe.name}} </div>
+    <div>ID: {{heroe.id}} </div>
+    <div>SUPERPODER: {{heroe.superPower}}</div>
+    <div>
+        <img src={{heroe.urlImg}} alt="">
+    </div>
+    <h2>MODIFICAR HEROE</h2>
+    <label>NAME:
+        <input type="text" [(ngModel)]='heroCopy.name'>
+    </label>
+    <label>ID:
+        <input type="text" [(ngModel)]='heroCopy.id'>
+    </label>
+    <label>SUPERPOWER:
+        <input type="text" [(ngModel)]='heroCopy.superPower'>
+    </label>
+    <label>IMAGEN:
+        <input type="url" [(ngModel)]='heroCopy.urlImg'>
+    </label>
+    <button (click)='modifyHero()'>MODIFICAR HÉROE Y PASARLO AL PADRE</button>
+</div>

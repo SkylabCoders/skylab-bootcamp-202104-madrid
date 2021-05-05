@@ -11,7 +11,7 @@ export class TaskComponent implements OnInit {
 
 tareas:any = []
 taskStatus = ["Pendiente", "Terminada", "Delego en Santi"]
-deleting = true;
+
   constructor() { }
 
   ngOnInit(): void {

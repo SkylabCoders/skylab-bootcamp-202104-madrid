@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke List</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/color/452/pokeball-2.png"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <header>
+        <div class="header__logo">
+            <img src="https://1000marcas.net/wp-content/uploads/2020/01/Pok%C3%A9mon-Logo.png" alt="Poke-logo" id="logo">
+        </div>
+        <div class="header__previous">
+        <img src="../../services/Pokebola-pokeball-png-0.png" class="button__prev" alt="Button previous"/>
+        </div> 
+        <div class="main__pagination">
+            <span id="0" class="pages thisTimePage">1</span>
+            <span id="100" class="pages">2</span>
+            <span id="200" class="pages">3</span>
+            <span id="300" class="pages">4</span>
+            <span id="400" class="pages">5</span>
+            <span id="500" class="pages">6</span>
+            <span id="600" class="pages">7</span>
+            <span id="700" class="pages">8</span>
+            <span id="800" class="pages">9</span>
+            <span id="900" class="pages">10</span>
+            <span id="1000" class="pages">11</span>
+        </div>
+        <div class="header__next">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" class="button__next" alt="button Next">
+        </div>
+        <a class="anchor__dashboard" href="../dashboard/dashboard.html">Dashboard</a>
+    </header>
+    <main>
+        <div class="main__container">
+            <ul id="poke-list">
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fd604b62-1d02-46e8-8c44-01717e9e6342/de9f25p-355c5e17-d69d-4b6e-91de-a04296bca78f.png/v1/fill/w_1280,h_720,strp/ash_ketchum_png_by_timepetals_de9f25p-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MjAiLCJwYXRoIjoiXC9mXC9mZDYwNGI2Mi0xZDAyLTQ2ZTgtOGM0NC0wMTcxN2U5ZTYzNDJcL2RlOWYyNXAtMzU1YzVlMTctZDY5ZC00YjZlLTkxZGUtYTA0Mjk2YmNhNzhmLnBuZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.a2r6fu55Ky3Q9JzurCVbcWBkJWi6V-b1T4ECObfewH0" alt="footer image">
+        <h2 id="footer__h2">ALL RIGHTS RESERVED POKEMON ®</h2>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fd604b62-1d02-46e8-8c44-01717e9e6342/de9f2j7-5ce84dbc-00c9-40e0-a099-81419e545b13.png/v1/fill/w_300,h_169,strp/ash_ketchum_png_by_timepetals_de9f2j7-200h.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MjAiLCJwYXRoIjoiXC9mXC9mZDYwNGI2Mi0xZDAyLTQ2ZTgtOGM0NC0wMTcxN2U5ZTYzNDJcL2RlOWYyajctNWNlODRkYmMtMDBjOS00MGUwLWEwOTktODE0MTllNTQ1YjEzLnBuZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.3Ql4nr4Sm9IxYidTTllPqOYkqacE9nFybUL5aUi7R2g" alt="footer image">
+    </footer>
+    <script src="../../services/pokemon.js"></script>
+    <script src="./list.js"></script>
+    <script src="list-act.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-/*
 
 const { getPokemon } = require("../../services/pokemon");
 
@@ -17,19 +16,9 @@ class Detail {
     drawImg () {
         const parent = document.getElementById('pokemon__container');
         const child = document.createElement('img');
-        child.src = this.pokemon.sprites.shiny.front_default;
+        child.src = this.pokemon.sprites.front_default;
         parent.appendChild(child)
     }
 }
 
-getPokemon(url).then((res) =>{
-    detailPage = new Detail()
-})
-
-function init (){
-    detailPage;
-    getPokemon(url).then((pokemon) =>
-    detailPage = new Detail();
-
-}
-*/
+module.exports = Detail

@@ -7,16 +7,21 @@
     <title>Poke Detail</title>
     <link rel="stylesheet" href="details.css">
     <link rel="icon" href="../../services/Poké_Ball_icon.svg.png" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <header>
-        <div id="header__title">Pokémon by Willy</div>
-            <div>
-                <audio id="title__header--button" controls autoplay src="../../services/pkm_theme.mp3"></audio>
+    <header class="header-container">
+        <h1 id="header__title">Pokémon by Willy</h1>
+            <div class="header__container-audio">
+                <audio  class="header__audio" controls src="../../services/pkmIberia.mp3"></audio>
             </div>
     </header>
-    <a href="../list/list.html">Lista</a>
-    <div id="pokemon__container"></div>
+    <div class="main__anchor">
+        <a href="../list/list.html">Lista</a>
+        <a href="../dashboard/dashboard.html">Dashboard</a>    
+    </div>
+    <div class="main-pokemon__container"></div>
+        <div class="main-pokemon__container__picture"></div>
     <script src="../../services/pokemon.js"></script>
     <script src="./detail.js"></script>
 </body>

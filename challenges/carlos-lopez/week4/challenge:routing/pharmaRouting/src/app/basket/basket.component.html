@@ -5,3 +5,6 @@
         <li *ngFor="let item of this.srv.basket">{{item.name}} <button (click)="removeFromBasket(item)">DELETE</button></li>
     </ul>
 </div>
+<div *ngIf='this.srv.total'>
+    <h4>TOTAL: {{this.srv.total}} €</h4>
+</div>

@@ -1,7 +1,27 @@
-<h1>LIST PRODUCTS</h1>
+<h1>AÑADE NUEVOS PRODUCTOS A LA LISTA</h1>
+<form (ngSubmit)= "onSubmit()" #productForm="ngForm">
+    <div class="form-group">
+        <label for="name">Nombre del producto</label>
+        <input type="text" class="form-control" id="name"
+    
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="price">Precio</label>
+        <input type="number" class="form-control" id="price"
+               [(ngModel)]="model.price" name="price"
+               #price="ngModel">
+    </div>
+    <br />
+    <button type="submit">SUBMIT</button>
+    <br />
+</form>
 
+<h1>LIST PRODUCTS</h1>
 <div>
     <ul>
-        <li *ngFor= "let item of products"> Name: {{item.name}} : {{item.price}} <button (click)="addToBuy(item)">ADD</button></li>
+        <li *ngFor= "let item of this.srv.products"> <h2>{{item.name}} : {{item.price}} €</h2><button (click)="addToBuy(item)">ADD</button></li>
     </ul>
 </div>

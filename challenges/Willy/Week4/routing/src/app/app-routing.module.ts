@@ -8,7 +8,8 @@ const routes: Routes = [
 
   {path:'details', component:DetailsComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'list', component:ListComponent}
+  {path:'list', component:ListComponent},
+  {path:'', component:DashboardComponent} // esto hace el componente principal de la pagina
 
 ];
 

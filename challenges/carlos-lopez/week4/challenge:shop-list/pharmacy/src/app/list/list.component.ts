@@ -15,12 +15,14 @@ export class ListComponent implements OnInit {
   model = {name:"", price: 0, inTheBasket:false};
   
   @Output() productAdded = new EventEmitter<any>();
-  constructor(private srv:MainService) { }
+  constructor(public srv:MainService) { }
   ngOnInit(): void {
   }
   addToTheBasket(item:any){
     this.productAdded.emit(item)
     console.log(item);
+    this.srv.product = item;
+    console.log(this.srv.product)
   }
   onSubmit(){
     let newModel = {...this.model};

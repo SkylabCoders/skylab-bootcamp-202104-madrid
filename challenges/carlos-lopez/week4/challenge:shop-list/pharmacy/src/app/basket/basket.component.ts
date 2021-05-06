@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MainService } from '../services/main.service';
 
 @Component({
   selector: 'app-basket',
@@ -10,7 +11,8 @@ export class BasketComponent implements OnInit {
   basket = [{name:'', price:0}];
   newProduct = {name:'', price:0}
   total = 0;
-  constructor() { }
+  value:any;
+  constructor(public srv:MainService) { }
   ngOnInit(): void {
   }
   getNewproduct(evt:any){
@@ -23,6 +25,9 @@ export class BasketComponent implements OnInit {
       this.basket.pop();
     }
     this.basket.push(newBla);
+  }
+  getValueFromService(){
+    this.value = this.srv.product;
   }
   removeFromBasket(selectedProduct:any){
     console.log(this.basket);

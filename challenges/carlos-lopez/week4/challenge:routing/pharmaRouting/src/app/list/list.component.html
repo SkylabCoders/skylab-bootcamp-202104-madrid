@@ -1,1 +1,7 @@
 <h1>LIST PRODUCTS</h1>
+
+<div>
+    <ul>
+        <li *ngFor= "let item of products"> Name: {{item.name}} : {{item.price}} <button (click)="addToBuy(item)">ADD</button></li>
+    </ul>
+</div>

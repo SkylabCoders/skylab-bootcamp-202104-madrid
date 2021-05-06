@@ -1,1 +1,7 @@
 <h1>YOUR BASKET</h1>
+
+<div *ngIf="this.srv.basket.length > 0">
+    <ul>
+        <li *ngFor="let item of this.srv.basket">{{item.name}} <button (click)="removeFromBasket(item)">DELETE</button></li>
+    </ul>
+</div>

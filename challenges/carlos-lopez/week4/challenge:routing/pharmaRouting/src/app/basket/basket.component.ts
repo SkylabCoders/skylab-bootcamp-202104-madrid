@@ -7,11 +7,15 @@ import { ComunicationService } from '../services/comunication.service';
   styleUrls: ['./basket.component.css']
 })
 export class BasketComponent implements OnInit {
-
-  constructor(private srv:ComunicationService) { }
+  constructor(public srv:ComunicationService) { }
 
   ngOnInit(): void {
-    
   }
-
-}
+  removeFromBasket(item:any){
+    for(let i = 0; i < this.srv.basket.length; i++){
+      if(item.name === this.srv.basket[i].name){
+        this.srv.basket.splice(i, 1);
+      };
+    };
+  };
+};

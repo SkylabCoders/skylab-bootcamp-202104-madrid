@@ -1,0 +1,12 @@
+@import "./style_form.scss";
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main__div--post{
+    display: flex;
+    border: solid 1px black;
+}

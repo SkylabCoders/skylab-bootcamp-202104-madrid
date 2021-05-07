@@ -1,0 +1,19 @@
+<div>BASKET</div>
+<div *ngIf='show'>
+    <ul>
+        <li *ngFor="let selectedProduct of basket"><h1>{{selectedProduct.name}}</h1>  <h3>{{selectedProduct.price}} €</h3>
+            <button (click)="removeFromBasket(selectedProduct)">DELETE</button>
+        </li> 
+    </ul> 
+</div>
+<div>
+    TOTAL COMPRA: 
+    <div>
+        <h3>{{total}} €</h3>
+    </div>
+</div>
+<div *ngIf="srv.product">
+    {{srv.product.name}}
+</div>
+<app-list (productAdded)="getNewproduct($event)"></app-list>
+

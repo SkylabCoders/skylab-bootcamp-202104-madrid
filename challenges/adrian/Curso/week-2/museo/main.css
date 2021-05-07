@@ -1,0 +1,23 @@
+.main__form {
+  background-color: #a6a6ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main__div--post {
+  display: flex;
+  border: solid 1px black;
+}
+
+/*# sourceMappingURL=main.css.map */

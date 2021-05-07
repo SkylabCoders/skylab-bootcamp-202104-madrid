@@ -1,0 +1,29 @@
+<label > 
+    NEW TASK:
+    <input type="text" [(ngModel)]="newT">
+</label>
+<label > 
+    WHOSE:
+    <input type="text" [(ngModel)]="newWhose">
+</label>
+<label > 
+    DEADLINE:
+    <input type="text" [(ngModel)]="newDeadline">
+</label>
+<label > 
+    STATUS:
+    <input type="text" [(ngModel)]="newStatus">
+</label>
+<ul *ngIf='show' class="lista" >
+    <li *ngFor = "let toDo of list" (click)="getListDetails(toDo)">
+        {{toDo.task}}
+    </li>
+</ul>
+<button (click)="toggleList()">{{ textToShow }}</button>
+<div>
+    <span>Task: {{taskName}}</span>
+</div>
+<div>
+    <button (click)="addTask()">Add
+    </button> 
+</div>

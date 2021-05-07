@@ -1,0 +1,25 @@
+main{
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+h1{
+    color: black;
+    text-align: center;
+}
+
+img{
+    height: 200px;
+}
+
+p{
+    color: black;
+}
+
+.poke-details{
+    display: flex;
+}
+

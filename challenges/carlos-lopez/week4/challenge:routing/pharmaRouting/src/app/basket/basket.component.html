@@ -1,8 +1,8 @@
 <h1>YOUR BASKET</h1>
 
-<div *ngIf="this.srv.basket.length > 0">
+<div *ngIf="this.srv.basketBackUp.length > 0">
     <ul>
-        <li *ngFor="let item of this.srv.basket">{{item.name}} <button (click)="removeFromBasket(item)">DELETE</button></li>
+        <li *ngFor="let item of this.srv.basketBackUp">{{item.name}} <button (click)="removeFromBasket(item)">DELETE</button></li>
     </ul>
 </div>
 <div *ngIf='this.srv.total'>

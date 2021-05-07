@@ -10,13 +10,14 @@ export class BasketComponent implements OnInit {
   constructor(public srv:ComunicationService) { }
 
   ngOnInit(): void {
+   
   }
   removeFromBasket(item:any){
-    for(let i = 0; i < this.srv.basket.length; i++){
-      if(item.name === this.srv.basket[i].name){
-        this.srv.basket[i].inTheBasket = false;
-        this.srv.total = this.srv.total - this.srv.basket[i].price;
-        this.srv.basket.splice(i, 1);
+    for(let i = 0; i < this.srv.basketBackUp.length; i++){
+      if(item.name === this.srv.basketBackUp[i].name){
+        this.srv.basketBackUp[i].inTheBasket = false;
+        this.srv.total = this.srv.total - this.srv.basketBackUp[i].price;
+        this.srv.basketBackUp.splice(i, 1);
       };
     };
   };

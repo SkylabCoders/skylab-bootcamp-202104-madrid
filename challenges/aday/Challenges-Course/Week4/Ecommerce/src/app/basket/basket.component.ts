@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IshopList } from '../models/interface';
+import {EcommerceService} from '../service/ecommerce.service';
 
 @Component({
   selector: 'app-basket',
@@ -8,10 +9,10 @@ import { IshopList } from '../models/interface';
 })
 export class BasketComponent implements OnInit {
 
-  @Output() totalPrice = new EventEmitter<number>();
-  @Input() basketList: IshopList[] = [];
+  // @Output() totalPrice = new EventEmitter<number>();
+  // @Input() basketList: IshopList[] = [];
 
-  constructor() { }
+  constructor(public srv:EcommerceService) { }
 
   ngOnInit(): void {
   }

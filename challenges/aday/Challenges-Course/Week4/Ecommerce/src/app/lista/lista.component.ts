@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IshopList } from '../models/interface';
-import { NgForm } from '@angular/forms'
+import { NgForm } from '@angular/forms';
+import {EcommerceService} from '../service/ecommerce.service';
 
 @Component({
   selector: 'app-lista',
@@ -10,20 +11,23 @@ import { NgForm } from '@angular/forms'
 export class ListaComponent implements OnInit {
   
   stockStatus = [true, false]
+
+  show = false;
   
   shopList: IshopList[] = []
 
-  basketList: IshopList[] = []
+  // basketList: IshopList[] = []
 
   model = {product: 'crema', price: 25, stock: true}
 
-  constructor() { }
+  constructor(private srv:EcommerceService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(shopForm: NgForm){
     this.shopList = [shopForm.value, ...this.shopList];
+    this.show = true;
     console.log(this.shopList);
   }
 
@@ -34,7 +38,7 @@ export class ListaComponent implements OnInit {
   }
 
   goBuy(index: number){
-    this.basketList.push(this.shopList[index]);
-    console.log(this.basketList);
+    this.srv.basketList.push(this.shopList[index]);
+    console.log(this.srv.basketList);
   }
 }

@@ -37,7 +37,7 @@
           </div>
           <button type="submit">Añadir a la lista de deseos</button>
     </form>
-    <h2>Lista de Deseos</h2>
+    <h2 *ngIf="show">Lista de Deseos</h2>
     <table> 
         <thead>
             <tr>
@@ -59,4 +59,8 @@
               <tbody></tbody>
     </table>
 </div>
-<app-basket [basketList]="basketList"></app-basket>
+<app-basket></app-basket>
+
+
+<!-- <app-basket [basketList]="basketList"></app-basket> -->
+<!-- Para hacerlo a través de input -->

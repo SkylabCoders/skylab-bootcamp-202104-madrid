@@ -1,0 +1,51 @@
+@import "./variables.scss";
+
+.main__banner-list{
+    
+    width: 100%;
+    ul{
+        width: 97%;
+        margin: 0;
+        margin-top: 5%;
+        padding-right:0;
+        padding-left: 1%;
+        background-color: $backgroundGeneral;
+        padding-bottom: 4%;
+        a{
+            max-width: 253.8px;
+            max-height: 170.77px;
+        }
+        img{
+            border: solild 4px transparent;
+            max-width: 253.8px;
+            margin: auto;
+        }
+        img:hover{
+            border: solid 4px $yellowHover;
+        }
+    }
+}
+
+/*
+MEDIA QUERYS
+*/
+
+@media  screen and(max-width: 1320px){
+    .main__banner-list{
+        width: auto;
+        a{
+            margin: 5px;
+        }
+        ul{
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            justify-content: flex-start;
+        }   
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

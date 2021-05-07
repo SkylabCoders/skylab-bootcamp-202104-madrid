@@ -9,8 +9,13 @@ class DetailPage {
     pokemonData.innerText = `\tName: ${this.pokemon.name} \n\tHeight: ${this.pokemon.height} \n\tWeight: ${this.pokemon.weight}`;
     container.appendChild(pokemonData);
   }
-}
 
-// const detailsPage = new detailsPage(pokemon);
+  drawPicture() {
+    const [container] = document.getElementsByClassName('body__main-container');
+    const imagen = document.createElement('img');
+    imagen.src = this.pokemon.sprites.front_default;
+    container.appendChild(imagen);
+  }
+}
 
 module.exports = DetailPage;

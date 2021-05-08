@@ -7,7 +7,7 @@ import { getLocaleDateFormat } from '@angular/common';
 })
 export class HttpService {
 
-  constructor(private http:HttpClient) { }
+  constructor(public http:HttpClient) { }
   
   getData(url:string):any{
     return this.http.get(url) 

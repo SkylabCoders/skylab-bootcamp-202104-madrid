@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PokemonComponent} from './pokemon/pokemon.component';
-import {StarWarsComponent} from './star-wars/star-wars.component';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { StarWarsComponent } from './star-wars/star-wars.component';
+
 
 const routes: Routes = [
-  {path:'pokemon', component:PokemonComponent },
-  {path:'starwars', component:StarWarsComponent},
-  {path:'', component:PokemonComponent}
+  {
+    path: 'pokemon',
+    loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule)
+  },
+  {
+    path: 'starwars',
+    component:StarWarsComponent
+  }
+  
 ];
 
 @NgModule({

@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {PokemonComponent} from './pokemon/pokemon.component'
-import { StarWarsComponent } from './star-wars/star-wars.component';
-import {HttpClientModule} from '@angular/common/http';
+import { SwCharactersComponent } from './sw-characters/sw-characters.component';
+import { SwStarshipsComponent } from './sw-starships/sw-starships.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StarWarsComponent,
-    PokemonComponent
+    SwCharactersComponent,
+    SwStarshipsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    CommonModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

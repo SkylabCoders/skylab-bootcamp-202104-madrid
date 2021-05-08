@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService} from '../services/http.service'
 
+
 @Component({
   selector: 'app-star-wars',
   templateUrl: './star-wars.component.html',
@@ -8,18 +9,20 @@ import { HttpService} from '../services/http.service'
 })
 export class StarWarsComponent implements OnInit {
 
-  starUrl = 'https://swapi.dev/api/starships'
+  starUrl = 'https://swapi.dev/api/planets/'
 
   starWarsList:any[] = [];
 
 
 
-  constructor(private http:HttpService) { }
+  constructor(public http:HttpService) { }
 
   ngOnInit(): void {
+   
     this.http.getData(this.starUrl).subscribe((res:any)=>{
-      this.starWarsList = res['results']
-    })
+       this.starWarsList = res['results']
+     })
   }
+
 
 }

@@ -1,0 +1,5 @@
+<h2>Tu carrito de la desesperacion</h2>
+    <ul *ngIf="srv.basketList">
+        <li *ngFor="let item of srv.basketList">{{ item.product }}, {{ item.price }}€</li>
+    </ul>
+

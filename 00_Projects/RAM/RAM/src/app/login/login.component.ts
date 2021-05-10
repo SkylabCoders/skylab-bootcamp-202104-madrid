@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { User } from '../services/mocking/user'
 
 @Component({
   selector: 'app-login',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  model = new User(' ', ' ');
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
+  onSubmit () {
+    console.log(this.model)
+  }
 }

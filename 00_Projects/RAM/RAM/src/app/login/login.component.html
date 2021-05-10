@@ -1,1 +1,15 @@
-<p>login works!</p>
+<form (ngSubmit)= "onSubmit()" #personForm="ngForm">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username"
+             [(ngModel)]="model.username" name="username"
+             #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="surname">password</label>
+      <input type="password" class="form-control" id="password"
+             [(ngModel)]="model.password" name="password"
+             #password="ngModel">
+    </div>
+  <button>Log in</button>
+</form>

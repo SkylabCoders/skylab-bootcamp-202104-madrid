@@ -1,6 +1,6 @@
 export interface RickMock {
-    id:number 
+    id:number
     name:string,
-    status:string, 
+    status:string,
     species:string
 }

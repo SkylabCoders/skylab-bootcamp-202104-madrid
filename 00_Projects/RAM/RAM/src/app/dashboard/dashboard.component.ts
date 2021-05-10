@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {StorageService} from '../services/storage.service'
-import {LoginService} from '../services/login.service'
-import {HttpService} from '../services/http.service'
+import { Component, OnInit } from '@angular/core'
+import { StorageService } from '../services/storage.service'
+import { LoginService } from '../services/login.service'
+import { HttpService } from '../services/http.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -9,12 +9,10 @@ import {HttpService} from '../services/http.service'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService){
+  constructor (public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService) {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
-
 }

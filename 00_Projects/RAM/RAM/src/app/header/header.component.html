@@ -1,14 +1,15 @@
 <header>
-    <div class="header__logo">Logo</div>
+    <div class="header__logo"><img class="header-logo__img" src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt=""> </div>
     <div class="header__anchors">
-        <a class="header__anchor--dashboard" routerLink="./dashboard"><i class="fas fa-home">blabla</i></a>
-        <a class="header__anchor--list" routerLink="./list"><i class="fas fa-list-ul"></i></a>
-        <a class="header__anchor--favourites" routerLink="./favorites"><i class="far fa-star"></i></a>
+        <a class="header__anchor--dashboard" routerLink="./dashboard"><i class="fas fa-home"></i><span class="header__anchor--text">Dashboard</span></a>
+        <a class="header__anchor--list" routerLink="./list"><i class="fas fa-list-ul"></i><span class="header__anchor--text" >List</span></a>
+        <a class="header__anchor--favourites" routerLink="./favorites"><i class="far fa-star"></i><span class="header__anchor--text">Favourites</span></a>
     </div>
     <div class="header__search">
-        busqueda
+        <div class="header-search__container"><i class="fas fa-search"></i><input class="search__input" type="text"></div>
     </div>
     <div class="header__logIn">
         <i class="fas fa-user"></i>
+        <span class="header__anchor--text">Log in</span>
     </div>
 </header>

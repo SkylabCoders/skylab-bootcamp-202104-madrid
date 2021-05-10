@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService){
 
   }
-
+ 
   ngOnInit(): void {
     const obs$ = this.srvHttp.getAPI(this.url).subscribe((res:any) => {
       this.ram = res.results;

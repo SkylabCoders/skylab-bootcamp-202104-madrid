@@ -1,0 +1,18 @@
+// FONT
+@font-face {
+    font-family:'Pokemon-Solid' ;
+    src: url('../../../fonts/Pokemon-Solid.ttf');
+}
+$main-font: "Roboto", sans-serif;
+
+// TEXT COLORS
+$brand-100: hsl(56, 97%, 52%);
+$brand-200: hsl(218, 50%, 44%);
+$brand-300: hsl(1, 83%, 63%);
+$brand-button: hsl(197, 68%, 52%);
+$subtitle: hsl(0, 0%, 19%);
+$span-bg: hsl(25, 98%, 57%);
+$details-bg: hsl(197, 68%, 52%);
+$white: white;
+
+

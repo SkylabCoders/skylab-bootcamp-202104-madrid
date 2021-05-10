@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {StorageService} from '../services/storage.service'
-import {LoginService} from '../services/login.service'
-import {HttpService} from '../services/http.service'
+import { Component, OnInit } from '@angular/core'
+import { StorageService } from '../services/storage.service'
+import { LoginService } from '../services/login.service'
+import { HttpService } from '../services/http.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +24,10 @@ export class DashboardComponent implements OnInit {
       console.log(this.rem);
       obs$.unsubscribe();
     })
+  constructor (public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService) {
+
   }
 
+  ngOnInit (): void {
+  }
 }

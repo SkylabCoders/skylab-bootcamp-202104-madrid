@@ -1,0 +1,41 @@
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(27, 37, 48);
+    color: rgb(196, 196, 196);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8%;
+    align-items: center;
+    font-family: 'Rock Salt';
+}
+
+a{
+    text-decoration: none;
+    color: rgb(196, 196, 196);
+}
+
+.header__logo{
+    display: none;
+}
+
+.header__anchors {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.header__search {
+    display: none;
+}
+
+.header__logIn{
+   display: flex;
+   width: 25%;
+   justify-content: center;
+}
+

@@ -10,12 +10,20 @@ import {HttpService} from '../services/http.service'
 })
 export class ListComponent implements OnInit {
 
+  url = 'https://rickandmortyapi.com/api/character';
+
+  ram: any[] = [];
 
   constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService){
 
   }
 
   ngOnInit(): void {
+    const obs$ = this.srvHttp.getAPI(this.url).subscribe((res:any) => {
+      this.ram = res.results;
+      console.log(this.ram);
+      obs$.unsubscribe();
+    })
   }
 
 }

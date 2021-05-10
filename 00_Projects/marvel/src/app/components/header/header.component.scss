@@ -1,0 +1,107 @@
+.nav-bar{
+    height: 65px;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(32, 32, 32, 1);
+    width: 360,07px;
+    height: 62,71px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px;
+
+    &__logo{
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    &__marvel-icon{
+        width: 65%;
+        
+    }
+
+    &__anchors{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__link{
+        text-decoration: none;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: x-small;
+        display: flex;
+        flex-direction: column-reverse;
+        color: white;
+    }
+    
+    &__icon{
+        font-size: x-large;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .nav-bar{
+        height: 65px;
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgba(32, 32, 32, 1);
+        width: 1439,36px;
+        height: 169,13px;
+        width: 100%;
+        border-radius: 0;
+        
+        position: relative;
+        
+        &__logo{
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        &__marvel-icon{
+            width: 80%;
+            
+        }
+    
+        &__anchors{
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        &__link{
+            text-decoration: none;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: large;
+            display: flex;
+            flex-direction: column-reverse;
+            color: white;
+            &:hover{
+                color: yellow;
+            }
+        }
+        
+        &__icon{
+            display: none;
+            font-size: x-large;
+        }
+    }
+}
+  
+
+
+
+
+
+

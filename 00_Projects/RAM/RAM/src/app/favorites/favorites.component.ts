@@ -10,9 +10,7 @@ import {HttpService} from '../services/http.service'
 })
 export class FavoritesComponent implements OnInit {
 
-  
   constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService){
-
   }
 
   ngOnInit(): void {

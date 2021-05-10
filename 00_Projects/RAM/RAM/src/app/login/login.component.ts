@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { User } from '../services/mocking/user'
+import { LoginService } from '../services/login.service'
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  model = new User(' ', ' ');
+  // eslint-disable-next-line no-useless-constructor
+  constructor (public srvLogin:LoginService) {}
+  ngOnInit (): void {
   }
 
+  onSubmit () {
+    this.srvLogin.currentUser = this.model
+    console.log(this.srvLogin.currentUser)
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { User } from '../services/mocking/user'
+import { LoginService } from '../services/login.service'
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,13 @@ import { User } from '../services/mocking/user'
 })
 export class LoginComponent implements OnInit {
   model = new User(' ', ' ');
-
+  // eslint-disable-next-line no-useless-constructor
+  constructor (public srvLogin:LoginService) {}
   ngOnInit (): void {
   }
 
   onSubmit () {
-    console.log(this.model)
+    this.srvLogin.currentUser = this.model
+    console.log(this.srvLogin.currentUser)
   }
 }

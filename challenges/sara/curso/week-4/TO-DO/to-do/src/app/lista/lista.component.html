@@ -1,0 +1,15 @@
+<button (click)="addMore()">DO YOU NEED TO ADD MORE?</button>
+<div *ngIf='wantsToAdd'>
+    <label>
+        WHAT IS NEW TASK?
+        <input type="text" [(ngModel)]="newToDo" >
+    </label>
+    <label>
+        WHO IS GONNA DO IT?
+        <input type="text" [(ngModel)]="newWho">
+    </label>
+    <button (click)='addNew()'>ADD</button>
+</div>
+<ul>
+    <li *ngFor= 'let toDo of toDoList' class='list' > - {{toDo.task}} </li>
+</ul>

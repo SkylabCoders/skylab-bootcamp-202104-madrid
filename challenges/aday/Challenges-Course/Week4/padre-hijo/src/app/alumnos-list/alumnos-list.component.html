@@ -1,0 +1,11 @@
+<ol>
+    <li *ngFor="let item of list" (click)="storeAlumno(item)">{{item.name}}</li>
+</ol>
+
+<button (click)="toggleRender()">DESTRUIR COMPONENTE</button>
+
+<app-alumno-details 
+*ngIf="alumno && mustRender" 
+[alumno]="alumno" 
+(nota)="getNota($event)"></app-alumno-details>
+<h1>LA CALIFICACIÓN DEL ALUMNO ES: {{nota}}</h1>

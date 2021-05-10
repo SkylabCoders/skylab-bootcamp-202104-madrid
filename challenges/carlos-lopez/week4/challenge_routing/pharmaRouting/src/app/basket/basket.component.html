@@ -1,0 +1,10 @@
+<h1>YOUR BASKET</h1>
+
+<div *ngIf="this.srv.basketBackUp.length > 0">
+    <ul>
+        <li *ngFor="let item of this.srv.basketBackUp">{{item.name}} <button (click)="removeFromBasket(item)">DELETE</button></li>
+    </ul>
+</div>
+<div *ngIf='this.srv.total'>
+    <h4>TOTAL: {{this.srv.total.toFixed(2)}} €</h4>
+</div>

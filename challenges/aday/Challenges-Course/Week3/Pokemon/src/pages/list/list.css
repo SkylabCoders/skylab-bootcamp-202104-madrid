@@ -1,0 +1,85 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+@font-face {font-family: "Pokemon"; src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot"); src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg"); }
+
+body {
+    background-color: rgb(237,70,54);
+    color: rgb(55,92,170);;
+    font-family: "Pokemon";
+    text-shadow: 5px 5px rgb(250,204,51);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+#logo {
+    width: 500px;
+    margin-top: auto;
+}
+
+#botonera {
+    display: flex;
+    justify-content: space-between;
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: rgb(55,92,170);
+    border: 1.5px solid rgb(250,204,51);
+    font-size: 30px;
+    width: 100px;
+    border-radius: 25px;
+    text-shadow: 5px 5px  rgb(250,204,51);
+    box-shadow: 2.5px 2.5px rgb(250,204,51);
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  #top-poke {
+    text-decoration: none;
+    text-shadow: 5px 5px rgb(55,92,170);
+    color: rgb(250,204,51);
+    padding: 25px;
+    font-size: 35px;
+    border-radius: 25px;
+  }
+
+  #top-poke:hover {
+    background-color: rgb(55,92,170);
+    text-shadow: 5px 5px rgb(237,70,54);
+    transition-duration: 0.8s; 
+  }
+
+#poke-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.foto > a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: rgb(237,70,54);
+    color: rgb(250,204,51);
+    text-shadow: 5px 5px rgb(55,92,170);
+    padding: 25px;
+    font-size: 25px;
+    border-radius: 25px;
+}
+
+.foto > a:hover {
+    background-color: rgb(55,92,170);
+    text-shadow: 5px 5px rgb(237,70,54);
+    transition-duration: 0.8s;
+}

@@ -1,0 +1,13 @@
+body {
+  background-color: RGB(254, 215, 24);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/*# sourceMappingURL=dashboard.css.map */

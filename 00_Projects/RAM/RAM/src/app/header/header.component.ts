@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { MainService } from '../services/main.service'
+import { MainService } from '../services/main.service';
+import { User } from '../services/mocking/user'
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,8 @@ export class HeaderComponent implements OnInit {
   listTag = 'List';
   favoriteTag = 'Favourites';
   logIn = 'LogIn'
+  showLogIn = false;
+  model = new User('', '');
   searchInput = ''
   ram:any
   
@@ -30,4 +33,13 @@ export class HeaderComponent implements OnInit {
       console.log('no esta')
     })
   }
+  openLogIn(){
+    this.showLogIn = !this.showLogIn
+  }
+  onSubmit () {
+    this.srvMain.currentUser = this.model
+    console.log(this.srvMain.currentUser);
+    this.showLogIn = false;
+  }
+
 }

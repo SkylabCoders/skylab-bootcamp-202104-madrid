@@ -1,10 +1,12 @@
+@import '../../../variables.scss';
+
 .nav-bar{
     z-index: 3500;
     height: 65px;
     color: white;
     display: flex;
     justify-content: space-evenly;
-    background-color: rgba(32, 32, 32, 1);
+    background-color: $negroHeader;
     width: 360,07px;
     height: 62,71px;
     position: fixed;
@@ -89,7 +91,7 @@
             flex-direction: column-reverse;
             color: white;
             &:hover{
-                color: yellow;
+                color: $amarilloMarvel;
             }
         }
         

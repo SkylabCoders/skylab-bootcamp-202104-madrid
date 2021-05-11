@@ -47,6 +47,76 @@ a{
    justify-content: center;
 }
 
+/* 
+STYLE FOR LOG IN MODAL
+*/
+
+form{
+    margin-top: 2rem;
+}
+
+button{
+    width: 17.5rem;
+    margin-left: 12rem;
+    margin-top: 1rem;
+}
+
+.formlogin{
+   position: absolute;
+   width: 100vw;
+   height: 193vh;
+   background-color: white;
+}
+.formlogin__div--form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    background-color: rgb(60, 62, 68);
+    border-top-left-radius: 54px;
+    border-top-right-radius: 54px;
+    // border-radius: 54px;
+    height: 30rem;
+}
+
+#imglogin{
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: -1.3rem;
+}
+button{
+    background-color: rgb(230,160,78);
+}
+.formlogin__span{
+    display: flex;
+    flex-direction: column;
+    color: rgb(230,160,78);
+}
+.form__group--username{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.form__group--password{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.form__group--buttons{
+    display: flex;
+    flex-direction: column;
+}
+#login--anchor{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
 
 @media only screen and (min-width: 800px) {
     header {
@@ -147,3 +217,65 @@ a{
     }
 
 }
+
+/* 
+STYLE FOR LOG IN MODAL
+*/
+// form{
+//     margin-top: 2rem;
+// }
+
+// button{
+//     width: 17.5rem;
+//     margin-left: 12rem;
+//     margin-top: 1rem;
+// }
+
+// .formlogin{
+//    position: absolute;
+//    width: 100vw;
+//    height: 193vh;
+//    background-color: white;
+
+// }
+// .formlogin__div--form{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding-top: 1rem;
+//     border-top-left-radius: 54px;
+//     border-top-right-radius: 54px;
+//     background-color: rgb(60, 62, 68);
+// }
+
+// #imglogin{
+//     height: 60vh;
+//     width: 100%;
+//     object-fit: cover;
+// }
+// button{
+//     background-color: rgb(230,160,78);
+// }
+// .formlogin__span{
+//     display: flex;
+//     flex-direction: column;
+//     color: rgb(230,160,78);
+// }
+// .form__group--username{
+//     display: flex;
+//     width: 100vw;
+//     justify-content: center;
+//     margin-bottom: 1.5rem;
+// }
+
+// .form__group--password{
+//     display: flex;
+//     width: 100vw;
+//     justify-content: center;
+//     margin-bottom: 1.5rem;
+// }
+
+// ::placeholder{
+//     color: rgb(60, 62, 68);
+// }

@@ -54,5 +54,4 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     const el:any = document.querySelector('.fav');
     el.style.fontWeight = 'bold'
   }
-
 }

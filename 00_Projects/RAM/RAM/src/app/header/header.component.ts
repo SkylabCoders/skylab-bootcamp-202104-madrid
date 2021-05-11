@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   favoriteTag = 'Favourites';
   logIn = 'LogIn'
   showLogIn = false;
-  model = new User(' ', ' ');
+  model = new User('', '');
 
   constructor (public srvMain:MainService) { }
 
@@ -25,7 +25,8 @@ export class HeaderComponent implements OnInit {
   }
   onSubmit () {
     this.srvMain.currentUser = this.model
-    console.log(this.srvMain.currentUser)
+    console.log(this.srvMain.currentUser);
+    this.showLogIn = false;
   }
 
 }

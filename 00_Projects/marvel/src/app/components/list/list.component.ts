@@ -42,13 +42,6 @@ export class ListComponent implements OnInit {
        }
      }
    ]
-<<<<<<< HEAD
-
-   constructor (public http:HttpService) { }
-
-   ngOnInit (): void {
-   }
-=======
 
    marvelList:Imarvel [] = []
    PUBLIC_KEY = '15e7eedc86b57ed8c9aa86e4c26e4a2b';
@@ -68,5 +61,4 @@ export class ListComponent implements OnInit {
     onlick () {
       console.log('hola')
     }
->>>>>>> 929b7a3a34e50595a69ff948d92e359184787d1a
 }

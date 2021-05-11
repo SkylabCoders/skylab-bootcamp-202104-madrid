@@ -16,7 +16,6 @@ class Mockmarvel {
     return of(MarvelMock)
   }
 }
->>>>>>> 929b7a3a34e50595a69ff948d92e359184787d1a
 
 describe('ListComponent', () => {
   let component: ListComponent
@@ -24,15 +23,14 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-<<<<<<< HEAD
-      declarations: [ListComponent]
-=======
+
       declarations: [ListComponent],
+
       schemas: [
         NO_ERRORS_SCHEMA
       ],
       providers: [{ provide: MarvelMock, useClass: Mockmarvel }]
->>>>>>> 929b7a3a34e50595a69ff948d92e359184787d1a
+
     })
       .compileComponents()
   })
@@ -46,8 +44,7 @@ describe('ListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy()
   })
-<<<<<<< HEAD
-=======
+
   it('should contain an object with string', () => {
     const document = HTMLElement = fixture.nativeElement
     const tag = document.querySelector('.main-container__list')
@@ -55,5 +52,4 @@ describe('ListComponent', () => {
     console.log(name)
     expect(name?.textContent).toContain('Cyclops')
   })
->>>>>>> 929b7a3a34e50595a69ff948d92e359184787d1a
 })

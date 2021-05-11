@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { HttpService } from '../../services/http.service'
+import { MainService } from 'src/app/services/main.service'
 import { Imarvel } from '../../models/Imarvel'
 
 @Component({
@@ -42,9 +42,31 @@ export class ListComponent implements OnInit {
        }
      }
    ]
+<<<<<<< HEAD
 
    constructor (public http:HttpService) { }
 
    ngOnInit (): void {
    }
+=======
+
+   marvelList:Imarvel [] = []
+   PUBLIC_KEY = '15e7eedc86b57ed8c9aa86e4c26e4a2b';
+    HASH = '55ab7706c5f814004ae2a053827b7004';
+
+   readonly mainUrl = 'https://gateway.marvel.com:443/v1/public/'
+    charactersUrl = `characters?apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`;
+
+    constructor (public mainSrv:MainService) {}
+
+    ngOnInit (): void {
+      this.mainSrv.getAction('getList', (this.mainUrl + this.charactersUrl)).subscribe((res:any) => {
+        this.marvelList = res.data.results
+      })
+    }
+
+    onlick () {
+      console.log('hola')
+    }
+>>>>>>> 929b7a3a34e50595a69ff948d92e359184787d1a
 }

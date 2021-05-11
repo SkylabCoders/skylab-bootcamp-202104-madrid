@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { HttpService } from 'src/app/services/http.service'
 import { Imarvel } from '../../models/Imarvel'
+import { MainService } from '../../services/main.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,7 @@ import { Imarvel } from '../../models/Imarvel'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  constructor (public http:HttpService) { }
+  constructor (public mainSrv:MainService) { }
 
   ngOnInit (): void {
   }

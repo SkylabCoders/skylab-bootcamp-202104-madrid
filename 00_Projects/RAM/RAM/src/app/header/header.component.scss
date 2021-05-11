@@ -200,7 +200,12 @@ button{
     justify-content: center;
     margin-bottom: 1.5rem;
 }
-
-::placeholder{
-    color: rgb(60, 62, 68);
+.form__group--buttons{
+    display: flex;
+    flex-direction: column;
+}
+#login--anchor{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
 }

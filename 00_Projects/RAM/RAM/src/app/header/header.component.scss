@@ -146,3 +146,44 @@ a{
     }
 
 }
+
+/* 
+STYLE FOR LOG IN MODAL
+*/
+form{
+    margin-top: 2rem;
+}
+
+.formlogin{
+   position: absolute;
+   width: 100vw;
+   height: 193vh;
+    background-color: rgb(60, 62, 68);
+}
+.formlogin__div--form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+#imglogin{
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+}
+button{
+    background-color: rgb(230,160,78);
+}
+.formlogin__span{
+    display: flex;
+    flex-direction: column;
+    color: rgb(230,160,78);
+}
+.form__group--username{
+
+}
+.form__group--password{
+
+}

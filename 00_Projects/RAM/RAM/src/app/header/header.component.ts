@@ -18,9 +18,6 @@ export class HeaderComponent implements OnInit {
   constructor (public srvMain:MainService) { }
 
   ngOnInit (): void {
-    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
-      obs$.unsubscribe();
-    })
   }
 
   searchSubmit(){

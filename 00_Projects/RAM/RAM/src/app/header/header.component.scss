@@ -154,6 +154,12 @@ form{
     margin-top: 2rem;
 }
 
+button{
+    width: 17.5rem;
+    margin-left: 12rem;
+    margin-top: 1rem;
+}
+
 .formlogin{
    position: absolute;
    width: 100vw;
@@ -182,8 +188,19 @@ button{
     color: rgb(230,160,78);
 }
 .form__group--username{
-
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
-.form__group--password{
 
+.form__group--password{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+::placeholder{
+    color: rgb(60, 62, 68);
 }

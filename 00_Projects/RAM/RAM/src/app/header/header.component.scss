@@ -65,6 +65,7 @@ button{
    position: absolute;
    width: 100vw;
    height: 193vh;
+   background-color: white;
 }
 .formlogin__div--form{
     display: flex;
@@ -73,8 +74,10 @@ button{
     align-items: center;
     padding-top: 1rem;
     background-color: rgb(60, 62, 68);
-    border-radius: 54px;
-        height: 30rem;
+    border-top-left-radius: 54px;
+    border-top-right-radius: 54px;
+    // border-radius: 54px;
+    height: 30rem;
 }
 
 #imglogin{
@@ -218,57 +221,61 @@ button{
 /* 
 STYLE FOR LOG IN MODAL
 */
-form{
-    margin-top: 2rem;
-}
+// form{
+//     margin-top: 2rem;
+// }
 
-button{
-    width: 17.5rem;
-    margin-left: 12rem;
-    margin-top: 1rem;
-}
+// button{
+//     width: 17.5rem;
+//     margin-left: 12rem;
+//     margin-top: 1rem;
+// }
 
-.formlogin{
-   position: absolute;
-   width: 100vw;
-   height: 193vh;
-    background-color: rgb(60, 62, 68);
-}
-.formlogin__div--form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-}
+// .formlogin{
+//    position: absolute;
+//    width: 100vw;
+//    height: 193vh;
+//    background-color: white;
 
-#imglogin{
-    height: 60vh;
-    width: 100%;
-    object-fit: cover;
-}
-button{
-    background-color: rgb(230,160,78);
-}
-.formlogin__span{
-    display: flex;
-    flex-direction: column;
-    color: rgb(230,160,78);
-}
-.form__group--username{
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
+// }
+// .formlogin__div--form{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding-top: 1rem;
+//     border-top-left-radius: 54px;
+//     border-top-right-radius: 54px;
+//     background-color: rgb(60, 62, 68);
+// }
 
-.form__group--password{
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
+// #imglogin{
+//     height: 60vh;
+//     width: 100%;
+//     object-fit: cover;
+// }
+// button{
+//     background-color: rgb(230,160,78);
+// }
+// .formlogin__span{
+//     display: flex;
+//     flex-direction: column;
+//     color: rgb(230,160,78);
+// }
+// .form__group--username{
+//     display: flex;
+//     width: 100vw;
+//     justify-content: center;
+//     margin-bottom: 1.5rem;
+// }
 
-::placeholder{
-    color: rgb(60, 62, 68);
-}
+// .form__group--password{
+//     display: flex;
+//     width: 100vw;
+//     justify-content: center;
+//     margin-bottom: 1.5rem;
+// }
+
+// ::placeholder{
+//     color: rgb(60, 62, 68);
+// }

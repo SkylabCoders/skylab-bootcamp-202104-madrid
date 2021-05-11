@@ -1,2 +1,25 @@
-<p>details works!</p>
 <!-- <h1 *ngFor="let character of ram">{{character.name}}</h1> -->
+
+<div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>NAME: {{characterDetails.name}}</mat-card-title>
+            <mat-card-subtitle>SPECIE: {{characterDetails.species}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src='{{characterDetails.image}}' alt="Photo of the character">
+        <mat-card-content class="container">
+            <div>
+                <p>
+                    GENDER: {{characterDetails.gender}} <br>
+                    ORIGIN: {{characterDetails.origin.name}} <br>
+                </p>
+            </div>
+            <div>
+                <mat-card-actions>
+                  <button mat-button (click)="changeFavicon()"><i class="far fa-star fav"></i></button>
+                </mat-card-actions>
+            </div>
+      </mat-card-content>
+    </mat-card>
+</div>

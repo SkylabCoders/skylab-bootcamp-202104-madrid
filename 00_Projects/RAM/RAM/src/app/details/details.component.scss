@@ -1,0 +1,32 @@
+* {
+    background-color: rgb(60, 62, 68);
+    color: rgb(255, 152, 0);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.example-header-image {
+  background-image: url();
+  background-size: cover;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+  @media only screen and (min-width: 800px) {
+
+      .container{
+          display: flex;
+          justify-content: center;
+      }
+
+      .example-header-image {
+        display: none;
+      }
+   
+  }
+  

@@ -1,6 +1,7 @@
 @import '../../../variables.scss';
 
 .nav-bar{
+    z-index: 3500;
     height: 65px;
     color: white;
     display: flex;

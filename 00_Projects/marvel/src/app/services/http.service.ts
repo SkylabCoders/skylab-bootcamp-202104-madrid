@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core'
 })
 export class HttpService {
   constructor (public http:HttpClient) { }
+
   getData (url:string):any {
     return this.http.get(url)
   }

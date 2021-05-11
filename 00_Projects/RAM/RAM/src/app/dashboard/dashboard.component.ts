@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   url = 'https://rickandmortyapi.com/api/character';
 
   ram: any[] = [];
+  imageRam:any
 
   constructor(public srvMain:MainService){
 
@@ -19,8 +20,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
       this.ram = res.results;
+      this.imageRam = this.ram.slice(0, 4)
       obs$.unsubscribe();
     })
   }
-
 }

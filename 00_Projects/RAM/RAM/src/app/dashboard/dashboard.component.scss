@@ -1,0 +1,26 @@
+
+main{
+   display: flex;
+   flex-direction: column;
+}
+.dashboard__main-pic {
+    background-image: url('https://trello-attachments.s3.amazonaws.com/60755d2282c14f477515af94/60984f23c7019f6710fbc2d6/c6c3da6f299efa4cab13cefa2a596071/ram-list1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 20rem;
+    width: 100%;
+}
+
+
+.dashboard__img-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .images{
+        width: 20vw;
+        height: 30vh;
+        padding: 10px;
+    }
+}

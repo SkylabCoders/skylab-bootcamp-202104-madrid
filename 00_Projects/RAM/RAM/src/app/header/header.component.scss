@@ -1,9 +1,8 @@
-
 header {
     display: flex;
     justify-content: space-around;
-    background-color: rgb(27, 37, 48);
-    color: rgb(196, 196, 196);
+    background-color: rgb(60, 62, 68);
+    color: rgb(255, 255, 255);
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -12,11 +11,13 @@ header {
     height: 8%;
     align-items: center;
     font-family: 'Rock Salt';
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 a{
     text-decoration: none;
-    color: rgb(196, 196, 196);
+    color: rgb(255, 255, 255);
 }
 
 .header__logo{
@@ -29,6 +30,10 @@ a{
     width: 100%;
 }
 
+.header__anchor--text{
+    display: none;
+}
+
 .header__search {
     display: none;
 }
@@ -39,3 +44,93 @@ a{
    justify-content: center;
 }
 
+
+@media only screen and (min-width: 800px) {
+    header {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(60, 62, 68);
+        color: rgb(255, 255, 255);
+        width: 100%;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        height: 10vh;
+        align-items: center;
+        font-family: 'Rock Salt';
+        border-radius: 0;
+    }
+
+    .header__anchors i{
+        display: none;
+    }
+
+    .header__anchor--text{
+        display: flex;
+    }
+
+    .header__logo{
+        display: flex;
+    }
+
+    .header-logo__img{
+        width: 20rem;
+        height: 6rem;
+    }
+    
+    .header__anchors {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .header__anchor--dashboard, .header__anchor--list, .header__anchor--favourites{
+        padding-left: 5%;
+    }
+
+    .header__anchor--text{
+        display: flex;
+    }
+
+    .header__anchor--text:hover {
+        color: rgb(255, 152, 0);
+        cursor: pointer;
+    }
+    
+    .header__search {
+        display: none;
+    }
+    
+    .header__logIn{
+       display: flex;
+       justify-content: center;
+    }
+
+    .header__logIn span{
+        padding-left: 10%;
+    }
+
+    .header__logIn:hover{
+        color: rgb(255, 152, 0);
+        cursor: pointer;
+    }
+
+    .header__search {
+        display: flex;
+    }
+
+    .header-search__container {
+        display: flex;
+        width: 20rem;
+        height: 3.3rem;
+        background-color: rgb(196, 196, 196);
+        border-radius: 2%;
+        align-items: center;
+    }
+    .search__input {
+        background: #c4c4c4;
+        border: none;
+    }
+
+}

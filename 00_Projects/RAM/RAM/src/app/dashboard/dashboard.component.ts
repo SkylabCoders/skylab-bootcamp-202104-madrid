@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { StorageService } from '../services/storage.service'
-import { LoginService } from '../services/login.service'
-import { HttpService } from '../services/http.service'
+import { MainService } from '../services/main.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -14,12 +12,12 @@ export class DashboardComponent implements OnInit {
 
   ram: any[] = [];
 
-  constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService){
+  constructor(public srvMain:MainService){
 
   }
-
+ 
   ngOnInit(): void {
-    const obs$ = this.srvHttp.getAPI(this.url).subscribe((res:any) => {
+    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
       this.ram = res.results;
       console.log(this.ram);
       obs$.unsubscribe();

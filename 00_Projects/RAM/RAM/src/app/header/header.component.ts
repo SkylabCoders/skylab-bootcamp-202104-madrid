@@ -32,6 +32,5 @@ export class HeaderComponent implements OnInit {
     }, (err:any) => {
       console.log('no esta')
     })
-
   }
 }

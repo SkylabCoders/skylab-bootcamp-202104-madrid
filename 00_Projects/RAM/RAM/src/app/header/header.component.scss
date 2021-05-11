@@ -11,6 +11,8 @@ header {
     height: 8%;
     align-items: center;
     font-family: 'Rock Salt';
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 a{
@@ -57,6 +59,7 @@ a{
         height: 10vh;
         align-items: center;
         font-family: 'Rock Salt';
+        border-radius: 0;
     }
 
     .header__anchors i{

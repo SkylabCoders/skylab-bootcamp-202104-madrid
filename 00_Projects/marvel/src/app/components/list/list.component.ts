@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpService } from '../../services/http.service'
 import { Imarvel } from '../../models/Imarvel'
-// import {marvel} from '../../models/mockList'
 
 @Component({
   selector: 'app-list',

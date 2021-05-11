@@ -50,8 +50,9 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     el.style.backgroundImage =`url(${this.characterDetails.image})`;
   }
 
-  prueba(){
-    alert('Los Fruittis mandan!');
+  changeFavicon(){
+    const el:any = document.querySelector('.fav');
+    el.style.fontWeight = 'bold'
   }
 
 }

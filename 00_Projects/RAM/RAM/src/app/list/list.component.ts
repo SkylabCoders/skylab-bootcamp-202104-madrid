@@ -9,7 +9,7 @@ import { MainService } from '../services/main.service'
 })
 export class ListComponent implements OnInit {
 
-  url = 'https://rickandmortyapi.com/api/character';
+  url = this.srvMain.url
 
   ram: any[] = [];
 
@@ -18,10 +18,19 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
+    let urlNew = this.srvMain.url
+    const obs$ = this.srvMain.getTheAPI(urlNew).subscribe((res:any) => {
+      console.log('a la lista llega esta url' + urlNew)
       this.ram = res.results;
       obs$.unsubscribe();
+      this.srvMain.url = 'https://rickandmortyapi.com/api/character'
     })
   }
+
+  ngOnDestroy():void {
+    this.srvMain.url = 'https://rickandmortyapi.com/api/character'
+  }
+
+  
 
 }

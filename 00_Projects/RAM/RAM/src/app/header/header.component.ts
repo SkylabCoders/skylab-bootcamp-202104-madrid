@@ -14,11 +14,24 @@ export class HeaderComponent implements OnInit {
   logIn = 'LogIn'
   showLogIn = false;
   model = new User('', '');
+  searchInput = ''
+  ram:any
+  
 
   constructor (public srvMain:MainService) { }
 
   ngOnInit (): void {
+  }
 
+  searchSubmit(){
+    console.log(this.searchInput);
+    const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
+      console.log('esta')
+      this.ram = res.results;
+      obs$.unsubscribe();
+    }, (err:any) => {
+      console.log('no esta')
+    })
   }
   openLogIn(){
     this.showLogIn = !this.showLogIn

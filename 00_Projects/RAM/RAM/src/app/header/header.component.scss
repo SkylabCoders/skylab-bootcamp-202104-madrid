@@ -13,6 +13,7 @@ header {
     font-family: 'Rock Salt';
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+    font-size: 1.6rem;
 }
 
 a{
@@ -22,6 +23,7 @@ a{
 
 .header__logo{
     display: none;
+    padding-left: 1rem;
 }
 
 .header__anchors {
@@ -91,6 +93,7 @@ a{
 
     .header__anchor--text{
         display: flex;
+        flex-wrap: nowrap;
     }
 
     .header__anchor--text:hover {
@@ -105,6 +108,8 @@ a{
     .header__logIn{
        display: flex;
        justify-content: center;
+       width: 30%;
+       align-items: center;
     }
 
     .header__logIn span{
@@ -131,6 +136,13 @@ a{
     .search__input {
         background: #c4c4c4;
         border: none;
+        outline: none;
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
+
+    #search__icon {
+        padding-left: 1rem;
     }
 
 }

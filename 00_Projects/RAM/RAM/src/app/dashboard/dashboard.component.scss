@@ -11,11 +11,14 @@ main{
     height: 20rem;
     width: 100%;
 }
+// .img-container__a{
+//     display: flex;
+// }
 
 
 .dashboard__img-container{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     .images{

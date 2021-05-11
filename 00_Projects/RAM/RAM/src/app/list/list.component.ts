@@ -20,7 +20,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
       this.ram = res.results;
-      console.log(this.ram);
       obs$.unsubscribe();
     })
   }

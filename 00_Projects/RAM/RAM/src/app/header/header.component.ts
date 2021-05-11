@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { MainService } from '../services/main.service'
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,23 @@ export class HeaderComponent implements OnInit {
   listTag = 'List';
   favoriteTag = 'Favourites';
   logIn = 'LogIn'
+  searchInput = ''
+  ram:any
+  
 
-  constructor () { }
+  constructor (public srvMain:MainService) { }
 
   ngOnInit (): void {
+  }
 
+  searchSubmit(){
+    console.log(this.searchInput);
+    const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
+      console.log('esta')
+      this.ram = res.results;
+      obs$.unsubscribe();
+    }, (err:any) => {
+      console.log('no esta')
+    })
   }
 }

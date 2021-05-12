@@ -11,6 +11,9 @@ import { URL } from '../../models/url'
 export class ListComponent implements OnInit {
    title:string = 'Character list'
    marvelList:Imarvel [] = []
+   favorite = false
+   favoriteList = this.mainSrv.favorites
+   favicon = document.querySelector('.far fa-star')
 
    constructor (public mainSrv:MainService) {}
 
@@ -21,7 +24,14 @@ export class ListComponent implements OnInit {
      })
    }
 
-   onlick () {
-     console.log('hola')
+   toFavorite (character:any) {
+     this.favorite = !this.favorite
+     if (this.favorite) {
+       this.favoriteList.push(character)
+       console.log(this.favoriteList)
+     } else {
+       this.favoriteList.slice(0, 1)
+       console.log(this.favoriteList)
+     }
    }
 }

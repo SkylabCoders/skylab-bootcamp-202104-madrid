@@ -10,7 +10,6 @@ import { Router } from '@angular/router'
 export class DashboardComponent implements OnInit {
 
   url = 'https://rickandmortyapi.com/api/character';
-
   ram: any[] = [];
   imageRam:any
 

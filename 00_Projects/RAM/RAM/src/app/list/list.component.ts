@@ -32,7 +32,6 @@ export class ListComponent implements OnInit {
   }
 
   getNextPage():void {
-    // if(this.pruebaurl !==  "https://rickandmortyapi.com/api/character/?page=35"){
       const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
         this.ram = res.results;
         obs$.unsubscribe();
@@ -43,7 +42,6 @@ export class ListComponent implements OnInit {
   }
 
   getPrevPage():void{
-    // if(this.pruebaurl !==  "https://rickandmortyapi.com/api/character/?page=0"){
       const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
         this.ram = res.results;
         obs$.unsubscribe();

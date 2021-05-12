@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   marvelList:Imarvel [] = []
   randomList:Imarvel [] = []
   topHeros:Imarvel [] = []
+  character:any
 
   constructor (public route: Router, public mainSrv:MainService, private activatedRoute: ActivatedRoute) {}
 
@@ -28,6 +29,8 @@ export class DashboardComponent implements OnInit {
   }
 
   goCharacter (characters:any) {
+    console.log(this.mainSrv.character)
     this.mainSrv.character = characters
+    this.route.navigate(['details'])
   }
 }

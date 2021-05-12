@@ -42,3 +42,45 @@ src: url('../../resources/Avengeance-YolO.ttf');
         }
     }
 }
+
+@media only screen and (max-width: 600px){
+    .main-container{
+        display: flex;
+        background-color: $backgroundDashboard;
+        flex-wrap: wrap;
+        &__title{
+            margin: 2%;
+            font-family: 'Avengeance';
+            color: white;
+            letter-spacing: 3px;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        &__list{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        &__anchors{
+            display: flex;
+            justify-content: space-evenly;
+            width: 131px;
+            height: 128px;
+            margin: 2%;
+        }
+        &__list-img{
+            object-fit: cover;
+            width: 131px;
+            height: 128px;
+            overflow: hidden;
+            transition: all 200ms ease-in-out;
+            &:hover{
+                border: 5px solid $yellowMarvel;
+                transform: scale(1.1);
+            }
+        }
+    }
+    
+
+}

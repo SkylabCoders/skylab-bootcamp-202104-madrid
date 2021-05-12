@@ -9,6 +9,7 @@ import { MainService } from '../services/main.service';
 export class DetailsComponent implements OnInit, AfterViewInit {
 
   url = 'https://rickandmortyapi.com/api/character';
+<<<<<<< HEAD
 
   ram: any[] = [];
 
@@ -37,15 +38,16 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     url: 'https://rickandmortyapi.com/api/character/1'
   } 
 
+=======
+  characterDetails = this.srvMain.detailsCharacter;
+  
+>>>>>>> features/project/RAM
   constructor(public srvMain:MainService){
 
   }
 
   ngOnInit(): void {
-    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
-      this.ram = res.results;
-      obs$.unsubscribe();
-    })
+ 
   }
 
   ngAfterViewInit(){

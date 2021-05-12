@@ -17,6 +17,11 @@ export class HeaderComponent implements OnInit {
   model = new User('', '');
   searchInput = ''
   ram:any
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> features/project/RAM
 
   constructor (public srvMain:MainService, public router:Router) { }
 
@@ -26,6 +31,9 @@ export class HeaderComponent implements OnInit {
 
   searchSubmit(){
     console.log(this.searchInput);
+    if(this.router.url === '/list'){
+      this.router.navigate(['/dashboard'])
+    }
     const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
       console.log('esta')
       this.ram = res.results;
@@ -36,6 +44,7 @@ export class HeaderComponent implements OnInit {
       console.log('no esta')
     })
   }
+
   openLogIn(){
     this.showLogIn = !this.showLogIn
   }

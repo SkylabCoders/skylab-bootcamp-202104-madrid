@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { MainService } from '../services/main.service';
+import { MainService } from '../services/main.service'
+import { Router } from '@angular/router'
 import { User } from '../services/mocking/user'
 
 @Component({
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ram:any
   
 
-  constructor (public srvMain:MainService) { }
+  constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
   }
@@ -29,6 +30,8 @@ export class HeaderComponent implements OnInit {
       console.log('esta')
       this.ram = res.results;
       obs$.unsubscribe();
+      this.srvMain.goToList("https://rickandmortyapi.com/api/character/?name=" + this.searchInput)
+      this.router.navigate(['/list'])
     }, (err:any) => {
       console.log('no esta')
     })
@@ -37,9 +40,11 @@ export class HeaderComponent implements OnInit {
     this.showLogIn = !this.showLogIn
   }
   onSubmit () {
+    localStorage.removeItem('username');
     this.srvMain.currentUser = this.model
     console.log(this.srvMain.currentUser);
     this.showLogIn = false;
+    localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
   }
 
 }

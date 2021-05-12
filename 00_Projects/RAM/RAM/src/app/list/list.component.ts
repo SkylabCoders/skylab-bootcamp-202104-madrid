@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
 
   url = this.srvMain.url
   maxPage:any;
-
+  imInTheList = this.srvMain.amIInList
   ram: any[] = [];
   completeRam:any;
 
@@ -42,5 +42,6 @@ export class ListComponent implements OnInit {
       this.chargePage(this.completeRam.info.prev)
     }
   }
+
 }
 

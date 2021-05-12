@@ -17,15 +17,23 @@ export class HeaderComponent implements OnInit {
   model = new User('', '');
   searchInput = ''
   ram:any
+<<<<<<< HEAD
+=======
+
   
+>>>>>>> features/project/RAM
 
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
+    // this.srvMain.getCurrentRoute();
   }
 
   searchSubmit(){
     console.log(this.searchInput);
+    if(this.router.url === '/list'){
+      this.router.navigate(['/dashboard'])
+    }
     const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
       console.log('esta')
       this.ram = res.results;

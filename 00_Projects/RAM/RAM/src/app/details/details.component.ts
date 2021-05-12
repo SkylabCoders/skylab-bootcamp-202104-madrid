@@ -9,8 +9,13 @@ import { MainService } from '../services/main.service';
 export class DetailsComponent implements OnInit, AfterViewInit {
 
   url = 'https://rickandmortyapi.com/api/character';
+<<<<<<< HEAD
 
   ram: any[] = [];
+
+  favorites: any[] = [];
+
+  change = false;
 
   characterDetails = {
     created: '2017-11-04T18:48:46.250Z',
@@ -33,15 +38,16 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     url: 'https://rickandmortyapi.com/api/character/1'
   } 
 
+=======
+  characterDetails = this.srvMain.detailsCharacter;
+  
+>>>>>>> features/project/RAM
   constructor(public srvMain:MainService){
 
   }
 
   ngOnInit(): void {
-    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
-      this.ram = res.results;
-      obs$.unsubscribe();
-    })
+ 
   }
 
   ngAfterViewInit(){
@@ -50,7 +56,17 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   }
 
   changeFavicon(){
-    const el:any = document.querySelector('.fav');
-    el.style.fontWeight = 'bold';
+    this.change = !this.change;
+    if(this.change){
+      const el:any = document.querySelector('.fav');
+      el.style.fontWeight = 'bold';
+      this.favorites.push(this.characterDetails);
+      console.log(this.favorites);
+    } else {
+      const el:any = document.querySelector('.fav');
+      el.style.fontWeight = '';
+      this.favorites.pop();
+      console.log(this.favorites);
+    }
   }
 }

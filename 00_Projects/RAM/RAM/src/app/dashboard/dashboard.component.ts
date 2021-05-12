@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MainService } from '../services/main.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
   ram: any[] = [];
   imageRam:any
 
-  constructor(public srvMain:MainService){
+  constructor(public srvMain:MainService, public router:Router){
 
   }
  
@@ -24,13 +25,10 @@ export class DashboardComponent implements OnInit {
       obs$.unsubscribe();
     })
   }
-  addId(){
-   let id = 0
-    for (let i = 0; i < this.imageRam.length; i++) {
-    this.imageRam[i].push(id++)
-    }
-  }
+  
   goToDetails(character:any){
-    
+    this.srvMain.detailsCharacter = character;
+    console.log(this.srvMain.detailsCharacter);
+    this.router.navigate(['details']);
   }
 }

@@ -6,7 +6,7 @@
     color: white;
     display: flex;
     justify-content: space-evenly;
-    background-color: $negroHeader;
+    background-color: $blackHeaderandFooter;
     width: 360,07px;
     height: 62,71px;
     position: fixed;
@@ -56,7 +56,7 @@
         color: white;
         display: flex;
         justify-content: space-evenly;
-        background-color: rgba(32, 32, 32, 1);
+        background-color: $blackHeaderandFooter;
         width: 1439,36px;
         height: 169,13px;
         width: 100%;
@@ -91,7 +91,7 @@
             flex-direction: column-reverse;
             color: white;
             &:hover{
-                color: $amarilloMarvel;
+                color: $yellowMarvel;
             }
         }
         

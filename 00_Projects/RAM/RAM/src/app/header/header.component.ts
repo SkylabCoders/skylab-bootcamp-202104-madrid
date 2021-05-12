@@ -25,18 +25,15 @@ export class HeaderComponent implements OnInit {
   }
 
   searchSubmit(){
-    console.log(this.searchInput);
     if(this.router.url === '/list'){
       this.router.navigate(['/loadingList'])
     }
     const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
-      console.log('esta')
       this.ram = res.results;
       obs$.unsubscribe();
       this.srvMain.goToList("https://rickandmortyapi.com/api/character/?name=" + this.searchInput)
       this.router.navigate(['/list'])
     }, (err:any) => {
-      console.log('no esta')
     })
   }
 
@@ -50,8 +47,7 @@ export class HeaderComponent implements OnInit {
   }
   onSubmit () {
     localStorage.removeItem('username');
-    this.srvMain.currentUser = this.model
-    console.log(this.srvMain.currentUser);
+    this.srvMain.currentUser = this.model;
     this.showLogIn = false;
     localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
   }

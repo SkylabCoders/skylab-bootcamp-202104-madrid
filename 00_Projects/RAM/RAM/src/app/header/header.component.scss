@@ -110,6 +110,9 @@ button{
 .form__group--buttons{
     display: flex;
     flex-direction: column;
+    button{
+        font-family: 'Rock Salt';
+    }
 }
 #login--anchor{
     display: flex;
@@ -210,6 +213,7 @@ button{
         outline: none;
         margin-left: 1rem;
         font-size: 1rem;
+        font-family: 'Rock Salt';
     }
 
     #search__icon {

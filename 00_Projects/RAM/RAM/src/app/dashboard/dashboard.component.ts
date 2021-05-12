@@ -27,7 +27,6 @@ export class DashboardComponent implements OnInit {
   
   goToDetails(character:any){
     this.srvMain.detailsCharacter = character;
-    console.log(this.srvMain.detailsCharacter);
     this.router.navigate(['details']);
   }
 }

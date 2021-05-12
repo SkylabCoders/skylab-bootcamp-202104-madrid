@@ -39,20 +39,24 @@
 }
 .container--button{    
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 5rem;
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 6rem;
 
     button{
         background-color: rgb(230,160,78);
         font-family: 'Rock Salt';
-        font-size: 1rem;
-        margin-left: 2rem;
+        font-size: 1.6rem;
+        height: 4rem;
+        width: 10rem;
     }
 }
 .character--display{
     display: none;
+}
+.list__item:hover {
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 800px){

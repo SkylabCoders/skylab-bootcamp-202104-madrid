@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../services/main.service'
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ListComponent implements OnInit {
   ram: any[] = [];
   completeRam:any;
 
-  constructor(public srvMain:MainService){ }
+  constructor(public srvMain:MainService, public router:Router){ }
 
   ngOnInit(): void {
     this.chargePage(this.url)
@@ -43,5 +44,10 @@ export class ListComponent implements OnInit {
     }
   }
 
+  sendToDetail(character:any){
+    this.srvMain.detailsCharacter = character;
+    console.log(this.srvMain.detailsCharacter);
+    this.router.navigate(['details']);
+  }
 }
 

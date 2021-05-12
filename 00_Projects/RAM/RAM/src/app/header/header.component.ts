@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   searchSubmit(){
     console.log(this.searchInput);
     if(this.router.url === '/list'){
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/loadingList'])
     }
     const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
       console.log('esta')

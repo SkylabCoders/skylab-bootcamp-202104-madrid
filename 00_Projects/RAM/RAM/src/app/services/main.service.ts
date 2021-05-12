@@ -23,7 +23,6 @@ export class MainService {
 
   goToList(paramUrl:string){
     this.url = paramUrl;
-    console.log('al main llega esta url' + paramUrl)
   }
 
 }

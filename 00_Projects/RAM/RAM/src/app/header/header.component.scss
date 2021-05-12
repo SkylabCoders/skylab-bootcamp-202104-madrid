@@ -108,6 +108,9 @@ button{
 .form__group--buttons{
     display: flex;
     flex-direction: column;
+    button{
+        font-family: 'Rock Salt';
+    }
 }
 #login--anchor{
     display: flex;

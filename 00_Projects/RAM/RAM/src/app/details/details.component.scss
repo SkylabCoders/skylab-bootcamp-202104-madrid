@@ -19,9 +19,14 @@
 
   @media only screen and (min-width: 800px) {
 
+     .main-container {
+        display: flex;
+        justify-content: center;
+    }
+
       .container{
           display: flex;
-          justify-content: center;
+          justify-content: space-around;
       }
 
       .example-header-image {

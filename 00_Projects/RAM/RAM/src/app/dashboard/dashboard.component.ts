@@ -12,7 +12,6 @@ export class DashboardComponent implements OnInit {
 
   ram: any[] = [];
   imageRam:any
-  prueba = 0;
 
   constructor(public srvMain:MainService){
 

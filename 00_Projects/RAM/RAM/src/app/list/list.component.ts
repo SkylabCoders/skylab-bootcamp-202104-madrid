@@ -9,46 +9,38 @@ import { MainService } from '../services/main.service'
 })
 export class ListComponent implements OnInit {
 
-  pruebaurl: any;
-  url = "https://rickandmortyapi.com/api/character/";
+
+  url = this.srvMain.url
   maxPage:any;
 
   ram: any[] = [];
+  completeRam:any;
 
-  constructor(public srvMain:MainService){
-
-  }
+  constructor(public srvMain:MainService){ }
 
   ngOnInit(): void {
-    let urlNew = this.srvMain.url
-    const obs$ = this.srvMain.getTheAPI(urlNew).subscribe((res:any) => {
-      console.log('a la lista llega esta url' + urlNew)
+    this.chargePage(this.url)
+  }
+
+  chargePage(url:string){
+    const obs$ = this.srvMain.getTheAPI(url).subscribe((res:any) => {
       this.ram = res.results;
-      this.pruebaurl = res.info.next
-      console.log(this.ram);
+      this.completeRam = res;
+      this.srvMain.url = 'https://rickandmortyapi.com/api/character?page=1' 
       obs$.unsubscribe();
-      this.srvMain.url = 'https://rickandmortyapi.com/api/character'
     })
   }
 
-  getNextPage():void {
-      const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
-        this.ram = res.results;
-        obs$.unsubscribe();
-        console.log(this.ram)
-        console.log(this.pruebaurl);
-        this.pruebaurl = res.info.next
-      }) 
+  getNextPage() {
+    if(this.completeRam.info.next){
+      this.chargePage(this.completeRam.info.next)     
+    }
   }
 
-  getPrevPage():void{
-      const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
-        this.ram = res.results;
-        obs$.unsubscribe();
-        console.log(this.ram)
-        console.log(this.pruebaurl);
-        this.pruebaurl = res.info.prev
-      })
+  getPrevPage() {
+    if(this.completeRam.info.prev && this.completeRam.info.prev !== 'https://rickandmortyapi.com/api/character'){
+      this.chargePage(this.completeRam.info.prev)
+    }
   }
-
 }
+

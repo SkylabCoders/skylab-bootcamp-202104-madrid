@@ -9,8 +9,39 @@ import { MainService } from '../services/main.service';
 export class DetailsComponent implements OnInit, AfterViewInit {
 
   url = 'https://rickandmortyapi.com/api/character';
+<<<<<<< HEAD
+
+  ram: any[] = [];
+
+  favorites: any[] = [];
+
+  change = false;
+
+  characterDetails = {
+    created: '2017-11-04T18:48:46.250Z',
+    episode: ['https://rickandmortyapi.com/api/episode/1', 'https://rickandmortyapi.com/api/episode/2'],
+    gender: 'Male',
+    id: 1,
+    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+    location: {
+      name: 'Earth (Replacement Dimension)',
+      url: 'https://rickandmortyapi.com/api/location/20'
+    },
+    name: 'Rick Sanchez',
+    origin: {
+      name: 'Earth (C-137)',    
+      url: 'https://rickandmortyapi.com/api/location/1'
+    },
+    species: 'Human',
+    status: 'Alive',
+    type: '',
+    url: 'https://rickandmortyapi.com/api/character/1'
+  } 
+
+=======
   characterDetails = this.srvMain.detailsCharacter;
   
+>>>>>>> features/project/RAM
   constructor(public srvMain:MainService){
 
   }
@@ -25,7 +56,17 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   }
 
   changeFavicon(){
-    const el:any = document.querySelector('.fav');
-    el.style.fontWeight = 'bold';
+    this.change = !this.change;
+    if(this.change){
+      const el:any = document.querySelector('.fav');
+      el.style.fontWeight = 'bold';
+      this.favorites.push(this.characterDetails);
+      console.log(this.favorites);
+    } else {
+      const el:any = document.querySelector('.fav');
+      el.style.fontWeight = '';
+      this.favorites.pop();
+      console.log(this.favorites);
+    }
   }
 }

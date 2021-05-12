@@ -1,9 +1,9 @@
 <header>
     <div class="header__logo"><img class="header-logo__img" src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt=""> </div>
     <div class="header__anchors">
-        <a class="header__anchor--dashboard" routerLink="./dashboard"><i class="fas fa-home"></i><span class="header__anchor--text">Dashboard</span></a>
-        <a class="header__anchor--list" routerLink="./list"><i class="fas fa-list-ul"></i><span class="header__anchor--text" >List</span></a>
-        <a class="header__anchor--favourites" routerLink="./favorites"><i class="far fa-star"></i><span class="header__anchor--text">Favourites</span></a>
+        <a class="header__anchor--dashboard" routerLink="./dashboard"><i class="fas fa-home"></i><span class="header__anchor--text" id="dashboard">Dashboard</span></a>
+        <a class="header__anchor--list" routerLink="./list"><i class="fas fa-list-ul"></i><span class="header__anchor--text" id="list">List</span></a>
+        <a class="header__anchor--favourites" routerLink="./favorites"><i class="far fa-star"></i><span class="header__anchor--text" id="favorites">Favourites</span></a>
     </div>
     <div class="header__search">
         <form (ngSubmit)='searchSubmit()' >

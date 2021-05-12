@@ -9,7 +9,7 @@ import { MainService } from '../services/main.service'
 })
 export class ListComponent implements OnInit {
 
-
+  
   url = this.srvMain.url
   maxPage:any;
   imInTheList = this.srvMain.amIInList
@@ -24,6 +24,7 @@ export class ListComponent implements OnInit {
 
   chargePage(url:string){
     const obs$ = this.srvMain.getTheAPI(url).subscribe((res:any) => {
+      console.log(res)
       this.ram = res.results;
       this.completeRam = res;
       this.srvMain.url = 'https://rickandmortyapi.com/api/character?page=1' 

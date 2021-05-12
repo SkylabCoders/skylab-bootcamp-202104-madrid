@@ -12,10 +12,9 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   ram: any[] = [];
 
-  favorites: any[] = [];
+  favorites: any[] = this.srvMain.favorites;
 
   change = false;
-
   characterDetails = this.srvMain.detailsCharacter;
   
   constructor(public srvMain:MainService){
@@ -36,13 +35,25 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     if(this.change){
       const el:any = document.querySelector('.fav');
       el.style.fontWeight = 'bold';
-      this.favorites.push(this.characterDetails);
-      console.log(this.favorites);
+      const check = this.checkFavoriteList(this.characterDetails);
+      if(!check){
+        this.favorites.push(this.characterDetails);
+        this.srvMain.favorites = this.favorites;
+        console.log(this.favorites);
+      }
     } else {
       const el:any = document.querySelector('.fav');
       el.style.fontWeight = '';
       this.favorites.pop();
+      this.srvMain.favorites = this.favorites;
       console.log(this.favorites);
     }
+  }
+  checkFavoriteList(character: any): any{
+   for(let i = 0; i < this.srvMain.favorites.length; i++) {
+     if(character.id === this.srvMain.favorites[i].id){
+       return true;
+     }
+   }
   }
 }

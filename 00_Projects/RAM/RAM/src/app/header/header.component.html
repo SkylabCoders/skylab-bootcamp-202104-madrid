@@ -1,47 +1,92 @@
 <header>
+<<<<<<< HEAD
     <div class="header__logo"><img class="header-logo__img" src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt=""> </div>
     <div class="header__anchors">
-        <a class="header__anchor--dashboard" routerLink="./dashboard"><i class="fas fa-home"></i><span class="header__anchor--text" id="dashboard">Dashboard</span></a>
-        <a class="header__anchor--list" routerLink="./list"><i class="fas fa-list-ul"></i><span class="header__anchor--text" id="list">List</span></a>
-        <a class="header__anchor--favourites" routerLink="./favorites"><i class="far fa-star"></i><span class="header__anchor--text" id="favorites">Favourites</span></a>
+        <a class="header__anchor--dashboard" routerLink="./dashboard"><i class="fas fa-home"></i><span class="header__anchor--text">Dashboard</span></a>
+        <a class="header__anchor--list" routerLink="./list"><i class="fas fa-list-ul"></i><span class="header__anchor--text">List</span></a>
+        <a class="header__anchor--favourites" routerLink="./favorites"><i class="far fa-star"></i><span class="header__anchor--text">Favourites</span></a>
+=======
+  <div class="header__logo">
+    <img
+      class="header-logo__img"
+      src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png"
+      alt=""
+    />
+  </div>
+  <div class="header__anchors">
+    <a class="header__anchor--dashboard" routerLink="./dashboard"
+      ><i class="fas fa-home"></i
+      ><span class="header__anchor--text" id="dashboard">Dashboard</span></a
+    >
+    <a class="header__anchor--list" routerLink="./list"
+      ><i class="fas fa-list-ul"></i
+      ><span class="header__anchor--text" id="list">List</span></a
+    >
+    <a class="header__anchor--favourites" routerLink="./favorites"
+      ><i class="far fa-star"></i
+      ><span class="header__anchor--text" id="favorites">Favourites</span></a
+    >
+  </div>
+  <div class="header__search">
+    <form (ngSubmit)="searchSubmit()">
+      <div class="header-search__container">
+        <i id="search__icon" class="fas fa-search"></i
+        ><input
+          class="search__input"
+          id="name"
+          name="name"
+          type="text"
+          [(ngModel)]="searchInput"
+        />
+      </div>
+    </form>
+  </div>
+  <a class="header__logIn" (click)="openLogIn()">
+    <i class="fas fa-user"></i>
+    <span class="header__anchor--text">{{ logIn }}</span>
+  </a>
+  <div *ngIf="showLogIn" class="formlogin">
+    <div class="formlogin__div--img">
+      <img
+        id="imglogin"
+        src="https://www.teleadhesivo.com/es/img/asfs1139-jpg/folder/products-listado-merchanthover/pegatinas-coches-motos-rick-y-morty.jpg"
+        alt="morty"
+      />
+>>>>>>> features/project/RAM
     </div>
-    <div class="header__search">
-        <form (ngSubmit)='searchSubmit()' >
-            <div class="header-search__container"><i id="search__icon" class="fas fa-search"></i><input class="search__input" id="name" name="name" type="text" [(ngModel)]="searchInput"></div>
-        </form>
-    </div>
-    <a class="header__logIn" (click)='openLogIn()'>
-        <i class="fas fa-user"></i>
-        <span class="header__anchor--text">Log in</span>
-    </a>
-    <div *ngIf='showLogIn' class="formlogin">
-        <div class="formlogin__div--img">
-            <img id="imglogin" src="https://www.teleadhesivo.com/es/img/asfs1139-jpg/folder/products-listado-merchanthover/pegatinas-coches-motos-rick-y-morty.jpg" alt="morty">
+    <div class="formlogin__div--form">
+      <div class="formlogin__span">
+        <span class="formlogin__span--big">WELCOME!</span>
+        <span class="formlogin__span--small">ENTER YOUR DETAILS</span>
+      </div>
+      <form (ngSubmit)="onSubmit()" #personForm="ngForm">
+        <div class="form__group--username">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            [(ngModel)]="model.username"
+            name="username"
+            #name="ngModel"
+          />
         </div>
-        <div class="formlogin__div--form">
-            <div class="formlogin__span">
-                <span class="formlogin__span--big">WELCOME!</span>
-                <span class="formlogin__span--small">ENTER YOUR DETAILS</span>
-            </div>
-            <form (ngSubmit)= "onSubmit()" #personForm="ngForm">
-                <div class="form__group--username">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" 
-                        [(ngModel)]="model.username" name="username"
-                        #name="ngModel"
-                        >
-                </div>
-                <div class="form__group--password">
-                <label for="surname">password</label>
-                <input type="password" class="form-control" id="password"
-                        [(ngModel)]="model.password" name="password"
-                        #password="ngModel">
-                </div>
-                <div class="form__group--buttons">
-                    <button>Log in</button>
-                    <a id="login--anchor" href=""><i class="fas fa-home"></i></a>
-                </div>
-            </form>
+        <div class="form__group--password">
+          <label for="surname">password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            [(ngModel)]="model.password"
+            name="password"
+            #password="ngModel"
+          />
         </div>
+        <div class="form__group--buttons">
+          <button>Log in</button>
+          <a id="login--anchor" href=""><i class="fas fa-home"></i></a>
+        </div>
+      </form>
     </div>
+  </div>
 </header>

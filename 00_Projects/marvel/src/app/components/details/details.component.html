@@ -1,1 +1,15 @@
-<h1>Soy detalles</h1>
+<main class="main-container">
+    <div class="main-container__thumbnail">
+        <h1 class="main-container__title">{{hero.name}}</h1>
+        <img class="main-container__img" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="{{hero.name}}">
+    </div>
+
+    <div class="main-container__description">
+        <h2 class="main-container__subtitle">{{description}}</h2>
+        <p class="main-container__text">{{hero.description}}</p>
+    </div>
+
+    <div class="main-container__comics">
+        <h2 class="main-container__subtitle-comic">{{comicText}}</h2>
+    </div>
+</main>

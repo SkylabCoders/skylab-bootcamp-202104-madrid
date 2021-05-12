@@ -1,10 +1,10 @@
 <main class="main-container">
     <h2 class="main-container__title">{{title}}</h2>
     <ul class="main-container__list">
-        <li class="main-container__list" *ngFor="let character of topHeros">
+        <li class="main-container__list" *ngFor="let character of topHeros" (click)="goCharacter(character)">
             <a class="main-container__anchors" routerLink='/details'>
                 <img class="main-container__list-img"
-                    src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="No image available">
+                    src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
             </a>
         </li>
     </ul>

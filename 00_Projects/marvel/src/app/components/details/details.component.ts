@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { MainService } from 'src/app/services/main.service'
 import { Imarvel } from '../../models/Imarvel'
 
 @Component({
@@ -7,8 +8,10 @@ import { Imarvel } from '../../models/Imarvel'
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  constructor () { }
+  hero:any = this.mainSrv.character
+  description:string = 'Description'
+  comicText:string = 'Comics'
+  constructor (public mainSrv: MainService) { }
 
-  ngOnInit (): void {
-  }
+  ngOnInit (): void {}
 }

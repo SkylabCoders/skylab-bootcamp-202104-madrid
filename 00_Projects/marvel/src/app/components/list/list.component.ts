@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
 
    ngOnInit (): void {
      this.mainSrv.getAction('getList', (URL.apiURL + URL.CharactersURL)).subscribe((res:any) => {
+       console.log(res.data.results)
        this.marvelList = res.data.results
      })
    }

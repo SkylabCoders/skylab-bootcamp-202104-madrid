@@ -2,7 +2,7 @@
 <main class="main-container">
     <h2 class="main-container__title">{{title}}</h2>
     <figure class="main-container__list" *ngFor="let character of marvelList">
-        <a routerLink="/details"><img class="main-container__list-img" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"></a>
+        <a routerLink="/details/{{character.name}}"><img class="main-container__list-img" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"></a>
         <figcaption class="main-container__list-name" >{{character.name}}<i (click)="onlick()" class="far fa-star"></i></figcaption>
     </figure>
     

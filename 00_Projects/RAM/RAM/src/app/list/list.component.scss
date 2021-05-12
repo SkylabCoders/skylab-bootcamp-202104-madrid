@@ -1,0 +1,53 @@
+
+.container{
+    background-color: rgb(60,62,66);
+}
+.container--headimg{
+    width: 100%;
+    img{
+        width: inherit;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+.container--cards{
+    .cards--character{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(38,40,45);
+        color: rgb(230,160,78);
+        margin-left: 4rem;
+        margin-right: 4rem;
+        margin-top: 2rem;
+        border-radius: 18px;
+        img{
+            width: 17rem;
+            border-radius: 18px;
+        }
+        .character--span{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
+            padding: 3rem;
+        }
+       
+    }
+}
+.container--button{    
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    button{
+        background-color: rgb(230,160,78);
+        font-family: 'Rock Salt';
+        font-size: 1rem;
+        margin-left: 2rem;
+    }
+}

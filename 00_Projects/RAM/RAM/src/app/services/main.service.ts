@@ -9,7 +9,7 @@ import { HttpService } from './http.service';
 })
 export class MainService {
   currentUser = this.srvLogin.currentUser;
-
+  amIInList = false;
   url = "https://rickandmortyapi.com/api/character?page=1"
   detailsCharacter:any
 

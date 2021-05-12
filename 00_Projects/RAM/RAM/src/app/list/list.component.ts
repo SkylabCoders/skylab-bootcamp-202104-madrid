@@ -9,9 +9,8 @@ import { MainService } from '../services/main.service'
 })
 export class ListComponent implements OnInit {
 
-  url = 'https://rickandmortyapi.com/api/character';
-  pruebaurl = 'https://rickandmortyapi.com/api/character/?page='
-  contador = 2;
+  pruebaurl: any;
+  url = "https://rickandmortyapi.com/api/character/";
   maxPage:any;
 
   ram: any[] = [];
@@ -23,20 +22,28 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
       this.ram = res.results;
-      this.maxPage = res['info'].pages;
+      this.pruebaurl = res.info.next
       console.log(this.ram);
       obs$.unsubscribe();
     })
   }
 
   getNextPage():void {
-    if(this.contador <= this.maxPage){
-      const obs$ = this.srvMain.getTheAPI(`${this.pruebaurl}${this.contador}`).subscribe((res:any) => {
-        this.ram = res.results;
-        obs$.unsubscribe();
-      })
-      this.contador++
-    }
+    const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
+      this.ram = res.results;
+      obs$.unsubscribe();
+      console.log(this.ram)
+      this.pruebaurl = res.info.next
+    })  
+  }
+
+  getPrevPage():void{
+    const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
+      this.ram = res.results;
+      obs$.unsubscribe();
+      console.log(this.ram)
+      this.pruebaurl = res.info.prev
+    })
   }
 
 }

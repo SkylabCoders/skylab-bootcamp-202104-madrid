@@ -12,6 +12,10 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   ram: any[] = [];
 
+  favorites: any[] = [];
+
+  change = false;
+
   characterDetails = {
     created: '2017-11-04T18:48:46.250Z',
     episode: ['https://rickandmortyapi.com/api/episode/1', 'https://rickandmortyapi.com/api/episode/2'],
@@ -50,7 +54,17 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   }
 
   changeFavicon(){
-    const el:any = document.querySelector('.fav');
-    el.style.fontWeight = 'bold';
+    this.change = !this.change;
+    if(this.change){
+      const el:any = document.querySelector('.fav');
+      el.style.fontWeight = 'bold';
+      this.favorites.push(this.characterDetails);
+      console.log(this.favorites);
+    } else {
+      const el:any = document.querySelector('.fav');
+      el.style.fontWeight = '';
+      this.favorites.pop();
+      console.log(this.favorites);
+    }
   }
 }

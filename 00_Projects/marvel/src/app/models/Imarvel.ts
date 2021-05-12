@@ -1,5 +1,6 @@
 export interface Imarvel {
     name?:string,
+    id?:number,
     description?:string,
     thumbnail:{
         path:string,

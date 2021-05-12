@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { MainService } from 'src/app/services/main.service'
 import { Imarvel } from '../../models/Imarvel'
+import { URL } from '../../models/url'
+import { MainService } from '../../services/main.service'
+import { ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-details',

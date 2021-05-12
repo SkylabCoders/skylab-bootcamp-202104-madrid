@@ -29,21 +29,25 @@ export class ListComponent implements OnInit {
   }
 
   getNextPage():void {
-    const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
-      this.ram = res.results;
-      obs$.unsubscribe();
-      console.log(this.ram)
-      this.pruebaurl = res.info.next
-    })  
+    // if(this.pruebaurl !==  "https://rickandmortyapi.com/api/character/?page=35"){
+      const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
+        this.ram = res.results;
+        obs$.unsubscribe();
+        console.log(this.ram)
+        console.log(this.pruebaurl);
+        this.pruebaurl = res.info.next
+      }) 
   }
 
   getPrevPage():void{
-    const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
-      this.ram = res.results;
-      obs$.unsubscribe();
-      console.log(this.ram)
-      this.pruebaurl = res.info.prev
-    })
+    // if(this.pruebaurl !==  "https://rickandmortyapi.com/api/character/?page=0"){
+      const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
+        this.ram = res.results;
+        obs$.unsubscribe();
+        console.log(this.ram)
+        console.log(this.pruebaurl);
+        this.pruebaurl = res.info.prev
+      })
   }
 
 }

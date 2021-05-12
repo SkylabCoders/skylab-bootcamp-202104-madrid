@@ -40,9 +40,11 @@ export class HeaderComponent implements OnInit {
     this.showLogIn = !this.showLogIn
   }
   onSubmit () {
+    localStorage.removeItem('username');
     this.srvMain.currentUser = this.model
     console.log(this.srvMain.currentUser);
     this.showLogIn = false;
+    localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
   }
 
 }

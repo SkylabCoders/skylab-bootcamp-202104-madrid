@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http'
 
 describe('HttpService', () => {
   let service: HttpService
-  let httpClient : HttpClient
+  let httpClient: HttpClient
   let httpMock: HttpTestingController
   let mockMarvel:any
   let mockUrl:any

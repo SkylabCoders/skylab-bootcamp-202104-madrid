@@ -7,8 +7,18 @@
             <li *ngFor="let character of ram">
                 <div class="cards--character">
                     <img src="{{character.image}}" alt="image character">
-                    <div class="character--span">
-                    <span>{{character.name}}</span>
+                    <div class="character--details">
+                        <div class="character--span" id="character--span">
+                        <span>{{character.name}}</span>
+                        </div>
+                        <div class="character--display">
+                            <div class="character__display--status">
+                                <span>{{character.status}}</span>
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <p>LAST KNOWN LOCATION</p>
+                            <span>{{character.location.name}}</span>
+                        </div>
                     </div>
                 </div>
             </li>

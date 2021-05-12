@@ -12,15 +12,22 @@ export class HeaderComponent implements OnInit {
   dashboardTag = 'Dashboard';
   listTag = 'List';
   favoriteTag = 'Favourites';
-  logIn = 'LogIn'
+  logIn = 'Log In'
   showLogIn = false;
   model = new User('', '');
   searchInput = ''
   ram:any
+<<<<<<< HEAD
 
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
+=======
+  constructor (public srvMain:MainService, public router:Router) { }
+
+  ngOnInit (): void {
+    // this.srvMain.getCurrentRoute(); 
+>>>>>>> features/project/RAM
   }
 
   searchSubmit(){
@@ -41,6 +48,11 @@ export class HeaderComponent implements OnInit {
 
   openLogIn(){
     this.showLogIn = !this.showLogIn
+    if(this.showLogIn){
+      this.logIn = 'Log Out';
+    } else {
+      this.logIn = 'Log In'
+    }
   }
   onSubmit () {
     localStorage.removeItem('username');

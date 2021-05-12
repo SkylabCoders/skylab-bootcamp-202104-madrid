@@ -16,6 +16,7 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   change = false;
 
+<<<<<<< HEAD
   // characterDetails = {
   //   created: '2017-11-04T18:48:46.250Z',
   //   episode: ['https://rickandmortyapi.com/api/episode/1', 'https://rickandmortyapi.com/api/episode/2'],
@@ -37,6 +38,8 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   //   url: 'https://rickandmortyapi.com/api/character/1'
   // } 
 
+=======
+>>>>>>> features/project/RAM
   characterDetails = this.srvMain.detailsCharacter;
   
   constructor(public srvMain:MainService){

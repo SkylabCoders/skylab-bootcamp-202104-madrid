@@ -17,17 +17,11 @@ export class HeaderComponent implements OnInit {
   model = new User('', '');
   searchInput = ''
   ram:any
-<<<<<<< HEAD
+
 
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
-=======
-  constructor (public srvMain:MainService, public router:Router) { }
-
-  ngOnInit (): void {
-    // this.srvMain.getCurrentRoute(); 
->>>>>>> features/project/RAM
   }
 
   searchSubmit(){

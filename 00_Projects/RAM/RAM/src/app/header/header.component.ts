@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit {
       console.log('no esta')
     })
   }
+
   openLogIn(){
     this.showLogIn = !this.showLogIn
   }

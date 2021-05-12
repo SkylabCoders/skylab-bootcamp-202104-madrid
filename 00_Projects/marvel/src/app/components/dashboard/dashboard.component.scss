@@ -1,0 +1,44 @@
+@import '../../../variables.scss';
+@font-face {
+    font-family: 'HoustonComic';
+    src:url('../../resources/HoustonComicsPersonalUse-6Yea1.ttf')
+}
+@font-face {
+font-family:'Avengeance';
+src: url('../../resources/Avengeance-YolO.ttf');
+}
+.main-container{
+    background-color: $backgroundDashboard;
+    &__title{
+        margin: 2%;
+        font-family: 'Avengeance';
+        color: white;
+        letter-spacing: 3px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    &__list{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__anchors{
+        display: flex;
+        justify-content: space-evenly;
+        width: 240px;
+        height: 490px;
+        margin: 2%;
+    }
+    &__list-img{
+        object-fit: cover;
+        width: 220px;
+        height: 410px;
+        overflow: hidden;
+        transition: all 200ms ease-in-out;
+        &:hover{
+            border: 5px solid $yellowMarvel;
+            transform: scale(1.1);
+        }
+    }
+}

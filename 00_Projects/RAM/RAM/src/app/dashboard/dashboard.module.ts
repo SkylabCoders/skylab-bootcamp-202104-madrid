@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { DashboardComponent } from './dashboard.component';
   imports: [
     CommonModule,
     DashboardRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ]
 })
 export class DashboardModule {

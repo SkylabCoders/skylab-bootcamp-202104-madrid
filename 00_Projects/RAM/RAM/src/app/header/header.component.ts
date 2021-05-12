@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   searchInput = ''
   ram:any
 
+
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {

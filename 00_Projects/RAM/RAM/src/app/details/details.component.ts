@@ -52,6 +52,6 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   changeFavicon(){
     const el:any = document.querySelector('.fav');
-    el.style.fontWeight = 'bold'
+    el.style.fontWeight = 'bold';
   }
 }

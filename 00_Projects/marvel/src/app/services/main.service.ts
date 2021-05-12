@@ -6,6 +6,7 @@ import { StorageService } from './storage.service'
   providedIn: 'root'
 })
 export class MainService {
+  character:any;
   constructor (public http:HttpService, public storageSrv:StorageService) { }
 
   getAction (action:string, param:any) {

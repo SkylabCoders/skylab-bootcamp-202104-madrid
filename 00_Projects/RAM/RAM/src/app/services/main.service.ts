@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from './storage.service'
-import { LoginService } from './login.service'
-import { HttpService } from './http.service'
+import { StorageService } from './storage.service';
+import { LoginService } from './login.service';
+import { HttpService } from './http.service';
 
 
 @Injectable({
@@ -10,6 +10,8 @@ import { HttpService } from './http.service'
 export class MainService {
   currentUser = this.srvLogin.currentUser;
   url = "https://rickandmortyapi.com/api/character"
+  detailsCharacter:any
+ 
   constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService ) { }
 
   getTheAPI(url:string):any {

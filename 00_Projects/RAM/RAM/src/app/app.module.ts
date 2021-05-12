@@ -5,7 +5,11 @@ import { AppComponent } from './app.component'
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component'
+=======
+import { HttpClientModule } from '@angular/common/http'
+>>>>>>> features/project/RAM
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 
@@ -14,7 +18,7 @@ import { FormsModule } from '@angular/forms'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,21 @@
-<button class="button--previous" (click) = "getPrevPage()">Previous</button>
-<button class="button--next" (click) = "getNextPage()">Next</button>
-<h1 ng-change="ram" *ngFor="let character of ram">{{character.name}}</h1>
+<div class="container">
+    <div class="container--headimg">
+        <img class="container--headimg" src="https://trello-attachments.s3.amazonaws.com/60755d2282c14f477515af94/60984f23c7019f6710fbc2d6/c6c3da6f299efa4cab13cefa2a596071/ram-list1.jpg" alt="image header">
+    </div>
+    <div class="container--cards">
+        <ul>
+            <li *ngFor="let character of ram">
+                <div class="cards--character">
+                    <img src="{{character.image}}" alt="image character">
+                    <div class="character--span">
+                    <span>{{character.name}}</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>  
+    <div class="container--button">
+        <button class="button--previous" (click) = "getPrevPage()">Previous</button>
+        <button class="button--next" (click) = "getNextPage()">Next</button>
+    </div>
+</div>

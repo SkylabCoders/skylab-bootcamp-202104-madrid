@@ -15,6 +15,7 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   favorites: any[] = [];
 
   change = false;
+
   characterDetails = this.srvMain.detailsCharacter;
   
   constructor(public srvMain:MainService){

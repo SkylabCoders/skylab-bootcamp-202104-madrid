@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
-    // this.srvMain.getCurrentRoute();
+    // this.srvMain.getCurrentRoute(); 
   }
 
   searchSubmit(){

@@ -9,7 +9,9 @@ import { MainService } from '../services/main.service'
 })
 export class ListComponent implements OnInit {
 
-  url = this.srvMain.url
+  pruebaurl: any;
+  url = "https://rickandmortyapi.com/api/character/";
+  maxPage:any;
 
   ram: any[] = [];
 
@@ -22,15 +24,31 @@ export class ListComponent implements OnInit {
     const obs$ = this.srvMain.getTheAPI(urlNew).subscribe((res:any) => {
       console.log('a la lista llega esta url' + urlNew)
       this.ram = res.results;
+      this.pruebaurl = res.info.next
+      console.log(this.ram);
       obs$.unsubscribe();
       this.srvMain.url = 'https://rickandmortyapi.com/api/character'
     })
   }
 
-  ngOnDestroy():void {
-    this.srvMain.url = 'https://rickandmortyapi.com/api/character'
+  getNextPage():void {
+      const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
+        this.ram = res.results;
+        obs$.unsubscribe();
+        console.log(this.ram)
+        console.log(this.pruebaurl);
+        this.pruebaurl = res.info.next
+      }) 
   }
 
-  
+  getPrevPage():void{
+      const obs$ = this.srvMain.getTheAPI(this.pruebaurl).subscribe((res:any) => {
+        this.ram = res.results;
+        obs$.unsubscribe();
+        console.log(this.ram)
+        console.log(this.pruebaurl);
+        this.pruebaurl = res.info.prev
+      })
+  }
 
 }

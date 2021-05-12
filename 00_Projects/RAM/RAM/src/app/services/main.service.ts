@@ -10,7 +10,10 @@ import { filter } from 'rxjs/operators'
 })
 export class MainService {
   currentUser = this.srvLogin.currentUser;
+<<<<<<< HEAD
   url = "https://rickandmortyapi.com/api/character?page=1"
+=======
+>>>>>>> features/project/RAM
   public currentRoute: any;
   constructor(public srvHttp:HttpService, public srvStorage: StorageService, public srvLogin: LoginService, private router: Router ) { }
   amIInList = false;

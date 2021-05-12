@@ -1,12 +1,13 @@
 <main>
-        <div class='dashboard__main-pic'>
-        </div>
-        <div class="dashboard__img-container">   
-        <a *ngFor="let character of imageRam" href="../details/details.component.html" class="img-container__a">
-        <img class="images" src="{{character.image}}">
-        </a> 
-        </div>
+  <div class="dashboard__main-pic"></div>
+  <span class="dashboard__title">WELCOME TO RICK AND MORTY UNIVERSE!</span>
+  <div class="dashboard__img-container">
+    <a
+      *ngFor="let character of imageRam"
+      (click)="goToDetails(character)"
+      id="a{{ character.id }}"
+    >
+      <img class="images" src="{{ character.image }}" alt="character" />
+    </a>
+  </div>
 </main>
-<!-- <p>dashboard works!</p>
-<h1 *ngFor="let character of ram"><a href=""><img src='{{character.image}}'></a> -->
-

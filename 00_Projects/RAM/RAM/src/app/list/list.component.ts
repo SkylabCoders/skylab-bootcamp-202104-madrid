@@ -20,11 +20,14 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
+    let urlNew = this.srvMain.url
+    const obs$ = this.srvMain.getTheAPI(urlNew).subscribe((res:any) => {
+      console.log('a la lista llega esta url' + urlNew)
       this.ram = res.results;
       this.pruebaurl = res.info.next
       console.log(this.ram);
       obs$.unsubscribe();
+      this.srvMain.url = 'https://rickandmortyapi.com/api/character'
     })
   }
 

@@ -2,7 +2,11 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+<<<<<<< HEAD
     jasmine: true
+=======
+    jasmine:true
+>>>>>>> features/project/RAM
   },
   extends: [
     'standard'

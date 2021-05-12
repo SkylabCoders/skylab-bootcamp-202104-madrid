@@ -9,6 +9,8 @@ import { MainService } from '../services/main.service'
 })
 export class FavoritesComponent implements OnInit {
 
+  ram: any[] = this.srvMain.favorites;
+
   constructor(public srvMain:MainService){
   }
 

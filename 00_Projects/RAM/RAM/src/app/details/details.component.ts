@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   ram: any[] = [];
 
-  favorites: any[] = [];
+  favorites: any[] = this.srvMain.favorites;
 
   change = false;
 
@@ -58,11 +58,13 @@ export class DetailsComponent implements OnInit, AfterViewInit {
       const el:any = document.querySelector('.fav');
       el.style.fontWeight = 'bold';
       this.favorites.push(this.characterDetails);
+      this.srvMain.favorites = this.favorites;
       console.log(this.favorites);
     } else {
       const el:any = document.querySelector('.fav');
       el.style.fontWeight = '';
       this.favorites.pop();
+      this.srvMain.favorites = this.favorites;
       console.log(this.favorites);
     }
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Imarvel } from '../../models/Imarvel'
 import { MainService } from '../../services/main.service'
 import { URL } from '../../models/url'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
   randomList: Imarvel[] = [];
   topHeros: Imarvel[] = [];
 
-  constructor (public mainSrv: MainService) {}
+  constructor (public mainSrv: MainService, public route:Router) {}
 
   ngOnInit (): void {
     this.mainSrv
@@ -27,7 +28,9 @@ export class DashboardComponent implements OnInit {
       })
   }
 
-  goCharacter (characters: any) {
+  goCharacter (characters:any) {
+    console.log(this.mainSrv.character)
     this.mainSrv.character = characters
+    this.route.navigate(['details'])
   }
 }

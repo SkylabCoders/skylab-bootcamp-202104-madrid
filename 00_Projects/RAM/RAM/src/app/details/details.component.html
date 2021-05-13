@@ -1,18 +1,18 @@
-<!-- <h1 *ngFor="let character of ram">{{character.name}}</h1> -->
-
 <div class="main-container">
     <mat-card class="example-card">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>NAME: {{characterDetails.name}}</mat-card-title>
-            <mat-card-subtitle>SPECIE: {{characterDetails.species}}</mat-card-subtitle>
+            <mat-card-title>Name: {{characterDetails.name}}</mat-card-title>
+            <mat-card-subtitle>Specie: {{characterDetails.species}}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src='{{characterDetails.image}}' alt="Photo of the character">
         <mat-card-content class="container">
             <div>
                 <p>
-                    GENDER: {{characterDetails.gender}} <br>
-                    ORIGIN: {{characterDetails.origin.name}} <br>
+                    Gender: {{characterDetails.gender}} <br>
+                    Origin: {{characterDetails.origin.name}} <br>
+                    Location: {{characterDetails.location.name}} <br>
+                    Status: {{characterDetails.status}}
                 </p>
             </div>
             <div>

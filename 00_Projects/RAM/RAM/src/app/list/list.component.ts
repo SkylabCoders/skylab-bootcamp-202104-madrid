@@ -46,7 +46,6 @@ export class ListComponent implements OnInit {
 
   sendToDetail(character:any){
     this.srvMain.detailsCharacter = character;
-    console.log(this.srvMain.detailsCharacter);
     this.router.navigate(['details']);
   }
 }

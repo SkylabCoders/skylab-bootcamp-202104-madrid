@@ -35,6 +35,10 @@ a {
     justify-content: space-evenly;
 }
 
+.footer__container--icons:hover {
+    cursor:pointer;
+}
+
 .footer__container--icons i {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -45,6 +49,10 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.footer__container--anchors:hover{
+    cursor:pointer;
 }
 
 .footer__container--contact {
@@ -59,6 +67,10 @@ a {
    .copyright{
    color: white;
    }
+}
+
+.footer__container--contact:hover {
+    cursor:pointer;
 }
 
 @media only screen and (min-width: 800px) {

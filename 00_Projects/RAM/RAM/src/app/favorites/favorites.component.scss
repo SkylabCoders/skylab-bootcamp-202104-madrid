@@ -1,10 +1,12 @@
+
 .container{
     background-color: rgb(60,62,66);
     min-height: 100vh;
 }
 ul {
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
 }
+
 .container--headimg{
     width: 100%;
     img{
@@ -40,39 +42,19 @@ ul {
        
     }
 }
-.container--button{    
-    display: flex;
-    justify-content: center;
-    height: 5rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
 
-    button{
-        background-color: rgb(230,160,78);
-        font-family: 'Rock Salt';
-        font-size: 1rem;
-        margin-left: 2rem;
+.character--delete-button {
+    color: rgb(230,160,78);
+    .fa, .fas {
+        font-size: 1.5rem;
     }
 }
+
 .character--display{
     display: none;
 }
 .list__item:hover {
     cursor: pointer;
-}
-.container--button{    
-    display: flex;
-    justify-content: center;
-    height: 5rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-
-    button{
-        background-color: rgb(230,160,78);
-        font-family: 'Rock Salt';
-        font-size: 1rem;
-        margin-left: 2rem;
-    }
 }
 
 @media only screen and (min-width: 800px){
@@ -136,4 +118,3 @@ ul {
     }
 
 }
-

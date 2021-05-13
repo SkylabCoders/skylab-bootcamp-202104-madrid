@@ -4,7 +4,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ShareModuleModule } from '../share-module/share-module.module';
+// import { ShareModuleModule } from '../share-module/share-module.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ShareModuleModule } from '../share-module/share-module.module';
     DashboardRoutingModule, 
     HttpClientModule,
     MatGridListModule,
-    ShareModuleModule 
+    // ShareModuleModule 
   ]
 })
 export class DashboardModule {

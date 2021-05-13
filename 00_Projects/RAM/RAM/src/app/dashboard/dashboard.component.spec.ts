@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
-import { DetailsComponent } from '../details/details.component'
-const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
+import { DetailsComponent } from '../details/details.component';
 
+const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
 const prueba = {gender: 'male',name:'rick'};
 let ram:any;
 let imageRam: any[];
@@ -19,14 +19,11 @@ class MockCharacter {
        return  of(CHARACTER_ARRAY); 
    }
  }
- 
-
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent ],
@@ -41,14 +38,12 @@ describe('DashboardComponent', () => {
     httpMock = TestBed.get(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);
   });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     spyOn(component,'goToDetails');
     fixture.detectChanges();
   });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });

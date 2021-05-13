@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from './services/main.service';
-import { TranslateService } from '@ngx-translate/core'
+// import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-root',
@@ -10,16 +10,16 @@ import { TranslateService } from '@ngx-translate/core'
 export class AppComponent implements OnInit {
   title = 'RAM';
 
-  constructor(public mainSrv: MainService, private translate:TranslateService){
-    translate.addLangs(['en', 'es']);
-    translate.setDefaultLang('en');
+  constructor(public mainSrv: MainService, /*private translate:TranslateService*/){
+    // translate.addLangs(['en', 'es']);
+    // translate.setDefaultLang('en');
   }
 
   ngOnInit (): void {
   }
 
-  changeLang(lang: string){
-    this.translate.use(lang);
-  }
+  // changeLang(lang: string){
+  //   this.translate.use(lang);
+  // }
 
 }

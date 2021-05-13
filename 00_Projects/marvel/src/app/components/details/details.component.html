@@ -2,28 +2,22 @@
   <div class="details__wrapper">
     <div class="details__thumbnail">
       <h1 class="details__title">{{ hero.name }}</h1>
-      <img
-        class="details__img"
-        src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}"
-        alt="{{ hero.name }}"
-      />
+      <img class="details__img" src="{{ hero.thumbnail.path }}.{{ hero.thumbnail.extension }}" alt="{{ hero.name }}" />
     </div>
 
-    <div class="details__description">
-      <h2 class="details__subtitle">{{ description }}</h2>
-      <p class="details__text">{{ hero.description }}</p>
-    </div>
+    <div class="details__description-wrapper">
+      <div class="details__description">
+        <h2 class="details__subtitle">{{ description }}</h2>
+        <p class="details__text">{{ hero.description }}</p>
+      </div>
 
-    <div class="details__comics">
-      <h2 class="details__subtitle">{{ comicText }}</h2>
-      <div class="details__wrapper-comics">
-        <div class="details__container-img">
-          <img
-            *ngFor="let comic of comicList"
-            src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
-            alt=""
-            class="details__comic-img"
-          />
+      <div class="details__comics">
+        <h2 class="details__subtitle">{{ comicText }}</h2>
+        <div class="details__wrapper-comics">
+          <div class="details__container-img">
+            <img *ngFor="let comic of comicList" src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt=""
+              class="details__comic-img" />
+          </div>
         </div>
       </div>
     </div>

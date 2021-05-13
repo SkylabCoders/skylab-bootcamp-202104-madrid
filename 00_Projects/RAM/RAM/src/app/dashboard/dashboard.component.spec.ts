@@ -4,17 +4,22 @@ import { HttpTestingController, HttpClientTestingModule } from '@angular/common/
 import { HttpClient } from '@angular/common/http'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 import { DetailsComponent } from '../details/details.component'
 const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
 
 const prueba = {gender: 'male',name:'rick'};
 let ram:any;
 let imageRam: any[];
+let mockRouter = {
+	navigate: jasmine.createSpy('navigate')
+}
 class MockCharacter {
   public me(): Observable<any> {
        return  of(CHARACTER_ARRAY); 
    }
  }
+ 
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -30,7 +35,7 @@ describe('DashboardComponent', () => {
     ])],
       providers: [DashboardComponent, {
         provide:MockCharacter, useClass: MockCharacter
-      } ]
+      }, { provide: Router, useValue: mockRouter} ]
     })
     .compileComponents();
     httpMock = TestBed.get(HttpTestingController);
@@ -58,6 +63,10 @@ describe('DashboardComponent', () => {
     component.goToDetails(prueba);
     expect(component.goToDetails).toHaveBeenCalledTimes(1);
   })
+  it('should navigate to details', ()=>{
+    mockRouter.navigate('details')
+    expect (mockRouter.navigate).toHaveBeenCalledWith('details');
+  })
   it('should be rick', () => {
     expect(CHARACTER_ARRAY[0].name).toBe('rick');
   })
@@ -66,7 +75,7 @@ describe('DashboardComponent', () => {
     ram = CHARACTER_ARRAY;
     expect(ram.length).toBe(4);
   })
-  it('should be 2', ()=>{
+  it('should be a JSON', ()=>{
     component.ngOnInit()
     ram = CHARACTER_ARRAY;
     imageRam = ram.slice(0, 2);

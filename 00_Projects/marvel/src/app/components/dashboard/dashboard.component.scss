@@ -7,80 +7,93 @@
 font-family:'Avengeance';
 src: url('../../resources/Avengeance-YolO.ttf');
 }
+
 .main-container{
+    padding-top: 62px;
     background-color: $backgroundDashboard;
+    min-height: 100vh;
+    &__image{
+        height: 207px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
     &__title{
-        margin: 2%;
-        font-family: 'Avengeance';
-        color: white;
-        letter-spacing: 3px;
+        display: none;
     }
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     &__list{
-        display: flex;
-        justify-content: space-evenly;
-    }
-    &__anchors{
-        display: flex;
-        justify-content: space-evenly;
-        width: 240px;
-        height: 490px;
-        margin: 2%;
+        margin-top: 10%;
+        list-style: none;
+        margin: auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
     }
     &__list-img{
-        object-fit: cover;
-        width: 220px;
-        height: 410px;
-        overflow: hidden;
-        transition: all 200ms ease-in-out;
-        &:hover{
-            border: 5px solid $yellowMarvel;
-            transform: scale(1.1);
-        }
+        width: 100%;
+        height: 120px;
     }
 }
 
-@media only screen and (max-width: 600px){
-    .main-container{
-        display: flex;
-        background-color: $backgroundDashboard;
-        flex-wrap: wrap;
-        &__title{
-            margin: 2%;
-            font-family: 'Avengeance';
-            color: white;
-            letter-spacing: 3px;
-        }
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        &__list{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        &__anchors{
-            display: flex;
-            justify-content: space-evenly;
-            width: 131px;
-            height: 128px;
-            margin: 2%;
-        }
-        &__list-img{
-            object-fit: cover;
-            width: 131px;
-            height: 128px;
-            overflow: hidden;
-            transition: all 200ms ease-in-out;
-            &:hover{
-                border: 5px solid $yellowMarvel;
-                transform: scale(1.1);
-            }
-        }
-    }
-    
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media only screen and (max-width: 800px){
+//     .main-container{
+//         display: flex;
+//         max-height: 100%;
+//         display: flex;
+//         flex-wrap: wrap;
+//         background-color: $backgroundDashboard;
+//         flex-direction: column;
+//         justify-content: space-evenly;
+//         align-items: center;
+//         &__title{
+//             margin: 2%;
+//             font-family: 'Avengeance';
+//             color: white;
+//             letter-spacing: 3px;
+//         }
+//         &__list{
+//             display: flex;
+//             justify-content: space-evenly;
+//         }
+//         &__hero{
+//             width: 150px;
+//             height: 160px;
+//         }
+//         &__anchors{
+//             display: flex;
+//             justify-content: space-evenly;
+//             margin: 2%;
+//         }
+//         &__list-img{
+//             object-fit: cover;
+//             width: 220px;
+//             height: 410px;
+//             overflow: hidden;
+//             transition: all 200ms ease-in-out;
+//             &:hover{
+//                 border: 5px solid $yellowMarvel;
+//                 transform: scale(1.1);
+//             }
+//         }
+//     }
+// }

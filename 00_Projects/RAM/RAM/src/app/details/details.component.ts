@@ -54,5 +54,5 @@ export class DetailsComponent implements OnInit, AfterViewInit {
        return true;
      }
    }
-  }
+  } 
 }

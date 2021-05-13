@@ -17,6 +17,7 @@ src: url('../../resources/Avengeance-YolO.ttf');
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 75px;
     
     &__title {
         display: flex;
@@ -24,6 +25,7 @@ src: url('../../resources/Avengeance-YolO.ttf');
         justify-content: center;
         margin-top: 30px;
     }
+
 
     &__list {
         display: flex;
@@ -63,9 +65,52 @@ src: url('../../resources/Avengeance-YolO.ttf');
         bottom: 0;
     }
 
+    &__list-name > i {
+        cursor:pointer;
+    }
+
 
 }
 
+@media only screen and (min-width: 600px) {
+    .main-container {
+
+        
+    
+        &__wrap {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 10px 10px;
+        }
+    
+        &__list {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            width: 321px;
+            overflow: hidden;
+            box-shadow: 0px 26px 24px -16px rgba(0, 0, 0, 0.4);
+        }
+
+    
+    
+        &__list-img {
+            cursor: pointer;
+            width: 321px;
+            height: 74px;
+            object-fit: cover;
+            object-position: 50% 50%;
+            transition: all 200ms ease-in-out;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    
+    }
+    
+}
 
 
 

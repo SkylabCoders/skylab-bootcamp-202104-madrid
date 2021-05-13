@@ -4,10 +4,10 @@
     <div class="main-container__img">
         <img src="https://trello-attachments.s3.amazonaws.com/6098e25224d83a589028906f/430x653/88f99a970ccc135d7d17c5fa248dbb70/stan_lee.png" alt="">
     </div>
-    <figure class="main-container__fav" *ngFor="let favorite of yourFavorites">
+    <figure class="main-container__fav" *ngFor="let favorite of yourFavorites; let i = index">
         <img class="main-container__fav-img" src="{{favorite.thumbnail.path}}.{{favorite.thumbnail.extension}}" alt="{{favorite.name}}">
         <figcaption class="main-container__fav-name" >{{favorite.name}}</figcaption>
-        <i class="far fa-trash-alt"></i>
+        <i (click)="remove(i)" class="far fa-trash-alt"></i>
     </figure>
     
     </main>

@@ -14,4 +14,10 @@ export class FavoritesComponent implements OnInit {
   yourFavorites = this.mainSrv.favorites
   ngOnInit (): void {
   }
+
+  remove (index:number) {
+    if (index > -1) {
+      this.yourFavorites.splice(index, 1)
+    }
+  }
 }

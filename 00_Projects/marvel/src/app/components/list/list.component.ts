@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
      })
    }
 
-   toFavorite (character:any) {
+   toFavorite (character:any, index:number) {
      this.favorite = !this.favorite
      if (this.favorite) {
        this.favoriteList.push(character)

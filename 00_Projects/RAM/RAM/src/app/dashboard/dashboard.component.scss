@@ -1,16 +1,17 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(60, 62, 66);
+}
 .dashboard__main-pic {
-    background-image: url('https://trello-attachments.s3.amazonaws.com/60755d2282c14f477515af94/60984f23c7019f6710fbc2d6/f15f4cbb4cf0711a7c3587be45f74e73/background-imageMain.jpg');
-    background-size: cover;
+    background-image: url('https://culturageek.com.ar/wp-content/uploads/2020/07/Rick-and-morty.png');
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     height: 20rem;
     width: 100%;
 } 
-
-main{
-    display: flex;
-    flex-direction: column;
-}
 
 .dashboard__title{
     background-color: rgb(60, 62, 66);
@@ -68,6 +69,14 @@ main{
         padding-top: 2rem;
         padding-bottom: none;
     }
+    .dashboard__main-pic {
+    background-image: url('https://culturageek.com.ar/wp-content/uploads/2020/07/Rick-and-morty.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40rem;
+    width: 100%;
+} 
     
     .dashboard__img-container{
         display: flex;
@@ -89,6 +98,8 @@ main{
         }
         .images:hover {
             border: 0.4rem solid rgb(255, 152, 0);
+            transform: scale(1.5);
+            cursor: pointer;
 
         }
     }
@@ -115,8 +126,6 @@ main{
             border-bottom-right-radius: 11%;
         }
     }
-  
-
 }
 
 

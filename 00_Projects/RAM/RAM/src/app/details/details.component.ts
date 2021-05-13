@@ -14,13 +14,23 @@ export class DetailsComponent implements OnInit {
   
   characterDetails = this.srvMain.detailsCharacter;
   indexOfDelete:any
+  episodeArray:Array<object> = []
   
   constructor(public srvMain:MainService){ }
 
   ngOnInit(): void {
-    const el:any = document.querySelector('.example-header-image');
-    el.style.backgroundImage =`url(${this.characterDetails.image})`;
+    // const el:any = document.querySelector('.example-header-image');
+    // el.style.backgroundImage =`url(${this.characterDetails.image})`;
     this.checkFavorites();
+    this.getUrl()
+  }
+
+  getUrl(){
+    this.characterDetails.episode.forEach((element:any) => {
+      this.srvMain.getTheAPI(element).subscribe((res:any) => {
+        this.episodeArray.push(res.name)
+      });
+    });
   }
 
   checkFavorites(){
@@ -91,4 +101,3 @@ export class DetailsComponent implements OnInit {
 
 }
 
-//fix

@@ -6,6 +6,8 @@ import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of } from 'rxjs';
 import { DetailsComponent } from '../details/details.component'
 const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
+
+const prueba = {gender: 'male',name:'rick'};
 let ram:any;
 let imageRam: any[];
 class MockCharacter {
@@ -38,6 +40,7 @@ describe('DashboardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
+    spyOn(component,'goToDetails');
     fixture.detectChanges();
   });
 
@@ -45,9 +48,15 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should contain an object', ()=>{
-    component.goToDetails(CHARACTER_ARRAY);
     const characters = CHARACTER_ARRAY;
     expect(characters).toEqual(CHARACTER_ARRAY);
+  })
+  it('should call gotoDetails',()=>{
+    // const el: HTMLElement = fixture.nativeElement; //document
+    // const anchor = el.querySelector('.tst');
+    // anchor?.dispatchEvent(new Event('click'));
+    component.goToDetails(prueba);
+    expect(component.goToDetails).toHaveBeenCalledTimes(1);
   })
   it('should be rick', () => {
     expect(CHARACTER_ARRAY[0].name).toBe('rick');
@@ -61,6 +70,6 @@ describe('DashboardComponent', () => {
     component.ngOnInit()
     ram = CHARACTER_ARRAY;
     imageRam = ram.slice(0, 2);
-    expect(imageRam).toContain("[ Object({ gender: 'male', name: 'rick' }), Object({ gender: 'female', name: 'beth' }) ]");
+    expect(JSON.stringify(imageRam)).toEqual('[{"gender":"male","name":"rick"},{"gender":"female","name":"beth"}]');
   })
 });

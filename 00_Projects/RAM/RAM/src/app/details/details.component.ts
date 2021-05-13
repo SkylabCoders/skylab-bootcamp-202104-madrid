@@ -90,3 +90,5 @@ export class DetailsComponent implements OnInit {
   }
 
 }
+
+//fix

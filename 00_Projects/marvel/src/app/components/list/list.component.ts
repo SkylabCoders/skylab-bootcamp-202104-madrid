@@ -12,6 +12,7 @@ import { URL } from '../../models/url'
 export class ListComponent implements OnInit {
    title:string = 'Character list'
    marvelList:Imarvel [] = []
+   // deleteFavorite:Imarvel [] = []
    favorite = false
    favoriteList = this.mainSrv.favorites
    favicon = document.querySelector('.far fa-star')
@@ -33,17 +34,21 @@ export class ListComponent implements OnInit {
    }
 
    toFavorite (character:any, index:number, evt:MouseEvent) {
-     console.log(evt.target)
      const element:any = evt.target
      element.classList.toggle('fas')
      element.classList.toggle('far')
-     // debugger
      character.selected = !character.selected
      if (character.selected) {
        this.favoriteList.push(character)
+       console.log(this.favoriteList)
      } else {
-       this.favoriteList.splice(index, 0)
+       return this.removeFavorite(character)
      }
+   }
+
+   removeFavorite (character:any) {
+     this.favoriteList = this.favoriteList.filter(hero => { return hero.id !== character.id })
+     this.mainSrv.favorites = this.favoriteList
      console.log(this.favoriteList)
    }
 }

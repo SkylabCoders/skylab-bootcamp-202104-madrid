@@ -11,4 +11,5 @@ export interface Imarvel {
         extension:string,
     }
     selected:boolean
+
 }

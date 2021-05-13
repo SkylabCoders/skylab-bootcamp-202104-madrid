@@ -4,7 +4,7 @@
     <div class="main-container__wrap">
         <figure class="main-container__list" *ngFor="let character of marvelList">
             <a routerLink="/details/{{character.name}}"><img class="main-container__list-img" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"></a>
-            <figcaption class="main-container__list-name" >{{character.name}}<i (click)="toFavorite(character)" class="far fa-star"></i></figcaption>
+            <figcaption class="main-container__list-name" >{{character.name}}<i (click)="toFavorite(character, $event)"  class='far fa-star'></i></figcaption>
         </figure>
     </div>
     

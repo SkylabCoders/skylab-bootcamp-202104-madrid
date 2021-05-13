@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Imarvel } from '../../models/Imarvel'
+import { MainService } from '../../services/main.service'
 
 @Component({
   selector: 'app-favorites',
@@ -7,8 +8,10 @@ import { Imarvel } from '../../models/Imarvel'
   styleUrls: ['./favorites.component.scss']
 })
 export class FavoritesComponent implements OnInit {
-  constructor () { }
+  constructor (private mainSrv:MainService) { }
 
+  title = 'Your favorite list'
+  yourFavorites = this.mainSrv.favorites
   ngOnInit (): void {
   }
 }

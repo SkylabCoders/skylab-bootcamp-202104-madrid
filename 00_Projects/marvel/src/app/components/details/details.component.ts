@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MainService } from 'src/app/services/main.service'
-import { Imarvel } from '../../models/Imarvel'
 import { URL } from '../../models/url'
-import { ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-details',
@@ -10,11 +8,19 @@ import { ActivatedRoute, Params } from '@angular/router'
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  hero:any = this.mainSrv.character;
-  description:string = 'Description'
-  comicText:string = 'Comics'
-  constructor (public mainSrv: MainService) { }
+  comicList: any;
+  hero: any = this.mainSrv.character;
+  description: string = 'Description';
+  comicText: string = 'Comics';
+  constructor (public mainSrv: MainService) {}
 
   ngOnInit (): void {
+    this.mainSrv
+      .getAction('getList', URL.apiURL + URL.comicURL)
+      .subscribe((res: any) => {
+        this.comicList = res.data.results.sort(() => Math.random() - 0.5)
+        this.comicList = this.comicList.slice(0, 6)
+        console.log(this.comicList.slice(0, 6))
+      })
   }
 }

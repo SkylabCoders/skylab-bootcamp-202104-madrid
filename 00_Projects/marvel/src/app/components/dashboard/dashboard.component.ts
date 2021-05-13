@@ -11,7 +11,7 @@ import { Router } from '@angular/router'
 })
 export class DashboardComponent implements OnInit {
   title = 'Meet de mighty heroes and villains of Marvel Universe';
-  marvelList: Imarvel[] = [];
+  MarvelList: Imarvel[] = [];
   randomList: Imarvel[] = [];
   topHeros: Imarvel[] = [];
 
@@ -22,8 +22,13 @@ export class DashboardComponent implements OnInit {
       .getAction('getList', URL.apiURL + URL.CharactersURL)
       .subscribe((res: any) => {
         this.randomList = res.data.results.sort(() => Math.random() - 0.5)
-        for (let i = 0; i < 4; i++) {
-          this.topHeros.push(this.randomList[i])
+        for (let i = 0; i < this.randomList.length; i++) {
+          if (this.topHeros.length === 4) {
+            break
+          }
+          if (this.randomList[i].thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
+            this.topHeros.push(this.randomList[i])
+          }
         }
       })
   }

@@ -46,8 +46,22 @@ export class ListComponent implements OnInit {
 
   sendToDetail(character:any){
     this.srvMain.detailsCharacter = character;
-    console.log(this.srvMain.detailsCharacter);
     this.router.navigate(['details']);
   }
+
+  // checkStatus(status:any, id:any){
+  //   let el = document.getElementById(id);
+  //     if(status === "Alive"){
+  //       if(el){
+  //         el.classList.add('alive')
+  //       }
+  //       return true
+  //     } else {
+  //       if(el){
+  //         el.classList.add('death')
+  //       }
+  //       return true
+  //     }
+  // }
 }
 

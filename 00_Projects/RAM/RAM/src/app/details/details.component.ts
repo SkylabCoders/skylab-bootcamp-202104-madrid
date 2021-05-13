@@ -11,6 +11,7 @@ export class DetailsComponent implements OnInit {
   favorites: any[] = this.srvMain.favorites;
   isInFavorites = false;
   change = false;
+  
   characterDetails = this.srvMain.detailsCharacter;
   indexOfDelete:any
   

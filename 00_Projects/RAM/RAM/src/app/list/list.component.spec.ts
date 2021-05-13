@@ -49,6 +49,7 @@ describe('ListComponent', () => {
     spyOn(component,'getNextPage');
     spyOn(component,'getPrevPage');
     spyOn(component,'chargePage');
+    spyOn(component,'ngOnInit');
     fixture.detectChanges();
   });
   it('should create', () => {
@@ -95,4 +96,8 @@ describe('ListComponent', () => {
     }
     expect(component.chargePage).toHaveBeenCalled();
   })
+  // it('should call chargePage', ()=>{
+  //   component.ngOnInit()
+  //   expect(component.ngOnInit()).toHaveBeenCalled();
+  // })
 });

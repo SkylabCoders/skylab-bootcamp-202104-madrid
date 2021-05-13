@@ -1,14 +1,17 @@
+import 'zone.js/dist/zone-testing'
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
-// const USER_OBJECT= {age:40,name:'Goliath'};
-// class MockUser {
-//   public me(): Observable<any> {
-//       return  of(USER_OBJECT); 
-//   }
-// }
+import { Observable, of } from 'rxjs';
+import {RouterTestingModule} from '@angular/router/testing'
+
+const CHARACTER_OBJECT= {name:'rick', status: 'alive', gender: 'male'};
+class MockCharacter {
+   public me(): Observable<any> {
+       return  of(CHARACTER_OBJECT); 
+   }
+}
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -19,8 +22,10 @@ describe('DashboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent ],
-      imports: [HttpClientTestingModule],
-      providers: [DashboardComponent]
+      imports: [HttpClientTestingModule, RouterTestingModule],
+      providers: [DashboardComponent, {
+        provide:MockCharacter, useClass: MockCharacter
+      }, ]
     })
     .compileComponents();
     httpMock = TestBed.get(HttpTestingController);
@@ -36,4 +41,9 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should contain an object', ()=>{
+    component.goToDetails(CHARACTER_OBJECT);
+    const character = CHARACTER_OBJECT;
+    expect(character).toEqual(CHARACTER_OBJECT);
+  })
 });

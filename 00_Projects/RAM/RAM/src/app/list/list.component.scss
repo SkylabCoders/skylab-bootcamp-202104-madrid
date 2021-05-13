@@ -59,6 +59,13 @@
 .list__item:hover {
     cursor: pointer;
 }
+.alive {
+    color: greenyellow;
+}
+
+.death {
+    color: red;
+}
 
 @media only screen and (min-width: 800px){
     ul{

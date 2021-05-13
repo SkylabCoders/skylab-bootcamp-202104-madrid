@@ -34,7 +34,6 @@
 //     const el: HTMLElement = fixture.nativeElement; //document
 //     const p = el.querySelector('#contenedor');
 //     const title = el.querySelector('#title');
-//     expect()
 //     expect(p?.textContent).toContain('ANGULAR MOLA')
 //     expect(title?.textContent).toMatch('ANGULAR RULES')
 //   })

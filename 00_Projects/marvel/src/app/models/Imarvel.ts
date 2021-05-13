@@ -10,4 +10,5 @@ export interface Imarvel {
         path:string,
         extension:string,
     }
+    selected:boolean
 }

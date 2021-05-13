@@ -12,10 +12,7 @@ import { URL } from '../../models/url'
 export class ListComponent implements OnInit {
    title:string = 'Character list'
    marvelList:Imarvel [] = []
-   // deleteFavorite:Imarvel [] = []
-   favorite = false
    favoriteList = this.mainSrv.favorites
-   favicon = document.querySelector('.far fa-star')
 
    constructor (public mainSrv:MainService) {}
 
@@ -33,7 +30,7 @@ export class ListComponent implements OnInit {
      }
    }
 
-   toFavorite (character:any, index:number, evt:MouseEvent) {
+   toFavorite (character:any, evt:MouseEvent) {
      const element:any = evt.target
      element.classList.toggle('fas')
      element.classList.toggle('far')

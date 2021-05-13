@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit {
       obs$.unsubscribe();
       this.srvMain.goToList("https://rickandmortyapi.com/api/character/?name=" + this.searchInput)
       this.router.navigate(['/list'])
+      this.searchInput = ''
     }, (err:any) => {
     })
   }

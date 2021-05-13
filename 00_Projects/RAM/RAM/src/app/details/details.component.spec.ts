@@ -54,9 +54,9 @@ describe('DetailsComponent', () => {
   //   expect(component).toBeTruthy();
   // });
 
-  it('should call gotoDetails',()=>{
-    component.checkFavorites();
-    expect(component.checkFavorites).toHaveBeenCalled();
-  })
+  // it('should call gotoDetails',()=>{
+  //   component.checkFavorites();
+  //   expect(component.checkFavorites).toHaveBeenCalled();
+  // })
 
 });

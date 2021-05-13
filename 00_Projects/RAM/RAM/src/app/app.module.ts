@@ -8,13 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ShareModuleModule } from '../app/share-module/share-module.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ShareModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

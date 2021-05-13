@@ -1,4 +1,4 @@
-import { Component, OnInit,AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MainService } from '../services/main.service';
 
 @Component({
@@ -6,52 +6,86 @@ import { MainService } from '../services/main.service';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit, AfterViewInit {
-
-  url = 'https://rickandmortyapi.com/api/character';
-
-  ram: any[] = [];
+export class DetailsComponent implements OnInit {
 
   favorites: any[] = this.srvMain.favorites;
-
+  isInFavorites = false;
   change = false;
   characterDetails = this.srvMain.detailsCharacter;
+  indexOfDelete:any
   
-  constructor(public srvMain:MainService){
-
-  }
+  constructor(public srvMain:MainService){ }
 
   ngOnInit(): void {
- 
-  }
-
-  ngAfterViewInit(){
     const el:any = document.querySelector('.example-header-image');
     el.style.backgroundImage =`url(${this.characterDetails.image})`;
+    this.checkFavorites();
   }
 
-  changeFavicon(){
-    this.change = !this.change;
-    if(this.change){
-      const el:any = document.querySelector('.fav');
-      el.style.fontWeight = 'bold';
-      const check = this.checkFavoriteList(this.characterDetails);
-      if(!check){
-        this.favorites.push(this.characterDetails);
-        this.srvMain.favorites = this.favorites;
+  checkFavorites(){
+    const elFav:any = document.querySelector('.fav');
+    for(let i = 0; i < this.favorites.length; i++) {
+      if(this.characterDetails.id === this.favorites[i].id){
+        this.isInFavorites=true;
+        this.indexOfDelete= i
+        break;
       }
-    } else {
-      const el:any = document.querySelector('.fav');
-      el.style.fontWeight = '';
-      this.favorites.pop();
-      this.srvMain.favorites = this.favorites;
+    }
+    if(this.isInFavorites){
+      elFav.style.fontWeight = 'bold';
     }
   }
-  checkFavoriteList(character: any): any{
-   for(let i = 0; i < this.srvMain.favorites.length; i++) {
-     if(character.id === this.srvMain.favorites[i].id){
-       return true;
-     }
-   }
+
+  addIt(){
+    this.favorites.push(this.characterDetails);
+    this.srvMain.favorites = this.favorites;
+    this.favorites = this.srvMain.favorites;
+    this.indexOfDelete = null;
+    this.isInFavorites = !this.isInFavorites;
+    this.checkFavorites();
+    this.change = !this.change
   }
+
+  deletIt(){
+    this.favorites.splice(this.indexOfDelete, 1);
+    this.srvMain.favorites = this.favorites;
+    this.favorites = this.srvMain.favorites;
+    this.indexOfDelete = null;
+    this.isInFavorites = !this.isInFavorites;
+    this.checkFavorites();
+    this.change = !this.change
+  }
+
+  changeFavicon(){    
+    this.change = !this.change;
+    const el:any = document.querySelector('.fav');
+
+    if(this.isInFavorites){
+      if(this.change){
+        el.style.fontWeight = '';
+        if(this.isInFavorites){
+          this.deletIt()
+        }
+        
+      } else {
+        el.style.fontWeight = 'bold';
+        if(!this.isInFavorites){
+          this.addIt()
+        }
+      }
+    } else {
+      if(this.change){
+        el.style.fontWeight = 'bold';
+        if(!this.isInFavorites){
+          this.addIt();
+        }
+      } else {
+        el.style.fontWeight = '';
+        if(this.isInFavorites){
+          this.deletIt()
+        }
+      }
+    }
+  }
+
 }

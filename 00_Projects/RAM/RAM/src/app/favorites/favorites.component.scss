@@ -1,6 +1,9 @@
-
 .container{
     background-color: rgb(60,62,66);
+    min-height: 100vh;
+}
+ul {
+    padding-bottom: 4rem;
 }
 .container--headimg{
     width: 100%;
@@ -51,7 +54,86 @@
         margin-left: 2rem;
     }
 }
+.character--display{
+    display: none;
+}
+.list__item:hover {
+    cursor: pointer;
+}
+.container--button{    
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    button{
+        background-color: rgb(230,160,78);
+        font-family: 'Rock Salt';
+        font-size: 1rem;
+        margin-left: 2rem;
+    }
+}
 
 @media only screen and (min-width: 800px){
-    
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+
+        li{
+            max-width: 70rem;
+        }
+        .character--details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            width: 25rem;
+        }
+        
+
+        .character--display{
+            display: flex;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 2rem;
+            
+            // .character__display--status{
+            //    .fa-circle{
+            //     color: green;
+            //    }
+
+            // }
+        }
+        .character--span{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
+            padding-left: 2rem;
+        }
+        #character--span{
+            padding: 0.5rem;
+        }
+    }
+
+    .container--headimg{
+        display: none;
+    }
+    .container--cards{
+        .cards--character{
+            img{
+                width: 16rem;
+                border-radius: 18px;
+            }
+        }
+    }
+
 }
+

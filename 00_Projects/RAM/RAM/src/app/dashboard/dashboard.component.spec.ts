@@ -1,8 +1,22 @@
+<<<<<<< HEAD
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { DashboardComponent } from './dashboard.component'
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
 import { HttpClient } from '@angular/common/http'
 import { RouterTestingModule } from '@angular/router/testing'
+=======
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DashboardComponent } from './dashboard.component';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
+// const USER_OBJECT= {age:40,name:'Goliath'};
+// class MockUser {
+//   public me(): Observable<any> {
+//       return  of(USER_OBJECT); 
+//   }
+// }
+>>>>>>> features/project/RAM
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

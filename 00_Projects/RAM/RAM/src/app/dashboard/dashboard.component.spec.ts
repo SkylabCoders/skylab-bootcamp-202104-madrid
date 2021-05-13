@@ -1,17 +1,15 @@
-import 'zone.js/dist/zone-testing'
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DashboardComponent } from './dashboard.component';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { DashboardComponent } from './dashboard.component'
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
+import { HttpClient } from '@angular/common/http'
+import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of } from 'rxjs';
-import {RouterTestingModule} from '@angular/router/testing'
-
-const CHARACTER_OBJECT= {name:'rick', status: 'alive', gender: 'male'};
+const CHARACTER_OBJECT= {age:40,name:'Goliath'};
 class MockCharacter {
-   public me(): Observable<any> {
+  public me(): Observable<any> {
        return  of(CHARACTER_OBJECT); 
    }
-}
+ }
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

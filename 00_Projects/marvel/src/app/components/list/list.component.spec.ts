@@ -25,6 +25,7 @@ describe('ListComponent', () => {
       imports: [HttpClientTestingModule],
       declarations: [ListComponent],
       providers: [{ provide: MarvelMock, useClass: Mockmarvel }]
+
     })
       .compileComponents()
   })

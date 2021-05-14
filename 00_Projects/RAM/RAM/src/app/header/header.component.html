@@ -4,6 +4,7 @@
       <img
         class="header-logo__img"
         src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png"
+        alt="header__log"
       />
     </div>
   </a>
@@ -16,7 +17,7 @@
       ><i class="fas fa-list-ul"></i
       ><span class="header__anchor--text" id="list">List</span></a
     >
-    <a class="header__anchor--favourites" routerLink="./favorites"
+    <a *ngIf='loged' class="header__anchor--favourites" routerLink="./favorites"
       ><i class="far fa-star"></i
       ><span class="header__anchor--text" id="favorites">Favourites</span></a
     >

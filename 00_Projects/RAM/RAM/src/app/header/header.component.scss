@@ -10,7 +10,7 @@ header {
     right: 0;
     height: 8%;
     align-items: center;
-    font-family: 'Rock Salt';
+    font-family: 'Rock Salt', sans-serif;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     font-size: 1.6rem;
@@ -47,6 +47,10 @@ a{
    justify-content: center;
 }
 
+.no-loged {
+    width: 45%;
+}
+
 /* 
 STYLE FOR LOG IN MODAL
 */
@@ -57,6 +61,7 @@ button{
     width: 17.5rem;
     margin-left: 12rem;
     margin-top: 1rem;
+    background-color: rgb(230,160,78);
 }
 
 .formlogin{
@@ -84,9 +89,7 @@ button{
     object-fit: cover;
     margin-bottom: -1.3rem;
 }
-button{
-    background-color: rgb(230,160,78);
-}
+
 .formlogin__span{
     display: flex;
     flex-direction: column;
@@ -109,7 +112,7 @@ button{
     display: flex;
     flex-direction: column;
     button{
-        font-family: 'Rock Salt';
+        font-family: 'Rock Salt', sans-serif;
     }
 }
 #login--anchor{
@@ -132,16 +135,12 @@ button{
         right: auto;
         height: 10vh;
         align-items: center;
-        font-family: 'Rock Salt';
+        font-family: 'Rock Salt', sans-serif;
         border-radius: 0;
     }
 
     .header__anchors i{
         display: none;
-    }
-
-    .header__anchor--text{
-        display: flex;
     }
 
     .header__logo{
@@ -211,11 +210,15 @@ button{
         outline: none;
         margin-left: 1rem;
         font-size: 1rem;
-        font-family: 'Rock Salt';
+        font-family: 'Rock Salt', sans-serif;
     }
 
     #search__icon {
         padding-left: 1rem;
+    }
+
+    .no-loged {
+        width: 30%;
     }
 
     
@@ -236,7 +239,7 @@ button{
         button{
             width: 31rem;
             height: 3.5rem;
-            font-family: 'Rock Salt';
+            font-family: 'Rock Salt', sans-serif;
             margin-left: 0;
         }
     }

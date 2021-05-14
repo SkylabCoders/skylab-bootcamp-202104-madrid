@@ -17,11 +17,16 @@ export class HeaderComponent implements OnInit {
   model = new User('', '');
   searchInput = ''
   ram:any
+  loged = false;
 
 
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
+    let el = document.querySelector('.header__logIn');
+    if(!this.loged){
+      el?.classList.add('no-loged');
+    }
   }
 
   searchSubmit(){
@@ -42,6 +47,8 @@ export class HeaderComponent implements OnInit {
     this.showLogIn = !this.showLogIn
   }
   onSubmit () {
+    let el = document.querySelector('.header__logIn');
+    el?.classList.remove('no-loged');
     if(this.showLogIn){
       this.logIn = 'Log Out';
     } else {
@@ -51,6 +58,8 @@ export class HeaderComponent implements OnInit {
     this.srvMain.currentUser = this.model;
     this.showLogIn = false;
     localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
+    this.loged = true;
+
   }
 
   backHome(){

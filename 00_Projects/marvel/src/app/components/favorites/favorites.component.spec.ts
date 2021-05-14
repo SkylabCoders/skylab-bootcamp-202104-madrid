@@ -1,25 +1,32 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { FavoritesComponent } from './favorites.component';
+import { FavoritesComponent } from './favorites.component'
 
 describe('FavoritesComponent', () => {
-  let component: FavoritesComponent;
-  let fixture: ComponentFixture<FavoritesComponent>;
+  let component: FavoritesComponent
+  let fixture: ComponentFixture<FavoritesComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavoritesComponent ]
+      declarations: [FavoritesComponent]
     })
-    .compileComponents();
-  });
+      .compileComponents()
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FavoritesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(FavoritesComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+    spyOn(component, 'ngOnInit')
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    // it ('should call remove function splice method in remove')
+    // spy = spyOn(service, 'redirectToAuth');
+    // component.handleLogin();
+    // expect(spy).toHaveBeenCalled();
+  })
+})
+
+// should call the `redirectToAuth` method on the `LoginService`', () => {
+//   spy = spyOn(service, 'redirectToAuth');
+//   component.handleLogin();
+//   expect(spy).toHaveBeenCalled();

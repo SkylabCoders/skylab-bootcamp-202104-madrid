@@ -30,8 +30,8 @@ export class ListComponent implements OnInit {
      }
    }
 
-   toFavorite (character:any, evt:MouseEvent) {
-     const element:any = evt.target
+   toFavorite (character:any, evt?:MouseEvent) {
+     const element:any = evt?.target
      element.classList.toggle('fas')
      element.classList.toggle('far')
      character.selected = !character.selected

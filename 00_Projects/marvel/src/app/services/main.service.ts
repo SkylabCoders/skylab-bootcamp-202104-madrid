@@ -9,6 +9,7 @@ import { Imarvel } from '../models/Imarvel'
 export class MainService {
   character:any;
   favorites:Imarvel [] = [];
+  userData:any;
 
   constructor (public http:HttpService, public storageSrv:StorageService) { }
 

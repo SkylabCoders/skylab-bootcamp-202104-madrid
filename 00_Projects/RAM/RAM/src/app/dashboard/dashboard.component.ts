@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   url = 'https://rickandmortyapi.com/api/character';
   ram: any[] = [];
-  imageRam:any
+  imageRam:any;
 
   constructor(public srvMain:MainService, public router:Router /*, public translate: TranslateService*/){
   }

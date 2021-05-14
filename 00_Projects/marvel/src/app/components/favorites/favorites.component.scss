@@ -1,27 +1,20 @@
 @import '../../../variables.scss';
-
 @font-face {
-   
     font-family: 'HoustonComic';
     src:url('../../resources/HoustonComicsPersonalUse-6Yea1.ttf')
 }
-
 @font-face {
 font-family:'Avengeance';
 src: url('../../resources/Avengeance-YolO.ttf');
 }
-
 .main-container {
     padding-bottom: 90px;
-
     &__wrapper-img {
         display: none;
     }
-
     &__container-img {
         position: relative;
     }
-
     &__fav {
         display: flex;
         align-items: center;
@@ -31,10 +24,10 @@ src: url('../../resources/Avengeance-YolO.ttf');
         margin-left: auto;
         margin-top: 30px;
     }
-
     &__icon {
         margin-left: 15px;
         font-size: 30px;
+        cursor: pointer;
     }
 
     &__fav-img {
@@ -42,7 +35,6 @@ src: url('../../resources/Avengeance-YolO.ttf');
         height: 100px;
         object-fit: cover;
     }
-
     &__fav-name {
         background-color: $yellowMarvel;
         width: 130px;
@@ -56,7 +48,8 @@ src: url('../../resources/Avengeance-YolO.ttf');
         bottom: 0;
         right: 0;
     }
-
+  
+    
     &__title {
         text-align: center;
         font-family: "Avengeance", Arial, Helvetica, sans-serif;
@@ -72,7 +65,6 @@ src: url('../../resources/Avengeance-YolO.ttf');
         height: 100vh;
         width: 75%;
         margin: auto;
-
         &__wrapper-img {
             display: block;
             height: 100vh;
@@ -88,12 +80,10 @@ src: url('../../resources/Avengeance-YolO.ttf');
             height: 90vh;
             margin: auto;
             overflow-y: scroll;
-
             &::-webkit-scrollbar {
                 display: none;
               }
         }
-
         &__title {
             padding: 0 20px;
         }

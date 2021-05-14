@@ -1,2 +1,24 @@
 <app-header></app-header>
+<main class="main-container">
+    <div class="main-container__wrap">
+        <div class="wrap__button-box">
+            <button class="button-box__button__login">Login</button>
+            <button class="button-box__button__sign-up">Sign Up</button>
+        </div>
+        <form class="wrap__form" (ngSubmit)='onSubmit()' #productForm='ngForm'>
+            <div class="form__form-group">
+                <label class="form-group__label" for="userName">User Name:</label>
+                <input class="form-group__input" id="userName" type="text" required [(ngModel)]='userData.userName'
+                    name='userName'>
+            </div>
+            <div class="form__form-group">
+                <label class="form-group__label" for="passWord">Password:</label>
+                <input class="form-group__input" id="passWord" type="password" required [(ngModel)]='userData.passWord'
+                    name='passWord'>
+                <a class="form-group__forget">Forget your password</a>
+            </div>
+            <button class="form__submit" type="submit">Enter</button>
+        </form>
+    </div>
+</main>
 <app-footer></app-footer>

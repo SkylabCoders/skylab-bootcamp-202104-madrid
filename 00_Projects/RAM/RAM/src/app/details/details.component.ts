@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../services/main.service';
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',

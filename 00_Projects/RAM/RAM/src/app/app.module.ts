@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { ShareModuleModule } from '../app/share-module/share-module.module';
+// import { ShareModuleModule } from '../app/share-module/share-module.module';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { ShareModuleModule } from '../app/share-module/share-module.module';
     CommonModule,
     FormsModule,
     RouterModule,
-    ShareModuleModule
+    // ShareModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

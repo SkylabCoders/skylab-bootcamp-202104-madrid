@@ -6,7 +6,6 @@ import { Observable, of } from 'rxjs';
 import { DetailsComponent } from '../details/details.component'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Router } from '@angular/router';
-
 const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
 const prueba = {
   gender: 'male',
@@ -24,13 +23,11 @@ class MockCharacter {
        return  of(CHARACTER_ARRAY); 
    }
  }
-
 describe('ListComponent', () => {
   let component: ListComponent;
   let fixture: ComponentFixture<ListComponent>;
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ListComponent ],
@@ -45,7 +42,6 @@ describe('ListComponent', () => {
     httpMock = TestBed.get(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);
   });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
@@ -53,9 +49,9 @@ describe('ListComponent', () => {
     spyOn(component,'getNextPage');
     spyOn(component,'getPrevPage');
     spyOn(component,'chargePage');
+    spyOn(component,'ngOnInit');
     fixture.detectChanges();
   });
-
   it('should create', () => {
    expect(component).toBeTruthy();
   });
@@ -100,5 +96,8 @@ describe('ListComponent', () => {
     }
     expect(component.chargePage).toHaveBeenCalled();
   })
- 
+  // it('should call chargePage', ()=>{
+  //   component.ngOnInit()
+  //   expect(component.ngOnInit()).toHaveBeenCalled();
+  // })
 });

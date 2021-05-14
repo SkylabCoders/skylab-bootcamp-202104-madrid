@@ -21,7 +21,7 @@ describe('AppComponent', () => {
       providers: [
         AppComponent, TranslateService
       ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
     httpMock = TestBed.get(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);

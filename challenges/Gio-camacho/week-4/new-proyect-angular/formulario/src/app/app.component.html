@@ -1,0 +1,13 @@
+<app-form></app-form>
+<button (click)="getData()">Machacame</button>
+<button (click)="getUrl()">Url</button>
+<ul>
+    <li *ngFor="let people of data"> {{people.name}} </li>
+</ul>
+
+<form>
+    <label>
+        <input type="text">
+        <input type="submit">
+    </label>
+</form>

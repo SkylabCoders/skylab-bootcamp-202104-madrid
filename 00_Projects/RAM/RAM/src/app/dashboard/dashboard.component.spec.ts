@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
-import { DetailsComponent } from '../details/details.component'
+import { DetailsComponent } from '../details/details.component';
+import { TranslateService } from '@ngx-translate/core';
+
 const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
 
 const prueba = {gender: 'male',name:'rick'};
@@ -33,7 +35,7 @@ describe('DashboardComponent', () => {
       imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([
         { path: 'details', component: DetailsComponent}
     ])],
-      providers: [DashboardComponent, {
+      providers: [DashboardComponent, TranslateService, {
         provide:MockCharacter, useClass: MockCharacter
       }, { provide: Router, useValue: mockRouter} ]
     })

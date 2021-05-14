@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { MainService } from 'src/app/services/main.service'
 import { Imarvel } from '../../models/Imarvel'
 import { URL } from '../../models/url'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-list',
@@ -9,19 +10,25 @@ import { URL } from '../../models/url'
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-   title:string = 'Character list'
    marvelList:Imarvel [] = []
    favorite = false
    favoriteList = this.mainSrv.favorites
    favicon = document.querySelector('.far fa-star')
 
-   constructor (public mainSrv:MainService) {}
+   constructor (public mainSrv:MainService, public translate: TranslateService) {
+   }
 
    ngOnInit (): void {
      this.mainSrv.getAction('getList', (URL.apiURL + URL.CharactersURL)).subscribe((res:any) => {
        console.log(res.data.results)
        this.marvelList = res.data.results
      })
+
+     this.translate.addLangs(['en', 'es'])
+     const localLang = localStorage.getItem('lang')
+     if (localLang) {
+       this.translate.use(localLang)
+     }
    }
 
    toFavorite (character:any) {

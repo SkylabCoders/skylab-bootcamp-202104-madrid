@@ -1,14 +1,17 @@
+<app-header></app-header>
 <main class="main-container">
     <h2 class="main-container__title">{{title}}</h2>
     <div class="main-container__slider">
-        <img class="main-container__image" src="https://www.cuartomundo.cl/wp-content/uploads/2020/01/Marvel-en-2019-destacada.jpg" alt="">
+        <img class="main-container__image"
+            src="https://www.cuartomundo.cl/wp-content/uploads/2020/01/Marvel-en-2019-destacada.jpg" alt="">
     </div>
     <ul class="main-container__list">
         <li class="main-container__hero" *ngFor="let character of topHeros" (click)="goCharacter(character)">
-            <a class="main-container__anchors" >
+            <a class="main-container__anchors">
                 <img class="main-container__list-img"
                     src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
             </a>
         </li>
     </ul>
 </main>
+<app-footer></app-footer>

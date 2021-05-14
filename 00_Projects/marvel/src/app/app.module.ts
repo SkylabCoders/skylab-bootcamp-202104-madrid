@@ -12,7 +12,14 @@ import { FavoritesComponent } from './components/favorites/favorites.component'
 import { LoginComponent } from './components/login/login.component'
 import { OptionsComponent } from './components/options/options.component'
 import { DetailsComponent } from './components/details/details.component'
+// import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
+// import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 
+import { ShareModuleModule } from '../app/share-module/share-module.module'
+
+// export function createTranslateLoader (http: HttpClient) {
+//   return new TranslateHttpLoader(http)
+// }
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +35,8 @@ import { DetailsComponent } from './components/details/details.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ShareModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

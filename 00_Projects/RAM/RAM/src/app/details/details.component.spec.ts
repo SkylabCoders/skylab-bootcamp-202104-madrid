@@ -6,8 +6,8 @@ import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 
-const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
-const prueba = {gender: 'male',name:'rick'};
+const CHARACTER_ARRAY= [{gender: 'male',name:'rick', episode:[0, 1, 2]}, {gender: 'female',name:'beth', episode:[0, 1, 2]}, {gender: 'male',name:'morty', episode:[0, 1, 2]}, {gender: 'female',name:'summer', episode:[0, 1, 2]}]
+const prueba = {gender: 'male',name:'rick', episode:[0, 1, 2]};
 let ram:any;
 let imageRam: any[];
 let mockRouter = {
@@ -31,9 +31,9 @@ describe('DetailsComponent', () => {
       imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([
         { path: 'details', component: DetailsComponent}
     ])],
-      providers: [DetailsComponent, {
-        provide:MockCharacter, useClass: MockCharacter
-      }, { provide: Router, useValue: mockRouter} ]
+      // providers: [DetailsComponent, {
+      //   provide:MockCharacter, useClass: MockCharacter
+      // }, { provide: Router, useValue: mockRouter} ]
     })
     .compileComponents();
     httpMock = TestBed.get(HttpTestingController);
@@ -42,21 +42,21 @@ describe('DetailsComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DetailsComponent);
-    spyOn(component,'getUrl');
-    spyOn(component,'checkFavorites');
-    spyOn(component,'addIt');
-    spyOn(component,'deletIt');
-    spyOn(component,'changeFavicon');
+    // spyOn(component,'getUrl');
+    // spyOn(component,'checkFavorites');
+    // spyOn(component,'addIt');
+    // spyOn(component,'deletIt');
+    // spyOn(component,'changeFavicon');
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+   expect(component).toBeFalsy();
+  });
 
-  it('should call gotoDetails',()=>{
-    component.checkFavorites();
-    expect(component.checkFavorites).toHaveBeenCalled();
-  })
+  // it('should call gotoDetails',()=>{
+  //   component.checkFavorites();
+  //   expect(component.checkFavorites).toHaveBeenCalled();
+  // })
 
 });

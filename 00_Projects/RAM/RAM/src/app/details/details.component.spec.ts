@@ -48,21 +48,10 @@ describe('DetailsComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DetailsComponent);
-    // spyOn(component,'getUrl');
-    // spyOn(component,'checkFavorites');
-    // spyOn(component,'addIt');
-    // spyOn(component,'deletIt');
-    // spyOn(component,'changeFavicon');
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // it('should call gotoDetails',()=>{
-  //   component.checkFavorites();
-  //   expect(component.checkFavorites).toHaveBeenCalled();
-  // })
-
 });

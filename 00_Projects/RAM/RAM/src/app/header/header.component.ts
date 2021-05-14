@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   model = new User('', '');
   searchInput = ''
   ram:any
+  loged = false;
 
 
   constructor (public srvMain:MainService, public router:Router) { }
@@ -51,6 +52,8 @@ export class HeaderComponent implements OnInit {
     this.srvMain.currentUser = this.model;
     this.showLogIn = false;
     localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
+    this.loged = true;
+
   }
 
   backHome(){

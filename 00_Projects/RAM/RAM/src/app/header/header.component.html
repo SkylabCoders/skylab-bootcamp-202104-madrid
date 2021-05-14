@@ -16,7 +16,7 @@
       ><i class="fas fa-list-ul"></i
       ><span class="header__anchor--text" id="list">List</span></a
     >
-    <a class="header__anchor--favourites" routerLink="./favorites"
+    <a *ngIf='loged' class="header__anchor--favourites" routerLink="./favorites"
       ><i class="far fa-star"></i
       ><span class="header__anchor--text" id="favorites">Favourites</span></a
     >

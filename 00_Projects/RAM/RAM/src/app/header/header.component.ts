@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit {
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
+    let el = document.querySelector('.header__logIn');
+    if(!this.loged){
+      el?.classList.add('no-loged');
+    }
   }
 
   searchSubmit(){
@@ -43,6 +47,8 @@ export class HeaderComponent implements OnInit {
     this.showLogIn = !this.showLogIn
   }
   onSubmit () {
+    let el = document.querySelector('.header__logIn');
+    el?.classList.remove('no-loged');
     if(this.showLogIn){
       this.logIn = 'Log Out';
     } else {

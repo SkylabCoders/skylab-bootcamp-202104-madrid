@@ -14,8 +14,8 @@ export class DetailsComponent implements OnInit {
   change = false;
   
   characterDetails = this.srvMain.detailsCharacter;
-  indexOfDelete:any
-  episodeArray:Array<object> = []
+  indexOfDelete:any;
+  episodeArray:Array<object> = [];
   
   constructor(public srvMain:MainService){ }
 

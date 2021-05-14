@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { ListComponent } from '../list/list.component'
 import { LoadingListComponent } from '../loading-list/loading-list.component'
+import { FormsModule } from '@angular/forms';
 
 const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
 const prueba = {gender: 'male',name:'rick'};
@@ -27,7 +28,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([
+      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule.withRoutes([
         { path: 'ListComponent', component: ListComponent},
         { path:'LoadingListComponent', component: LoadingListComponent}
     ])],
@@ -42,10 +43,16 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent)
     component = fixture.componentInstance
-    fixture.detectChanges()
+    fixture.detectChanges();
+    spyOn(component, 'openLogIn');
   })
 
   it('should create', () => {
     expect(component).toBeTruthy()
+  })
+
+  it('should call openLogin', () => {
+    component.openLogIn();
+    expect(component.openLogIn).toHaveBeenCalled();
   })
 })

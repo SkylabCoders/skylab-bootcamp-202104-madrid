@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoadingListRoutingModule } from './loading-list-routing.module';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LoadingListComponent } from './loading-list.component';
-
 
 @NgModule({
   declarations: [
@@ -13,6 +12,6 @@ import { LoadingListComponent } from './loading-list.component';
     CommonModule,
     LoadingListRoutingModule,
     HttpClientModule
-  ]
+  ],
 })
 export class LoadingListModule { }

@@ -46,18 +46,11 @@ a{
    width: 25%;
    justify-content: center;
 }
-.fa-home{
-    font-size: 2.5rem;
+
+.no-loged {
+    width: 45%;
 }
-.fa-list-ul{
-    font-size: 2.5rem;
-}
-.fa-star{
-    font-size: 2.5rem;
-}
-.fa-user{
-    font-size: 2.5rem;
-}
+
 /* 
 STYLE FOR LOG IN MODAL
 */
@@ -227,6 +220,10 @@ button{
 
     #search__icon {
         padding-left: 1rem;
+    }
+
+    .no-loged {
+        width: 30%;
     }
 
     

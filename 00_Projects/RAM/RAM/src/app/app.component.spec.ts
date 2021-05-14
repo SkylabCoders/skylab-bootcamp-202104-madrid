@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 describe('AppComponent', () => {
   let httpMock: HttpTestingController;
@@ -17,7 +18,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [
-        AppComponent
+        AppComponent, TranslateService
       ]
     }).compileComponents();
     httpMock = TestBed.get(HttpTestingController);

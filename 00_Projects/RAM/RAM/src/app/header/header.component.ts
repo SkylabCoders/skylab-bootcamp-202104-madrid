@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   dashboardTag = 'Dashboard';
   listTag = 'List';
   favoriteTag = 'Favourites';
-  logIn = 'Log In'
+  logIn = 'Log In';
   showLogIn = false;
   model = new User('', '');
   searchInput = ''

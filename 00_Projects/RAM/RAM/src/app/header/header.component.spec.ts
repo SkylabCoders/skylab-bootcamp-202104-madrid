@@ -3,16 +3,34 @@ import { HeaderComponent } from './header.component'
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
 import { HttpClient } from '@angular/common/http'
 import { RouterTestingModule } from '@angular/router/testing'
+import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { ListComponent } from '../list/list.component'
+import { LoadingListComponent } from '../loading-list/loading-list.component'
+
+const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
+const prueba = {gender: 'male',name:'rick'};
+class MockCharacter {
+  public me(): Observable<any> {
+       return  of(CHARACTER_ARRAY); 
+   }
+ }
+let mockRouter = {
+	navigate: jasmine.createSpy('navigate')
+}
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent
+  let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>
-  let httpMock: HttpTestingController
-  let httpClient: HttpClient
+  let httpMock: HttpTestingController;
+  let httpClient: HttpClient;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([
+        { path: 'ListComponent', component: ListComponent},
+        { path:'LoadingListComponent', component: LoadingListComponent}
+    ])],
       providers: [HeaderComponent],
       declarations: [HeaderComponent]
     })

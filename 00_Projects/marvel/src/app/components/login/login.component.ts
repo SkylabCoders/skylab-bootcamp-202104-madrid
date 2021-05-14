@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { StorageService } from '../../services/storage.service'
+
+import { MainService } from '../../services/main.service'
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,19 @@ import { StorageService } from '../../services/storage.service'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor () { }
+  userData = {
+    userName: '',
+    passWord: ''
+  }
+
+  constructor (public srv:MainService) { }
 
   ngOnInit (): void {
+  }
+
+  onSubmit () {
+    this.srv.userData = this.userData
+    console.log(this.userData)
+    console.log(this.srv.userData)
   }
 }

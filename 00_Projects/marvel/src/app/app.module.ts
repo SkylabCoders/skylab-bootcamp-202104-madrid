@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { HttpClientModule } from '@angular/common/http'
-
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './components/header/header.component'
@@ -12,6 +10,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component'
 import { LoginComponent } from './components/login/login.component'
 import { OptionsComponent } from './components/options/options.component'
 import { DetailsComponent } from './components/details/details.component'
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { DetailsComponent } from './components/details/details.component'
     DetailsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule

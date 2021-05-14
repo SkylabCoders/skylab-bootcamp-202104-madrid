@@ -47,7 +47,7 @@
 
     button{
         background-color: rgb(230,160,78);
-        font-family: 'Rock Salt';
+        font-family: 'Rock Salt', sans-serif;
         font-size: 1.6rem;
         height: 4rem;
         width: 10rem;
@@ -88,7 +88,6 @@
         
 
         .character--display{
-            display: flex;
             display: flex;
             flex-direction: column;
             justify-content: center;

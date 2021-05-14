@@ -1,14 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { FooterRoutingModule } from './footer-routing.module';
-
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { ShareModuleModule } from '../../share-module/share-module.module'
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    FooterRoutingModule
+    ShareModuleModule
   ]
 })
 export class FooterModule { }

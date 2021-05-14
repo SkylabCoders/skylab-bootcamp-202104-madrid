@@ -13,6 +13,8 @@ import { DetailsComponent } from './components/details/details.component'
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 
+import { ShareModuleModule } from '../app/share-module/share-module.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms'
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ShareModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

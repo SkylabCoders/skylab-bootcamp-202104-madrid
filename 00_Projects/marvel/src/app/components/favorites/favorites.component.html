@@ -1,14 +1,12 @@
+<app-header></app-header>
 <main class="main-container">
     <div class="main-container__wrapper-img">
-        <img class="main-container__img"
-        [src]="imgSrc"
-           (mouseenter)="OnMouseEnter()"
-           (mouseleave)="OnMouseOut()"
-       
+        <img class="main-container__img" [src]="imgSrc" (mouseenter)="OnMouseEnter()" (mouseleave)="OnMouseOut()"
             alt="">
     </div>
+
     <div class="main-container__fav-list">
-        <h2 class="main-container__title">{{title}}</h2>
+        <h2 class="main-container__title">{{'favorite' | translate}}</h2>
         <figure class="main-container__fav" *ngFor="let favorite of yourFavorites;let i = index">
             <div class="main-container__container-img">
                 <img class="main-container__fav-img" src="{{favorite.thumbnail.path}}.{{favorite.thumbnail.extension}}"
@@ -18,4 +16,6 @@
             <i (click)="remove(i)" class="main-container__icon far fa-trash-alt"></i>
         </figure>
     </div>
+
 </main>
+<app-footer></app-footer>

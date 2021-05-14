@@ -3,6 +3,7 @@ import { Imarvel } from '../../models/Imarvel'
 import { MainService } from '../../services/main.service'
 import { URL } from '../../models/url'
 import { Router } from '@angular/router'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
   randomList: Imarvel[] = [];
   topHeros: Imarvel[] = [];
 
-  constructor (public mainSrv: MainService, public route:Router) {}
+  constructor (public mainSrv: MainService, public route:Router, public translate: TranslateService) {}
 
   ngOnInit (): void {
     this.mainSrv

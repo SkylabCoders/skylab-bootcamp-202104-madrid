@@ -1,5 +1,7 @@
+<app-header></app-header>
 <main class="option-container">
-    <h1 class="option-container__title">title</h1>
-    <button class="option-container__btn">en</button>
-    <button class="option-container__btn">es</button>
+    <h1 class="option-container__title">{{'lenguages' | translate}}</h1>
+    <button (click)="changeLang('en')" class="option-container__btn">{{ 'english' | translate }}</button>
+    <button (click)="changeLang('es')" class="option-container__btn">{{ 'spanish' | translate }}</button>
 </main>
+<app-footer></app-footer>

@@ -3,6 +3,7 @@ import { ElementArrayFinder } from 'protractor'
 import { MainService } from 'src/app/services/main.service'
 import { Imarvel } from '../../models/Imarvel'
 import { URL } from '../../models/url'
+import { TranslateService } from '@ngx-translate/core'
 import { Router } from '@angular/router'
 import { analyzeAndValidateNgModules } from '@angular/compiler'
 
@@ -12,11 +13,11 @@ import { analyzeAndValidateNgModules } from '@angular/compiler'
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-   title:string = 'Character list'
    marvelList:Imarvel [] = []
    favoriteList = this.mainSrv.favorites
 
-   constructor (public mainSrv:MainService, public route:Router) {}
+   constructor (public mainSrv:MainService, public translate: TranslateService, public route:Router) {
+   }
 
    ngOnInit (): void {
      this.mainSrv.getAction('getList', (URL.apiURL + URL.CharactersURL)).subscribe((res:any) => {
@@ -24,6 +25,12 @@ export class ListComponent implements OnInit {
        this.parseData(res.data.results)
        this.marvelList = res.data.results
      })
+
+     this.translate.addLangs(['en', 'es'])
+     const localLang = localStorage.getItem('lang')
+     if (localLang) {
+       this.translate.use(localLang)
+     }
    }
 
    parseData (list:any []) {

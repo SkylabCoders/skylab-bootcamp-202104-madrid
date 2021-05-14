@@ -7,8 +7,11 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 const MarvelMock = {
   name: 'Cyclops'
-
 }
+
+const marvelMockList = [{ name: 'Cyclops' }, { name: 'Wolverine' }]
+
+const marvelPush = marvelMockList.push({ name: 'Adrian' })
 
 class Mockmarvel {
   getData (MarvelMock:any) {
@@ -38,5 +41,12 @@ describe('ListComponent', () => {
 
   it('should contain an object with string', () => {
     expect(MarvelMock.name).toBe('Cyclops')
+  })
+
+  it('should push an object into an array', () => {
+    const button: HTMLElement = fixture.nativeElement
+    const boton = button.querySelector('.far fa-star')
+    button.click()
+    expect(marvelPush).toBe(3)
   })
 })

@@ -32,16 +32,21 @@ describe('HeaderComponent', () => {
         { path: 'ListComponent', component: ListComponent},
         { path:'LoadingListComponent', component: LoadingListComponent}
     ])],
-      providers: [HeaderComponent],
-      declarations: [HeaderComponent]
-    })
+    providers: [HeaderComponent, {
+      provide:MockCharacter, useClass: MockCharacter
+    }, { provide: Router, useValue: mockRouter} ]
+  })
       .compileComponents()
       httpMock = TestBed.get(HttpTestingController)
       httpClient = TestBed.inject(HttpClient)
   })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent)
+    fixture = TestBed.createComponent(HeaderComponent);
+    spyOn(component,'searchSubmit');
+    spyOn(component,'openLogIn');
+    spyOn(component,'onSubmit');
+    spyOn(component,'backHome');
     component = fixture.componentInstance
     fixture.detectChanges();
     spyOn(component, 'openLogIn');
@@ -49,8 +54,23 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy()
-  })
-
+  });
+  it('should contain an object',()=>{
+    const characters = CHARACTER_ARRAY;
+    expect(characters).toEqual(CHARACTER_ARRAY)
+  });
+  it('should navigate to loadingList',()=>{
+    mockRouter.navigate('loadingList')
+    expect (mockRouter.navigate).toHaveBeenCalledWith('loadingList')
+  });
+  it('should navigate to list',()=>{
+    mockRouter.navigate('list')
+    expect (mockRouter.navigate).toHaveBeenCalledWith('loadingList')
+  });
+  it('should call searchSubmit',()=>{
+    component.searchSubmit;
+    expect(component.searchSubmit).toHaveBeenCalled
+  });
   it('should call openLogin', () => {
     component.openLogIn();
     expect(component.openLogIn).toHaveBeenCalled();

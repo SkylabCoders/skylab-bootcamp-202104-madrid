@@ -12,8 +12,8 @@ export class DetailsComponent implements OnInit {
   favorites: any[] = this.srvMain.favorites;
   isInFavorites = false;
   characterDetails = this.srvMain.detailsCharacter;
-  indexOfDelete:any
-  episodeArray:Array<object> = []
+  indexOfDelete:any;
+  episodeArray:Array<object> = [];
   
   constructor(public srvMain:MainService){ }
 

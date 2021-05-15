@@ -1,3 +1,4 @@
+<app-header></app-header>
 <main class="details">
   <div class="details__wrapper">
     <div class="details__thumbnail">
@@ -15,7 +16,7 @@
         <h2 class="details__subtitle">{{ comicText }}</h2>
         <div class="details__wrapper-comics">
           <div class="details__container-img">
-            <img *ngFor="let comic of comicList" src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt=""
+            <img *ngFor="let comic of comicList" src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt="Comic"
               class="details__comic-img" />
           </div>
         </div>
@@ -23,3 +24,4 @@
     </div>
   </div>
 </main>
+<app-footer></app-footer>

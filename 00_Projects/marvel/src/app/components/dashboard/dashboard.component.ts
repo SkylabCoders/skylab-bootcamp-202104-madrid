@@ -3,6 +3,7 @@ import { Imarvel } from '../../models/Imarvel'
 import { MainService } from '../../services/main.service'
 import { URL } from '../../models/url'
 import { Router } from '@angular/router'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-dashboard',
@@ -10,14 +11,18 @@ import { Router } from '@angular/router'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  title = 'Meet de mighty heroes and villains of Marvel Universe';
   MarvelList: Imarvel[] = [];
   randomList: Imarvel[] = [];
   topHeros: Imarvel[] = [];
 
-  constructor (public mainSrv: MainService, public route:Router) {}
+  constructor (public mainSrv: MainService, public route:Router, public translate: TranslateService) {}
 
   ngOnInit (): void {
+    this.translate.addLangs(['en', 'es'])
+    const localLang = localStorage.getItem('lang')
+    if (localLang) {
+      this.translate.use(localLang)
+    }
     this.mainSrv
       .getAction('getList', URL.apiURL + URL.CharactersURL)
       .subscribe((res: any) => {
@@ -34,7 +39,6 @@ export class DashboardComponent implements OnInit {
   }
 
   goCharacter (characters:any) {
-    console.log(this.mainSrv.character)
     this.mainSrv.character = characters
     this.route.navigate(['details'])
   }

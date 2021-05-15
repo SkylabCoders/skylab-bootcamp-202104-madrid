@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
-import { ElementArrayFinder } from 'protractor'
 import { MainService } from 'src/app/services/main.service'
 import { Imarvel } from '../../models/Imarvel'
 import { URL } from '../../models/url'
+import { TranslateService } from '@ngx-translate/core'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-list',
@@ -10,42 +11,47 @@ import { URL } from '../../models/url'
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-   title:string = 'Character list'
    marvelList:Imarvel [] = []
    favoriteList = this.mainSrv.favorites
 
-   constructor (public mainSrv:MainService) {}
+   constructor (public mainSrv:MainService, public translate: TranslateService, public route:Router) {}
 
    ngOnInit (): void {
      this.mainSrv.getAction('getList', (URL.apiURL + URL.CharactersURL)).subscribe((res:any) => {
-       console.log(res.data.results)
        this.parseData(res.data.results)
        this.marvelList = res.data.results
      })
-   }
 
-   parseData (list:any []) {
-     for (let i = 0; i < list.length; i++) {
-       list[i].selected = false
+     this.translate.addLangs(['en', 'es'])
+     const localLang = localStorage.getItem('lang')
+     if (localLang) {
+       this.translate.use(localLang)
      }
    }
 
-   toFavorite (character:any, evt?:MouseEvent) {
-     const element:any = evt?.target
+   parseData (list:Imarvel []) {
+     list.map(element => element.selected = false)
+   }
+
+   toFavorite (character:Imarvel, evento?:MouseEvent) {
+     const element:any = evento?.target
      element.classList.toggle('fas')
      element.classList.toggle('far')
      character.selected = !character.selected
      if (character.selected) {
        this.favoriteList.push(character)
-       console.log(this.favoriteList)
      } else {
        return this.removeFavorite(character)
      }
    }
 
-   removeFavorite (character:any) {
+   removeFavorite (character:Imarvel) {
      this.favoriteList = this.favoriteList.filter(hero => { return hero.id !== character.id })
      this.mainSrv.favorites = this.favoriteList
-     console.log(this.favoriteList)
+   }
+
+   goCharacter (characters:any) {
+     this.mainSrv.character = characters
+     this.route.navigate(['details'])
    }
 }

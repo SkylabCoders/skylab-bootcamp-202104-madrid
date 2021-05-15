@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-
+import { User } from './../../models/Iusers'
 import { MainService } from '../../services/main.service'
 
 @Component({
@@ -10,7 +10,7 @@ import { MainService } from '../../services/main.service'
 export class LoginComponent implements OnInit {
   userData = {
     userName: '',
-    passWord: ''
+    password: ''
   }
 
   constructor (public srv:MainService) { }
@@ -20,7 +20,5 @@ export class LoginComponent implements OnInit {
 
   onSubmit () {
     this.srv.userData = this.userData
-    console.log(this.userData)
-    console.log(this.srv.userData)
   }
 }

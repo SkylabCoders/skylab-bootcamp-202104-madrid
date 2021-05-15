@@ -20,7 +20,6 @@ export class DetailsComponent implements OnInit {
       .subscribe((res: any) => {
         this.comicList = res.data.results.sort(() => Math.random() - 0.5)
         this.comicList = this.comicList.slice(0, 6)
-        console.log(this.comicList.slice(0, 6))
       })
   }
 }

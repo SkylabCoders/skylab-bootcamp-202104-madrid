@@ -17,7 +17,6 @@ export class FavoritesComponent implements OnInit {
     const localLang = localStorage.getItem('lang')
     if (localLang) {
       this.translate.use(localLang)
-      console.log(this.yourFavorites)
     }
   }
 

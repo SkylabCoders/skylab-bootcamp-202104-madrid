@@ -10,32 +10,32 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./components/dashboard/dashboard.module')
-      .then(m => m.DashboardModule)
+      .then(module => module.DashboardModule)
   },
   {
     path: 'list',
     loadChildren: () => import('./components/list/list.module')
-      .then(m => m.ListModule)
+      .then(module => module.ListModule)
   },
   {
     path: 'favorites',
     loadChildren: () => import('./components/favorites/favorites.module')
-      .then(m => m.FavoritesModule)
+      .then(module => module.FavoritesModule)
   },
   {
     path: 'options',
     loadChildren: () => import('./components/options/options.module')
-      .then(m => m.OptionsModule)
+      .then(module => module.OptionsModule)
   },
   {
     path: 'login',
     loadChildren: () => import('./components/login/login.module')
-      .then(m => m.LoginModule)
+      .then(module => module.LoginModule)
   },
   {
     path: 'details',
     loadChildren: () => import('./components/details/details.module')
-      .then(m => m.DetailsModule)
+      .then(module => module.DetailsModule)
   }
 ]
 

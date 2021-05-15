@@ -11,7 +11,6 @@ import { TranslateService } from '@ngx-translate/core'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  title = 'Meet de mighty heroes and villains of Marvel Universe';
   MarvelList: Imarvel[] = [];
   randomList: Imarvel[] = [];
   topHeros: Imarvel[] = [];
@@ -19,6 +18,11 @@ export class DashboardComponent implements OnInit {
   constructor (public mainSrv: MainService, public route:Router, public translate: TranslateService) {}
 
   ngOnInit (): void {
+    this.translate.addLangs(['en', 'es'])
+    const localLang = localStorage.getItem('lang')
+    if (localLang) {
+      this.translate.use(localLang)
+    }
     this.mainSrv
       .getAction('getList', URL.apiURL + URL.CharactersURL)
       .subscribe((res: any) => {
@@ -35,7 +39,6 @@ export class DashboardComponent implements OnInit {
   }
 
   goCharacter (characters:any) {
-    console.log(this.mainSrv.character)
     this.mainSrv.character = characters
     this.route.navigate(['details'])
   }

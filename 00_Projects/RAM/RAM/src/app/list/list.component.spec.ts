@@ -1,104 +1,122 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Pipe, PipeTransform, Injectable, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, Directive, Input, Output } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { Observable, of as observableOf, throwError } from 'rxjs';
+
+import { Component } from '@angular/core';
 import { ListComponent } from './list.component';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { DetailsComponent } from '../details/details.component'
-import { RouterTestingModule } from '@angular/router/testing'
+import { MainService } from '../services/main.service';
 import { Router } from '@angular/router';
 
-const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
-const prueba = {
-  gender: 'male',
-  name:'rick', 
-  info:{next: 'https://rickandmortyapi.com/api/character?page=4', prev:'https://rickandmortyapi.com/api/character?page=2'}
-};
-let ram:any;
-let imageRam: any[];
-let url ='https://rickandmortyapi.com/api/character?page=1'
-let mockRouter = {
-	navigate: jasmine.createSpy('navigate')
+@Injectable()
+class MockMainService {
+  url = {};
+  amIInList = {};
 }
-class MockCharacter {
-  public me(): Observable<any> {
-       return  of(CHARACTER_ARRAY); 
-   }
- }
+
+@Injectable()
+class MockRouter {
+  navigate() {};
+}
+
+@Directive({ selector: '[oneviewPermitted]' })
+class OneviewPermittedDirective {
+  @Input() oneviewPermitted: any;
+}
+
+@Pipe({name: 'translate'})
+class TranslatePipe implements PipeTransform {
+  transform(value: any) { return value; }
+}
+
+@Pipe({name: 'phoneNumber'})
+class PhoneNumberPipe implements PipeTransform {
+  transform(value: any) { return value; }
+}
+
+@Pipe({name: 'safeHtml'})
+class SafeHtmlPipe implements PipeTransform {
+  transform(value: any) { return value; }
+}
+
 describe('ListComponent', () => {
-  let component: ListComponent;
   let fixture: ComponentFixture<ListComponent>;
-  let httpMock: HttpTestingController;
-  let httpClient: HttpClient;
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListComponent ],
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([
-        { path: 'details', component: DetailsComponent}
-      ])],
-        providers: [ListComponent, {
-          provide:MockCharacter, useClass: MockCharacter
-        }, { provide: Router, useValue: mockRouter} ]
-      })
-    .compileComponents();
-    httpMock = TestBed.get(HttpTestingController);
-    httpClient = TestBed.inject(HttpClient);
-  });
+  let component: { ngOnDestroy: () => void; chargePage: (arg0: {}) => void; ngOnInit: () => void; srvMain: { getTheAPI?: any; url?: any; detailsCharacter?: any; }; completeRam: { info?: any; }; getNextPage: () => void; getPrevPage: () => void; router: { navigate?: any; }; sendToDetail: (arg0: {}) => void; };
+
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ FormsModule, ReactiveFormsModule ],
+      declarations: [
+        ListComponent,
+        TranslatePipe, PhoneNumberPipe, SafeHtmlPipe,
+        OneviewPermittedDirective
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+      providers: [
+        { provide: MainService, useClass: MockMainService },
+        { provide: Router, useClass: MockRouter }
+      ]
+    }).overrideComponent(ListComponent, {
+
+    }).compileComponents();
     fixture = TestBed.createComponent(ListComponent);
-    component = fixture.componentInstance;
-    spyOn(component,'sendToDetail');
-    spyOn(component,'getNextPage');
-    spyOn(component,'getPrevPage');
-    spyOn(component,'chargePage');
-    spyOn(component,'ngOnInit');
-    fixture.detectChanges();
+    component = fixture.debugElement.componentInstance;
   });
-  it('should create', () => {
-   expect(component).toBeTruthy();
+
+  afterEach(() => {
+    component.ngOnDestroy = function() {};
+    fixture.destroy();
   });
-  it('should call sendToDetail',()=>{
-    component.sendToDetail(prueba);
-    expect(component.sendToDetail).toHaveBeenCalled();
-  })
-  it('should call getNextPage',()=>{
-    component.getNextPage();
-    expect(component.getNextPage).toHaveBeenCalled();
-  })
-  it('should call getPrevPage',()=>{
-    component.getPrevPage();
-    expect(component.getPrevPage).toHaveBeenCalled();
-  })
-  it('should navigate to details', ()=>{
-    mockRouter.navigate('details')
-    expect (mockRouter.navigate).toHaveBeenCalledWith('details');
-  })
-  it('should be a JSON', ()=>{
-    component.ngOnInit()
-    ram = CHARACTER_ARRAY;
-    imageRam = ram.slice(0, 2);
-    expect(JSON.stringify(imageRam)).toEqual('[{"gender":"male","name":"rick"},{"gender":"female","name":"beth"}]');
-  })
-  it('should be an url',()=>{
-    component.chargePage(url);
-    let srvUrl = url;
-    expect(srvUrl).toBe('https://rickandmortyapi.com/api/character?page=1');
-  })
-  it('should call chargePage',()=>{
-    component.getNextPage();
-    if(prueba.info.next){
-      component.chargePage(prueba.info.next)
-    }
-    expect(component.chargePage).toHaveBeenCalled();
-  })
-  it('should call chargePage',()=>{
-    component.getPrevPage();
-    if(prueba.info.prev){
-      component.chargePage(prueba.info.prev)
-    }
-    expect(component.chargePage).toHaveBeenCalled();
-  })
-  // it('should call chargePage', ()=>{
-  //   component.ngOnInit()
-  //   expect(component.ngOnInit()).toHaveBeenCalled();
-  // })
+
+  it('should run #constructor()', async () => {
+    expect(component).toBeTruthy();
+  });
+
+  // it('should run #ngOnInit()', async () => {
+  //   component.chargePage = jest.fn();
+  //   component.ngOnInit();
+  //   // expect(component.chargePage).toHaveBeenCalled();
+  // });
+
+  // it('should run #chargePage()', async () => {
+  //   component.srvMain = component.srvMain || {};
+  //   component.srvMain.getTheAPI = jest.fn().mockReturnValue(observableOf({
+  //     results: {}
+  //   }));
+  //   component.srvMain.url = 'url';
+  //   component.chargePage({});
+  //   // expect(component.srvMain.getTheAPI).toHaveBeenCalled();
+  // });
+
+  // it('should run #getNextPage()', async () => {
+  //   component.completeRam = component.completeRam || {};
+  //   component.completeRam.info = {
+  //     next: {}
+  //   };
+  //   component.chargePage = jest.fn();
+  //   component.getNextPage();
+  //   // expect(component.chargePage).toHaveBeenCalled();
+  // });
+
+  // it('should run #getPrevPage()', async () => {
+  //   component.completeRam = component.completeRam || {};
+  //   component.completeRam.info = {
+  //     prev: {}
+  //   };
+  //   component.chargePage = jest.fn();
+  //   component.getPrevPage();
+  //   // expect(component.chargePage).toHaveBeenCalled();
+  // });
+
+  // it('should run #sendToDetail()', async () => {
+  //   component.srvMain = component.srvMain || {};
+  //   component.srvMain.detailsCharacter = 'detailsCharacter';
+  //   component.router = component.router || {};
+  //   component.router.navigate = jest.fn();
+  //   component.sendToDetail({});
+  //   // expect(component.router.navigate).toHaveBeenCalled();
+  // });
+
 });

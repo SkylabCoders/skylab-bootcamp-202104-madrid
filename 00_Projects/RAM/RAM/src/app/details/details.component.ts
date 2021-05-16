@@ -31,7 +31,7 @@ export class DetailsComponent implements OnInit {
   }
 
   checkFavorites(){
-    const favouriteStar:any = document.querySelector('.fav');
+    const favouriteStar: HTMLElement | null = document.querySelector('.fav');
     for(let i = 0; i < this.favorites.length; i++) {
       if(this.characterDetails.id === this.favorites[i].id){
         this.isInFavorites=true;
@@ -39,7 +39,7 @@ export class DetailsComponent implements OnInit {
         break;
       }
     }
-    if(this.isInFavorites){
+    if(this.isInFavorites && favouriteStar){
       favouriteStar.style.fontWeight = 'bold';
     }
   }
@@ -62,11 +62,11 @@ export class DetailsComponent implements OnInit {
 
   changeFavicon(){    
     if(this.srvMain.canAddTofavs){
-      const favouriteStar:any = document.querySelector('.fav');
-      if(this.isInFavorites){
+      const favouriteStar: HTMLElement | null = document.querySelector('.fav');
+      if(this.isInFavorites && favouriteStar){
         favouriteStar.style.fontWeight = '';
         this.deletIt()      
-      } else {
+      } else if (this.isInFavorites === false && favouriteStar) {
         favouriteStar.style.fontWeight = 'bold';
         this.addIt()
       }

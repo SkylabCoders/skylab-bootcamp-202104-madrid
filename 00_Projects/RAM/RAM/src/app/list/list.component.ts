@@ -12,7 +12,6 @@ export class ListComponent implements OnInit {
 
   
   url = this.srvMain.url
-  maxPage:any;
   imInTheList = this.srvMain.amIInList
   ram: any[] = [];
   completeRam:any;
@@ -44,24 +43,10 @@ export class ListComponent implements OnInit {
     }
   }
 
-  sendToDetail(character:any){
+  sendToDetail(character:object){
     this.srvMain.detailsCharacter = character;
     this.router.navigate(['details']);
   }
 
-  // checkStatus(status:any, id:any){
-  //   let el = document.getElementById(id);
-  //     if(status === "Alive"){
-  //       if(el){
-  //         el.classList.add('alive')
-  //       }
-  //       return true
-  //     } else {
-  //       if(el){
-  //         el.classList.add('death')
-  //       }
-  //       return true
-  //     }
-  // }
 }
 

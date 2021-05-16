@@ -1,78 +1,107 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { HeaderComponent } from './header.component'
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
-import { HttpClient } from '@angular/common/http'
-import { RouterTestingModule } from '@angular/router/testing'
-import { Observable, of } from 'rxjs';
-import { Router } from '@angular/router';
-import { ListComponent } from '../list/list.component'
-import { LoadingListComponent } from '../loading-list/loading-list.component'
-import { FormsModule } from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Pipe, PipeTransform, Injectable, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, Directive, Input, Output } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+import { Observable, of as observableOf, throwError } from 'rxjs';
 
-const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
-const prueba = {gender: 'male',name:'rick'};
-class MockCharacter {
-  public me(): Observable<any> {
-       return  of(CHARACTER_ARRAY); 
-   }
- }
-let mockRouter = {
-	navigate: jasmine.createSpy('navigate')
+import { Component } from '@angular/core';
+import { HeaderComponent } from './header.component';
+import { MainService } from '../services/main.service';
+import { Router } from '@angular/router';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
+
+let logIn = true;
+let showLogIn = false;
+
+@Injectable()
+class MockMainService {}
+
+@Injectable()
+class MockRouter {
+  navigate() {};
+}
+
+@Directive({ selector: '[oneviewPermitted]' })
+class OneviewPermittedDirective {
+  @Input() oneviewPermitted: any;
+}
+
+@Pipe({name: 'safeHtml'})
+class SafeHtmlPipe implements PipeTransform {
+  transform(value: any) { return value; }
 }
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>
-  let httpMock: HttpTestingController;
-  let httpClient: HttpClient;
+  let fixture: ComponentFixture<HeaderComponent>;
+  let component: { ngOnDestroy: () => void; ngOnInit: () => void; router: { url?: any; navigate?: any; }; srvMain: { getTheAPI?: any; goToList?: any; currentUser?: any; }; searchSubmit: () => void; openLogIn: () => void; onSubmit: () => void; backHome: () => void; };
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule.withRoutes([
-        { path: 'ListComponent', component: ListComponent},
-        { path:'LoadingListComponent', component: LoadingListComponent}
-    ])],
-    providers: [HeaderComponent, {
-      provide:MockCharacter, useClass: MockCharacter
-    }, { provide: Router, useValue: mockRouter} ]
-  })
-      .compileComponents()
-      httpMock = TestBed.get(HttpTestingController)
-      httpClient = TestBed.inject(HttpClient)
-  })
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [ FormsModule, ReactiveFormsModule ],
+      declarations: [
+        HeaderComponent,
+        SafeHtmlPipe,
+        OneviewPermittedDirective
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+      providers: [
+        { provide: MainService, useClass: MockMainService },
+        { provide: Router, useClass: MockRouter }
+      ]
+    }).overrideComponent(HeaderComponent, {
 
-  beforeEach(() => {
+    }).compileComponents();
     fixture = TestBed.createComponent(HeaderComponent);
-    spyOn(component,'searchSubmit');
-    spyOn(component,'openLogIn');
-    spyOn(component,'onSubmit');
-    spyOn(component,'backHome');
-    component = fixture.componentInstance
-    fixture.detectChanges();
-    spyOn(component, 'openLogIn');
-  })
+    component = fixture.debugElement.componentInstance;
+  }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
+  afterEach(() => {
+    component.ngOnDestroy = function() {};
+    fixture.destroy();
   });
-  it('should contain an object',()=>{
-    const characters = CHARACTER_ARRAY;
-    expect(characters).toEqual(CHARACTER_ARRAY)
+
+  it('should run #constructor()', async () => {
+    expect(component).toBeTruthy();
   });
-  it('should navigate to loadingList',()=>{
-    mockRouter.navigate('loadingList')
-    expect (mockRouter.navigate).toHaveBeenCalledWith('loadingList')
+
+  it('should run #ngOnInit()', async () => {
+    component.ngOnInit();
+    let el = document.querySelector('.header__logIn');
+    let loged = false;
+    
+    if(!loged){
+      el?.classList.add('no-loged');
+    }
+    expect(el).toHaveClass('no-loged')
+
   });
-  it('should navigate to list',()=>{
-    mockRouter.navigate('list')
-    expect (mockRouter.navigate).toHaveBeenCalledWith('loadingList')
-  });
-  it('should call searchSubmit',()=>{
-    component.searchSubmit;
-    expect(component.searchSubmit).toHaveBeenCalled
-  });
-  it('should call openLogin', () => {
+
+  it('should run #openLogIn()', async () => {
     component.openLogIn();
-    expect(component.openLogIn).toHaveBeenCalled();
-  })
-})
+    showLogIn = !showLogIn
+    expect(showLogIn).toBe(true);
+
+  });
+
+  it('should run #onSubmit()', async () => {
+    component.srvMain = component.srvMain || {};
+    component.srvMain.currentUser = 'currentUser';
+    component.onSubmit();
+    localStorage.setItem('username', JSON.stringify(component.srvMain.currentUser));
+    expect(localStorage).toBeTruthy();
+
+  });
+
+  it('should run #backHome()', async () => {
+    component.backHome();
+    logIn = false;
+    expect(logIn).toBe(false);
+
+  });
+  it('should contain log in', async(()=> {
+    let anchor = <HTMLElement>document.querySelector('.header__anchor--text');
+    expect(anchor.innerHTML).toBe('Dashboard')
+  }));
+
+});

@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { DetailsComponent } from '../details/details.component'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Router } from '@angular/router';
+
 const CHARACTER_ARRAY= [{gender: 'male',name:'rick'}, {gender: 'female',name:'beth'}, {gender: 'male',name:'morty'}, {gender: 'female',name:'summer'}]
 const prueba = {
   gender: 'male',

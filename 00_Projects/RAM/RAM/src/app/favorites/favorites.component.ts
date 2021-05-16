@@ -20,11 +20,10 @@ export class FavoritesComponent implements OnInit {
 
   sendToDetail(character:any){
     this.srvMain.detailsCharacter = character;
-    console.log(this.srvMain.detailsCharacter);
     this.router.navigate(['details']);
   }
 
-  delete(character:any){
+  deleteCharacters(character:any){
     for(let i = 0; i < this.ram.length; i++) {
       if(character.id === this.ram[i].id){
         this.indexOfDelete= i

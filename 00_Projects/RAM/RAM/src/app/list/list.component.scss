@@ -47,7 +47,7 @@
 
     button{
         background-color: rgb(230,160,78);
-        font-family: 'Rock Salt';
+        font-family: 'Rock Salt', sans-serif;
         font-size: 1.6rem;
         height: 4rem;
         width: 10rem;
@@ -89,7 +89,6 @@
 
         .character--display{
             display: flex;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             padding-left: 2rem;
@@ -125,6 +124,11 @@
                 border-radius: 18px;
             }
         }
+    }
+    .list__item:hover{
+            transform: scale(1.2);
+            transition: 0.4s ease-out;
+            cursor: pointer;
     }
 
 }

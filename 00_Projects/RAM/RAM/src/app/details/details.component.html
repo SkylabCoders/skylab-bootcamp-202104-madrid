@@ -1,59 +1,27 @@
 <div class="main">
-    <div class="main__container-left">
-        <div class="main-left__title">
-            DETAILS
-        </div>
-        <div class="main-left__container--name">
-            {{characterDetails.name}}
-        </div>
-        <div class="main-left__pic">
-            <img src="{{characterDetails.image}}">
-        </div>
-        <div class="main-left__button-container">
-            <div class="main-left__button" (click)="changeFavicon()"><i class="far fa-star fav"></i></div>
-        </div>
+  <div class="main__container-left">
+    <div class="main-left__title">DETAILS</div>
+    <div class="main-left__container--name">
+      {{ characterDetails.name }}
     </div>
-    <div class="main__container-right">
-        <div class="main__container-right--img">
-            <div class="main__container-right--details">
-                Gender  --> {{characterDetails.gender}} <br>
-                Status --> {{characterDetails.status}} <br>
-                Origin --> {{characterDetails.origin.name}} <br>
-                Current Location --> {{characterDetails.location.name}} <br>
-                Species --> {{characterDetails.species}} <br>
-                First Episode --> {{episodeArray[0]}} <br>
-                Last Episode --> {{episodeArray[episodeArray.length -1 ]}} <br>
-            </div>
-        </div>
+    <div class="main-left__pic">
+      <img src="{{ characterDetails.image }}" alt="character"/>
     </div>
+    <div class="main-left__button-container">
+      <div class="main-left__button" (click)="changeFavicon()">
+        <i class="far fa-star fav"></i>
+      </div>
+    </div>
+  </div>
+  <div class="main__container-right">
+    <div class="main__container-right--details">
+      Gender --> {{ characterDetails.gender }} <br />
+      Status --> {{ characterDetails.status }} <br />
+      Origin --> {{ characterDetails.origin.name }} <br />
+      Current Location --> {{ characterDetails.location.name }} <br />
+      Species --> {{ characterDetails.species }} <br />
+      First Episode --> {{ episodeArray[0] }} <br />
+      Last Episode --> {{ episodeArray[episodeArray.length - 1] }} <br />
+    </div>
+  </div>
 </div>
-
-<!-- 
-
-<div class="main-container">
-    <mat-card class="example-card">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Name: {{characterDetails.name}}</mat-card-title>
-            <mat-card-subtitle>Specie: {{characterDetails.species}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src='{{characterDetails.image}}' alt="Photo of the character">
-        <mat-card-content class="container">
-            <div>
-                <p>
-                    Gender : {{characterDetails.gender}} <br>
-                    Status : {{characterDetails.status}} <br>
-                    Origin : {{characterDetails.origin.name}} <br>
-                    Current Location : {{characterDetails.location.name}} <br>
-                    First Episode : {{episodeArray[0]}} <br>
-                    Last Episode : {{episodeArray[episodeArray.length -1 ]}} <br> 
-                </p>
-            </div>
-            <div>
-                <mat-card-actions>
-                  <button mat-button (click)="changeFavicon()"><i class="far fa-star fav"></i></button>
-                </mat-card-actions>
-            </div>
-      </mat-card-content>
-    </mat-card>
-</div> -->

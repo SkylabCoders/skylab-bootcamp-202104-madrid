@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 describe('AppComponent', () => {
   let httpMock: HttpTestingController;
@@ -17,8 +19,9 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [
-        AppComponent
-      ]
+        AppComponent, TranslateService
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
     httpMock = TestBed.get(HttpTestingController);
     httpClient = TestBed.inject(HttpClient);

@@ -53,9 +53,6 @@ describe('DashboardComponent', () => {
     expect(characters).toEqual(CHARACTER_ARRAY);
   })
   it('should call gotoDetails',()=>{
-    // const el: HTMLElement = fixture.nativeElement; //document
-    // const anchor = el.querySelector('.tst');
-    // anchor?.dispatchEvent(new Event('click'));
     component.goToDetails(prueba);
     expect(component.goToDetails).toHaveBeenCalledTimes(1);
   })

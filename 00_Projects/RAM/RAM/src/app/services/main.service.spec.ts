@@ -16,9 +16,9 @@ describe('MainService', () => {
        providers: [MainService]
     });
     service = TestBed.inject(MainService);
-     httpMock = TestBed.get(HttpTestingController);
-     httpClient = TestBed.inject(HttpClient);
-     spyOn(service, 'getTheAPI');
+    httpMock = TestBed.get(HttpTestingController);
+    httpClient = TestBed.inject(HttpClient);
+    spyOn(service, 'getTheAPI');
   });
 
   it('should be created', () => {
@@ -28,5 +28,10 @@ describe('MainService', () => {
   it('should call getTheAPI', () => {
     service.getTheAPI(url);
     expect(service.getTheAPI).toHaveBeenCalled();
+  });
+  
+  it('should run #goToList()', async () => {
+    service.goToList(url);
+    expect(url).toBeTruthy()
   });
 });

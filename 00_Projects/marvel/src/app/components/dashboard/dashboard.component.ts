@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   MarvelList: Imarvel[] = [];
   randomList: Imarvel[] = [];
   topHeros: Imarvel[] = [];
+  loadGif = true
 
   constructor (public mainSrv: MainService, public route:Router, public translate: TranslateService) {}
 
@@ -23,10 +24,11 @@ export class DashboardComponent implements OnInit {
     if (localLang) {
       this.translate.use(localLang)
     }
-    this.mainSrv
+    const obs$ = this.mainSrv
       .getAction('getList', URL.apiURL + URL.CharactersURL)
       .subscribe((res: any) => {
         this.randomList = res.data.results.sort(() => Math.random() - 0.5)
+        this.loadGif = false
         for (let i = 0; i < this.randomList.length; i++) {
           if (this.topHeros.length === 4) {
             break
@@ -35,6 +37,7 @@ export class DashboardComponent implements OnInit {
             this.topHeros.push(this.randomList[i])
           }
         }
+        obs$.unsubscribe()
       })
   }
 

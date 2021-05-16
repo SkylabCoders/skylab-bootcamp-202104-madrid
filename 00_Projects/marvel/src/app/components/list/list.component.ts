@@ -13,12 +13,15 @@ import { Router } from '@angular/router'
 export class ListComponent implements OnInit {
    marvelList:Imarvel [] = []
    favoriteList = this.mainSrv.favorites
+   loadSvg = true
 
    constructor (public mainSrv:MainService, public translate: TranslateService, public route:Router) {}
 
    ngOnInit (): void {
-     this.mainSrv.getAction('getList', (URL.apiURL + URL.CharactersURL)).subscribe((res:any) => {
+     console.log(this.favoriteList)
+     this.mainSrv.getAction('getList', (URL.apiURL + URL.CharactersURL + URL.offsetAndLimit)).subscribe((res:any) => {
        this.parseData(res.data.results)
+       this.loadSvg = false
        this.marvelList = res.data.results
      })
 
@@ -33,8 +36,8 @@ export class ListComponent implements OnInit {
      list.map(element => element.selected = false)
    }
 
-   toFavorite (character:Imarvel, evento?:MouseEvent) {
-     const element:any = evento?.target
+   toFavorite (character:Imarvel, event?:MouseEvent) {
+     const element:any = event?.target
      element.classList.toggle('fas')
      element.classList.toggle('far')
      character.selected = !character.selected

@@ -8,7 +8,8 @@ import { URL } from '../../models/url'
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  comicList: any;
+  loadSvg = true
+  comicList:any
   hero: any = this.mainSrv.character;
   description: string = 'Description';
   comicText: string = 'Comics';
@@ -19,6 +20,7 @@ export class DetailsComponent implements OnInit {
       .getAction('getList', URL.apiURL + URL.comicURL)
       .subscribe((res: any) => {
         this.comicList = res.data.results.sort(() => Math.random() - 0.5)
+        this.loadSvg = false
         this.comicList = this.comicList.slice(0, 6)
       })
   }

@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 describe('AppComponent', () => {
   let httpMock: HttpTestingController;
   let httpClient: HttpClient;
+  let component: AppComponent;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -39,4 +40,9 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('RAM');
   });
 
+  it('should run #ngOnInit()', async () => {
+    component.ngOnInit();
+    expect(component.ngOnInit()).toHaveBeenCalled();
+    
+  });
 });

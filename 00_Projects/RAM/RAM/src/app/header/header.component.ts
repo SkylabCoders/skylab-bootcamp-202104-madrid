@@ -59,6 +59,7 @@ export class HeaderComponent implements OnInit {
     this.showLogIn = false;
     localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
     this.loged = true;
+    this.srvMain.canAddTofavs = true;
 
   }
 

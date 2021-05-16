@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
   }
 
   getUrl(){
-    this.characterDetails.episode.forEach((element:any) => {
+    this.characterDetails.episode.forEach((element:string) => {
       this.srvMain.getTheAPI(element).subscribe((res:any) => {
         this.episodeArray.push(res.name)
       });

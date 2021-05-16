@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   
-  goToDetails(character:any){
+  goToDetails(character:object){
     this.srvMain.detailsCharacter = character;
     this.router.navigate(['details']);
   }

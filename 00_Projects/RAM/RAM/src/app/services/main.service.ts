@@ -13,6 +13,7 @@ export class MainService {
   amIInList = false;
   detailsCharacter:any
   favorites: any[] = [];
+  canAddTofavs = false;
   
   constructor(public srvHttp:HttpService, public srvLogin: LoginService ) { }
 

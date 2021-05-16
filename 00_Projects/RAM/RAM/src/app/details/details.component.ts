@@ -61,13 +61,15 @@ export class DetailsComponent implements OnInit {
   }
 
   changeFavicon(){    
-    const favouriteStar:any = document.querySelector('.fav');
-    if(this.isInFavorites){
-      favouriteStar.style.fontWeight = '';
-      this.deletIt()      
-    } else {
-      favouriteStar.style.fontWeight = 'bold';
-      this.addIt()
+    if(this.srvMain.canAddTofavs){
+      const favouriteStar:any = document.querySelector('.fav');
+      if(this.isInFavorites){
+        favouriteStar.style.fontWeight = '';
+        this.deletIt()      
+      } else {
+        favouriteStar.style.fontWeight = 'bold';
+        this.addIt()
+      }
     }
   }
 

@@ -74,49 +74,45 @@ describe('ListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should run #ngOnInit()', async () => {
-  //   component.chargePage = jest.fn();
-  //   component.ngOnInit();
-  //   // expect(component.chargePage).toHaveBeenCalled();
-  // });
+  it('should run #ngOnInit()', async () => {
+    component.ngOnInit();
+    // expect(component.chargePage).toHaveBeenCalled();
+  });
 
-  // it('should run #chargePage()', async () => {
-  //   component.srvMain = component.srvMain || {};
-  //   component.srvMain.getTheAPI = jest.fn().mockReturnValue(observableOf({
-  //     results: {}
-  //   }));
-  //   component.srvMain.url = 'url';
-  //   component.chargePage({});
-  //   // expect(component.srvMain.getTheAPI).toHaveBeenCalled();
-  // });
+  it('should run #chargePage()', async () => {
+    component.srvMain = component.srvMain || {};
+    component.srvMain.getTheAPI.mockReturnValue(observableOf({
+      results: {}
+    }));
+    component.srvMain.url = 'url';
+    component.chargePage({});
+    // expect(component.srvMain.getTheAPI).toHaveBeenCalled();
+  });
 
-  // it('should run #getNextPage()', async () => {
-  //   component.completeRam = component.completeRam || {};
-  //   component.completeRam.info = {
-  //     next: {}
-  //   };
-  //   component.chargePage = jest.fn();
-  //   component.getNextPage();
-  //   // expect(component.chargePage).toHaveBeenCalled();
-  // });
+  it('should run #getNextPage()', async () => {
+    component.completeRam = component.completeRam || {};
+    component.completeRam.info = {
+      next: {}
+    };
+    component.getNextPage();
+    // expect(component.chargePage).toHaveBeenCalled();
+  });
 
-  // it('should run #getPrevPage()', async () => {
-  //   component.completeRam = component.completeRam || {};
-  //   component.completeRam.info = {
-  //     prev: {}
-  //   };
-  //   component.chargePage = jest.fn();
-  //   component.getPrevPage();
-  //   // expect(component.chargePage).toHaveBeenCalled();
-  // });
+  it('should run #getPrevPage()', async () => {
+    component.completeRam = component.completeRam || {};
+    component.completeRam.info = {
+      prev: {}
+    };
+    component.getPrevPage();
+    // expect(component.chargePage).toHaveBeenCalled();
+  });
 
-  // it('should run #sendToDetail()', async () => {
-  //   component.srvMain = component.srvMain || {};
-  //   component.srvMain.detailsCharacter = 'detailsCharacter';
-  //   component.router = component.router || {};
-  //   component.router.navigate = jest.fn();
-  //   component.sendToDetail({});
-  //   // expect(component.router.navigate).toHaveBeenCalled();
-  // });
+  it('should run #sendToDetail()', async () => {
+    component.srvMain = component.srvMain || {};
+    component.srvMain.detailsCharacter = 'detailsCharacter';
+    component.router = component.router || {};
+    component.sendToDetail({});
+    // expect(component.router.navigate).toHaveBeenCalled();
+  });
 
 });

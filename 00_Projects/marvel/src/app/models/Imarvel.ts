@@ -2,6 +2,7 @@ export interface Imarvel {
     name?:string,
     id?:number,
     description?:string,
+    selected?:boolean,
     thumbnail:{
         path:string,
         extension:string,
@@ -10,6 +11,5 @@ export interface Imarvel {
         path:string,
         extension:string,
     }
-    selected:boolean
 
 }

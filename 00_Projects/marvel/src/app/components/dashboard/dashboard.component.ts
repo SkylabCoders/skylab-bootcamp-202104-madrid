@@ -13,8 +13,9 @@ import { TranslateService } from '@ngx-translate/core'
 export class DashboardComponent implements OnInit {
   MarvelList: Imarvel[] = [];
   randomList: Imarvel[] = [];
-  topHeros: Imarvel[] = [];
+  topHeroes: Imarvel[] = [];
   loadGif = true
+  limit: string = '&limit=100'
 
   constructor (public mainSrv: MainService, public route:Router, public translate: TranslateService) {}
 
@@ -25,18 +26,18 @@ export class DashboardComponent implements OnInit {
       this.translate.use(localLang)
     }
     const obs$ = this.mainSrv
-      .getAction('getList', URL.apiURL + URL.CharactersURL)
+      .getAction('getList', URL.apiURL + URL.CharactersURL + this.limit)
       .subscribe((res: any) => {
-        this.randomList = res.data.results.sort(() => Math.random() - 0.5)
+        this.topHeroes = res.data.results.sort(() => Math.random() - 0.5)
+        this.topHeroes = res.data.results.filter((hero:Imarvel) => hero.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
+        this.topHeroes = this.topHeroes.slice(0, 4)
         this.loadGif = false
-        for (let i = 0; i < this.randomList.length; i++) {
-          if (this.topHeros.length === 4) {
-            break
+        this.topHeroes.map((hero:Imarvel) => {
+          if (hero.description === '') {
+            hero.description = 'Ooops! We are very sorry! This super hero does not have a description available at this time.'
           }
-          if (this.randomList[i].thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
-            this.topHeros.push(this.randomList[i])
-          }
-        }
+          return hero.description
+        })
         obs$.unsubscribe()
       })
   }

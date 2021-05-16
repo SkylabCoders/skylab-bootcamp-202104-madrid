@@ -13,15 +13,19 @@ export class DetailsComponent implements OnInit {
   hero: any = this.mainSrv.character;
   description: string = 'Description';
   comicText: string = 'Comics';
+  limit: string = '&limit=100'
   constructor (public mainSrv: MainService) {}
 
   ngOnInit (): void {
-    this.mainSrv
-      .getAction('getList', URL.apiURL + URL.comicURL)
+    const obs$ = this.mainSrv
+      .getAction('getList', URL.apiURL + URL.comicURL + this.limit)
       .subscribe((res: any) => {
-        this.comicList = res.data.results.sort(() => Math.random() - 0.5)
         this.loadSvg = false
+        this.comicList = res.data.results.sort(() => Math.random() - 0.5)
+        this.comicList = res.data.results.filter((comic:any) =>
+          comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
         this.comicList = this.comicList.slice(0, 6)
+        obs$.unsubscribe()
       })
   }
 }

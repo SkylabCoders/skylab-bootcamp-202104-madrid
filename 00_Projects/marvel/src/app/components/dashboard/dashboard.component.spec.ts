@@ -84,7 +84,7 @@ describe('DashboardComponent', () => {
         { name: 'avalanch' }
       ]
       spyOn(mainServiceStub, 'getAction').and.returnValue(of(marvelTop))
-      expect(marvelTop).toEqual([])
+      expect(marvelTop.length).toBe(4)
     })
 
     describe('goCharacter', () => {

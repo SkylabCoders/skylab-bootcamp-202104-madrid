@@ -1,12 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HeaderComponent } from './header.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { NO_ERRORS_SCHEMA } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
+import { RouterTestingModule } from '@angular/router/testing'
+import { HeaderComponent } from './header.component'
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+  let component: HeaderComponent
+  let fixture: ComponentFixture<HeaderComponent>
 
   beforeEach(() => {
     const translateServiceStub = () => ({
@@ -20,25 +20,25 @@ describe('HeaderComponent', () => {
       providers: [
         { provide: TranslateService, useFactory: translateServiceStub }
       ]
-    });
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-  });
+    })
+    fixture = TestBed.createComponent(HeaderComponent)
+    component = fixture.componentInstance
+  })
 
   it('can load instance', () => {
-    expect(component).toBeTruthy();
-  });
+    expect(component).toBeTruthy()
+  })
 
   describe('ngOnInit', () => {
     it('makes expected calls', () => {
       const translateServiceStub: TranslateService = fixture.debugElement.injector.get(
         TranslateService
-      );
-      spyOn(translateServiceStub, 'addLangs').and.callThrough();
-      spyOn(translateServiceStub, 'use').and.callThrough();
-      component.ngOnInit();
-      expect(translateServiceStub.addLangs).toHaveBeenCalled();
-      expect(translateServiceStub.use).toHaveBeenCalled();
-    });
-  });
-});
+      )
+      spyOn(translateServiceStub, 'addLangs').and.callThrough()
+      spyOn(translateServiceStub, 'use').and.callThrough()
+      component.ngOnInit()
+      expect(translateServiceStub.addLangs).toHaveBeenCalled()
+      expect(translateServiceStub.use).toHaveBeenCalled()
+    })
+  })
+})

@@ -6,11 +6,9 @@ import { TranslateService } from '@ngx-translate/core'
 import { Router } from '@angular/router'
 import { RouterTestingModule } from '@angular/router/testing'
 import { ListComponent } from './list.component'
-
 describe('ListComponent', () => {
   let component: ListComponent
   let fixture: ComponentFixture<ListComponent>
-
   beforeEach(() => {
     const mainServiceStub = () => ({
       getAction: (string:string, arg:string) => ({ subscribe: () => ({}) }),
@@ -35,19 +33,15 @@ describe('ListComponent', () => {
     fixture = TestBed.createComponent(ListComponent)
     component = fixture.componentInstance
   })
-
   it('can load instance', () => {
     expect(component).toBeTruthy()
   })
-
   it('marvelList has default value', () => {
     expect(component.marvelList).toEqual([])
   })
-
   it('favoriteList has default value', () => {
     expect(component.favoriteList).toEqual([])
   })
-
   describe('ngOnInit', () => {
     it('makes expected calls', () => {
       const mainServiceStub: MainService = fixture.debugElement.injector.get(

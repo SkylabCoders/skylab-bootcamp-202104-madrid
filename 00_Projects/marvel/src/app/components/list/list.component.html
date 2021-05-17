@@ -1,6 +1,10 @@
 <app-header></app-header>
 <main class="main-container">
-    <h2 class="main-container__title">{{'character' | translate}}</h2>
+    <div class="main-container__pagination">
+        <button class="pagination__button" (click)="getPrevious()">Previous</button>
+        <h2 class="pagination__title">{{'character' | translate}}</h2>
+        <button class="pagination__button" (click)="getNext()">Next</button>
+    </div>
     <div class="main-container__wrap--loader" *ngIf="loadGif">
         <img src="https://trello-attachments.s3.amazonaws.com/60755d2282c14f477515af94/6098e25224d83a589028906f/2bc554133137166a8f40a1bd4ad274f2/3cf85300be74b9f0b5afd361b87cbbd5.gif" alt="Loading">
         <p>Loading...</p>
@@ -9,8 +13,8 @@
         <figure class="main-container__list" *ngFor="let character of marvelList">
             <a routerLink="/details/{{character.name}}" (click)="goCharacter(character)"><img class="main-container__list-img"
                     src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"></a>
-            <figcaption class="main-container__list-name">{{character.name}}<em (click)="toFavorite(character, $event)"
-                    class='far fa-star'></em></figcaption>
+            <figcaption class="main-container__list-name">{{character.name}}<em (click)="toFavorite(character)"
+                    class='far fa-star'  id="adrian{{character.id}}"></em></figcaption>
         </figure>
     </div>
 </main>

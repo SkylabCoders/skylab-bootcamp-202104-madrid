@@ -12,7 +12,7 @@ describe('HeaderComponent', () => {
     const translateServiceStub = () => ({
       addLangs: () => ({}),
       use: () => ({})
-    })
+    });
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       schemas: [NO_ERRORS_SCHEMA],

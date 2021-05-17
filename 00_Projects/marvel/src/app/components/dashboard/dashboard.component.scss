@@ -60,7 +60,8 @@ src: url('../../resources/Avengeance-YolO.ttf');
     .main-container{
         display: flex;
         min-height: 100vh;
-       
+        display: flex;       
+        features/project/marvel
         flex-wrap: wrap;
         background-color: $backgroundDashboard;
         flex-direction: column;

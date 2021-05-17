@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MainService } from 'src/app/services/main.service'
 import { URL } from '../../models/url'
+import {Imarvel} from '../../models/Imarvel'
 
 @Component({
   selector: 'app-details',
@@ -17,6 +18,7 @@ export class DetailsComponent implements OnInit {
   constructor (public mainSrv: MainService) {}
 
   ngOnInit (): void {
+
     const obs$ = this.mainSrv
       .getAction('getList', URL.apiURL + URL.comicURL + this.limit)
       .subscribe((res: any) => {
@@ -27,5 +29,5 @@ export class DetailsComponent implements OnInit {
         this.comicList = this.comicList.slice(0, 6)
         obs$.unsubscribe()
       })
+   }
   }
-}

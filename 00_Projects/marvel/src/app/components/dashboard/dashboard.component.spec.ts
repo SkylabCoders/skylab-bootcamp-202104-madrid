@@ -2,11 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { NO_ERRORS_SCHEMA } from '@angular/core'
 import { MainService } from '../../services/main.service'
 import { Router } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
+import { TranslateModule,TranslateLoader, TranslateService } from '@ngx-translate/core'
 import { DashboardComponent } from './dashboard.component'
 import { of } from 'rxjs'
 import { RouterTestingModule } from '@angular/router/testing'
 import { DetailsComponent } from '../details/details.component'
+
+
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent

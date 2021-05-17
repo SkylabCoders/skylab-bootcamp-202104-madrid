@@ -8,7 +8,7 @@ import { User } from '../models/Iusers'
   providedIn: 'root'
 })
 export class MainService {
-  character:Imarvel [] = [];
+  character:any
   favorites:Imarvel [] = [];
   userData:any
 

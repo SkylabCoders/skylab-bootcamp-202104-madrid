@@ -1,80 +1,70 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { NO_ERRORS_SCHEMA } from '@angular/core'
+import { MainService } from 'src/app/services/main.service'
+import { Imarvel } from '../../models/Imarvel'
+import { TranslateService } from '@ngx-translate/core'
+import { Router } from '@angular/router'
+import { RouterTestingModule } from '@angular/router/testing'
 import { ListComponent } from './list.component'
-import { of } from 'rxjs'
-import { HttpClient } from '@angular/common/http'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { MainService } from '../../services/main.service'
-
-const MarvelMock = {
-  name: 'Cyclops',
-  selected: false
-}
-
-const marvelMockList = [{ name: 'Cyclops' }, { name: 'Wolverine' }]
-const marvelPush = marvelMockList.push({ name: 'Adrian' })
-
-const marvelUrlMock = 'https://gateway.marvel.com:443/v1/public/characters?apikey=15e7eedc86b57ed8c9aa86e4c26e4a2b&hash=55ab7706c5f814004ae2a053827b7004'
-const action = 'marvelMock'
-
-class Mockmarvel {
-  getData (MarvelMock:any) {
-    return of(MarvelMock)
-  }
-}
 
 describe('ListComponent', () => {
   let component: ListComponent
   let fixture: ComponentFixture<ListComponent>
-  let service:MainService
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [ListComponent],
-      providers: [{ provide: MarvelMock, useClass: Mockmarvel }]
-
-    })
-      .compileComponents()
-  })
 
   beforeEach(() => {
+    const mainServiceStub = () => ({
+      getAction: (string:string, arg:string) => ({ subscribe: () => ({}) }),
+      favorites: {},
+      character: {}
+    })
+    const translateServiceStub = () => ({
+      addLangs: () => ({}),
+      use: () => ({})
+    })
+    const routerStub = () => ({ navigate: () => ({}) })
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ListComponent],
+      providers: [
+        { provide: MainService, useFactory: mainServiceStub },
+        { provide: TranslateService, useFactory: translateServiceStub },
+        { provide: Router, useFactory: routerStub }
+      ]
+    })
     fixture = TestBed.createComponent(ListComponent)
     component = fixture.componentInstance
-
-    spyOn(component, 'parseData')
-    spyOn(component, 'toFavorite')
-    spyOn(component, 'removeFavorite')
-    fixture.detectChanges()
   })
 
-  it('should contain an object with string', () => {
-    expect(MarvelMock.name).toBe('Cyclops')
+  it('can load instance', () => {
+    expect(component).toBeTruthy()
   })
 
-  it('Expect service to return an array of objets', () => {
-    // spyOn(component, 'ngOnInit')
-    component.ngOnInit()
-    expect(component.ngOnInit).toHaveBeenCalled()
+  it('marvelList has default value', () => {
+    expect(component.marvelList).toEqual([])
   })
 
-  it('should make a push if a condition is true', () => {
-    component.toFavorite(marvelMockList)
-    expect(component.toFavorite).toHaveBeenCalled()
+  it('favoriteList has default value', () => {
+    expect(component.favoriteList).toEqual([])
   })
 
-  it('should remove an element when call it', () => {
-    component.removeFavorite(marvelMockList)
-    expect(component.removeFavorite).toHaveBeenCalled()
+  describe('ngOnInit', () => {
+    it('makes expected calls', () => {
+      const mainServiceStub: MainService = fixture.debugElement.injector.get(
+        MainService
+      )
+      const translateServiceStub: TranslateService = fixture.debugElement.injector.get(
+        TranslateService
+      )
+      spyOn(component, 'parseData').and.callThrough()
+      spyOn(mainServiceStub, 'getAction').and.callThrough()
+      spyOn(translateServiceStub, 'addLangs').and.callThrough()
+      spyOn(translateServiceStub, 'use').and.callThrough()
+      component.ngOnInit()
+      expect(component.parseData).toHaveBeenCalled()
+      expect(mainServiceStub.getAction).toHaveBeenCalled()
+      expect(translateServiceStub.addLangs).toHaveBeenCalled()
+      expect(translateServiceStub.use).toHaveBeenCalled()
+    })
   })
 })
-
-// it('should push an object into an array', () => {
-
-//   // const button: HTMLElement = fixture.nativeElement
-//   // const boton = button.querySelector('.far fa-star')
-//   // button.click()
-//   // punisher.toFavorite(MarvelMock)
-//   // expect(MarvelMock.selected).toBe(true)
-// })
-
-// })

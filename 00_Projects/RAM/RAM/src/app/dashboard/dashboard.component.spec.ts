@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { DashboardComponent } from './dashboard.component'
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { DetailsComponent } from '../details/details.component';
@@ -18,6 +18,7 @@ describe('DashboardComponent', () => {
   let srvMain: MainService;
   let srvHttp: HttpService;
   let srvLogin: LoginService;
+  let handler: HttpHandler;
 
   let mockRouter = {
     navigate: jasmine.createSpy('navigate')
@@ -27,7 +28,7 @@ describe('DashboardComponent', () => {
     { id: 2, name: 'Morty Smith', status: 'Alive', species: 'Human' }
   ];
   const prueba = { id: 1, name: 'Rick Sanchez', status: 'Alive', species: 'Human' };
-  const url = "http://www.google.es"
+  const url = "https://rickandmortyapi.com/api/character?page=1"
   
   class MockCharacter {
     public me(): Observable<any> {
@@ -61,21 +62,6 @@ describe('DashboardComponent', () => {
     component.ngOnInit();
     expect(spyFn).toHaveBeenCalled();
   })
-  // it('should call and receive and observable ngOnInit to be called', ()=>{
-  //   const spyFn = spyOn(component, 'ngOnInit').and.callThrough();
-  //   component.ngOnInit();
-  //   expect(spyFn).toHaveBeenCalled();
-  // })
-//   it('#getObservableValue should return value from observable',
-//   (done: DoneFn) => {
-//     let service = new MainService(new HttpService(httpClient = new HttpClient(), srvLogin)
-//     service.currentUser = {username: 'Aday', password: 'platanito'}
-//     service.getTheAPI(url).subscribe((value: any) => {
-//     expect(typeof value).toBe('object');
-//     done();
-//   });
-// });
-
   it('should be #goToDetails to be called', ()=>{
     const spyFn = spyOn(component, 'goToDetails').and.callThrough();
     component.goToDetails(prueba);
@@ -87,4 +73,39 @@ describe('DashboardComponent', () => {
     mockRouter.navigate('details');
     expect(mockRouter.navigate).toHaveBeenCalledWith('details');
   })
+  // it('should call and receive and observable ngOnInit to be called', ()=>{
+  //   const spyFn = spyOn(component, 'ngOnInit').and.callThrough();
+  //   component.ngOnInit();
+  //   expect(spyFn).toHaveBeenCalled();
+  // })
+  // it('#getObservableValue should return value from observable',
+  //   (done: DoneFn) => {
+  //     srvMain = new MainService(srvHttp, srvLogin);
+  //     srvMain.getTheAPI(url).subscribe((value: any) => {
+  //     expect(typeof value).toBe('object');
+  //     done();
+  //   });
+  // });
+  it('#Poner titulo',() => {
+      srvLogin = new LoginService();
+      srvMain = new MainService(srvHttp, srvLogin);
+      srvHttp = new HttpService(httpClient);
+      const valueServiceSpy = jasmine.createSpyObj('HttpService', ['getAPI'])
+      expect(valueServiceSpy.getAPI).toBeTruthy();
+  });
+
+  it('#getObservableValue should return value from observable',(done: DoneFn) => {
+    srvMain = new MainService(srvHttp, srvLogin);
+    srvHttp = new HttpService(httpClient);
+    const pruebaSpy = jasmine.createSpyObj('MainService', ['getTheAPI']) as jasmine.SpyObj<HttpService>
+    const valueServiceSpy = jasmine.createSpyObj('HttpService', ['getAPI']) as jasmine.SpyObj<HttpService>
+    const spyFn = spyOn(component, 'ngOnInit').and.callThrough();
+    component.ngOnInit();
+    srvMain.getTheAPI(url).subscribe((value:any) => {
+      console.log(value)
+      expect(value).toBe(true);
+      done();
+    });
+});
+
 });

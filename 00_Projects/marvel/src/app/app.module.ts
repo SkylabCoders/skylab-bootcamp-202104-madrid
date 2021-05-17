@@ -33,6 +33,7 @@ import { ShareModuleModule } from '../app/share-module/share-module.module'
     AppRoutingModule,
     HttpClientModule,
     ShareModuleModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,9 +38,9 @@ src: url('../../resources/Avengeance-YolO.ttf');
         align-items: center;
     }
     &__list{
+        margin: auto;
         margin-top: 10%;
         list-style: none;
-        margin: auto;
         width: 90%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -70,15 +70,14 @@ src: url('../../resources/Avengeance-YolO.ttf');
         &__svg{
             display: none;
         }
-        &__title{
-            display: block;
-        }
+        
         &__image{
             display: none;
         }
         &__title{
+            display: block;
             margin: 2%;
-            font-family: 'Avengeance';
+            font-family: 'Avengeance',Arial, Helvetica, sans-serif;
             color: white;
             letter-spacing: 3px;
         }
@@ -113,45 +112,6 @@ src: url('../../resources/Avengeance-YolO.ttf');
         }
     }
 }
-
-// @media only screen and (min-width: 800px){    
-//         .main-container{
-//             background-color: $backgroundDashboard;
-//         display: flex;
-//         height: 100%;
-//         flex-direction: column;
-//         justify-content: space-evenly;
-//         align-items: center;
-//         &__title{
-//             margin: 2%;
-//             font-family: 'Avengeance';
-//             color: white;
-//             letter-spacing: 3px;
-//         }
-//         &__list{
-//             display: flex;
-//             justify-content: space-evenly;
-//         }
-//         &__anchors{
-//             display: flex;
-//             justify-content: space-evenly;
-//             width: 240px;
-//             height: 490px;
-//             margin: 2%;
-//         }
-//         &__list-img{
-//             object-fit: cover;
-//             width: 220px;
-//             height: 410px;
-//             overflow: hidden;
-//             transition: all 200ms ease-in-out;
-//             &:hover{
-//                 border: 5px solid $yellowMarvel;
-//                 transform: scale(1.1);
-//             }
-//         }
-//     }
-// }
 
 
 

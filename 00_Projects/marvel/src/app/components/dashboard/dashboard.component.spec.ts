@@ -1,51 +1,99 @@
-import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { DashboardComponent } from './dashboard.component'
-import { RouterTestingModule } from '@angular/router/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { NO_ERRORS_SCHEMA } from '@angular/core'
+import { MainService } from '../../services/main.service'
 import { Router } from '@angular/router'
-import { Location } from '@angular/common'
+import { TranslateService } from '@ngx-translate/core'
+import { DashboardComponent } from './dashboard.component'
+import { of } from 'rxjs'
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent
   let fixture: ComponentFixture<DashboardComponent>
-  let router: Router
-  let location: Location
-  const mockHero = { name: 'Ciclops' }
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule],
-      declarations: [DashboardComponent]
-    })
-      .compileComponents()
-  })
 
   beforeEach(() => {
+    const mainServiceStub = () => ({
+      getAction: (string:string, arg:string) => ({ subscribe: () => ({}) }),
+      character: {}
+    })
+    const routerStub = () => ({ navigate: () => ({}) })
+    const translateServiceStub = () => ({
+      addLangs: () => ({}),
+      use: () => ({})
+    })
+    TestBed.configureTestingModule({
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [DashboardComponent],
+      providers: [
+        { provide: MainService, useFactory: mainServiceStub },
+        { provide: Router, useFactory: routerStub },
+        { provide: TranslateService, useFactory: translateServiceStub }
+      ]
+    })
     fixture = TestBed.createComponent(DashboardComponent)
     component = fixture.componentInstance
-    spyOn(component, 'ngOnInit')
-    spyOn(component, 'goCharacter')
-    location = TestBed.get(Location)
-    router = TestBed.get(Router)
-    router.initialNavigation()
-    fixture.detectChanges()
   })
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy()
-  // })
-  it('should render a random list of hero when init', () => {
-    component.ngOnInit()
-    expect(component.ngOnInit).toHaveBeenCalled()
+  it('can load instance', () => {
+    expect(component).toBeTruthy()
   })
 
-  it('should navigate to details page when clicked', () => {
-    component.goCharacter(mockHero)
-    expect(component.goCharacter).toHaveBeenCalled()
+  it('MarvelList has default value', () => {
+    expect(component.MarvelList).toEqual([])
   })
 
-  it('navigate to "/" redirects you to /details', fakeAsync(() => {
-    router.navigate([''])
-    expect(location.path()).toBe('/')
-  }))
+  it('randomList has default value', () => {
+    expect(component.randomList).toEqual([])
+  })
+
+  it('topHeros has default value', () => {
+    expect(component.topHeros).toEqual([])
+  })
+
+  describe('ngOnInit', () => {
+    it('makes expected calls', () => {
+      const mainServiceStub: MainService = fixture.debugElement.injector.get(
+        MainService
+      )
+      const translateServiceStub: TranslateService = fixture.debugElement.injector.get(
+        TranslateService
+      )
+      spyOn(mainServiceStub, 'getAction').and.callThrough()
+      spyOn(translateServiceStub, 'addLangs').and.callThrough()
+      spyOn(translateServiceStub, 'use').and.callThrough()
+      component.ngOnInit()
+      expect(mainServiceStub.getAction).toHaveBeenCalled()
+      expect(translateServiceStub.addLangs).toHaveBeenCalled()
+      expect(translateServiceStub.use).toHaveBeenCalled()
+    })
+  })
+
+  describe('getAction', () => {
+    it('makes expected calls', () => {
+      const mainServiceStub: MainService = TestBed.inject(MainService)
+      spyOn(mainServiceStub, 'getAction').and.callThrough()
+      component.ngOnInit()
+      expect(mainServiceStub.getAction).toHaveBeenCalled()
+    })
+
+    it('renders four random heroes', () => {
+      const mainServiceStub: MainService = TestBed.inject(MainService)
+      const marvelTop = [
+        { name: 'wolverine' },
+        { name: 'cyclops' },
+        { name: 'a-bomb' },
+        { name: 'avalanch' }
+      ]
+      spyOn(mainServiceStub, 'getAction').and.returnValue(of(marvelTop))
+      expect(marvelTop).toEqual([])
+    })
+
+    describe('goCharacter', () => {
+      it('navigate to ', () => {
+        const router = {
+          navigate: jasmine.createSpy('navigate')
+        }
+        expect(router.navigate).toHaveBeenCalledWith(['/detail'])
+      })
+    })
+  })
 })

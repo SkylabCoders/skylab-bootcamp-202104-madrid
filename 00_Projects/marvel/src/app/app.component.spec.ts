@@ -1,29 +1,38 @@
-import { TestBed } from '@angular/core/testing'
-import { RouterTestingModule } from '@angular/router/testing'
-import { AppComponent } from './app.component'
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(() => {
+    const translateServiceStub = () => ({
+      addLangs: () => ({}),
+      setDefaultLang: () => ({}),
+      use: () => ({})
+    });
+    TestBed.configureTestingModule({
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [AppComponent],
+      providers: [
+        { provide: TranslateService, useFactory: translateServiceStub }
       ]
+    });
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+  });
 
-    }).compileComponents()
-  })
+  it('can load instance', () => {
+    expect(component).toBeTruthy();
+  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app).toBeTruthy()
-  })
+  it(`title has default value`, () => {
+    expect(component.title).toEqual(`marvel`);
+  });
 
-  it('should have as title \'marvel\'', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app.title).toContain('marvel')
-  })
-})
+  it(`testLang has default value`, () => {
+    expect(component.testLang).toEqual(`i18n`);
+  });
+});

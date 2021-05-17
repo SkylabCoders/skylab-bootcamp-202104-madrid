@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MainService } from 'src/app/services/main.service'
 import { URL } from '../../models/url'
+import {Imarvel} from '../../models/Imarvel'
 
 @Component({
   selector: 'app-details',
@@ -8,7 +9,7 @@ import { URL } from '../../models/url'
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  comicList: any;
+  comicList:Imarvel [] = [];
   hero: any = this.mainSrv.character;
   description: string = 'Description';
   comicText: string = 'Comics';
@@ -16,10 +17,13 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit (): void {
     this.mainSrv
-      .getAction('getList', URL.apiURL + URL.comicURL)
+      .getAction('getList', URL.apiURL + URL.comicURL + '&limit=100')
       .subscribe((res: any) => {
         this.comicList = res.data.results.sort(() => Math.random() - 0.5)
+        this.comicList = res.data.results.filter((e:any) =>
+          e.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
+        console.log(this.comicList)
         this.comicList = this.comicList.slice(0, 6)
       })
+   }
   }
-}

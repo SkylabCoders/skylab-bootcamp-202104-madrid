@@ -1,12 +1,16 @@
 <app-header></app-header>
 <main class="main-container">
-    <h2 class="main-container__title">{{'character' | translate}}</h2>
+    <div class="main-container__pagination">
+        <button class="pagination__button" (click)="getPrevious()">Previous</button>
+        <h2 class="pagination__title">{{'character' | translate}}</h2>
+        <button class="pagination__button" (click)="getNext()">Next</button>
+    </div>
     <div class="main-container__wrap">
-        <figure class="main-container__list" *ngFor="let character of marvelList" (click)="goCharacter(character)">
-            <a routerLink="/details/{{character.name}}"><img class="main-container__list-img"
+        <figure class="main-container__list" *ngFor="let character of marvelList" >
+            <a routerLink="/details/{{character.name}}" (click)="goCharacter(character) "><img class="main-container__list-img"
                     src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"></a>
-            <figcaption class="main-container__list-name">{{character.name}}<i (click)="toFavorite(character, $event)"
-                    class='far fa-star'></i></figcaption>
+            <figcaption class="main-container__list-name">{{character.name}}<i (click)="toFavorite(character)"
+                    class='far fa-star' id='adrian{{character.id}}'  ></i></figcaption>
         </figure>
     </div>
 </main>

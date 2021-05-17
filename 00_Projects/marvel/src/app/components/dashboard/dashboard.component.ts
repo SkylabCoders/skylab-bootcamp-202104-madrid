@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
       this.translate.use(localLang)
     }
     this.mainSrv
-      .getAction('getList', URL.apiURL + URL.CharactersURL)
+      .getAction('getList', URL.apiURL + URL.CharactersURL + '&limit=100')
       .subscribe((res: any) => {
         this.randomList = res.data.results.sort(() => Math.random() - 0.5)
         for (let i = 0; i < this.randomList.length; i++) {

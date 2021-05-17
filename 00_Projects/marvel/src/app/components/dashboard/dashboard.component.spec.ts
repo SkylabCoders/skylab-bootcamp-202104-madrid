@@ -5,6 +5,8 @@ import { Router } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 import { DashboardComponent } from './dashboard.component'
 import { of } from 'rxjs'
+import { RouterTestingModule } from '@angular/router/testing'
+import { DetailsComponent } from '../details/details.component'
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent
@@ -22,6 +24,7 @@ describe('DashboardComponent', () => {
     })
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
+      imports: [RouterTestingModule.withRoutes([{ path: 'details', component: DetailsComponent }])],
       declarations: [DashboardComponent],
       providers: [
         { provide: MainService, useFactory: mainServiceStub },
@@ -46,7 +49,7 @@ describe('DashboardComponent', () => {
   })
 
   it('topHeros has default value', () => {
-    expect(component.topHeros).toEqual([])
+    expect(component.topHeroes).toEqual([])
   })
 
   describe('ngOnInit', () => {
@@ -92,7 +95,7 @@ describe('DashboardComponent', () => {
         const router = {
           navigate: jasmine.createSpy('navigate')
         }
-        expect(router.navigate).toHaveBeenCalledWith(['/detail'])
+        expect(router.navigate).toHaveBeenCalledWith('details')
       })
     })
   })

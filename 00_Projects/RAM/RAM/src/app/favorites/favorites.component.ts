@@ -24,6 +24,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   deleteCharacters(character:any){
+    
     for(let i = 0; i < this.ram.length; i++) {
       if(character.id === this.ram[i].id){
         this.indexOfDelete= i

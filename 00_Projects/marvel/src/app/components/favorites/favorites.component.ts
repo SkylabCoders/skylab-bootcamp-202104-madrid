@@ -14,11 +14,9 @@ export class FavoritesComponent implements OnInit {
   title = 'Your favorite list'
   yourFavorites = this.mainSrv.favorites
 
-  // topFavorites = [...new Set(this.yourFavorites)]
-
   ngOnInit (): void {
     this.yourFavorites = this.yourFavorites.filter((value, index, arr) => arr.indexOf(value) === index)
-    // console.log(this.topFavorites)
+
     this.translate.addLangs(['en', 'es'])
     const localLang = localStorage.getItem('lang')
     if (localLang) {
@@ -28,9 +26,6 @@ export class FavoritesComponent implements OnInit {
 
   remove (favorite:Imarvel) {
     this.yourFavorites = this.yourFavorites.filter(hero => { return hero.id !== favorite.id })
-    // if (index > -1) {
-    //   this.topFavorites.splice(index, 1)
-    // }
   }
 
   @HostListener('mouseenter') onMouseEnter () {

@@ -13,7 +13,7 @@ import { Router } from '@angular/router'
 export class ListComponent implements OnInit {
    marvelList:Imarvel [] = []
   favoriteList = this.mainSrv.favorites
-   loadSvg = true
+   loadGif = true
    limit: string = '&limit=100'
 
    constructor (public mainSrv:MainService, public translate: TranslateService, public route:Router) {}
@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
         hero.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
          )
 
-         this.loadSvg = false
+         this.loadGif = false
          this.marvelList.map((hero:Imarvel) => {
            if (hero.description === '') {
              hero.description = 'Ooops! We are very sorry! This super hero does not have a description available at this time.'

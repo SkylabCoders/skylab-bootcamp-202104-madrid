@@ -11,7 +11,7 @@ import { Router } from '@angular/router'
 export class DashboardComponent implements OnInit {
 
   url = 'https://rickandmortyapi.com/api/character';
-  ram: any[] = [];
+  ram:Array<object> = []
   imageRam:any;
 
   constructor(public srvMain:MainService, public router:Router /*, public translate: TranslateService*/){

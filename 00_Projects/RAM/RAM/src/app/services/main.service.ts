@@ -9,10 +9,9 @@ export class MainService {
 
   currentUser = this.srvLogin.currentUser;
   url = "https://rickandmortyapi.com/api/character?page=1"
-  public currentRoute: any;
   amIInList = false;
   detailsCharacter:any
-  favorites: any[] = [];
+  favorites:Array<object> = []
   canAddTofavs = false;
   
   constructor(public srvHttp:HttpService, public srvLogin: LoginService ) { }

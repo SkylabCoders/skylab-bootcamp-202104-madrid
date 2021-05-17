@@ -18,7 +18,7 @@ export class FavoritesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendToDetail(character:any){
+  sendToDetail(character:object){
     this.srvMain.detailsCharacter = character;
     this.router.navigate(['details']);
   }

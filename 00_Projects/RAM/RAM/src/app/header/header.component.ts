@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   showLogIn = false;
   model = new User('', '');
   searchInput = ''
-  ram:any
+  ram:Array<object> = []
   loged = false;
 
 

@@ -1,6 +1,21 @@
-<p>FAVORITES</p>
-<a routerLink="/dashboard">HOME</a><br>
-<a routerLink="/list">CHARACTERS</a><br>
-<a routerLink="/favorites">FAVORITES</a><br>
-<a routerLink="/options">OPTIONS</a><br>
-<a routerLink="/login">LOGIN</a> 
+<app-header></app-header>
+<main class="main-container">
+    <div class="main-container__wrapper-img">
+        <img class="main-container__img" [src]="imgSrc" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()"
+            alt="Stan Lee">
+    </div>
+
+    <div class="main-container__fav-list">
+        <h2 class="main-container__title">{{'favorite' | translate}}</h2>
+        <figure class="main-container__fav" *ngFor="let favorite of yourFavorites;let i = index">
+            <div class="main-container__container-img">
+                <img class="main-container__fav-img" src="{{favorite.thumbnail.path}}.{{favorite.thumbnail.extension}}"
+                    alt="{{favorite.name}}">
+                <figcaption class="main-container__fav-name">{{favorite.name}}</figcaption>
+            </div>
+            <i (click)="remove(favorite)" class="main-container__icon far fa-trash-alt"></i>
+        </figure>
+    </div>
+
+</main>
+<app-footer></app-footer>

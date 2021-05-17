@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-options',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options.component.scss']
 })
 export class OptionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  title = 'Lenguages'
+  english = 'English'
+  spanish = 'Spanish'
+  constructor (public translate: TranslateService) {
+    translate.addLangs(['en', 'es'])
+    translate.setDefaultLang('en')
   }
 
+  ngOnInit (): void {
+  }
+
+  changeLang (lang:any) {
+    this.translate.use(lang)
+    localStorage.setItem('lang', lang)
+  }
 }

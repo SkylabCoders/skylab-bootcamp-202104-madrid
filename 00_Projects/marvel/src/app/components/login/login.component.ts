@@ -19,6 +19,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit () {
-    this.srv.userData = this.userData
+    const userDataStore = this.srv.storageSrv.get('userData')
+    if (!userDataStore) {
+      this.srv.userData = this.userData
+      this.srv.storageSrv.set('userData', this.userData)
+    } else {
+      this.userData = userDataStore
+    }
   }
 }

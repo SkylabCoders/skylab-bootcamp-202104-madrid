@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main class="main-container">
     <div class="main-container__wrapper-img">
-        <img class="main-container__img" [src]="imgSrc" (mouseenter)="OnMouseEnter()" (mouseleave)="OnMouseOut()"
+        <img class="main-container__img" [src]="imgSrc" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()"
             alt="Stan Lee">
     </div>
 
@@ -13,7 +13,7 @@
                     alt="{{favorite.name}}">
                 <figcaption class="main-container__fav-name">{{favorite.name}}</figcaption>
             </div>
-            <i (click)="remove(i)" class="main-container__icon far fa-trash-alt"></i>
+            <i (click)="remove(favorite)" class="main-container__icon far fa-trash-alt"></i>
         </figure>
     </div>
 

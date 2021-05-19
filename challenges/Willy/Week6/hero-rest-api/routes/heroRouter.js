@@ -13,7 +13,7 @@ function heroRouter() {
     heroRoutes
     .route('/:heroId')
     .get(controller.getById)
-    .post(controller.postOneHero)
+    .put(controller.putOneHero)
     .delete(controller.deleteHeroes)
 
     return heroRoutes

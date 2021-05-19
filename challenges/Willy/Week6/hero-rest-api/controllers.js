@@ -1,4 +1,4 @@
-const heroArr = require('./constantes/mockHero')
+let heroArr = require('./constantes/mockHero')
 
 function heroesController() {
     let maxHeroId;
@@ -19,20 +19,42 @@ function heroesController() {
       res.send(newHero);
     };
     const getById = (req, res) => {
-      res.send(heroArr.find((hero) => hero.id === +req.params.heroId));
+        const {heroId} = req.params;
+         const hero = heroArr.find(({id}) => id === +heroId);
+         res.json(hero);
     };
-    const postOneHero = (req, res) => {
-            res.send('post funciona con un heroe')
+    const putOneHero = (req, res) => {
+        const {heroId} = req.params;
+        let hero;
+
+        heroArr = heroArr.map((currentHero) => {
+            if (currentHero.id === +heroId){
+                hero = {
+                    ...currentHero,
+                    ...req.body,
+                    modified: new Date()
+                };
+            
+                return hero;
+            };
+        
+        return currentHero;
+        
+        });
+            res.json(hero)
          };
 
     const deleteHeroes = (req, res) => {
-      res.send(`Se ha eliminado el héroe ${req.params.heroId}`);
+        const {heroId} = req.params
+        heroArr = heroArr.filter((hero) => hero !== hero.id)
+        res.status(204);
+        res.json()
     };
     return {
       getAllHeroes,
       createHeroes,
       getById,
-      postOneHero,
+      putOneHero,
       deleteHeroes,
     };
   }

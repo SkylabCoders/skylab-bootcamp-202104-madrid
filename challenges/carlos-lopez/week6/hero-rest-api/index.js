@@ -5,6 +5,7 @@ const heroRouter = require('./routes/heroRouter');
 
 // crear el servidor
 const server = express();
+server.use(express.json());
 
 // Definir una ruta raíz
 

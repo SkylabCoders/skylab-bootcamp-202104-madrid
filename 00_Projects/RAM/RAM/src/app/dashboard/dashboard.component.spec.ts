@@ -73,19 +73,6 @@ describe('DashboardComponent', () => {
     mockRouter.navigate('details');
     expect(mockRouter.navigate).toHaveBeenCalledWith('details');
   })
-  // it('should call and receive and observable ngOnInit to be called', ()=>{
-  //   const spyFn = spyOn(component, 'ngOnInit').and.callThrough();
-  //   component.ngOnInit();
-  //   expect(spyFn).toHaveBeenCalled();
-  // })
-  // it('#getObservableValue should return value from observable',
-  //   (done: DoneFn) => {
-  //     srvMain = new MainService(srvHttp, srvLogin);
-  //     srvMain.getTheAPI(url).subscribe((value: any) => {
-  //     expect(typeof value).toBe('object');
-  //     done();
-  //   });
-  // });
   it('#Poner titulo',() => {
       srvLogin = new LoginService();
       srvMain = new MainService(srvHttp, srvLogin);

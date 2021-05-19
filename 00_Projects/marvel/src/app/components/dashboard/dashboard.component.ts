@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core'
 export class DashboardComponent implements OnInit {
   MarvelList: Imarvel[] = [];
   randomList: Imarvel[] = [];
-  topHeroes: Imarvel[] = [];
+  topHeros: Imarvel[] = [];
   loadGif = true
   limit: string = '&limit=100'
 
@@ -29,11 +29,11 @@ export class DashboardComponent implements OnInit {
     this.mainSrv
       .getAction('getList', URL.apiURL + URL.CharactersURL + '&limit=100')
       .subscribe((res: any) => {
-        this.topHeroes = res.data.results.sort(() => Math.random() - 0.5)
-        this.topHeroes = res.data.results.filter((hero:Imarvel) => hero.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
-        this.topHeroes = this.topHeroes.slice(0, 4)
+        this.topHeros = res.data.results.sort(() => Math.random() - 0.5)
+        this.topHeros = res.data.results.filter((hero:Imarvel) => hero.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
+        this.topHeros = this.topHeros.slice(0, 4)
         this.loadGif = false
-        this.topHeroes.map((hero:Imarvel) => {
+        this.topHeros.map((hero:Imarvel) => {
           if (hero.description === '') {
             hero.description = 'Ooops! We are very sorry! This super hero does not have a description available at this time.'
           }

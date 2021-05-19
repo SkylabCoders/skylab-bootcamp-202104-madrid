@@ -25,7 +25,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   remove (favorite:Imarvel) {
-    this.yourFavorites = this.yourFavorites.filter(hero => { return hero.id !== favorite.id })
+    this.yourFavorites = this.yourFavorites.filter(hero => {  hero.id !== favorite.id })
   }
 
   @HostListener('mouseenter') onMouseEnter () {

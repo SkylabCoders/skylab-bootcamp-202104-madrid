@@ -3,12 +3,19 @@ import { NO_ERRORS_SCHEMA } from '@angular/core'
 import { MainService } from '../../services/main.service'
 import { TranslateService } from '@ngx-translate/core'
 import { FavoritesComponent } from './favorites.component'
+import {Imarvel} from '../../models/Imarvel'
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent
   let fixture: ComponentFixture<FavoritesComponent>
-
+  let HttpClient: HttpClient;
+  
   beforeEach(() => {
+    fixture = TestBed.createComponent(FavoritesComponent, HttpClientTestingModule);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
     const mainServiceStub = () => ({})
     const translateServiceStub = () => ({
       addLangs: () => ({}),
@@ -19,11 +26,19 @@ describe('FavoritesComponent', () => {
       declarations: [FavoritesComponent],
       providers: [
         { provide: MainService, useFactory: mainServiceStub },
-        { provide: TranslateService, useFactory: translateServiceStub }
+        { provide: TranslateService, useFactory: translateServiceStub,}
       ]
     })
-    fixture = TestBed.createComponent(FavoritesComponent)
-    component = fixture.componentInstance
+    .compileComponents();
+    HttpClient = TestBed.inject(HttpClient);
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(FavoritesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+ 
   })
 
   it('can load instance', () => {
@@ -56,4 +71,26 @@ describe('FavoritesComponent', () => {
       expect(translateServiceStub.use).toHaveBeenCalled()
     })
   })
-})
+
+
+  
+  it('should return undefined when deleteCharacters is invoked', ()=>{
+    let hero:Imarvel ={
+      name:'cyclop',
+      id:1,
+      description:'string',
+      selected:true,
+      thumbnail:{
+          path:'string',
+          extension:'string',
+      },
+      images:{
+          path:'string',
+          extension:'string',
+      }
+  
+  }
+    const spyFn = spyOn(component, 'remove').and.callThrough();
+    component.remove(hero);
+    expect(component.remove(hero)).toBeFalsy();
+  })

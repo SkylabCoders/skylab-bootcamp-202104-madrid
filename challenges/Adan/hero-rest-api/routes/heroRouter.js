@@ -1,17 +1,18 @@
 const Router = require('express');
-const heroes = require('../controller/heroController');
+const heroController = require('../controller/heroController');
 
 function heroRouter() {
   const heroRoutes = Router();
 
   heroRoutes
     .route('/')
-    .get((req, res) => {
-      res.json(heroes);
-    })
-    .put((req, res) => {
-      res.send('te puteo');
-    });
+    .get(heroController.getAll)
+    .post(heroController.create);
+  heroRoutes
+    .route('/:heroId')
+    .get(heroController.getById)
+    .put(heroController.updateById)
+    .delete(heroController.deleteById);
 
   return heroRoutes;
 }

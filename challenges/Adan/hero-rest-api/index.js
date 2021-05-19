@@ -1,6 +1,7 @@
 const express = require('express');
 
 const server = express();
+server.use(express.json()); // indicarle al server que debe esperar un json, 'use' metodo middleware
 
 const heroRoutes = require('./routes/heroRouter');
 

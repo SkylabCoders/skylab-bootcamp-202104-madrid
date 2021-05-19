@@ -1,6 +1,21 @@
-<p>DASHBOARD</p>
-<a routerLink="/dashboard">HOME</a><br>
-<a routerLink="/list">CHARACTERS</a><br>
-<a routerLink="/favorites">FAVORITES</a><br>
-<a routerLink="/options">OPTIONS</a><br>
-<a routerLink="/login">LOGIN</a>
+<app-header></app-header>
+<main class="main-container">
+   <img class="main-container__svg" src="https://cdn.iconscout.com/icon/free/png-512/marvel-282124.png" alt="Logo">
+    <h2 class="main-container__title">{{ 'dashboardTitle' | translate }}</h2>
+    <div class="main-container__slider">
+        <img class="main-container__image"
+            src="https://www.cuartomundo.cl/wp-content/uploads/2020/01/Marvel-en-2019-destacada.jpg" alt="Heros portrait">
+    </div>
+    <ul class="main-container__list" *ngIf='loadGif'>
+        <img src="https://trello-attachments.s3.amazonaws.com/60755d2282c14f477515af94/6098e25224d83a589028906f/df7643783387f9c1e0e18e9215bf9196/rogue2.gif" alt="Rogue">
+    </ul>  
+    <ul class="main-container__list" *ngIf='!loadGif'> 
+        <li class="main-container__hero" *ngFor="let character of topHeroes" (click)="goCharacter(character)">
+            <a class="main-container__anchors">
+                <img class="main-container__list-img"
+                    src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
+            </a>
+        </li>
+    </ul>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+El método static hace referencia a que no necesitaremos ninguna
+de las propiedades de una clase para utilizarlo.
+
+
+POKEMON challenge
+dashboard 4 cards 
+paginacion: pagina 1, 0-100 pokemons; pagina 2,100-200 pokemons; 
+pagina 3, 200-300
+
+RULES PARA ESLINT 
+'linebreak-style': 0,
+'global-require': 0,
+'eslint linebreak-style': [0, 'error', 'windows'],
+'comma-dangle': [2, 'never']
+
+
+------------------------------------------
+E6ARDCG9VSLM8N
+
+
+notToEqual.([1, 2 , 3])
+---------------------------------------------------
+pasos para instalar angular
+npm install @angular/cli
+ng ==> para comprobar si se instalo
+ng new
+ng serve --open ==>pagina por defecto
+ng g 
+----------------------------

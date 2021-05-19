@@ -1,0 +1,15 @@
+<!-- Para este método el constructor debe estar en privado -->
+
+<!-- <button (click)="getValueFromService()">OBTENER VALOR DEL SERVICIO</button>
+
+<div *ngIf="value">
+    {{value.name}}, {{value.superPower}}
+</div> -->
+
+
+<button>OBTENER VALOR DEL SERVICIO</button>
+
+<div *ngIf="srv.superAlumno">
+    {{srv.superAlumno.name}}, {{srv.superAlumno.superPower}}
+</div>
+<!-- Para este segundo método hay que poner el constructor en público -->

@@ -1,6 +1,5 @@
-const { TestScheduler } = require('@jest/core');
-const dashboard = require('./dashboard');
 
+//Test passed
 describe('given a prinRandomNumbers()', () => {
     describe('when calling it', () => {
         test('then it should return 1', () => {
@@ -9,3 +8,50 @@ describe('given a prinRandomNumbers()', () => {
         })
     })
 })
+
+// Test passed
+
+function renderNames(arr,num1){
+   return arr[num1];
+  }
+
+describe('given a renderNames()', () => {
+    describe('when calling it with 2 parameters (arr, 3)', () => {
+        test('then it should log 4', () => {
+            //arrange
+            let arr = [1, 2, 3, 4];
+            //act
+            let result = renderNames(arr, 3);
+            //assert
+            expect(result).toBe(4);
+        })
+    })
+})
+
+
+//Test passed
+
+function renderListHeroes() {
+    let newAnchor = document.createElement("newAnchor");
+    newAnchor.id = "hola";
+    newAnchor.innerHTML = "frase + frase";
+    let result = newAnchor.innerHTML;
+    document.body.appendChild(newAnchor);
+    return result;
+  };
+
+describe("Given function renderListHeroes", () => {
+  describe("When calling renderListHeroes", () => {
+    test("Then it should return <newAnchor id=hola>frase + frase</newAnchor>", () => {
+      let newAnchor = document.createElement("newAnchor");
+      document.body.innerHTML = `<div id="contenedor"></div>`;
+      let containerList = document.getElementById("contenedor");
+      renderListHeroes();
+      console.log(containerList.innerHTML)
+      console.log(newAnchor.innerHTML)
+      expect(containerList.innerHTML).toContain(newAnchor.innerHTML);
+    });
+  });
+});
+
+

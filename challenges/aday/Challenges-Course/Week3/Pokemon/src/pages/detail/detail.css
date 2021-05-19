@@ -1,0 +1,48 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+@font-face {font-family: "Pokemon"; src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot"); src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg"); }
+
+* {
+    background-color: rgb(55,92,170);
+    color: rgb(250,204,51);
+    font-family: "Pokemon";
+    font-size: 35px;
+    text-shadow: 5px 5px rgb(237,70,54);
+}
+
+header {
+    height: 200px;
+}
+
+.body__main-container {
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+    padding: 25px;
+    font-size: 35px;
+    border-radius: 25px;
+    text-shadow: 5px 5px rgb(237,70,54);
+}
+
+a:hover {
+    background-color: rgb(237,70,54);
+    text-shadow: 5px 5px rgb(55,92,170);
+    transition-duration: 0.8s;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+img {
+    width: 250px; height: 250px;
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;
+}

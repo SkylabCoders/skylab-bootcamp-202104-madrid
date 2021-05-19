@@ -1,0 +1,15 @@
+<!-- <form (ngSubmit)='onSubmit()' #productForm ='ngForm'>
+    <div class="formGroup">
+        <label for="name">Name</label>
+        <input id="name" type="text" required [(ngModel)]='theModel.name' name='name'>
+    </div>
+    <div class="formGroup">
+        <label for="price">Price</label>
+        <input id="price" type="number" required [(ngModel)]='theModel.price' name='price'>
+    </div>
+    <button type="submit">Submit</button>
+</form> -->
+<ul>
+    <li *ngFor='let item of products'> Name: {{item.name}}, Price: {{item.price}} <button (click)='addToBasket(item)'>Add</button></li>
+</ul>
+

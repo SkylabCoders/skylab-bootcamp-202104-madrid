@@ -1,0 +1,56 @@
+<div>
+    <h1>Drogueria</h1>
+    <form (ngSubmit)="onSubmit(shopForm)"   #shopForm="ngForm">
+        <div class="form-group">
+            <label for="product">Product</label>
+            <input type="text" class="form-control" id="product"
+                   required
+                   [(ngModel)]="model.product" name="product"
+                   #product="ngModel">
+            <div [hidden]="product.valid || product.pristine"
+                 class="alert alert-danger">
+              Product is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price"
+                   required
+                   [(ngModel)]="model.price" name="price"
+                   #price="ngModel">
+            <div [hidden]="price.valid || price.pristine"
+                 class="alert alert-danger">
+              Price is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="stock">Buy</label>
+            <select class="form-control" id="stock"
+                    required
+                    [(ngModel)]="model.stock" name="stock"
+                    #stock="ngModel">
+              <option *ngFor="let status of stockStatus" [value]="status">{{status}}</option>
+            </select>
+            <div [hidden]="stock.valid || stock.pristine" class="alert alert-danger">
+              Stock is required
+            </div>
+          </div>
+          <button>Añadir</button>
+    </form>
+</div>
+
+<h2>Lista de productos</h2>
+<ul>
+    <li *ngFor="let item of shopList; let i = index">
+        Producto: {{ item.product}}, 
+        Precio: {{ item.price}}€,
+        Stock: {{ item.stock}}
+       <button (click)="remove(i)">Eliminar</button>
+       <button (click)="goBuy(i)">Añadir al carrito</button>
+    </li>
+</ul>
+
+<app-basket></app-basket>
+
+
+<!--[baskList]="basketList"-->

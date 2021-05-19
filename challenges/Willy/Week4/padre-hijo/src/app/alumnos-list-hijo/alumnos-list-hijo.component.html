@@ -1,0 +1,7 @@
+<ol>
+    <li *ngFor="let item of list" (click)="storeAlumno(item)">{{ item.name }}</li>
+</ol>
+<button></button>
+<app-alumno-details *ngIf="alumno && mustRender" [alumno] ="alumno" (nota)="getNota($event)"></app-alumno-details> 
+<!--ponemos el ngIf porque depende de un click del usuario, si no daria undefined-->
+<h1>La calificacion es {{ nota }}</h1>

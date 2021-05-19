@@ -2,9 +2,9 @@
   "name": "hero-rest-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "indexCharacter.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon indexCharacter.js",
     "test": "jest --watchAll --collect-coverage"
   },
   "keywords": [],

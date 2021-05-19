@@ -1,23 +1,17 @@
 const { Router } = require('express');
-const heroes = require('../controllers/heroesJSON');
+const heroController = require('../controllers/heroController');
 
 function heroRouter() {
   const heroRoutes = Router();
   heroRoutes
     .route('/')
-    .get((req, res) => {
-      res.json(heroes);
-    });
+    .get(heroController.getAll)
+    .post(heroController.post);
   heroRoutes
-    .route('/prueba/post')
-    .post((req, res) => {
-      res.send('Te posteo');
-    });
-  heroRoutes
-    .route('/prueba/put')
-    .put((req, res) => {
-      res.send('Te puteo');
-    });
+    .route('/:heroId')
+    .get(heroController.getHero)
+    .put(heroController.modifyHero)
+    .delete(heroController.deleteHero);
   return heroRoutes;
 }
 module.exports = heroRouter();

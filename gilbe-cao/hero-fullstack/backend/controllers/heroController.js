@@ -30,31 +30,25 @@ function controller() {
     res.send(newHero);
   };
 
-  const getById = (req, res) => {
+  const getById = async (req, res) => {
     const { heroId } = req.params;
-    const hero = heroes.find(({ id }) => id === +heroId);
+
+    const hero = await Hero.findById(heroId);
 
     res.json(hero);
   };
 
-  const updateById = (req, res) => {
+  const updateById = async (req, res) => {
     const { heroId } = req.params;
-    let hero;
+    const dataToUpdate = req.body;
 
-    heroes = heroes.map((currentHero) => {
-      if (currentHero.id === +heroId) {
-        hero = {
-          ...currentHero,
-          ...req.body,
-          modified: new Date(),
-        };
+    const heroUpdated = await Hero.findByIdAndUpdate(
+      heroId,
+      dataToUpdate,
+      { new: true },
+    );
 
-        return hero;
-      }
-      return currentHero;
-    });
-
-    res.json(hero);
+    res.json(heroUpdated);
   };
 
   const deleteById = (req, res) => {

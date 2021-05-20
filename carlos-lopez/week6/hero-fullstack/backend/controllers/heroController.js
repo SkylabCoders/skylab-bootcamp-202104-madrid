@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 let heroes = require('../constants/heroesJSON');
+const Hero = require('../models/heroModel');
 
 function controller() {
   let maxHeroId;
@@ -17,12 +18,10 @@ function controller() {
     return res.json(heroes);
   };
   const createHero = (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
+    const newHero = new Hero({
       ...req.body,
-      id: maxHeroId,
-    };
-    heroes.push(newHero);
+    });
+    newHero.save();
     res.send(newHero);
   };
   const getHero = (req, res) => {

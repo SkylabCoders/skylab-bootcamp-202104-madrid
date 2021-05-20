@@ -8,9 +8,14 @@ let maxHeroId;
 }());
 
 module.exports = {
+
   getAll: (req, res) => {
-    res.json(Heroes);
+    if (req.query.name) {
+      return res.json(Heroes.filter(({ name }) => name.includes(req.query.name)));
+    }
+    return res.json(Heroes);
   },
+
   getById: (req, res) => {
     const { heroId } = req.params;
     const hero = Heroes.find(({ id }) => id === +heroId);
@@ -21,6 +26,7 @@ module.exports = {
       res.send('no encontré el heroes');
     }
   },
+
   postHero: (req, res) => {
     maxHeroId += 1;
     const newHero = {
@@ -30,6 +36,7 @@ module.exports = {
     Heroes.push(newHero);
     res.send(newHero);
   },
+
   putHero: (req, res) => {
     const { heroId } = req.params;
     let hero;

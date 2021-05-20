@@ -3,11 +3,9 @@ const Hero = require('../models/heroModel');
 
 module.exports = {
 
-  getAll: (req, res) => {
-    if (req.query.name) {
-      return res.json(Heroes.filter(({ name }) => name.includes(req.query.name)));
-    }
-    return res.json(Heroes);
+  getAll: async (req, res) => {
+    const heroes = await Hero.find(req.query);
+    res.json(heroes);
   },
 
   getById: (req, res) => {
@@ -21,7 +19,7 @@ module.exports = {
     }
   },
 
-  postHero: (req, res) => {
+  postHero: async (req, res) => {
     const newHero = new Hero({
       ...req.body,
     });
@@ -47,7 +45,7 @@ module.exports = {
 
   deleteHero: (req, res) => {
     const { heroId } = req.params;
-    Heroes = Heroes.filter((element) => element.id !== +heroId);
+    Hero.findByIdAndDelete(heroId);
     res.status(204);
     res.json(heroId);
   },

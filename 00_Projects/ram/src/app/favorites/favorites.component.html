@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="container--headimg">
+        <img class="container--headimg" src="https://trello-attachments.s3.amazonaws.com/60755d2282c14f477515af94/60984f23c7019f6710fbc2d6/c6c3da6f299efa4cab13cefa2a596071/ram-list1.jpg" alt="image header">
+    </div>
+    <div class="container--cards">
+        <ul>
+            <li *ngFor="let character of ram" (click)="sendToDetail(character)" class="list__item">
+                <div class="cards--character">
+                    <img src="{{character.image}}" alt="image character">
+                    <div class="character--details">
+                        <div class="character--span" id="character--span">
+                        <span>{{character.name}}</span>
+                        </div>
+                        <div class="character--display">
+                            <div class="character__display--status">
+                                <span>Specie: {{character.species}}</span>
+                                <!-- <i class="fas fa-circle"></i> -->
+                            </div>
+                            <span>Status: {{character.status}}</span>
+                        </div>
+                        <div class="character--delete-button" (click)="deleteCharacters(character)"><i class="fas fa-trash-alt"></i></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>  

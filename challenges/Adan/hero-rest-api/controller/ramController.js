@@ -1,12 +1,12 @@
 const ramCharacters = require('../constants/ramMock');
 
 function controller() {
-  let maxHeroId;
+  let maxCharacterId;
   (function getHeroId() {
-    const heroesOrdered = ramCharacters.sort(
+    const characterOrdered = ramCharacters.sort(
       (characterA, characterB) => characterA.id - characterB.id
     );
-    maxCharacterId = heroesOrdered[heroesOrdered.length - 1].id;
+    maxCharacterId = characterOrdered[characterOrdered.length - 1].id;
   }());
   return {
     getAll: (req, res) => {
@@ -16,7 +16,7 @@ function controller() {
       maxCharacterId += 1;
       const newCharacter = {
         ...req.body,
-        id: maxHeroId
+        id: maxCharacterId
       };
       ramCharacters.push(newCharacter);
       res.send(newCharacter);

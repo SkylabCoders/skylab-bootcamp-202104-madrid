@@ -1,20 +1,14 @@
-//que vamos a utilizar para crear el servidor 
-//cpn que vamos a escuchar eventos
-const express  = require('express')
+//importar express
+const express = require('express')
+//crear el servidor
+const server = express()
 
-//crear servidor
-const server = express();
-
-
-
-//definir las rutas
-
-
-
-
-server.use('/api/heroes', heroRoutes)
+server.use(express.json())
+//definir la ruta raiz
+const heroRouter = require('./routes/heroRouter')
+server.use('/api/heroes', heroRouter)
 //definir los mecanismos para escuchar peticiones
-server.listen(4000, ( )=> console.log('Server is running in localhost://4000')) 
+const port = 4000
+server.listen(port, ( )=> console.log(`Server is running in localhost://${port}`)) 
 
 
-//escuchar petociones

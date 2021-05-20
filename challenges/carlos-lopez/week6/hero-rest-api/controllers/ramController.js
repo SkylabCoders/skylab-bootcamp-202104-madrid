@@ -8,52 +8,52 @@ function controller() {
     maxCharacterId = ramCharacterOrdered[ramCharacterOrdered.length - 1].id;
   }());
 
-  const getAll = (req, res) => {
+  const getAllCharacters = (req, res) => {
     res.json(ramCharacter);
   };
-  const createHero = (req, res) => {
+  const createCharacter = (req, res) => {
     maxCharacterId += 1;
-    const newHero = {
+    const newCharacter = {
       ...req.body,
       id: maxCharacterId,
     };
-    ramCharacter.push(newHero);
-    res.send(newHero);
+    ramCharacter.push(newCharacter);
+    res.send(newCharacter);
   };
-  const getHero = (req, res) => {
-    const { heroId } = req.params;
-    const hero = ramCharacter.find(({ id }) => id === +heroId);
-    res.json(hero);
+  const getCharacter = (req, res) => {
+    const { characterId } = req.params;
+    const character = ramCharacter.find(({ id }) => id === +characterId);
+    res.json(character);
   };
-  const modifyHero = (req, res) => {
-    const { heroId } = req.params;
-    let hero;
+  const modifyCharacter = (req, res) => {
+    const { characterId } = req.params;
+    let character;
     // El método map nos va a sobrescribir el array de ramCharacter todo el tiempo
-    ramCharacter = ramCharacter.map((currentHero) => {
-      if (currentHero.id === +heroId) {
-        hero = {
-          ...currentHero,
+    ramCharacter = ramCharacter.map((currentCharacter) => {
+      if (currentCharacter.id === +characterId) {
+        character = {
+          ...currentCharacter,
           ...req.body,
           modified: new Date(),
         };
-        return hero;
+        return character;
       }
-      return currentHero;
+      return currentCharacter;
     });
-    res.json(hero);
+    res.json(character);
   };
-  const deleteHero = (req, res) => {
-    const { heroId } = req.params;
-    ramCharacter = ramCharacter.filter((hero) => hero.id !== +heroId);
+  const deleteCharacter = (req, res) => {
+    const { characterId } = req.params;
+    ramCharacter = ramCharacter.filter((character) => character.id !== +characterId);
     res.status(204);
     res.json();
   };
   return {
-    getAll,
-    createHero,
-    getHero,
-    modifyHero,
-    deleteHero,
+    getAllCharacters,
+    createCharacter,
+    getCharacter,
+    modifyCharacter,
+    deleteCharacter,
   };
 }
 

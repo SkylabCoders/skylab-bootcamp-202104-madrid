@@ -1,7 +1,7 @@
-const marvelList = require('../constantes/marvelMock')
+const marvelList = require('../constantes/marvelMock');
 
 module.exports = {
-    getAll: (req, res)=>{
-        res.json(marvelList)
-    },    
-}
+  getAll: (req, res) => {
+    res.json(marvelList);
+  }
+};

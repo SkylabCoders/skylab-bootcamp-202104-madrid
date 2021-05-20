@@ -15,7 +15,7 @@ module.exports = {
   },
 
   postHero: async (req, res) => {
-    const newHero = new Hero({
+    const newHero = await new Hero({
       ...req.body,
     });
     newHero.save();
@@ -38,10 +38,9 @@ module.exports = {
     res.json(hero);
   },
 
-  deleteHero: (req, res) => {
+  deleteHero: async (req, res) => {
     const { heroId } = req.params;
-    Hero.findByIdAndDelete(heroId);
-    res.status(204);
-    res.json(heroId);
+    const deletedHero = await Hero.findByIdAndDelete(heroId);
+    res.json(deletedHero);
   },
 };

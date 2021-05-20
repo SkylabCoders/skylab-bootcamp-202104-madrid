@@ -19,9 +19,11 @@ function controller() {
     res.send(newHero);
   };
 
-  const getHeroById = (req, res) => {
+  const getHeroById = async (req, res) => {
     const { heroId } = req.params;
-    const hero = heroes.find(({ id }) => id === +heroId);
+
+    const hero = await Hero.findById(heroId);
+
     res.json(hero);
   };
 

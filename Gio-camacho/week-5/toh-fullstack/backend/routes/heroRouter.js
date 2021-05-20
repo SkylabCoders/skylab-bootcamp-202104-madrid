@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const {
-  allHeroes, post, getOneHero, update, deleteHero
+  getAllHeroes, createHero, getHeroById, updateHeroById, deleteHeroById
 } = require('../controllers/callback');
 
 function heroRouter() {
@@ -8,14 +8,14 @@ function heroRouter() {
 
   heroRoutes
     .route('/')
-    .get(allHeroes)
-    .post(post);
+    .get(getAllHeroes)
+    .post(createHero);
 
   heroRoutes
     .route('/:heroId')
-    .get(getOneHero)
-    .put(update)
-    .delete(deleteHero);
+    .get(getHeroById)
+    .put(updateHeroById)
+    .delete(deleteHeroById);
 
   return heroRoutes;
 }

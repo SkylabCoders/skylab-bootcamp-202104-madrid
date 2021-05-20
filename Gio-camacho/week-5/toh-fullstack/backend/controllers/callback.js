@@ -2,7 +2,7 @@ let heroes = require('../constantes/mockHeroes');
 const Hero = require('../models/heroModel');
 
 function controller() {
-  const allHeroes = (req, res) => {
+  const getAllHeroes = (req, res) => {
     const heroName = req.query.name;
     if (heroName) {
       return res.json(
@@ -12,7 +12,7 @@ function controller() {
     return res.json(heroes);
   };
 
-  const post = (req, res) => {
+  const createHero = (req, res) => {
     const newHero = new Hero({
       ...req.body
     });
@@ -21,13 +21,13 @@ function controller() {
     res.send(newHero);
   };
 
-  const getOneHero = (req, res) => {
+  const getHeroById = (req, res) => {
     const { heroId } = req.params;
     const hero = heroes.find(({ id }) => id === +heroId);
     res.json(hero);
   };
 
-  const update = (req, res) => {
+  const updateHeroById = (req, res) => {
     const { heroId } = req.params;
     let hero;
     heroes = heroes.map((currentHero) => {
@@ -45,7 +45,7 @@ function controller() {
     res.json(hero);
   };
 
-  const deleteHero = (req, res) => {
+  const deleteHeroById = (req, res) => {
     const { heroId } = req.params;
     heroes = heroes.filter((hero) => hero.id !== +heroId);
     res.status(204);
@@ -53,11 +53,11 @@ function controller() {
   };
 
   return {
-    allHeroes,
-    post,
-    getOneHero,
-    update,
-    deleteHero
+    getAllHeroes,
+    createHero,
+    getHeroById,
+    updateHeroById,
+    deleteHeroById
   };
 }
 

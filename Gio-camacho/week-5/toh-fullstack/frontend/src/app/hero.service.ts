@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './hero';
 import { MessageService } from './message.service';
-import  environment  from '../environments/environment'
+import { environment } from '../environments/environment'
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {

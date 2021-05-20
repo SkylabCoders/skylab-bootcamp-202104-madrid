@@ -1,35 +1,35 @@
 /* eslint-disable no-console */
-let heroes = require('../constants/ramJSON.json');
+let ramCharacter = require('../constants/ramJSON.json');
 
 function controller() {
-  let maxHeroId;
-  (function getHeroId() {
-    const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-    maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
+  let maxCharacterId;
+  (function getCharacterId() {
+    const ramCharacterOrdered = ramCharacter.sort((characterA, characterB) => characterA.id - characterB.id);
+    maxCharacterId = ramCharacterOrdered[ramCharacterOrdered.length - 1].id;
   }());
 
   const getAll = (req, res) => {
-    res.json(heroes);
+    res.json(ramCharacter);
   };
   const createHero = (req, res) => {
-    maxHeroId += 1;
+    maxCharacterId += 1;
     const newHero = {
       ...req.body,
-      id: maxHeroId,
+      id: maxCharacterId,
     };
-    heroes.push(newHero);
+    ramCharacter.push(newHero);
     res.send(newHero);
   };
   const getHero = (req, res) => {
     const { heroId } = req.params;
-    const hero = heroes.find(({ id }) => id === +heroId);
+    const hero = ramCharacter.find(({ id }) => id === +heroId);
     res.json(hero);
   };
   const modifyHero = (req, res) => {
     const { heroId } = req.params;
     let hero;
-    // El método map nos va a sobrescribir el array de heroes todo el tiempo
-    heroes = heroes.map((currentHero) => {
+    // El método map nos va a sobrescribir el array de ramCharacter todo el tiempo
+    ramCharacter = ramCharacter.map((currentHero) => {
       if (currentHero.id === +heroId) {
         hero = {
           ...currentHero,
@@ -44,7 +44,7 @@ function controller() {
   };
   const deleteHero = (req, res) => {
     const { heroId } = req.params;
-    heroes = heroes.filter((hero) => hero.id !== +heroId);
+    ramCharacter = ramCharacter.filter((hero) => hero.id !== +heroId);
     res.status(204);
     res.json();
   };

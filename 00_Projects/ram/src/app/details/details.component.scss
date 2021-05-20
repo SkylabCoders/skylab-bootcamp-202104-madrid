@@ -42,19 +42,7 @@
     justify-content: center;
 
   }
-  // .main__container-right::before{
-  //   content: "";
-  //   background-image: url('https://trello-attachments.s3.amazonaws.com/60984f23c7019f6710fbc2d6/300x300/fe4eacab7ca5674f3a3e579a474f5783/portalRAM.png');
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  //   top: 47px;
-  //   right: 0px;
-  //   bottom: 97px;
-  //   left: 1px;
-  //   opacity: 0.5;
-  //   // position: absolute;
 
-  // }
   .main__container-right--details {
     font-size: 1.4rem;
     display: flex;
@@ -67,10 +55,6 @@
   }
 
 }
-
-
-
-
 
 @media only screen and (min-width: 800px) {
   
@@ -114,32 +98,6 @@
     position: relative;
   }
   
-  // .main__container-right::before{
-  //   display: none;
-  //   content: "";
-  //   background-image: url('https://trello-attachments.s3.amazonaws.com/60984f23c7019f6710fbc2d6/300x300/fe4eacab7ca5674f3a3e579a474f5783/portalRAM.png');
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  //   top: 89px;
-  //   right: 4px;
-  //   bottom: 62px;
-  //   left: 126px;
-  //   opacity: 0.5;
-  //   position: absolute;
-  // }
-  // .main__container-right::after{
-  //   content: "";
-  //   background-image: url('https://trello-attachments.s3.amazonaws.com/60984f23c7019f6710fbc2d6/300x300/fe4eacab7ca5674f3a3e579a474f5783/portalRAM.png');
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  //   top: 89px;
-  //   right: 4px;
-  //   bottom: 62px;
-  //   left: 126px;
-  //   opacity: 0.5;
-  //   position: absolute;
-
-  // }
   
   .main__container-right--details {
     font-size: 1.8rem;
@@ -153,27 +111,3 @@
   
 
 }
-
-//Mobile version MTL
-
-// .main {
-//   display: none;
-// }
-// * {
-//     background-color: rgb(60, 62, 68);
-//     color: rgb(255, 152, 0);
-// }
-
-// .container {
-//     display: flex;
-//     justify-content: space-around;
-// }
-
-// .example-header-image {
-//   background-image: url();
-//   background-size: cover;
-// }
-
-// .example-card {
-//     max-width: 400px;
-// }

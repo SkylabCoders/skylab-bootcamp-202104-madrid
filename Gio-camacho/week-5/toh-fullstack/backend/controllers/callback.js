@@ -2,17 +2,11 @@ let heroes = require('../constantes/mockHeroes');
 const Hero = require('../models/heroModel');
 
 function controller() {
-  let maxHeroId;
-
-  (function getHeroId() {
-    const heroOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-    maxHeroId = heroOrdered[heroOrdered.length - 1].id;
-  }());
-
   const allHeroes = (req, res) => {
-    if (req.query.name) {
+    const heroName = req.query.name;
+    if (heroName) {
       return res.json(
-        heroes.filter(({ name }) => name.toLocaleLowerCase().includes(req.query.name))
+        heroes.filter(({ name }) => name.toLocaleLowerCase().includes(heroName.toLocaleLowerCase()))
       );
     }
     return res.json(heroes);

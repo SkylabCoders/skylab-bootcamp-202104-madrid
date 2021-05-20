@@ -1,4 +1,4 @@
-let heroes = require('../constantes/mockHeroes');
+const heroes = require('../constantes/mockHeroes');
 const Hero = require('../models/heroModel');
 
 function controller() {
@@ -41,9 +41,11 @@ function controller() {
     res.json(heroUpdate);
   };
 
-  const deleteHeroById = (req, res) => {
+  const deleteHeroById = async (req, res) => {
     const { heroId } = req.params;
-    heroes = heroes.filter((hero) => hero.id !== +heroId);
+
+    await Hero.findByIdAndDelete(heroId);
+
     res.status(204);
     res.json();
   };

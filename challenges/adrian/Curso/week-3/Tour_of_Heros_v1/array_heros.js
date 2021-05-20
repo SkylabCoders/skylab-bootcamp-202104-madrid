@@ -1,8 +1,12 @@
-/*let urlJsonHeros = 'http://127.0.0.1:5500/challenges/adrian/Curso/week-3/Tour_of_Heros_v1/superHeroData.json'
-function fetchInfo(url){
-    return fetch(url)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-}
-
-console.log(fetchInfo(urlJsonHeros));*/
+const heroes = [
+    { id: 11, name: 'Dr Nice' },
+    { id: 12, name: 'Narco' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },
+    { id: 15, name: 'Magneta' },
+    { id: 16, name: 'RubberMan' },
+    { id: 17, name: 'Dynama' },
+    { id: 18, name: 'Dr IQ' },
+    { id: 19, name: 'Magma' },
+    { id: 20, name: 'Tornado' }
+    ];

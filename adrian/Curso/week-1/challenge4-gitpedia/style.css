@@ -1,0 +1,41 @@
+#logoimg{
+    height: 100px;
+    width: 100px;
+}
+
+#divtop{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbarSupportedContent{
+    max-height: 65px;
+}
+
+#carouselExampleControls{
+    max-height: 500px;
+    max-height: 500px;
+}
+
+.d-block.w-100{
+    max-height: 500px;
+    max-width: 500px;
+}
+
+#enterinfo{
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+#nav1{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#gitipedia{
+    font-size: 5em;
+    font-family: sans-serif;
+}

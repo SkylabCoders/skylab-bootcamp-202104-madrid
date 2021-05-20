@@ -1,33 +1,39 @@
-const dashboard = document.getElementById('dashboard');
-const heros = document.getElementById('heros');
+const heroes = [
+    { id: 11, name: 'Dr Nice' },
+    { id: 12, name: 'Narco' },
+    { id: 13, name: 'Bombasto' },
+    { id: 14, name: 'Celeritas' },
+    { id: 15, name: 'Magneta' },
+    { id: 16, name: 'RubberMan' },
+    { id: 17, name: 'Dynama' },
+    { id: 18, name: 'Dr IQ' },
+    { id: 19, name: 'Magma' },
+    { id: 20, name: 'Tornado' }
+    ];
 
-function getToDashboard() {
-  window.location.href = 'http://127.0.0.1:5500/challenges/adrian/Curso/week-3/Tour_of_Heros_v1/Dashboar/dashboard.html';
+let dashboard = document.getElementById('dashboard');
+let heros = document.getElementById('heros');
+
+function getToDashboard (){
+    window.location.href = "http://127.0.0.1:5500/Dashboar/dashboard.html";
 }
 
-function getToHeroes() {
-  window.location.href = 'http://127.0.0.1:5500/challenges/adrian/Curso/week-3/Tour_of_Heros_v1/Hero_list/hero_list.html';
+function getToHeroes (){
+    window.location.href = "http://127.0.0.1:5500/Hero_list/hero_list.html"
 }
 
-const urlJsonHeros = 'http://127.0.0.1:5500/challenges/adrian/Curso/week-3/Tour_of_Heros_v1/superHeroData.json';
-function fetchInfo(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((data) => loadPage(data));
-}
-
-const detailDiv = document.querySelector('.main__list');
+let detailDiv = document.querySelector('.main__list');
 const params = new URLSearchParams(window.location.search);
-const idHero = params.get('id');
-const indexHero = params.get('index');
+const idHero = params.get("id");
+const heroIndex = params.get("index");
 
-function loadPage(arr) {
-  const heroId = document.createElement('h1');
-  const heroName = document.createElement('h2');
-  detailDiv.appendChild(heroName);
-  detailDiv.appendChild(heroId);
-  heroName.innerText = arr[indexHero].name;
-  heroId.innerText = arr[indexHero].id;
-}
+function loadPage() {
+    let heroName = document.createElement('h1');
+    let heroId = document.createElement('h3');
+    detailDiv.appendChild(heroName);
+    detailDiv.appendChild(heroId);
+    heroName.innerText = heroes[heroIndex]['name'];
+    heroId.innerText = heroes[heroIndex]['id'];
+  }
 
-fetchInfo(urlJsonHeros);
+  loadPage();

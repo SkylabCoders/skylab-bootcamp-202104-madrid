@@ -14,7 +14,7 @@ function controller() {
       ...req.body,
     });
 
-    res.send(newHero);
+    res.json(newHero);
   };
 
   const getById = async (req, res) => {

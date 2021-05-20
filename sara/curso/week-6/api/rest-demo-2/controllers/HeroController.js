@@ -1,4 +1,4 @@
-let Heroes = require('../constantes/heroMock');
+const Heroes = require('../constantes/heroMock');
 const Hero = require('../models/heroModel');
 
 module.exports = {
@@ -22,19 +22,9 @@ module.exports = {
     res.send(newHero);
   },
 
-  putHero: (req, res) => {
+  putHero: async (req, res) => {
     const { heroId } = req.params;
-    let hero;
-    Heroes = Heroes.map((currenthero) => {
-      if (currenthero.id === +heroId) {
-        hero = {
-          ...currenthero,
-          ...req.body,
-        };
-        return hero;
-      }
-      return currenthero;
-    });
+    const hero = await Hero.findByIdAndUpdate(heroId, { ...req.body }, { new: true });
     res.json(hero);
   },
 

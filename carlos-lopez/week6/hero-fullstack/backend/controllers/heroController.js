@@ -1,54 +1,36 @@
 /* eslint-disable no-console */
-let heroes = require('../constants/heroesJSON');
 const Hero = require('../models/heroModel');
 
 function controller() {
-  let maxHeroId;
-  (function getHeroId() {
-    const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-    maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-  }());
-
-  const getAll = (req, res) => {
-    if (req.query.name) {
-      return res.json(
-        heroes.filter(({ name }) => name.toLowerCase().includes(req.query.name.toLowerCase())),
-      );
-    }
+  const getAll = async (req, res) => {
+    const query = { ...req.query };
+    const heroes = await Hero.find(query);
     return res.json(heroes);
   };
-  const createHero = (req, res) => {
-    const newHero = new Hero({
+  const createHero = async (req, res) => {
+    const newHero = await Hero.create({
       ...req.body,
     });
-    newHero.save();
-    res.send(newHero);
+    res.json(newHero);
   };
-  const getHero = (req, res) => {
+  const getHero = async (req, res) => {
     const { heroId } = req.params;
-    const hero = heroes.find(({ id }) => id === +heroId);
+    const hero = await Hero.findById(heroId);
     res.json(hero);
   };
-  const modifyHero = (req, res) => {
+  const modifyHero = async (req, res) => {
     const { heroId } = req.params;
-    let hero;
-    // El método map nos va a sobrescribir el array de heroes todo el tiempo
-    heroes = heroes.map((currentHero) => {
-      if (currentHero.id === +heroId) {
-        hero = {
-          ...currentHero,
-          ...req.body,
-          modified: new Date(),
-        };
-        return hero;
-      }
-      return currentHero;
-    });
-    res.json(hero);
+    const dataToUpdate = req.body;
+    const heroUpdated = await Hero.findByIdAndUpdate(
+      heroId,
+      dataToUpdate,
+      { new: true },
+    );
+    res.json(heroUpdated);
   };
-  const deleteHero = (req, res) => {
+  const deleteHero = async (req, res) => {
     const { heroId } = req.params;
-    heroes = heroes.filter((hero) => hero.id !== +heroId);
+    await Hero.findByIdAndDelete(heroId);
     res.status(204);
     res.json();
   };

@@ -5,9 +5,9 @@ import { AppComponent } from './app.component'
 import { HttpClientModule } from '@angular/common/http'
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
-import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import { DashboardModule } from './dashboard/dashboard.module'
 
 @NgModule({
   declarations: [
@@ -17,11 +17,11 @@ import { RouterModule } from '@angular/router'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DashboardModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

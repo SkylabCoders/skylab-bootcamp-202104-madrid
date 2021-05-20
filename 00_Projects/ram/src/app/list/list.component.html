@@ -4,7 +4,7 @@
     </div>
     <div class="container--cards">
         <ul>
-            <li *ngFor="let character of ram" (click)="sendToDetail(character)" class="list__item">
+            <li *ngFor="let character of ram$ | async" (click)="sendToDetail(character)" class="list__item">
                 <div class="cards--character">
                     <img src="{{character.image}}" alt="image character">
                     <div class="character--details">
@@ -23,7 +23,18 @@
         </ul>
     </div>  
     <div class="container--button">
-        <button class="button--previous" (click) = "getPrevPage()">Previous</button>
-        <button class="button--next" (click) = "getNextPage()">Next</button>
+        <button
+            [disabled]="!prevUrl" 
+            class="button--previous"
+            (click) = "chargePage(prevUrl)">
+          Previous
+        </button>
+
+        <button
+            [disabled]="!nextUrl" 
+            class="button--next"
+            (click) = "chargePage(nextUrl)">
+          Next
+        </button>
     </div>
 </div>

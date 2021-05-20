@@ -6,20 +6,20 @@ function controller() {
     const heroesOrdered = ramCharacters.sort(
       (characterA, characterB) => characterA.id - characterB.id
     );
-    maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
+    maxCharacterId = heroesOrdered[heroesOrdered.length - 1].id;
   }());
   return {
     getAll: (req, res) => {
       res.json(ramCharacters);
     },
     create: (req, res) => {
-      maxHeroId += 1;
-      const newHero = {
+      maxCharacterId += 1;
+      const newCharacter = {
         ...req.body,
         id: maxHeroId
       };
-      ramCharacters.push(newHero);
-      res.send(newHero);
+      ramCharacters.push(newCharacter);
+      res.send(newCharacter);
     }
 
   };

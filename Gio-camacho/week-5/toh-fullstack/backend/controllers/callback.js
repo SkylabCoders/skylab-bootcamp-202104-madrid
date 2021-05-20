@@ -27,22 +27,18 @@ function controller() {
     res.json(hero);
   };
 
-  const updateHeroById = (req, res) => {
+  const updateHeroById = async (req, res) => {
     const { heroId } = req.params;
-    let hero;
-    heroes = heroes.map((currentHero) => {
-      if (currentHero.id === +heroId) {
-        hero = {
-          ...currentHero,
-          ...req.body,
-          modify: new Date()
-        };
-        return hero;
-      }
-      return currentHero;
-    });
 
-    res.json(hero);
+    const dataToUpdate = req.body;
+
+    const heroUpdate = await Hero.findByIdAndUpdate(
+      heroId,
+      dataToUpdate,
+      { new: true }
+    );
+
+    res.json(heroUpdate);
   };
 
   const deleteHeroById = (req, res) => {

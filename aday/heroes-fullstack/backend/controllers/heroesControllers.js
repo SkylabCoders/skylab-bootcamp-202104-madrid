@@ -3,24 +3,20 @@ let heroes = require('../constants/heroesMock');
 function heroesController() {
   let maxHeroId;
 
-  // IIEF:
-
   (function getHeroI() {
     const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
     maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
   }());
 
-  // //Función sin IIEF:
-
-  // const getHeroId = () => {
-  //   const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-  //   maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-  // };
-
-  // getHeroId();
-
   const getAllHeroes = (req, res) => {
-    res.send(heroes);
+    if (req.query.name) {
+      return res.json(
+        heroes.filter(
+          ({ name }) => name.toLowerCase().includes(req.query.name.toLowerCase()),
+        ),
+      );
+    }
+    return res.send(heroes);
   };
 
   const createHeroes = (req, res) => {
@@ -74,8 +70,3 @@ function heroesController() {
 }
 
 module.exports = heroesController();
-
-// respuesta diferente para el getById:
-/*
-    res.send(heroes.find((hero) => hero.id === +req.params.heroId));
-    */

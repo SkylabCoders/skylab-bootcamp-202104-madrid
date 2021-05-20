@@ -25,24 +25,14 @@ function heroesController() {
          const hero = await Hero.findById(heroId)
          res.json(hero);
     };
-    const updateHero = (req, res) => {
+    
+    const updateHero = async (req, res) => {
         const {heroId} = req.params;
-        let hero;
+        const hero = await Hero.findByIdAndUpdate(heroId,
+           {...req.body}, 
+           {new:true}
+           );
 
-        heroArr = heroArr.map((currentHero) => {
-            if (currentHero.id === +heroId){
-                hero = {
-                    ...currentHero,
-                    ...req.body,
-                    modified: new Date()
-                };
-            
-                return hero;
-            };
-        
-        return currentHero;
-        
-        });
             res.json(hero)
          };
 

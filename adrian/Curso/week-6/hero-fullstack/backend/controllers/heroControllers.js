@@ -1,4 +1,4 @@
-
+const Hero = require('../models/heroModels')
 let heros = require('../constantes/heroMock')
 let maxheroId;
 (function getHeroId(){
@@ -14,14 +14,12 @@ module.exports = {
              res.json(heros)
     },
 
-    post: (req, res)=>{
-        maxheroId += 1
-        const nuevoHeroe = {
+    create: (req, res)=>{
+        const newHero = new Hero({
             ...req.body,
-            id: maxheroId
-        }
-        heros.push(nuevoHeroe)
-         res.send(nuevoHeroe)
+        })
+        newHero.save();
+         res.send(newHero)
     },
 
     getById: (req, res)=>{

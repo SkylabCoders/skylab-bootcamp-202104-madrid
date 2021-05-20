@@ -7,7 +7,7 @@ function heroRouter() {
   heroRoutes
     .route('/')
     .get(HeroController.getAll)
-    .post(HeroController.post);
+    .post(HeroController.create);
 
   heroRoutes
     .route('/:heroId')

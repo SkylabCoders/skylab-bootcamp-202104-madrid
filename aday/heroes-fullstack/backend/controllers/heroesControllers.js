@@ -1,14 +1,6 @@
-let heroes = require('../constants/heroesMock');
 const Hero = require('../models/heroModel');
 
 function heroesController() {
-  let maxHeroId;
-
-  (function getHeroI() {
-    const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-    maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-  }());
-
   const getAllHeroes = (req, res) => {
     if (req.query.name) {
       return res.json(
@@ -20,12 +12,11 @@ function heroesController() {
     return res.send(heroes);
   };
 
-  const createHeroes = (req, res) => {
-    const newHero = new Hero({
+  const createHeroes = async (req, res) => {
+    const newHero = await Hero.create({
       ...req.body,
     });
-    newHero.save();
-    res.send(newHero);
+    res.json(newHero);
   };
 
   const getById = (req, res) => {

@@ -1,31 +1,19 @@
 const { Router } = require('express');
 const HeroController = require('../controllers/HeroController');
-const RickController = require('../controllers/RickController');
 
 function heroRouter() {
   const heroRoutes = Router();
 
   heroRoutes
-    .route('/')
+    .route('/api/heroes')
     .get(HeroController.getAll)
     .post(HeroController.postHero);
 
   heroRoutes
-    .route('/:heroId')
+    .route('/api/heroes/:heroId')
     .get(HeroController.getById)
     .put(HeroController.putHero)
     .delete(HeroController.deleteHero);
-
-  heroRoutes
-    .route('/ricks/characters')
-    .get(RickController.getAllRicks)
-    .post(RickController.postHero);
-
-  heroRoutes
-    .route('/ricks/characters/:heroId')
-    .get(RickController.getById)
-    .put(RickController.putHero)
-    .delete(RickController.deleteHero);
 
   return heroRoutes;
 }

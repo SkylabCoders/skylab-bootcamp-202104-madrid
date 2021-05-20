@@ -5,8 +5,10 @@ const server = express();
 server.use(express.json());
 
 const heroRouter = require('./routes/heroRoutes');
+const rickRouter = require('./routes/rickRoutes');
 
-server.use('/api/heroes', heroRouter);
+server.use('/', heroRouter);
+server.use('/', rickRouter);
 
 const port = 4000;
 

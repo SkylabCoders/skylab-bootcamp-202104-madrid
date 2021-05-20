@@ -2,11 +2,7 @@ let heroArr = require('./constantes/mockHero')
 const Hero = require('./models/heroModel')
 
 function heroesController() {
-    let maxHeroId;
-    (function getHeroId() {
-      const heroesOrdered = heroArr.sort((heroA, heroB) => heroA.id - heroB.id);
-      maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-    }());
+   
     const getAllHeroes = (req, res) => {
       if (req.query.name) {
         return res.json(heroArr.filter(({name}) => name.toLocaleLowerCase().includes(req.query.name.toLocaleLowerCase())))
@@ -14,31 +10,22 @@ function heroesController() {
       return res.json(heroArr);
     };
 
-    /* funcion de crear antes de mongoose
-    const createHeroes = (req, res) => {
-      maxHeroId += 1;
-      const newHero = {
-        ...req.body,
-        id: maxHeroId,
-      };
-      heroArr.push(newHero);
-      res.send(newHero);
-    };*/
+    
 
-    const createHeroes = (req, res) => {
-      const newHero = new Hero ({
+    const createHeroes = async (req, res) => {
+      const newHero = await Hero.create ({
         ...req.body, 
       });
-      newHero.save()
-      res.send(newHero);
+      
+      res.json(newHero);
     }
 
-    const getById = (req, res) => {
+    const getById = async (req, res) => {
         const {heroId} = req.params;
-         const hero = heroArr.find(({id}) => id === +heroId);
+         const hero = await Hero.findById(heroId)
          res.json(hero);
     };
-    const putOneHero = (req, res) => {
+    const updateHero = (req, res) => {
         const {heroId} = req.params;
         let hero;
 
@@ -69,7 +56,7 @@ function heroesController() {
       getAllHeroes,
       createHeroes,
       getById,
-      putOneHero,
+      updateHero,
       deleteHeroes,
     };
   }

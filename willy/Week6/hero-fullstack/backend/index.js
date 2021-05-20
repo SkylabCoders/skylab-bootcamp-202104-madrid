@@ -1,4 +1,4 @@
-// importar expres
+
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
@@ -9,31 +9,23 @@ mongoose.connect(
     { useNewUrlParser: true ,
      useUnifiedTopology: true },
     );
-//crear el servirdor
+
 
 const server = express();
 
 server.use(cors())
 
-server.use(express.json()) //esto habilita el body del server en json
+server.use(express.json()) 
 
-//definir una ruta raiz
-// server.get('/api/heroes', (req, res) => {
-//     res.send('Hola Aday')
-// })
+
 const marvelRouter = require('./routes/marvelRouter')
 const heroRouter = require('./routes/heroRouter');
 const { Mongoose } = require('mongoose');
 
-//aqui vinculamos un camino con una ruta
+
 server.use('/v1/public/characters/results', marvelRouter)
 server.use('/api/heroes', heroRouter)
-// const routes = express.Router()
-// routes.route('/').get((req, res) => {
-//     res.send('Hola');
-//   });
 
-//escuchar en un puerto
 const port = 4000
 
 server.listen(port, () => {

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 let ramCharacter = require('../constants/ramJSON.json');
 
 function controller() {

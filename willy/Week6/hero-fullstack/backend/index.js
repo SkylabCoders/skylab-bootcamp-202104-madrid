@@ -1,7 +1,14 @@
 // importar expres
 const express = require('express')
 const cors = require('cors')
+const mongoose = require('mongoose')
 
+require('dotenv').config()
+mongoose.connect(
+    process.env.DDBB_URL, 
+    { useNewUrlParser: true ,
+     useUnifiedTopology: true },
+    );
 //crear el servirdor
 
 const server = express();
@@ -15,7 +22,8 @@ server.use(express.json()) //esto habilita el body del server en json
 //     res.send('Hola Aday')
 // })
 const marvelRouter = require('./routes/marvelRouter')
-const heroRouter = require('./routes/heroRouter')
+const heroRouter = require('./routes/heroRouter');
+const { Mongoose } = require('mongoose');
 
 //aqui vinculamos un camino con una ruta
 server.use('/v1/public/characters/results', marvelRouter)

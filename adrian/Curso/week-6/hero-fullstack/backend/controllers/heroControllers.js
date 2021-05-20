@@ -7,11 +7,9 @@ let maxheroId;
 })()
 
 module.exports = {
-    getAll: (req, res)=>{
-        if(req.query.name) {
-            res.json(heros.filter(  ({ name })  => name.includes(req.query.name) ))
-        }
-             res.json(heros)
+    getAll: async (req, res)=>{
+       const hero = await Hero.find(req.query)
+       res.json(hero)
     },
 
     create: (req, res)=>{
@@ -22,31 +20,21 @@ module.exports = {
          res.send(newHero)
     },
 
-    getById: (req, res)=>{
+    getById: async (req, res)=>{
         const { heroId } = req.params;
-        const hero = heros.find(({ id }) => id === +heroId);
+        const hero = await Hero.findById(heroId)
         res.json(hero)
     },
 
-    put: (req, res)=>{
-        const { heroId } = req.params;
-        let hero;
-        heros = heros.map((currentHero)=>{
-            if(currentHero === +hero.id){
-                hero = {
-                    ...currentHero,
-                    ...req.body,
-                    modified: new Date(),
-                };
-                return hero
-            }
-            return currentHero;
-        });
-        res.json(hero);
+    put: async (req, res)=>{
+        const { heroId } = req.params;  
+        let hero = await Hero.findByIdAndUpdate(heroId, {...req.body},  {new: true})
+        res.json(hero)
     },
 
-    delete: (req, res)=>{
-        heros = heros.filter(hero => hero.id !== +req.params.heroId)
-        res.json(heros)
+    delete: async (req, res)=>{
+        const { heroId } = req.params;
+        const heroDeleted = await Hero.findByIdAndDelete(heroId)
+        res.json(heroDeleted)
     },
 }

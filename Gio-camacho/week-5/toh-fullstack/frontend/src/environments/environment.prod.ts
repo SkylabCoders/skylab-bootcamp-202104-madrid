@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  heroesUrl : 'http://localhost:4002/api/heroes/'
 };

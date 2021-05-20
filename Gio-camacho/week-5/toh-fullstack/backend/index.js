@@ -1,7 +1,16 @@
 // Importar express
 const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+
+require('dotenv').config();
+
+mongoose.connect(process.env.DDBB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+
 // Crear el servidor
 const server = express();
+
+server.use(cors());
 
 server.use(express.json());
 

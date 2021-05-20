@@ -9,7 +9,12 @@ function controller() {
   }());
 
   const allHeroes = (req, res) => {
-    res.json(heroes);
+    if (req.query.name) {
+      return res.json(
+        heroes.filter(({ name }) => name.toLocaleLowerCase().includes(req.query.name))
+      );
+    }
+    return res.json(heroes);
   };
 
   const post = (req, res) => {
@@ -48,7 +53,7 @@ function controller() {
 
   const deleteHero = (req, res) => {
     const { heroId } = req.params;
-    heroes = heroes.filter((hero) => heroId !== hero.id);
+    heroes = heroes.filter((hero) => hero.id !== +heroId);
     res.status(204);
     res.json();
   };

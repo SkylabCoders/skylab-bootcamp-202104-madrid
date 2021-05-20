@@ -9,7 +9,14 @@ function controller() {
   }());
 
   const getAll = (req, res) => {
-    res.json(heroes);
+    if (req.query.name) {
+      return res.json(
+        heroes.filter(
+          ({ name }) => name.toLowerCase().includes(req.query.name.toLowerCase()),
+        ),
+      );
+    }
+    return res.json(heroes);
   };
 
   const create = (req, res) => {

@@ -47,3 +47,5 @@ export class DashboardComponent implements OnInit {
     this.route.navigate(['details'])
   }
 }
+
+// URL.apiURL + URL.CharactersURL + this.limit

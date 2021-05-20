@@ -1,4 +1,4 @@
-let heroes = require('../constants/heroesMock');
+const heroes = require('../constants/heroesMock');
 const Hero = require('../models/heroModel');
 
 function controller() {
@@ -51,9 +51,9 @@ function controller() {
     res.json(heroUpdated);
   };
 
-  const deleteById = (req, res) => {
+  const deleteById = async (req, res) => {
     const { heroId } = req.params;
-    heroes = heroes.filter(({ id }) => id !== +heroId);
+    await Hero.findByIdAndDelete(heroId);
 
     res.status(204);
     res.json();

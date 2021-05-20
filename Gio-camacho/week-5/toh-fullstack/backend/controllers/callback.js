@@ -2,14 +2,12 @@ let heroes = require('../constantes/mockHeroes');
 const Hero = require('../models/heroModel');
 
 function controller() {
-  const getAllHeroes = (req, res) => {
-    const heroName = req.query.name;
-    if (heroName) {
-      return res.json(
-        heroes.filter(({ name }) => name.toLocaleLowerCase().includes(heroName.toLocaleLowerCase()))
-      );
-    }
-    return res.json(heroes);
+  const getAllHeroes = async (req, res) => {
+    const query = { ...res.query };
+
+    const allHeroes = await Hero.find(query);
+
+    res.json(allHeroes);
   };
 
   const createHero = (req, res) => {

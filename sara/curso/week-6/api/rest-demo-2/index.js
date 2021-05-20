@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
+
+console.log(process.env.DDBB_URL);
 
 const server = express();
 

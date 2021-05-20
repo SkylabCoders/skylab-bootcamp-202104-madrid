@@ -1,11 +1,5 @@
 let Heroes = require('../constantes/heroMock');
-
-let maxHeroId;
-
-(function getHeroId() {
-  const heroesOrdered = Heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-  maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-}());
+const Hero = require('../models/heroModel');
 
 module.exports = {
 
@@ -28,12 +22,10 @@ module.exports = {
   },
 
   postHero: (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
-      id: maxHeroId,
+    const newHero = new Hero({
       ...req.body,
-    };
-    Heroes.push(newHero);
+    });
+    newHero.save();
     res.send(newHero);
   },
 

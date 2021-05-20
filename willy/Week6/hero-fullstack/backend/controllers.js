@@ -3,8 +3,12 @@ const Hero = require('./models/heroModel')
 
 function heroesController() {
    
-    const getAllHeroes = (req, res) => {
-   
+    const getAllHeroes = async (req, res) => {
+    
+      const query = {...req.query}
+      const heroes = await Hero.find(query)
+      res.json(heroes)
+      
     };
 
     

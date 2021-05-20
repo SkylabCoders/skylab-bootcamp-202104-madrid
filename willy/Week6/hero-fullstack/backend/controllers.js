@@ -1,4 +1,5 @@
 let heroArr = require('./constantes/mockHero')
+const Hero = require('./models/heroModel')
 
 function heroesController() {
     let maxHeroId;
@@ -12,6 +13,8 @@ function heroesController() {
       }
       return res.json(heroArr);
     };
+
+    /* funcion de crear antes de mongoose
     const createHeroes = (req, res) => {
       maxHeroId += 1;
       const newHero = {
@@ -20,7 +23,16 @@ function heroesController() {
       };
       heroArr.push(newHero);
       res.send(newHero);
-    };
+    };*/
+
+    const createHeroes = (req, res) => {
+      const newHero = new Hero ({
+        ...req.body, 
+      });
+      newHero.save()
+      res.send(newHero);
+    }
+
     const getById = (req, res) => {
         const {heroId} = req.params;
          const hero = heroArr.find(({id}) => id === +heroId);

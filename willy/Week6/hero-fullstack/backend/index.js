@@ -1,9 +1,12 @@
 // importar expres
 const express = require('express')
+const cors = require('cors')
 
 //crear el servirdor
 
 const server = express();
+
+server.use(cors())
 
 server.use(express.json()) //esto habilita el body del server en json
 

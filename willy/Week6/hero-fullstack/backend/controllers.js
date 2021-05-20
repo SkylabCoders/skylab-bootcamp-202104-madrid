@@ -46,7 +46,7 @@ function heroesController() {
 
     const deleteHeroes = (req, res) => {
         const {heroId} = req.params
-        heroArr = heroArr.filter((hero) => hero !== hero.id)
+        heroArr = heroArr.filter(({id}) => id !== +heroId)
         res.status(204);
         res.json()
     };

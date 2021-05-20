@@ -1,4 +1,3 @@
-const heroes = require('../constantes/mockHeroes');
 const Hero = require('../models/heroModel');
 
 function controller() {

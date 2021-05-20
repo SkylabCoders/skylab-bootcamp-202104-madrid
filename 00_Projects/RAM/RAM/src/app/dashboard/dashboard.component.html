@@ -1,0 +1,17 @@
+<!-- <h1>{{'welcome' | translate}}</h1>
+<button (click)="changeLang('en')">SELECT ENGLISH</button>
+<button (click)="changeLang('es')">SELECCIONA ESPAÑOL</button> -->
+
+<main class="dashboard">
+  <div class="dashboard__main-pic"></div>
+  <span class="dashboard__title">Welcome to Rick & Morty World</span>
+  <div class="dashboard__img-container">
+    <a class="tst"
+      *ngFor="let character of imageRam"
+      (click)="goToDetails(character)"
+      id="a{{ character.id }}"
+    >
+      <img class="images" src="{{ character.image }}" alt="character" />
+    </a>
+  </div>
+</main>

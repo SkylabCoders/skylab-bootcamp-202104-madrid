@@ -11,9 +11,11 @@ server.use(express.json()) //esto habilita el body del server en json
 // server.get('/api/heroes', (req, res) => {
 //     res.send('Hola Aday')
 // })
+const marvelRouter = require('./routes/marvelRouter')
 const heroRouter = require('./routes/heroRouter')
 
 //aqui vinculamos un camino con una ruta
+server.use('/v1/public/characters/results', marvelRouter)
 server.use('/api/heroes', heroRouter)
 // const routes = express.Router()
 // routes.route('/').get((req, res) => {

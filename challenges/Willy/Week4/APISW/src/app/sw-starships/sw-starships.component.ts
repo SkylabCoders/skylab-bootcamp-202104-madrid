@@ -20,7 +20,7 @@ starshipsList: ISWList[] = []
     const starshipStored = this.storeSvr.get('starshipList')
     if(!starshipStored){
       
-    const obs$ = this.http.getData(this.starshipsUrl).subscribe((res:any)=>{
+    const obs$ = this.http.getData( this.starshipsUrl).subscribe((res:any)=>{
       this.starshipsList = res['results']
       this.storeSvr.set('starshipList', this.starshipsList);
       obs$.unsubscribe;

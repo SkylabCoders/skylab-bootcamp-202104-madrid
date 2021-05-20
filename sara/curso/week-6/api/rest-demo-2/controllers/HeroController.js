@@ -1,4 +1,3 @@
-const Heroes = require('../constantes/heroMock');
 const Hero = require('../models/heroModel');
 
 module.exports = {

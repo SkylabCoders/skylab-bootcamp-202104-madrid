@@ -1,4 +1,5 @@
 let heroes = require('../constants/heroesMock');
+const Hero = require('../models/heroModel');
 
 function heroesController() {
   let maxHeroId;
@@ -20,12 +21,10 @@ function heroesController() {
   };
 
   const createHeroes = (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
+    const newHero = new Hero({
       ...req.body,
-      id: maxHeroId,
-    };
-    heroes.push(newHero);
+    });
+    newHero.save();
     res.send(newHero);
   };
 

@@ -8,15 +8,10 @@ module.exports = {
     res.json(heroes);
   },
 
-  getById: (req, res) => {
+  getById: async (req, res) => {
     const { heroId } = req.params;
-    const hero = Heroes.find(({ id }) => id === +heroId);
-    if (hero) {
-      res.json(hero);
-    } else {
-      res.status(404);
-      res.send('no encontré el heroes');
-    }
+    const hero = await Hero.findById(heroId);
+    res.json(hero);
   },
 
   postHero: async (req, res) => {

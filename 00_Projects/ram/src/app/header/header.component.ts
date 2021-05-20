@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { MainService } from '../services/main.service'
 import { Router } from '@angular/router'
 import { User } from '../services/mocking/user'
+import { of, Subject } from 'rxjs'
+import { catchError, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-header',
@@ -19,52 +21,51 @@ export class HeaderComponent implements OnInit {
   ram:Array<object> = []
   loged = false;
 
+  searchTerm$ = new Subject<string>()
 
+  // eslint-disable-next-line no-useless-constructor
   constructor (public srvMain:MainService, public router:Router) { }
 
   ngOnInit (): void {
-    let el = document.querySelector('.header__logIn');
-    if(!this.loged){
-      el?.classList.add('no-loged');
+    const el = document.querySelector('.header__logIn')
+    if (!this.loged) {
+      el?.classList.add('no-loged')
     }
+
+    this.searchTerm$
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        tap((searchValue) => {
+          this.router.navigateByUrl('/list?term=' + searchValue)
+        })
+      )
+      .subscribe()
   }
 
-  searchSubmit(){
-    if(this.router.url === '/list'){
-      this.router.navigate(['/loadingList'])
-    }
-    const obs$ = this.srvMain.getTheAPI("https://rickandmortyapi.com/api/character/?name=" + this.searchInput).subscribe((res:any) => {
-      this.ram = res.results;
-      obs$.unsubscribe();
-      this.srvMain.goToList("https://rickandmortyapi.com/api/character/?name=" + this.searchInput)
-      this.router.navigate(['/list'])
-      this.searchInput = ''
-    }, (err:any) => {
-    })
+  searchSubmit (searchValue: string) {
+    this.searchTerm$.next(searchValue)
   }
 
-  openLogIn(){
+  openLogIn () {
     this.showLogIn = !this.showLogIn
   }
+
   onSubmit () {
-    let el = document.querySelector('.header__logIn');
-    el?.classList.remove('no-loged');
-    if(this.showLogIn){
-      this.logIn = 'Log Out';
-    } else {
-      this.logIn = 'Log In'
-    }
-    localStorage.removeItem('username');
-    this.srvMain.currentUser = this.model;
-    this.showLogIn = false;
-    localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser));
-    this.loged = true;
-    this.srvMain.canAddTofavs = true;
+    const el = document.querySelector('.header__logIn')
+    el?.classList.remove('no-loged')
 
+    this.logIn = this.showLogIn ? 'Log Out' : 'Log In'
+
+    localStorage.removeItem('username')
+    this.srvMain.currentUser = this.model
+    this.showLogIn = false
+    localStorage.setItem('username', JSON.stringify(this.srvMain.currentUser))
+    this.loged = true
+    this.srvMain.canAddTofavs = true
   }
 
-  backHome(){
-    this.showLogIn = false;
+  backHome () {
+    this.showLogIn = false
   }
-
 }

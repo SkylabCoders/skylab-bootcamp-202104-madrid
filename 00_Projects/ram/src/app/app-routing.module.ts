@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 const routes: Routes = [
   {
-    path: '', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-  },
-  {
-    path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    path: '',
+    component: DashboardComponent
   },
   {
     path: 'list', loadChildren: () => import('./list/list.module').then(m => m.ListModule)
@@ -16,9 +15,11 @@ const routes: Routes = [
   },
   {
     path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule)
-  }, 
+  },
   {
-    path: 'loadingList', loadChildren: () => import('./loading-list/loading-list.module').then(m => m.LoadingListModule)
+    path: '**',
+    redirectTo: '/',
+    pathMatch: 'full'
   }
 ]
 

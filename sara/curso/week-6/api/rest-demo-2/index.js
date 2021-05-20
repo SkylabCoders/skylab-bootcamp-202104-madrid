@@ -1,8 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 require('dotenv').config();
 
-console.log(process.env.DDBB_URL);
+mongoose.connect(process.env.DDBB_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
 const server = express();
 

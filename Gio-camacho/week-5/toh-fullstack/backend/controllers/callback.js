@@ -1,4 +1,5 @@
 let heroes = require('../constantes/mockHeroes');
+const Hero = require('../models/heroModel');
 
 function controller() {
   let maxHeroId;
@@ -18,12 +19,11 @@ function controller() {
   };
 
   const post = (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
-      ...req.body,
-      id: maxHeroId
-    };
-    heroes.push(newHero);
+    const newHero = new Hero({
+      ...req.body
+    });
+
+    newHero.save(); /* Promesa */
     res.send(newHero);
   };
 

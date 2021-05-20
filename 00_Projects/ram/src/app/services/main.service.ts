@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core'
 import { LoginService } from './login.service'
-import { HttpService } from './http.service'
+import { HttpClient } from '@angular/common/http'
+import { catchError } from 'rxjs/operators'
+import { of } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +16,16 @@ export class MainService {
   canAddTofavs = false;
 
   // eslint-disable-next-line no-useless-constructor
-  constructor (public srvHttp:HttpService, public srvLogin: LoginService) { }
+  constructor (
+    public httpClient:HttpClient,
+    public srvLogin: LoginService
+  ) { }
 
   getTheAPI (url:string) {
-    return this.srvHttp.getAPI(url)
+    return this.httpClient.get(url)
+      .pipe(
+        catchError(() => of(false))
+      )
   }
 
   goToList (paramUrl:string) {

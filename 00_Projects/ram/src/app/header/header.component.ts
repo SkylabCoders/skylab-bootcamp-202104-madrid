@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { MainService } from '../services/main.service'
 import { Router } from '@angular/router'
 import { User } from '../services/mocking/user'
+import { of, Subject } from 'rxjs'
+import { catchError, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-header',
@@ -19,6 +21,8 @@ export class HeaderComponent implements OnInit {
   ram:Array<object> = []
   loged = false;
 
+  searchTerm$ = new Subject<string>()
+
   // eslint-disable-next-line no-useless-constructor
   constructor (public srvMain:MainService, public router:Router) { }
 
@@ -27,19 +31,20 @@ export class HeaderComponent implements OnInit {
     if (!this.loged) {
       el?.classList.add('no-loged')
     }
+
+    this.searchTerm$
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        tap((searchValue) => {
+          this.router.navigateByUrl('/list?term=' + searchValue)
+        })
+      )
+      .subscribe()
   }
 
-  searchSubmit () {
-    const obs$ = this.srvMain.getTheAPI('https://rickandmortyapi.com/api/character/?name=' + this.searchInput).subscribe((res:any) => {
-      this.ram = res.results
-      obs$.unsubscribe()
-      this.srvMain.goToList('https://rickandmortyapi.com/api/character/?name=' + this.searchInput)
-      this.router.navigate(['/list'])
-      this.searchInput = ''
-    }, (err:any) => {
-      // TODO Add error handling
-      console.log(err)
-    })
+  searchSubmit (searchValue: string) {
+    this.searchTerm$.next(searchValue)
   }
 
   openLogIn () {

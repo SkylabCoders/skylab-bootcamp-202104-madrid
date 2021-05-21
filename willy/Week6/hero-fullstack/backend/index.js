@@ -1,7 +1,8 @@
 
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const debug = require('debug')('server')
 
 require('dotenv').config()
 mongoose.connect(
@@ -29,5 +30,5 @@ server.use('/api/heroes', heroRouter)
 const port = 4000
 
 server.listen(port, () => {
-    console.log(`Hola holita, te estoy escuchandito en el puerto ${port}`)
+    debug(`Hola holita, te estoy escuchandito en el puerto ${port}`)
 })

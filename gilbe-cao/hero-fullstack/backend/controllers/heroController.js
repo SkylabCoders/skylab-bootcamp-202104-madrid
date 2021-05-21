@@ -25,6 +25,21 @@ function controller() {
     }
   };
 
+  const addNewWithSave = async (req, res) => {
+    try {
+      const newHero = new Hero({
+        ...req.body,
+      });
+
+      await newHero.save();
+
+      res.json(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
+
   const getById = async (req, res) => {
     const { heroId } = req.params;
     try {
@@ -73,6 +88,7 @@ function controller() {
     updateById,
     deleteById,
     getById,
+    addNewWithSave,
   };
 }
 module.exports = controller();

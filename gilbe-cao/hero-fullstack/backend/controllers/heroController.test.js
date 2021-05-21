@@ -4,6 +4,7 @@ const {
   getById,
   updateById,
   deleteById,
+  addNewWithSave,
 } = require('./heroController');
 const Hero = require('../models/heroModel');
 
@@ -111,6 +112,70 @@ describe('heroController', () => {
 
         test('Then call res.send with \'create error\'', () => {
           expect(res.send).toHaveBeenCalledWith('create error');
+        });
+      });
+    });
+  });
+
+  describe('Given a addNewWithSave function', () => {
+    describe('When is invoked', () => {
+      let req;
+      let res;
+      let save;
+
+      describe('And there is no error', () => {
+        beforeEach(async () => {
+          req = {
+            body: null,
+          };
+          res = {
+            json: jest.fn(),
+          };
+
+          save = jest.fn().mockResolvedValueOnce();
+
+          Hero.mockReturnValueOnce({
+            save,
+          });
+
+          await addNewWithSave(req, res);
+        });
+
+        test('Then call res.json once', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+
+        test('Then call save', () => {
+          expect(save).toHaveBeenCalled();
+        });
+      });
+
+      describe('And there is an error', () => {
+        beforeEach(async () => {
+          req = {
+            body: null,
+          };
+          res = {
+            json: jest.fn(),
+            status: jest.fn(),
+            send: jest.fn(),
+          };
+
+          save = jest.fn().mockRejectedValueOnce('addNewWithSave error');
+
+          Hero.mockReturnValueOnce({
+            save,
+          });
+
+          await addNewWithSave(req, res);
+        });
+
+        test('Then call res.status with 500', () => {
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+
+        test('Then call res.send with \'addNewWithSave error\'', () => {
+          expect(res.send).toHaveBeenCalledWith('addNewWithSave error');
         });
       });
     });

@@ -4,25 +4,36 @@ function controller() {
   const getAll = async (req, res) => {
     const query = { ...req.query };
 
-    const heroes = await Hero.find(query);
-
-    return res.json(heroes);
+    try {
+      const heroes = await Hero.find(query);
+      res.json(heroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const create = async (req, res) => {
-    const newHero = await Hero.create({
-      ...req.body,
-    });
-
-    res.json(newHero);
+    try {
+      const newHero = await Hero.create({
+        ...req.body,
+      });
+      res.json(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const getById = async (req, res) => {
     const { heroId } = req.params;
-
-    const hero = await Hero.findById(heroId);
-
-    res.json(hero);
+    try {
+      const hero = await Hero.findById(heroId);
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const updateById = async (req, res) => {

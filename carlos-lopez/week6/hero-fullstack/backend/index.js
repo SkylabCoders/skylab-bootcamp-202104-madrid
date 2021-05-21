@@ -5,6 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const debug = require('debug')('app');
 const chalk = require('chalk');
+const morgan = require('morgan');
 require('dotenv').config();
 
 mongoose.connect(
@@ -21,6 +22,7 @@ const ramRouter = require('./routes/ramRouter');
 const server = express();
 server.use(express.json());
 server.use(cors());
+server.use(morgan('dev'));
 
 // Definir una ruta raíz
 

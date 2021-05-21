@@ -38,8 +38,13 @@ module.exports = {
 
   putHero: async (req, res) => {
     const { heroId } = req.params;
-    const hero = await Hero.findByIdAndUpdate(heroId, { ...req.body }, { new: true });
-    res.json(hero);
+    try {
+      const hero = await Hero.findByIdAndUpdate(heroId, { ...req.body }, { new: true });
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   deleteHero: async (req, res) => {

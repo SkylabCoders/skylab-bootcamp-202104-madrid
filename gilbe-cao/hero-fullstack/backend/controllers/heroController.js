@@ -40,21 +40,31 @@ function controller() {
     const { heroId } = req.params;
     const dataToUpdate = req.body;
 
-    const heroUpdated = await Hero.findByIdAndUpdate(
-      heroId,
-      dataToUpdate,
-      { new: true, useFindAndModify: false },
-    );
+    try {
+      const heroUpdated = await Hero.findByIdAndUpdate(
+        heroId,
+        dataToUpdate,
+        { new: true, useFindAndModify: false },
+      );
 
-    res.json(heroUpdated);
+      res.json(heroUpdated);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const deleteById = async (req, res) => {
     const { heroId } = req.params;
-    await Hero.findByIdAndDelete(heroId);
 
-    res.status(204);
-    res.json();
+    try {
+      await Hero.findByIdAndDelete(heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   return {

@@ -15,13 +15,18 @@ function controller() {
     }
   };
 
-  const createHero = (req, res) => {
-    const newHero = new Hero({
-      ...req.body
-    });
+  const createHero = async (req, res) => {
+    try {
+      const newHero = new Hero({
+        ...req.body
+      });
 
-    newHero.save(); /* Promesa */
-    res.send(newHero);
+      await newHero.save(); /* Promesa */
+      res.json(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const getHeroById = async (req, res) => {

@@ -3,6 +3,7 @@ const {
   getById,
   postHero,
   putHero,
+  deleteHero,
 } = require('./HeroController');
 
 const Hero = require('../models/heroModel');
@@ -220,7 +221,7 @@ describe('heroController', () => {
           res = {
             json: jest.fn(),
           };
-          await getAll(req, res);
+          await deleteHero(req, res);
         });
         test('Then call res.json', () => {
           expect(res.json).toHaveBeenCalled();
@@ -228,12 +229,15 @@ describe('heroController', () => {
         test('Then call Hero.find', () => {
           expect(Hero.find).toHaveBeenCalled();
         });
+        test('Then call Hero.find', () => {
+          expect(Hero.findById).toHaveBeenCalledWith('myHero');
+        });
       });
 
       describe('And there is an error', () => {
         beforeEach(async () => {
           req = {
-            params: null,
+            params: { heroId: 'myHero' },
           };
           res = {
             json: jest.fn(),
@@ -241,9 +245,9 @@ describe('heroController', () => {
             send: jest.fn(),
           };
 
-          Hero.find.mockRejectedValueOnce('deleteHero error');
+          Hero.findByIdAndDelete.mockRejectedValueOnce('deleteHero error');
 
-          await getAll(req, res);
+          await deleteHero(req, res);
         });
 
         test('Then call res.status with 500', () => {

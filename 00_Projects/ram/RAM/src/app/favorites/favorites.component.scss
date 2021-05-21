@@ -1,0 +1,121 @@
+
+.container{
+    background-color: rgb(60,62,66);
+    min-height: 100vh;
+}
+ul {
+    padding-bottom: 6rem;
+}
+
+.container--headimg{
+    width: 100%;
+    img{
+        width: inherit;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+.container--cards{
+    .cards--character{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(38,40,45);
+        color: rgb(230,160,78);
+        margin-left: 4rem;
+        margin-right: 4rem;
+        margin-top: 2rem;
+        border-radius: 18px;
+        img{
+            width: 17rem;
+            border-radius: 18px;
+        }
+        .character--span{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
+            padding: 3rem;
+        }
+       
+    }
+}
+
+.character--delete-button {
+    color: rgb(230,160,78);
+    .fa, .fas {
+        font-size: 1.5rem;
+    }
+    display: flex;
+    justify-content: center;
+}
+
+.character--display{
+    display: none;
+}
+.list__item:hover {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 800px){
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+
+        li{
+            max-width: 70rem;
+        }
+        .character--details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            width: 25rem;
+        }
+        
+
+        .character--display{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 2rem;
+            
+            // .character__display--status{
+            //    .fa-circle{
+            //     color: green;
+            //    }
+
+            // }
+        }
+        .character--span{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
+            padding-left: 2rem;
+        }
+        #character--span{
+            padding: 0.5rem;
+        }
+    }
+
+    .container--headimg{
+        display: none;
+    }
+    .container--cards{
+        .cards--character{
+            img{
+                width: 16rem;
+                border-radius: 18px;
+            }
+        }
+    }
+
+}

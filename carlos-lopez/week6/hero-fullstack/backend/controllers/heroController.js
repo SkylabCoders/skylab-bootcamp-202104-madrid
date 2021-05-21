@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
+const debug = require('debug')('app:heroController');
 const Hero = require('../models/heroModel');
 
 function controller() {
   const getAll = async (req, res) => {
     const query = { ...req.query };
     const heroes = await Hero.find(query);
+    debug(heroes);
     return res.json(heroes);
   };
   const createHero = async (req, res) => {

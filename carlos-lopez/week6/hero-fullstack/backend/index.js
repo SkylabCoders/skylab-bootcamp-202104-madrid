@@ -3,6 +3,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const debug = require('debug')('app');
+const chalk = require('chalk');
 require('dotenv').config();
 
 mongoose.connect(
@@ -27,4 +29,4 @@ server.use('/api/ram', ramRouter);
 
 // Escuchar en un puerto ....4000
 const port = 4000;
-server.listen(port, () => console.log(`Server is runnning in http://localhost:${port}`));
+server.listen(port, () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`));

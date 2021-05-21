@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import { MainService } from '../services/main.service'
-import { ActivatedRoute, Router } from '@angular/router'
-import { map, switchMap, tap } from 'rxjs/operators'
-import { Observable, of, Subject } from 'rxjs'
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-list',
@@ -10,51 +9,44 @@ import { Observable, of, Subject } from 'rxjs'
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  nextPage$ = new Subject<string>()
 
-  nextUrl: string = '';
-  prevUrl: string = '';
+  
+  url = this.srvMain.url
+  imInTheList = this.srvMain.amIInList
+  ram: any[] = [];
+  completeRam:any;
 
-  ram$!: Observable<any>
+  constructor(public srvMain:MainService, public router:Router){ }
 
-  // eslint-disable-next-line no-useless-constructor
-  constructor (
-    public srvMain:MainService,
-    public router:Router,
-    private route: ActivatedRoute
-  ) { }
-
-  ngOnInit (): void {
-    this.route.queryParams
-      .pipe(
-        tap(({ term }) => this.nextPage$.next('https://rickandmortyapi.com/api/character/?name=' + term))
-      )
-      .subscribe()
-
-    this.ram$ = this.nextPage$
-      .pipe(
-        tap(console.log),
-        switchMap(url => this.srvMain.getTheAPI(url)),
-        tap((response: any) => {
-          this.nextUrl = response?.info?.next
-          if (response?.info?.prev !== 'https://rickandmortyapi.com/api/character') {
-            this.prevUrl = response?.info?.prev
-          }
-        }),
-        map((response: any) => response.results)
-      )
-
-    setTimeout(() => {
-      this.chargePage(this.srvMain.url)
-    }, 0)
+  ngOnInit(): void {
+    this.chargePage(this.url)
   }
 
-  chargePage (url:string) {
-    this.nextPage$.next(url)
+  chargePage(url:string){
+    const obs$ = this.srvMain.getTheAPI(url).subscribe((res:any) => {
+      this.ram = res.results;
+      this.completeRam = res;
+      this.srvMain.url = 'https://rickandmortyapi.com/api/character?page=1' 
+      obs$.unsubscribe();
+    })
   }
 
-  sendToDetail (character:object) {
-    this.srvMain.detailsCharacter = character
-    this.router.navigate(['details'])
+  getNextPage() {
+    if(this.completeRam.info.next){
+      this.chargePage(this.completeRam.info.next)     
+    }
   }
+
+  getPrevPage() {
+    if(this.completeRam.info.prev && this.completeRam.info.prev !== 'https://rickandmortyapi.com/api/character'){
+      this.chargePage(this.completeRam.info.prev)
+    }
+  }
+
+  sendToDetail(character:object){
+    this.srvMain.detailsCharacter = character;
+    this.router.navigate(['details']);
+  }
+
 }
+

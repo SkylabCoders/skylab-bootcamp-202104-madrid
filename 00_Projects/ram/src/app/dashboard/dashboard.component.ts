@@ -1,25 +1,31 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { MainService } from '../services/main.service'
 import { Router } from '@angular/router'
-import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+
   url = 'https://rickandmortyapi.com/api/character';
-  imageRam$ = this.srvMain.getTheAPI(this.url)
-    .pipe(
-      map((response: any) => response.results.slice(0, 4))
-    )
+  ram:Array<object> = []
+  imageRam:any;
 
-  // eslint-disable-next-line no-useless-constructor
-  constructor (public srvMain:MainService, public router:Router) {}
-
-  goToDetails (character:object) {
-    this.srvMain.detailsCharacter = character
-    this.router.navigate(['details'])
+  constructor(public srvMain:MainService, public router:Router){
+  }
+ 
+  ngOnInit(): void {
+    const obs$ = this.srvMain.getTheAPI(this.url).subscribe((res:any) => {
+      this.ram = res.results;
+      this.imageRam = this.ram.slice(0, 4);
+      obs$.unsubscribe();
+    })
+  }
+  
+  goToDetails(character:object){
+    this.srvMain.detailsCharacter = character;
+    this.router.navigate(['details']);
   }
 }

@@ -7,6 +7,7 @@
  * */
 
 const heroController = require('./heroesControllers');
+const Hero = require('../models/heroModel');
 
 jest.mock('../models/heroModel');
 
@@ -24,8 +25,11 @@ describe('heroController', () => {
         };
         await heroController.getAllHeroes(req, res);
       });
-      test.only('Then call resjson once', () => {
+      test('Then call resjson once', () => {
         expect(res.json).toHaveBeenCalled();
+      });
+      test('Then call Hero.find', () => {
+        expect(Hero.find).toHaveBeenCalled();
       });
     });
   });

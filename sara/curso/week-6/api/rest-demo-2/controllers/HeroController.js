@@ -3,33 +3,58 @@ const Hero = require('../models/heroModel');
 module.exports = {
 
   getAll: async (req, res) => {
-    const heroes = await Hero.find(req.query);
-    res.json(heroes);
+    try {
+      const heroes = await Hero.find(req.query);
+      res.json(heroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   getById: async (req, res) => {
     const { heroId } = req.params;
-    const hero = await Hero.findById(heroId);
-    res.json(hero);
+    try {
+      const hero = await Hero.findById(heroId);
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   postHero: async (req, res) => {
-    const newHero = await new Hero({
-      ...req.body,
-    });
-    newHero.save();
-    res.send(newHero);
+    try {
+      const newHero = new Hero({
+        ...req.body,
+      });
+      await newHero.save();
+      res.send(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   putHero: async (req, res) => {
     const { heroId } = req.params;
-    const hero = await Hero.findByIdAndUpdate(heroId, { ...req.body }, { new: true });
-    res.json(hero);
+    try {
+      const hero = await Hero.findByIdAndUpdate(heroId, { ...req.body }, { new: true });
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   deleteHero: async (req, res) => {
     const { heroId } = req.params;
-    const deletedHero = await Hero.findByIdAndDelete(heroId);
-    res.json(deletedHero);
+    try {
+      const deletedHero = await Hero.findByIdAndDelete(heroId);
+      res.json(deletedHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 };

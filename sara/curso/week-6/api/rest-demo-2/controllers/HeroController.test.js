@@ -79,7 +79,7 @@ describe('heroController', () => {
         test('Then call Hero.find', () => {
           expect(Hero.findById).toHaveBeenCalled();
         });
-        test('Then call Hero.find', () => {
+        test('Then call Hero.find with \'myHero\'', () => {
           expect(Hero.findById).toHaveBeenCalledWith('myHero');
         });
       });
@@ -178,7 +178,7 @@ describe('heroController', () => {
         test('Then call Hero.find', () => {
           expect(Hero.find).toHaveBeenCalled();
         });
-        test('Then call Hero.find', () => {
+        test('Then call Hero.find with \'myHero\'', () => {
           expect(Hero.findById).toHaveBeenCalledWith('myHero');
         });
       });
@@ -229,7 +229,7 @@ describe('heroController', () => {
         test('Then call Hero.find', () => {
           expect(Hero.find).toHaveBeenCalled();
         });
-        test('Then call Hero.find', () => {
+        test('Then call Hero.find with \'myHero\' ', () => {
           expect(Hero.findById).toHaveBeenCalledWith('myHero');
         });
       });

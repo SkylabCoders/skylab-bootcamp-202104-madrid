@@ -3,7 +3,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const debug = require('debug');
+const debug = require('debug')('server');
+const chalk = require('chalk');
+const morgan = require('morgan');
 
 require('dotenv').config();
 
@@ -18,6 +20,7 @@ mongoose.connect(process.env.DDBB_URL,
 const server = express();
 
 server.use(cors());
+server.use(morgan('dev'));
 
 // cuando envias algo en el postman a través de body en formato json hay que:
 server.use(express.json());
@@ -30,4 +33,7 @@ server.use('/api/character', ramRoutes);
 // definir las rutas dentro del servidor
 
 // escuchar las peticiones
-server.listen(4000, () => console.log('Server is running in http://localhost://4000'));
+const port = 4000;
+server.listen(
+  port, () => debug(`Server is running in ${chalk.blue(`http://localhost:${port}`)}`),
+);

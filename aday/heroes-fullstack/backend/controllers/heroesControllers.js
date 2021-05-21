@@ -1,7 +1,10 @@
+const debug = require('debug')('server:heroesController');
+const chalk = require('chalk');
 const Hero = require('../models/heroModel');
 
 function heroesController() {
   const getAllHeroes = async (req, res) => {
+    debug(`Esto es ${chalk.yellow('getAllHeroes')}`);
     const query = { ...req.query };
     const heroes = await Hero.find(query);
     res.json(heroes);
@@ -16,9 +19,7 @@ function heroesController() {
 
   const getById = async (req, res) => {
     const { heroId } = req.params;
-    console.log(heroId);
     const hero = await Hero.findById(heroId);
-    console.log(hero);
     res.json(hero);
   };
 

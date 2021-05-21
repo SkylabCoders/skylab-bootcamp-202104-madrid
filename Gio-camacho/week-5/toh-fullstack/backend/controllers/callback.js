@@ -6,9 +6,13 @@ function controller() {
   const getAllHeroes = async (req, res) => {
     const query = { ...res.query };
 
-    const allHeroes = await Hero.find(query);
-
-    res.json(allHeroes);
+    try {
+      const allHeroes = await Hero.find(query);
+      res.json(allHeroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const createHero = (req, res) => {

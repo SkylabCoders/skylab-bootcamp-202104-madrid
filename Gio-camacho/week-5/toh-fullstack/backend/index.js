@@ -20,10 +20,10 @@ server.use(morgan('dev'));
 server.use(express.json());
 
 const heroRouter = require('./routes/heroRouter');
-const marvelRouter = require('./routes/marvelRouter');
+// const marvelRouter = require('./routes/marvelRouter');
 
 server.use('/api/heroes', heroRouter);
-server.use('/api/marvel', marvelRouter);
+// server.use('/api/marvel', marvelRouter);
 
 const port = 4002;
 server.listen(port,

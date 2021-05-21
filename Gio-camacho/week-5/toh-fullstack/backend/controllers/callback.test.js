@@ -5,7 +5,6 @@
  * OR
  * THEN...
  */
-// const callback = require('./callback');
 const { getAllHeroes } = require('./callback');
 const Hero = require('../models/heroModel'); /** Si quiero escuchar algo de ese modulo tengo que importarlo */
 
@@ -16,27 +15,56 @@ describe('controller function', () => {
     describe('When is invoked', () => {
       let req;
       let res;
-      beforeEach(async () => {
+
+      describe('And there is', () => {
+        beforeEach(async () => {
         // arrange
-        req = {
-          query: null
-        };
+          req = {
+            query: null
+          };
 
-        res = {
-          json: jest.fn()
-        };
+          res = {
+            json: jest.fn()
+          };
 
-        // act
-        await getAllHeroes(req, res);
+          // act
+          await getAllHeroes(req, res);
+        });
+
+        // assert
+        test('Then call res.json once', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+
+        test('Then call Hero.find', () => {
+          expect(Hero.find).toHaveBeenCalled();
+        });
       });
 
-      // assert
-      test('Then call res.json once', () => {
-        expect(res.json).toHaveBeenCalled();
-      });
+      describe('And there is an error', () => {
+        beforeEach(async () => {
+          req = {
+            query: null
+          };
 
-      test.only('Then call Hero.find', () => {
-        expect(Hero.find).toHaveBeenCalled();
+          res = {
+            json: jest.fn(),
+            status: jest.fn(),
+            send: jest.fn()
+          };
+
+          Hero.find.mockRejectedValueOnce('find');
+
+          await getAllHeroes(req, res);
+        });
+
+        test('Then call res.status with 500', () => {
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+
+        test('Then call res.send with find', () => {
+          expect(res.send).toHaveBeenCalledWith('find');
+        });
       });
     });
   });

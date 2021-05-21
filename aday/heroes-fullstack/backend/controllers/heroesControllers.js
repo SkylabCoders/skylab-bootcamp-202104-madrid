@@ -23,18 +23,29 @@ function heroesController() {
 
   const getById = async (req, res) => {
     const { heroId } = req.params;
-    const hero = await Hero.findById(heroId);
-    res.json(hero);
+
+    try {
+      const hero = await Hero.findById(heroId);
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const updateById = async (req, res) => {
     const { heroId } = req.params;
-    const hero = await Hero.findByIdAndUpdate(
-      heroId,
-      { ...req.body },
-      { new: true, useFindAndModify: false },
-    );
-    res.json(hero);
+    try {
+      const hero = await Hero.findByIdAndUpdate(
+        heroId,
+        { ...req.body },
+        { new: true, useFindAndModify: false },
+      );
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const deleteHeroes = async (req, res) => {

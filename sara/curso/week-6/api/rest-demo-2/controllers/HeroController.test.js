@@ -38,7 +38,7 @@ describe('heroController', () => {
             send: jest.fn(),
           };
 
-          Hero.find.mockRejectedValueOnce('find error');
+          Hero.find.mockRejectedValueOnce('getAll error');
 
           await getAll(req, res);
         });
@@ -47,8 +47,56 @@ describe('heroController', () => {
           expect(res.status).toHaveBeenCalledWith(500);
         });
 
+        test('Then call res.send with getAll error', () => {
+          expect(res.send).toHaveBeenCalledWith('getAll error');
+        });
+      });
+    });
+  });
+  describe('Given a getById function', () => {
+    describe('when is invoked', () => {
+      let req;
+      let res;
+      describe('And there is no error', () => {
+        beforeEach(async () => {
+          req = {
+            params: { heroId: 'myHero' },
+          };
+          res = {
+            json: jest.fn(),
+          };
+          await getAll(req, res);
+        });
+        test('Then call res.json', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+        test('Then call Hero.find', () => {
+          expect(Hero.find).toHaveBeenCalled();
+        });
+      });
+
+      describe('And there is an error', () => {
+        beforeEach(async () => {
+          req = {
+            params: null,
+          };
+          res = {
+            json: jest.fn(),
+            status: jest.fn(),
+            send: jest.fn(),
+          };
+
+          Hero.find.mockRejectedValueOnce('getById error');
+
+          await getAll(req, res);
+        });
+
         test('Then call res.status with 500', () => {
-          expect(res.send).toHaveBeenCalledWith('find error');
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+
+        test('Then call res.send with getById error', () => {
+          expect(res.send).toHaveBeenCalledWith('getById error');
         });
       });
     });

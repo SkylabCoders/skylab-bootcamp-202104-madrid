@@ -14,8 +14,13 @@ module.exports = {
 
   getById: async (req, res) => {
     const { heroId } = req.params;
-    const hero = await Hero.findById(heroId);
-    res.json(hero);
+    try {
+      const hero = await Hero.findById(heroId);
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   postHero: async (req, res) => {

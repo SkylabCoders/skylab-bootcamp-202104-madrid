@@ -1,57 +1,46 @@
-let heroes = require('../constants/heroesMock');
+const Hero = require('../models/heroModel');
 
 function controller() {
-  let maxHeroId;
+  const getAll = async (req, res) => {
+    const query = { ...req.query };
 
-  (function getHeroId() {
-    const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-    maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-  }());
+    const heroes = await Hero.find(query);
 
-  const getAll = (req, res) => {
-    res.json(heroes);
+    return res.json(heroes);
   };
 
-  const create = (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
+  const create = async (req, res) => {
+    const newHero = await Hero.create({
       ...req.body,
-      id: maxHeroId,
-    };
-    heroes.push(newHero);
-    res.send(newHero);
-  };
-
-  const getById = (req, res) => {
-    const { heroId } = req.params;
-    const hero = heroes.find(({ id }) => id === +heroId);
-
-    res.json(hero);
-  };
-
-  const updateById = (req, res) => {
-    const { heroId } = req.params;
-    let hero;
-
-    heroes = heroes.map((currentHero) => {
-      if (currentHero.id === +heroId) {
-        hero = {
-          ...currentHero,
-          ...req.body,
-          modified: new Date(),
-        };
-
-        return hero;
-      }
-      return currentHero;
     });
 
+    res.json(newHero);
+  };
+
+  const getById = async (req, res) => {
+    const { heroId } = req.params;
+
+    const hero = await Hero.findById(heroId);
+
     res.json(hero);
   };
 
-  const deleteById = (req, res) => {
+  const updateById = async (req, res) => {
     const { heroId } = req.params;
-    heroes = heroes.filter(({ id }) => id !== +heroId);
+    const dataToUpdate = req.body;
+
+    const heroUpdated = await Hero.findByIdAndUpdate(
+      heroId,
+      dataToUpdate,
+      { new: true },
+    );
+
+    res.json(heroUpdated);
+  };
+
+  const deleteById = async (req, res) => {
+    const { heroId } = req.params;
+    await Hero.findByIdAndDelete(heroId);
 
     res.status(204);
     res.json();

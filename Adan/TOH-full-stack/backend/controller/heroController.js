@@ -6,16 +6,26 @@ function controller() {
     getAll: async (req, res) => {
       debug('esto es un debug en controller');
       const query = { ...req.query };
-      const heroes = await Hero.find(query);
-      res.json(heroes);
+      try {
+        const heroes = await Hero.find(query);
+        res.json(heroes);
+      } catch (error) {
+        res.status(500);
+        res.send(error);
+      }
     },
 
-    create: (req, res) => {
-      const newHero = new Hero({
-        ...req.body
-      });
-      newHero.save();
-      res.send(newHero);
+    create: async (req, res) => {
+      try {
+        const newHero = await Hero.create({
+          ...req.body
+        });
+
+        res.json(newHero);
+      } catch (error) {
+        res.status(500);
+        res.send(error);
+      }
     },
     getById: async (req, res) => {
       const { heroId } = req.params;

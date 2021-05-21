@@ -321,3 +321,4 @@ auth-data.js
 
 /.expo
 .expo/
+.DS_Store

@@ -3,8 +3,13 @@ const Hero = require('../models/heroModel');
 module.exports = {
 
   getAll: async (req, res) => {
-    const heroes = await Hero.find(req.query);
-    res.json(heroes);
+    try {
+      const heroes = await Hero.find(req.query);
+      res.json(heroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   getById: async (req, res) => {

@@ -1,59 +1,58 @@
-/* eslint-disable no-console */
-let heroes = require('../constants/ramJSON.json');
+let ramCharacter = require('../constants/ramJSON.json');
 
 function controller() {
-  let maxHeroId;
-  (function getHeroId() {
-    const heroesOrdered = heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-    maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
+  let maxCharacterId;
+  (function getCharacterId() {
+    const ramCharacterOrdered = ramCharacter.sort((characterA, characterB) => characterA.id - characterB.id);
+    maxCharacterId = ramCharacterOrdered[ramCharacterOrdered.length - 1].id;
   }());
 
-  const getAll = (req, res) => {
-    res.json(heroes);
+  const getAllCharacters = (req, res) => {
+    res.json(ramCharacter);
   };
-  const createHero = (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
+  const createCharacter = (req, res) => {
+    maxCharacterId += 1;
+    const newCharacter = {
       ...req.body,
-      id: maxHeroId,
+      id: maxCharacterId,
     };
-    heroes.push(newHero);
-    res.send(newHero);
+    ramCharacter.push(newCharacter);
+    res.send(newCharacter);
   };
-  const getHero = (req, res) => {
-    const { heroId } = req.params;
-    const hero = heroes.find(({ id }) => id === +heroId);
-    res.json(hero);
+  const getCharacter = (req, res) => {
+    const { characterId } = req.params;
+    const character = ramCharacter.find(({ id }) => id === +characterId);
+    res.json(character);
   };
-  const modifyHero = (req, res) => {
-    const { heroId } = req.params;
-    let hero;
-    // El método map nos va a sobrescribir el array de heroes todo el tiempo
-    heroes = heroes.map((currentHero) => {
-      if (currentHero.id === +heroId) {
-        hero = {
-          ...currentHero,
+  const modifyCharacter = (req, res) => {
+    const { characterId } = req.params;
+    let character;
+    // El método map nos va a sobrescribir el array de ramCharacter todo el tiempo
+    ramCharacter = ramCharacter.map((currentCharacter) => {
+      if (currentCharacter.id === +characterId) {
+        character = {
+          ...currentCharacter,
           ...req.body,
           modified: new Date(),
         };
-        return hero;
+        return character;
       }
-      return currentHero;
+      return currentCharacter;
     });
-    res.json(hero);
+    res.json(character);
   };
-  const deleteHero = (req, res) => {
-    const { heroId } = req.params;
-    heroes = heroes.filter((hero) => hero.id !== +heroId);
+  const deleteCharacter = (req, res) => {
+    const { characterId } = req.params;
+    ramCharacter = ramCharacter.filter((character) => character.id !== +characterId);
     res.status(204);
     res.json();
   };
   return {
-    getAll,
-    createHero,
-    getHero,
-    modifyHero,
-    deleteHero,
+    getAllCharacters,
+    createCharacter,
+    getCharacter,
+    modifyCharacter,
+    deleteCharacter,
   };
 }
 

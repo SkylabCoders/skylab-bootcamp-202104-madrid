@@ -3,7 +3,9 @@ let ramCharacter = require('../constants/ramJSON.json');
 function controller() {
   let maxCharacterId;
   (function getCharacterId() {
-    const ramCharacterOrdered = ramCharacter.sort((characterA, characterB) => characterA.id - characterB.id);
+    const ramCharacterOrdered = ramCharacter.sort(
+      (characterA, characterB) => characterA.id - characterB.id,
+    );
     maxCharacterId = ramCharacterOrdered[ramCharacterOrdered.length - 1].id;
   }());
 

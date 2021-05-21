@@ -7,6 +7,7 @@
  */
 // const callback = require('./callback');
 const { getAllHeroes } = require('./callback');
+const Hero = require('../models/heroModel'); /** Si quiero escuchar algo de ese modulo tengo que importarlo */
 
 jest.mock('../models/heroModel');
 
@@ -30,8 +31,12 @@ describe('controller function', () => {
       });
 
       // assert
-      test.only('Then call res.json once', () => {
+      test('Then call res.json once', () => {
         expect(res.json).toHaveBeenCalled();
+      });
+
+      test.only('Then call Hero.find', () => {
+        expect(Hero.find).toHaveBeenCalled();
       });
     });
   });

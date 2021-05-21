@@ -28,6 +28,8 @@ describe('controller function', () => {
         // act
         await getAllHeroes(req, res);
       });
+
+      // assert
       test.only('Then call res.json once', () => {
         expect(res.json).toHaveBeenCalled();
       });

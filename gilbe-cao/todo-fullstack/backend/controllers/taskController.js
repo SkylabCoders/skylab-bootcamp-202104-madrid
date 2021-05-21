@@ -26,7 +26,7 @@ function taskController() {
       const task = await Task.findByIdAndUpdate(
         req.params.taskId,
         req.body,
-        { new: true },
+        { new: true, useFindAndModify: false },
       );
 
       res.json(task);

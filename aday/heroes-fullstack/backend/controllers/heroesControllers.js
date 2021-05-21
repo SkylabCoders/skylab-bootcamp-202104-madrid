@@ -2,7 +2,7 @@ const Hero = require('../models/heroModel');
 
 function heroesController() {
   const getAllHeroes = async (req, res) => {
-    const query = { ...res.query };
+    const query = { ...req.query };
     const heroes = await Hero.find(query);
     res.json(heroes);
   };
@@ -16,7 +16,9 @@ function heroesController() {
 
   const getById = async (req, res) => {
     const { heroId } = req.params;
+    console.log(heroId);
     const hero = await Hero.findById(heroId);
+    console.log(hero);
     res.json(hero);
   };
 
@@ -25,7 +27,7 @@ function heroesController() {
     const hero = await Hero.findByIdAndUpdate(
       heroId,
       { ...req.body },
-      { new: true },
+      { new: true, useFindAndModify: false },
     );
     res.json(hero);
   };

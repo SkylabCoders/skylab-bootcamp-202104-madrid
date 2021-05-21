@@ -2,6 +2,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const debug = require('debug')('server');
+const chalk = require('chalk');
 
 require('dotenv').config();
 
@@ -21,4 +23,4 @@ server.use('/api/heroes', heroRouter);
 server.use('/api/marvel', marvelRouter);
 
 const port = 4002;
-server.listen(port, () => console.log(`Server is running on port http://localhost:${port}`));
+server.listen(port, () => debug(`Server is ${chalk.blue('running')} cool on port http://localhost:${port}`));

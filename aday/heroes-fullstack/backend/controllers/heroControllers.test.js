@@ -35,8 +35,23 @@ describe('heroController', () => {
   });
 });
 
-describe('heroController', () => {
-  test('should work', () => {
-    expect(true).toBe(true);
+describe('And is an error', () => {
+  let req;
+  let res;
+  beforeEach(async () => {
+    req = {
+      query: null,
+    };
+    res = {
+      json: jest.fn(),
+      status: jest.fn(),
+      send: jest.fn(),
+    };
+    Hero.find.mockRejectedValueOnce('There is an error');
+
+    await heroController.getAllHeroes(req, res);
+  });
+  test('Then call res.status with 500', () => {
+    expect(res.status).toHaveBeenCalledWith(500);
   });
 });

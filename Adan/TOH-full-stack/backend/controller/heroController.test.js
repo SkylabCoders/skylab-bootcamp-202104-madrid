@@ -93,10 +93,10 @@ describe('heroController', () => {
           await create(req, res);
         });
 
-        test('Then call res.json once', () => {
+        test('Then call res.status once', () => {
           expect(res.status).toHaveBeenCalledWith(500);
         });
-        test('Then call res.json once', () => {
+        test('Then call res.send once', () => {
           expect(res.send).toHaveBeenCalledWith('create error');
         });
       });
@@ -109,7 +109,7 @@ describe('heroController', () => {
       describe('and when there is no error', () => {
         beforeEach(async () => {
           req = {
-            query: null
+            params: {}
           };
           res = {
             json: jest.fn()
@@ -119,29 +119,29 @@ describe('heroController', () => {
         test('Then call res.json once', () => {
           expect(res.json).toHaveBeenCalled();
         });
-        test('Then call Hero.create', () => {
-          expect(Hero.create).toHaveBeenCalled();
+        test('Then call Hero.findById', () => {
+          expect(Hero.findById).toHaveBeenCalled();
         });
       });
 
       describe('And there is an error', () => {
         beforeEach(async () => {
           req = {
-            body: null
+            params: {}
           };
           res = {
             json: jest.fn(),
             status: jest.fn(),
             send: jest.fn()
           };
-          Hero.create.mockRejectedValueOnce('create error');
-          await create(req, res);
+          Hero.findById.mockRejectedValueOnce('create error');
+          await getById(req, res);
         });
 
-        test('Then call res.json once', () => {
+        test('Then call res.status once', () => {
           expect(res.status).toHaveBeenCalledWith(500);
         });
-        test('Then call res.json once', () => {
+        test('Then call res.send once', () => {
           expect(res.send).toHaveBeenCalledWith('create error');
         });
       });

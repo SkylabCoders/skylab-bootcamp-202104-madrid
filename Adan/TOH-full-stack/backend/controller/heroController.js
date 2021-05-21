@@ -28,9 +28,14 @@ function controller() {
       }
     },
     getById: async (req, res) => {
-      const { heroId } = req.params;
-      const hero = await Hero.findById(heroId);
-      res.json(hero);
+      try {
+        const { heroId } = req.params;
+        const hero = await Hero.findById(heroId);
+        res.json(hero);
+      } catch (error) {
+        res.status(500);
+        res.send(error);
+      }
     },
     updateById: async (req, res) => {
       const { heroId } = req.params;

@@ -5,9 +5,14 @@ const Hero = require('../models/heroModel');
 function controller() {
   const getAll = async (req, res) => {
     const query = { ...req.query };
-    const heroes = await Hero.find(query);
-    debug(heroes);
-    return res.json(heroes);
+    try {
+      const heroes = await Hero.find(query);
+      debug(heroes);
+      res.json(heroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
   const createHero = async (req, res) => {
     const newHero = await Hero.create({

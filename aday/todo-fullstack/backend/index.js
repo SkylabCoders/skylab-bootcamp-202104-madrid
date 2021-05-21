@@ -16,6 +16,25 @@ connect(
 
 const app = express();
 
+const tasks = [
+  {
+    responsable: 'Aday',
+    description: 'Comprar entradas NBA',
+  },
+];
+
+// definir las rutas dentro del servidor
+
+app.get('/api/tasks', (req, res) => {
+  res.send(tasks);
+});
+
+app.get('/api/tasks/:taskId', (req, res) => {
+  res.send();
+});
+
+//
+
 const port = process.env.PORT || 4000;
 
 app.use(cors());

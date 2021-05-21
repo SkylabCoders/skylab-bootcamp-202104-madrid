@@ -23,16 +23,15 @@
     >
   </div>
   <div class="header__search">
-    <form>
+    <form (ngSubmit)="searchSubmit()">
       <div class="header-search__container">
         <i id="search__icon" class="fas fa-search"></i
         ><input
-          #search
           class="search__input"
           id="name"
           name="name"
           type="text"
-          (input)="searchSubmit(search.value)"
+          [(ngModel)]="searchInput"
         />
       </div>
     </form>

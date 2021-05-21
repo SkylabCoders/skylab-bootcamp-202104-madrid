@@ -1,55 +1,35 @@
-let Heroes = require('../constantes/heroMock');
-
-let maxHeroId;
-
-(function getHeroId() {
-  const heroesOrdered = Heroes.sort((heroA, heroB) => heroA.id - heroB.id);
-  maxHeroId = heroesOrdered[heroesOrdered.length - 1].id;
-}());
+const Hero = require('../models/heroModel');
 
 module.exports = {
-  getAll: (req, res) => {
-    res.json(Heroes);
+
+  getAll: async (req, res) => {
+    const heroes = await Hero.find(req.query);
+    res.json(heroes);
   },
-  getById: (req, res) => {
+
+  getById: async (req, res) => {
     const { heroId } = req.params;
-    const hero = Heroes.find(({ id }) => id === +heroId);
-    if (hero) {
-      res.json(hero);
-    } else {
-      res.status(404);
-      res.send('no encontré el heroes');
-    }
-  },
-  postHero: (req, res) => {
-    maxHeroId += 1;
-    const newHero = {
-      id: maxHeroId,
-      ...req.body,
-    };
-    Heroes.push(newHero);
-    res.send(newHero);
-  },
-  putHero: (req, res) => {
-    const { heroId } = req.params;
-    let hero;
-    Heroes = Heroes.map((currenthero) => {
-      if (currenthero.id === +heroId) {
-        hero = {
-          ...currenthero,
-          ...req.body,
-        };
-        return hero;
-      }
-      return currenthero;
-    });
+    const hero = await Hero.findById(heroId);
     res.json(hero);
   },
 
-  deleteHero: (req, res) => {
+  postHero: async (req, res) => {
+    const newHero = await new Hero({
+      ...req.body,
+    });
+    newHero.save();
+    res.send(newHero);
+  },
+
+  putHero: async (req, res) => {
     const { heroId } = req.params;
-    Heroes = Heroes.filter((element) => element.id !== +heroId);
-    res.status(204);
-    res.json(heroId);
+    const hero = await Hero.findByIdAndUpdate(heroId, { ...req.body }, { new: true });
+    res.json(hero);
+  },
+
+  deleteHero: async (req, res) => {
+    const { heroId } = req.params;
+    const deletedHero = await Hero.findByIdAndDelete(heroId);
+    res.json(deletedHero);
   },
 };

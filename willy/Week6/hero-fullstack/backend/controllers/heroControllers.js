@@ -1,11 +1,14 @@
-
+const debug = require('debug')('server:heroController')
 const Hero = require('../models/heroModel')
+
+debug("Estas en heroController")
 
 function heroesController() {
    
     const getAllHeroes = async (req, res) => {
     
       const query = {...req.query}
+
       const heroes = await Hero.find(query)
       res.json(heroes)
       

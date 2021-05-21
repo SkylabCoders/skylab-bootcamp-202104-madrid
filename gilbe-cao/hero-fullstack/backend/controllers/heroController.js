@@ -1,9 +1,7 @@
-const debug = require('debug')('app:heroController');
 const Hero = require('../models/heroModel');
 
 function controller() {
   const getAll = async (req, res) => {
-    debug('esto es get all heroes');
     const query = { ...req.query };
 
     const heroes = await Hero.find(query);
@@ -34,7 +32,7 @@ function controller() {
     const heroUpdated = await Hero.findByIdAndUpdate(
       heroId,
       dataToUpdate,
-      { new: true },
+      { new: true, useFindAndModify: false },
     );
 
     res.json(heroUpdated);

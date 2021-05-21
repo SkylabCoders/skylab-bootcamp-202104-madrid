@@ -1,7 +1,9 @@
+const debug = require('debug')('app:heroController');
 const Hero = require('../models/heroModel');
 
 function controller() {
   const getAll = async (req, res) => {
+    debug('esto es get all heroes');
     const query = { ...req.query };
 
     const heroes = await Hero.find(query);

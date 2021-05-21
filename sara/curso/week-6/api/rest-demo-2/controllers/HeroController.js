@@ -49,7 +49,12 @@ module.exports = {
 
   deleteHero: async (req, res) => {
     const { heroId } = req.params;
-    const deletedHero = await Hero.findByIdAndDelete(heroId);
-    res.json(deletedHero);
+    try {
+      const deletedHero = await Hero.findByIdAndDelete(heroId);
+      res.json(deletedHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 };

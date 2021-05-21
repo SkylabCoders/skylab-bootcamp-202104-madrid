@@ -1,5 +1,5 @@
 
-const Hero = require('./models/heroModel')
+const Hero = require('../models/heroModel')
 
 function heroesController() {
    

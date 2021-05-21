@@ -1,7 +1,7 @@
-const {model, Schema } = require('mongoose')
+const {model, Schema, Types } = require('mongoose')
 
 const heroSchema = Schema({
-   
+   _id: Types.ObjectId,
     name: String
 })
 

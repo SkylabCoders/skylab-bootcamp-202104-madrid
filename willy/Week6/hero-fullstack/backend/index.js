@@ -1,7 +1,10 @@
 
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const debug = require('debug')('server')
+const chalk = require('chalk')
+const morgan = require('morgan')
 
 require('dotenv').config()
 mongoose.connect(
@@ -13,9 +16,9 @@ mongoose.connect(
 
 const server = express();
 
-server.use(cors())
-
-server.use(express.json()) 
+server.use(cors());
+server.use(morgan('dev'));
+server.use(express.json());
 
 
 const marvelRouter = require('./routes/marvelRouter')
@@ -29,5 +32,5 @@ server.use('/api/heroes', heroRouter)
 const port = 4000
 
 server.listen(port, () => {
-    console.log(`Hola holita, te estoy escuchandito en el puerto ${port}`)
+    debug(`Hola holita, te estoy escuchandito en el puerto ${chalk.green(`http//localhost:${port}`)}`)
 })

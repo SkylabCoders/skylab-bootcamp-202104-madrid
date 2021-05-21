@@ -1,21 +1,32 @@
+const debug = require('debug')('server:callback');
 const Hero = require('../models/heroModel');
 
+debug('haaa');
 function controller() {
   const getAllHeroes = async (req, res) => {
     const query = { ...res.query };
 
-    const allHeroes = await Hero.find(query);
-
-    res.json(allHeroes);
+    try {
+      const allHeroes = await Hero.find(query);
+      res.json(allHeroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
-  const createHero = (req, res) => {
-    const newHero = new Hero({
-      ...req.body
-    });
+  const createHero = async (req, res) => {
+    try {
+      const newHero = new Hero({
+        ...req.body
+      });
 
-    newHero.save(); /* Promesa */
-    res.send(newHero);
+      await newHero.save(); /* Promesa */
+      res.json(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const getHeroById = async (req, res) => {

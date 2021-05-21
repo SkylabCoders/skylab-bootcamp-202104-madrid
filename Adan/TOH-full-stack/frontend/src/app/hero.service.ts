@@ -31,25 +31,25 @@ export class HeroService {
   }
 
   /** GET hero by id. Return `undefined` when id not found */
-  getHeroNo404<Data>(_id: String): Observable<Hero> {
-    const url = `${this.heroesUrl}/?id=${_id}`;
+  getHeroNo404<Data>(id: String): Observable<Hero> {
+    const url = `${this.heroesUrl}/?id=${id}`;
     return this.http.get<Hero[]>(url)
       .pipe(
         map(heroes => heroes[0]), // returns a {0|1} element array
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} hero id=${_id}`);
+          this.log(`${outcome} hero id=${id}`);
         }),
-        catchError(this.handleError<Hero>(`getHero id=${_id}`))
+        catchError(this.handleError<Hero>(`getHero id=${id}`))
       );
   }
 
   /** GET hero by id. Will 404 if id not found */
-  getHero(_id: String): Observable<Hero> {
-    const url = `${this.heroesUrl}/${_id}`;
+  getHero(id: number): Observable<Hero> {
+    const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${_id}`)),
-      catchError(this.handleError<Hero>(`getHero id=${_id}`))
+      tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
 
@@ -78,11 +78,11 @@ export class HeroService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero(_id: String): Observable<Hero> {
-    const url = `${this.heroesUrl}/${_id}`;
+  deleteHero(id: string): Observable<Hero> {
+    const url = `${this.heroesUrl}/${id}`;
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted hero id=${_id}`)),
+      tap(_ => this.log(`deleted hero id=${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }

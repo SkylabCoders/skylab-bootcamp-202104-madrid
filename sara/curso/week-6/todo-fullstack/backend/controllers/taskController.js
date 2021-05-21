@@ -1,5 +1,13 @@
+const Task = require('../models/taskModel');
+
 module.exports = {
-  iAmWorking: (req, res) => {
-    res.send('I am working !!');
+  getAll: async (req, res) => {
+    try {
+      const tasks = await Task.find(req.query);
+      res.json(tasks);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 };

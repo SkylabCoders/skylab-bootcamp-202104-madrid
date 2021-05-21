@@ -6,7 +6,7 @@ function taskRouter() {
 
   taskRouters
     .route('/')
-    .get(taskController.iAmWorking);
+    .get(taskController.getAll);
 
   return taskRouters;
 }

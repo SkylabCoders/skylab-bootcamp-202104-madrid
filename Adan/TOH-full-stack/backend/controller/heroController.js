@@ -1,48 +1,38 @@
-let heroes = require('../constants/heroMock');
 const Hero = require('../models/heroModel');
 
 function controller() {
   return {
-    getAll: (req, res) => {
-      if (req.query.name) {
-        return res.json(
-          heroes.filter(({ name }) => name.toLowerCase().includes(req.query.name.toLowerCase()))
-        );
-      }
-      return res.json(heroes);
+    getAll: async (req, res) => {
+      const query = { ...req.query };
+      const heroes = await Hero.find(query);
+      res.json(heroes);
     },
+
     create: (req, res) => {
       const newHero = new Hero({
         ...req.body
       });
-      heroes.push(newHero);
       newHero.save();
       res.send(newHero);
     },
-    getById: (req, res) => {
+    getById: async (req, res) => {
       const { heroId } = req.params;
-      const hero = heroes.find(({ id }) => id === +heroId);
+      const hero = await Hero.findById(heroId);
       res.json(hero);
     },
-    updateById: (req, res) => {
+    updateById: async (req, res) => {
       const { heroId } = req.params;
-      let hero;
-      heroes = heroes.map((currentHero) => {
-        if (currentHero.id === +heroId) {
-          hero = {
-            ...currentHero,
-            ...req.body
-          };
-          return hero;
-        }
-        return currentHero;
-      });
-      res.json(hero);
+      const dataToUpdate = req.body;
+      const heroUpdated = await Hero.findByIdAndUpdate(
+        heroId,
+        dataToUpdate,
+        { new: true }
+      );
+      res.json(heroUpdated);
     },
-    deleteById: (req, res) => {
+    deleteById: async (req, res) => {
       const { heroId } = req.params;
-      heroes = heroes.filter((currentHero) => currentHero.id !== +heroId);
-
+      await Hero.findByIdAndDelete(heroId);
       res.status(204);
       res.json();
     }

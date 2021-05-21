@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const { connect } = require('mongoose');
+const todoRouter = require('./routes/todoRouter');
 require('dotenv').config();
 
 connect(
@@ -20,6 +21,6 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
-app.use('api/tasks');
+app.use('/api/tasks', todoRouter);
 
 app.listen(port, () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`));

@@ -1,6 +1,8 @@
 const {
   getAll,
   getById,
+  postHero,
+  putHero,
 } = require('./HeroController');
 
 const Hero = require('../models/heroModel');
@@ -107,54 +109,54 @@ describe('heroController', () => {
       });
     });
   });
-  describe('Given a postHero function', () => {
-    describe('when is invoked', () => {
-      let req;
-      let res;
-      describe('And there is no error', () => {
-        beforeEach(async () => {
-          req = {
-            body: {},
-          };
-          res = {
-            json: jest.fn(),
-          };
-          await getAll(req, res);
-        });
-        test('Then call res.json', () => {
-          expect(res.json).toHaveBeenCalled();
-        });
-        test('Then call Hero.find', () => {
-          expect(Hero.find).toHaveBeenCalled();
-        });
-      });
+  //   describe('Given a postHero function', () => {
+  //     describe('when is invoked', () => {
+  //       let req;
+  //       let res;
+  //       describe('And there is no error', () => {
+  //         beforeEach(async () => {
+  //           req = {
+  //             body: {},
+  //           };
+  //           res = {
+  //             json: jest.fn(),
+  //           };
+  //           await postHero(req, res);
+  //         });
+  //         test('Then call res.json', () => {
+  //           expect(res.json).toHaveBeenCalled();
+  //         });
+  //         test('Then call Hero.find', () => {
+  //           expect(Hero.find).toHaveBeenCalled();
+  //         });
+  //       });
 
-      describe('And there is an error', () => {
-        beforeEach(async () => {
-          req = {
-            body: null,
-          };
-          res = {
-            json: jest.fn(),
-            status: jest.fn(),
-            send: jest.fn(),
-          };
+  //       describe('And there is an error', () => {
+  //         beforeEach(async () => {
+  //           req = {
+  //             body: {},
+  //           };
+  //           res = {
+  //             json: jest.fn(),
+  //             status: jest.fn(),
+  //             send: jest.fn(),
+  //           };
+  //           const hero = new Hero();
+  //           hero.save.mockRejectedValueOnce('postHero error');
 
-          Hero.find.mockRejectedValueOnce('postHero error');
+  //           await postHero(req, res);
+  //         });
 
-          await getAll(req, res);
-        });
+  //         test('Then call res.status with 500', () => {
+  //           expect(res.status).toHaveBeenCalledWith(500);
+  //         });
 
-        test('Then call res.status with 500', () => {
-          expect(res.status).toHaveBeenCalledWith(500);
-        });
-
-        test('Then call res.send with postHero error', () => {
-          expect(res.send).toHaveBeenCalledWith('postHero error');
-        });
-      });
-    });
-  });
+  //         test('Then call res.send with postHero error', () => {
+  //           expect(res.send).toHaveBeenCalledWith('postHero error');
+  //         });
+  //       });
+  //     });
+  //   });
   describe('Given a putHero function', () => {
     describe('when is invoked', () => {
       let req;
@@ -167,7 +169,7 @@ describe('heroController', () => {
           res = {
             json: jest.fn(),
           };
-          await getAll(req, res);
+          await putHero(req, res);
         });
         test('Then call res.json', () => {
           expect(res.json).toHaveBeenCalled();
@@ -175,12 +177,15 @@ describe('heroController', () => {
         test('Then call Hero.find', () => {
           expect(Hero.find).toHaveBeenCalled();
         });
+        test('Then call Hero.find', () => {
+          expect(Hero.findById).toHaveBeenCalledWith('myHero');
+        });
       });
 
       describe('And there is an error', () => {
         beforeEach(async () => {
           req = {
-            params: null,
+            params: { heroId: 'myHero' },
           };
           res = {
             json: jest.fn(),
@@ -188,9 +193,9 @@ describe('heroController', () => {
             send: jest.fn(),
           };
 
-          Hero.find.mockRejectedValueOnce('putHero error');
+          Hero.findByIdAndUpdate.mockRejectedValueOnce('putHero error');
 
-          await getAll(req, res);
+          await putHero(req, res);
         });
 
         test('Then call res.status with 500', () => {

@@ -6,6 +6,7 @@
  * THEN...
  */
 const { getAll } = require('./heroController');
+const Hero = require('../models/heroModel');
 
 jest.mock('../models/heroModel');
 
@@ -23,13 +24,13 @@ describe('heroController', () => {
         };
         await getAll(req, res);
       });
-      test.only('Then call res.json once', () => {
+      test('Then call res.json once', () => {
         expect(res.json).toHaveBeenCalled();
       });
-      test('Then call res.json with an array of 2 objects', () => {
-        expect(true).toBe(false);
+      test.only('then call Hero.find', () => {
+        expect(Hero.find).toHaveBeenCalled();
       });
-      test('sThen call Hero.find', () => {
+      test('Then call Hero.find', () => {
         expect(true).toBe(false);
       });
       describe('And there is an error', () => {

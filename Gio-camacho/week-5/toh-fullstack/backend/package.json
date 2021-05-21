@@ -7,7 +7,7 @@
     "start": "nodemon index.js",
     "debug": "nodemon --inspect-brk index.js",
     "dev": "DEBUG=server,server:* nodemon index.js",
-    "test": "jest watchAll --collect-coverage"
+    "test": "jest --watchAll --collect-coverage"
   },
   "keywords": [],
   "author": "",

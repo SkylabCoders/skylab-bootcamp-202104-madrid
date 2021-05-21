@@ -10,22 +10,36 @@ let maxheroId;
 module.exports = {
     getAll: async (req, res)=>{
         debug('esto es getAll')
-       const hero = await Hero.find(req.query)
-       res.json(hero)
+        try {
+            const hero = await Hero.find(req.query)
+            res.json(hero);
+        }catch (error){
+            res.status(500);
+            res.send(error)
+        }
     },
 
     create: (req, res)=>{
-        const newHero = new Hero({
+        try{const newHero = new Hero({
             ...req.body,
         })
         newHero.save();
          res.send(newHero)
+        }catch (error){
+            res.status(500);
+            res.send(error)
+        }
     },
 
     getById: async (req, res)=>{
-        const { heroId } = req.params;
-        const hero = await Hero.findById(heroId)
-        res.json(hero)
+        try{
+            const { heroId } = req.params;
+            const hero = await Hero.findById(heroId)
+            res.json(hero)
+        }catch (error){
+            res.status(500);
+            res.send(error)
+        }
     },
 
     put: async (req, res)=>{

@@ -1,4 +1,5 @@
 const debug = require('debug')('server:heroController')
+const { restart } = require('nodemon');
 const Hero = require('../models/heroModel')
 
 debug("Estas en heroController")
@@ -8,9 +9,15 @@ function heroesController() {
     const getAllHeroes = async (req, res) => {
     
       const query = {...req.query}
+try {
 
-      const heroes = await Hero.find(query)
-      res.json(heroes)
+  const heroes = await Hero.find(query)
+ 
+   res.json(heroes)
+} catch (error) {
+  res.status(500);
+  res.send(error)
+}
       
     };
 

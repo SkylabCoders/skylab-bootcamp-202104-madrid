@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const debug = require('debug')('app');
+const chalk = require('chalk');
+const morgan = require('morgan');
 
 require('dotenv').config();
 
@@ -15,6 +18,7 @@ mongoose.connect(
 const server = express();
 
 server.use(cors());
+server.use(morgan('dev'));
 
 server.use(express.json());
 
@@ -25,5 +29,5 @@ server.use('/api/heroes', heroRouter());
 const port = 4000;
 server.listen(
   port,
-  () => console.log(`Server is running on http://localhost:${port}`),
+  () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`),
 );

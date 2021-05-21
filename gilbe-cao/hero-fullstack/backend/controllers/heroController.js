@@ -4,46 +4,82 @@ function controller() {
   const getAll = async (req, res) => {
     const query = { ...req.query };
 
-    const heroes = await Hero.find(query);
-
-    return res.json(heroes);
+    try {
+      const heroes = await Hero.find(query);
+      res.json(heroes);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const create = async (req, res) => {
-    const newHero = await Hero.create({
-      ...req.body,
-    });
+    try {
+      const newHero = await Hero.create({
+        ...req.body,
+      });
+      res.json(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
 
-    res.json(newHero);
+  const addNewWithSave = async (req, res) => {
+    try {
+      const newHero = new Hero({
+        ...req.body,
+      });
+
+      await newHero.save();
+
+      res.json(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const getById = async (req, res) => {
     const { heroId } = req.params;
-
-    const hero = await Hero.findById(heroId);
-
-    res.json(hero);
+    try {
+      const hero = await Hero.findById(heroId);
+      res.json(hero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const updateById = async (req, res) => {
     const { heroId } = req.params;
     const dataToUpdate = req.body;
 
-    const heroUpdated = await Hero.findByIdAndUpdate(
-      heroId,
-      dataToUpdate,
-      { new: true },
-    );
+    try {
+      const heroUpdated = await Hero.findByIdAndUpdate(
+        heroId,
+        dataToUpdate,
+        { new: true, useFindAndModify: false },
+      );
 
-    res.json(heroUpdated);
+      res.json(heroUpdated);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   const deleteById = async (req, res) => {
     const { heroId } = req.params;
-    await Hero.findByIdAndDelete(heroId);
 
-    res.status(204);
-    res.json();
+    try {
+      await Hero.findByIdAndDelete(heroId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   };
 
   return {
@@ -52,6 +88,7 @@ function controller() {
     updateById,
     deleteById,
     getById,
+    addNewWithSave,
   };
 }
 module.exports = controller();

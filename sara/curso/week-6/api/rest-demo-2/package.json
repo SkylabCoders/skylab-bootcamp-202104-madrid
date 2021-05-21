@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "dev": "DEBBUG=app,app:* nodemon index.js",
     "test": "jest --watchAll --collect-coverage"
   },
   "keywords": [],

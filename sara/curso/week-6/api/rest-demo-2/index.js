@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const debug = require('debug')('server');
 require('dotenv').config();
 
 mongoose.connect(process.env.DDBB_URL,
@@ -23,4 +24,4 @@ server.use('/', rickRouter);
 
 const port = 4000;
 
-server.listen(port, () => console.log(`server is running on http://localhost:${port}`));
+server.listen(port, () => debug(`server is running on http://localhost:${port}`));

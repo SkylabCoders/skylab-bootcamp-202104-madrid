@@ -25,10 +25,10 @@ module.exports = {
 
   postHero: async (req, res) => {
     try {
-      const newHero = await new Hero({
+      const newHero = new Hero({
         ...req.body,
       });
-      newHero.save();
+      await newHero.save();
       res.send(newHero);
     } catch (error) {
       res.status(500);

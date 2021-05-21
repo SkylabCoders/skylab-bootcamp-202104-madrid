@@ -1,8 +1,10 @@
+const debug = require('debug')('app:heroController');
 const Hero = require('../models/heroModel');
 
 module.exports = {
 
   getAll: async (req, res) => {
+    debug('esto es el getAll');
     const heroes = await Hero.find(req.query);
     res.json(heroes);
   },

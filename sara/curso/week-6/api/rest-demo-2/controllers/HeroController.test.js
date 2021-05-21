@@ -101,4 +101,52 @@ describe('heroController', () => {
       });
     });
   });
+  describe('Given a postHero function', () => {
+    describe('when is invoked', () => {
+      let req;
+      let res;
+      describe('And there is no error', () => {
+        beforeEach(async () => {
+          req = {
+            body: {},
+          };
+          res = {
+            json: jest.fn(),
+          };
+          await getAll(req, res);
+        });
+        test('Then call res.json', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+        test('Then call Hero.find', () => {
+          expect(Hero.find).toHaveBeenCalled();
+        });
+      });
+
+      describe('And there is an error', () => {
+        beforeEach(async () => {
+          req = {
+            body: null,
+          };
+          res = {
+            json: jest.fn(),
+            status: jest.fn(),
+            send: jest.fn(),
+          };
+
+          Hero.find.mockRejectedValueOnce('postHero error');
+
+          await getAll(req, res);
+        });
+
+        test('Then call res.status with 500', () => {
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+
+        test('Then call res.send with postHero error', () => {
+          expect(res.send).toHaveBeenCalledWith('postHero error');
+        });
+      });
+    });
+  });
 });

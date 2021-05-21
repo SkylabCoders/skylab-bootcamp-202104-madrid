@@ -24,11 +24,16 @@ module.exports = {
   },
 
   postHero: async (req, res) => {
-    const newHero = await new Hero({
-      ...req.body,
-    });
-    newHero.save();
-    res.send(newHero);
+    try {
+      const newHero = await new Hero({
+        ...req.body,
+      });
+      newHero.save();
+      res.send(newHero);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
   },
 
   putHero: async (req, res) => {

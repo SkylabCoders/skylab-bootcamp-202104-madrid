@@ -1,4 +1,7 @@
-const { getAll } = require('./HeroController');
+const {
+  getAll,
+  getById,
+} = require('./HeroController');
 
 const Hero = require('../models/heroModel');
 
@@ -65,20 +68,23 @@ describe('heroController', () => {
           res = {
             json: jest.fn(),
           };
-          await getAll(req, res);
+          await getById(req, res);
         });
         test('Then call res.json', () => {
           expect(res.json).toHaveBeenCalled();
         });
         test('Then call Hero.find', () => {
-          expect(Hero.find).toHaveBeenCalled();
+          expect(Hero.findById).toHaveBeenCalled();
+        });
+        test('Then call Hero.find', () => {
+          expect(Hero.findById).toHaveBeenCalledWith('myHero');
         });
       });
 
       describe('And there is an error', () => {
         beforeEach(async () => {
           req = {
-            params: null,
+            params: { heroId: 'myHero' },
           };
           res = {
             json: jest.fn(),
@@ -86,9 +92,9 @@ describe('heroController', () => {
             send: jest.fn(),
           };
 
-          Hero.find.mockRejectedValueOnce('getById error');
+          Hero.findById.mockRejectedValueOnce('getById error');
 
-          await getAll(req, res);
+          await getById(req, res);
         });
 
         test('Then call res.status with 500', () => {

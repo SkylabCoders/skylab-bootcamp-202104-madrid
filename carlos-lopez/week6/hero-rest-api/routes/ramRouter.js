@@ -5,13 +5,13 @@ function ramRouter() {
   const ramRoutes = Router();
   ramRoutes
     .route('/')
-    .get(ramController.getAll)
-    .post(ramController.createHero);
+    .get(ramController.getAllCharacters)
+    .post(ramController.createCharacter);
   ramRoutes
-    .route('/:heroId')
-    .get(ramController.getHero)
-    .put(ramController.modifyHero)
-    .delete(ramController.deleteHero);
+    .route('/:characterId')
+    .get(ramController.getCharacter)
+    .put(ramController.modifyCharacter)
+    .delete(ramController.deleteCharacter);
   return ramRoutes;
 }
 module.exports = ramRouter();

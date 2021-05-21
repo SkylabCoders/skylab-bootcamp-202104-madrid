@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const chalk = require('chalk');
 const debug = require('debug')('app');
-const morgan = require('morgan');
-const { connect } = require('mongoose');
 require('dotenv').config();
+
+const { connect } = require('mongoose');
 
 connect(
   process.env.DDBB_URL,
@@ -16,10 +16,12 @@ connect(
 
 const app = express();
 const port = process.env.PORT || 4000;
-app.use(morgan('dev'));
+
 app.use(cors());
+
 app.use(express.json());
 
-app.use('api/tasks');
-
-app.listen(port, () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`));
+app.listen(
+  port,
+  () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`),
+);

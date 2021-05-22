@@ -11,8 +11,13 @@ function taskController() {
       res.send(error);
     }
   }
+  async function create() {
+
+  }
   return {
-    getAll
+    getAll,
+    create
+
   };
 }
 module.exports = taskController;

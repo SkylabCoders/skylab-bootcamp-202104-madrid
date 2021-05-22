@@ -1,13 +1,16 @@
 <main>
   <header class="main__header">TO-DO list</header>
   <div class="main__container--add">
-    <input class="container__input" type="text" placeholder="{{inputText}}" #newTask>
+    <input class="container__input" type="text" placeholder="Create a new Task" #newTask>
     <button type="button" class="container__button--ADD" (click)="addNewTask(newTask.value)">ADD</button>
-    <button type="button"  class="list__button--update" >Update</button> 
   </div>
   <ul class="main__list">
-    <li class="list__elemnt" *ngFor="let task of tasks">{{task.description}} 
-      <button type="button" class="list__button--delete">Delete</button> 
+    <li class="list__elemnt" *ngFor="let task of tasks" (click)="goToUpdate()">{{task.description}} 
+      <button type="button" class="list__button--delete" (click)="deleteTask(task._id)">Delete</button> 
+      <div class="list-element__container" *ngIf="wantsToUpdate">
+        <input class="container__input" type="text" placeholder="{{task.description}}" #updatedTask>
+        <button type="button"  class="list__button--update" (click)="update(task._id, updatedTask.value)">Update</button> 
+      </div>
     </li>
   </ul>
 

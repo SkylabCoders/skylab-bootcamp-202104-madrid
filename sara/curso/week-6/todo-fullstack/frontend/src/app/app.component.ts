@@ -11,7 +11,7 @@ import { TaskService } from './services/task.service';
 export class AppComponent implements OnInit {
   tasks:any
 
-  inputText = 'Create a new task'
+  wantsToUpdate = false;
 
   constructor(private taskService:TaskService) {}
 
@@ -29,6 +29,27 @@ export class AppComponent implements OnInit {
     this.taskService.create(newTask).subscribe();
     setTimeout(() => {
       this.paintList();
-    }, 1000);
+    }, 500);
+  }
+
+  deleteTask(id:string) {
+    this.taskService.delete(id).subscribe();
+    setTimeout(() => {
+      this.paintList();
+    }, 500);
+  }
+
+  goToUpdate() {
+    this.wantsToUpdate = true;
+  }
+
+  update(id:string, updateTask:string) {
+    console.log(id);
+    console.log(updateTask);
+    this.wantsToUpdate = false;
+    this.taskService.update(id, updateTask).subscribe();
+    setTimeout(() => {
+      this.paintList();
+    }, 500);
   }
 }

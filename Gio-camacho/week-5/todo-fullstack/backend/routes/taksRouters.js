@@ -5,8 +5,10 @@ function taksRouter() {
   const taskRoutes = Router();
 
   taskRoutes
-    .router('/')
+    .route('/')
     .post(taskController.create);
+
+  return taskRoutes;
 }
 
 module.exports = taksRouter();

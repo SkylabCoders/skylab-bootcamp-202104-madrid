@@ -8,7 +8,7 @@ const morgan = require('morgan');
 const taskRoutes = require('./routes/taskRoutes');
 
 connect(
-  process.env.DDB_URL,
+  process.env.DDBB_URL, 
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -20,6 +20,6 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
-app.use('/api/tasks', taskRoutes);
+app.use('/api/task', taskRoutes);
 
 app.listen(port, () => debug(`Server is running in ${chalk.green(`http://localhost:${port}`)}`));

@@ -1,7 +1,6 @@
 const { Router } = require('express');
-const traskController = require('../controllers/taskController');
-
 const taskController = require('../controllers/taskController');
+
 
 function taskRouter() {
   const taskRoutes = Router();
@@ -9,7 +8,7 @@ function taskRouter() {
   taskRoutes
     .route('/')
     .get(taskController.getAll)
-    .post(traskController.create);
+    .post(taskController.create);
 
   taskRoutes
     .route('/:taskId')

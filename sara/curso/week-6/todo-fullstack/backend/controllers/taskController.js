@@ -10,10 +10,19 @@ module.exports = {
       res.send(error);
     }
   },
+  createTask: async (req, res) => {
+    try {
+      const newTask = await Task.create(req.body);
+      res.send(newTask);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  },
   findTaskById: async (req, res) => {
     const { taskId } = req.params('taskId');
     try {
-      const task = Task.findById(taskId);
+      const task = await Task.findById(taskId);
       res.json(task);
     } catch (error) {
       res.status(500);

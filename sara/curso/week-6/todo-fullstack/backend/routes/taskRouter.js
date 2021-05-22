@@ -12,8 +12,8 @@ function taskRouter() {
   taskRouters
     .route('/:taskId')
     .get(taskController.findTaskById)
-    .put(taskController.updateTask);
-  // .delete(taskController);
+    .put(taskController.updateTask)
+    .delete(taskController.deleteTask);
 
   return taskRouters;
 }

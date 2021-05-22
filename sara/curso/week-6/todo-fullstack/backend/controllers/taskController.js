@@ -36,7 +36,19 @@ module.exports = {
     const { taskId } = req.params;
     try {
       const task = await Task.findByIdAndUpdate(taskId, { ...req.body }, { new: true });
+      res.status(204);
       res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  },
+
+  deleteTask: async (req, res) => {
+    const { taskId } = req.params;
+    try {
+      const task = await Task.findByIdAndDelete(taskId);
+      res.send(task);
     } catch (error) {
       res.status(500);
       res.send(error);

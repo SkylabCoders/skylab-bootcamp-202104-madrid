@@ -17,13 +17,13 @@ mongoose.connect(
 
 const app = express();
 
-app.use(cors());
+app.use(express.json());
 
-app.use('/api/task', taskRouter);
+app.use(cors());
 
 app.use(morgan('dev'));
 
-app.use(express.json());
+app.use('/api/task', taskRouter);
 
 const port = 4000;
 

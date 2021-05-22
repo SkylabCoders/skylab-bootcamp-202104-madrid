@@ -6,6 +6,7 @@ function taksRouter() {
 
   taskRoutes
     .route('/')
+    .get(taskController.getAll)
     .post(taskController.create);
 
   return taskRoutes;

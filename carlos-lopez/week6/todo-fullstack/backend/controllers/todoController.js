@@ -19,10 +19,49 @@ function controller() {
     });
     res.json(newTodo);
   };
+  const getTaskById = async (req, res) => {
+    const { taskId } = req.params;
+    try {
+      const task = await Todo.findById(taskId);
+      res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
+  const updateById = async (req, res) => {
+    const { taskId } = req.params;
+    const dataToUpdate = req.body;
+    try {
+      const taskUpdated = await Todo.findByIdAndUpdate(
+        taskId,
+        dataToUpdate,
+        { new: true, useFindAndModify: false },
+      );
+      res.json(taskUpdated);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
+  const deleteById = async (req, res) => {
+    const { taskId } = req.params;
+    try {
+      await Todo.findByIdAndDelete(taskId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
 
   return {
     getAll,
     createTodo,
+    getTaskById,
+    updateById,
+    deleteById,
   };
 }
 

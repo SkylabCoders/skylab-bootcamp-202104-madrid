@@ -7,6 +7,13 @@ function todoRouter() {
     .route('/')
     .get(todoController.getAll)
     .post(todoController.createTodo);
+
+  todoRoutes
+    .route('/:taskId')
+    .get(todoController.getTaskById)
+    .put(todoController.updateById)
+    .delete(todoController.deleteById);
+
   return todoRoutes;
 }
 module.exports = todoRouter();

@@ -6,7 +6,8 @@ function taskController() {
       const task = Task.find(req.query);
       res.json(task);
     } catch (error) {
-      res;
+      res.status(500);
+      res.send('find error');
     }
   }
 }

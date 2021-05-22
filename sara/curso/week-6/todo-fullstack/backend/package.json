@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon index.js",
     "dev": "DEBUG=app,app:* nodemon index.js",
-    "dev:debug": "nodemon --inspect-brk index.js",
-    "test": "jest --watchAll --collect-coverage"
+    "test": "jest --watchAll --collect-coverage",
+    "debug": "nodemon --inspect-brk index.js"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +27,5 @@
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.2"
-  },
-  "jest":{
-    "testEnvironment": "node"
   }
 }

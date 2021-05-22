@@ -8,11 +8,12 @@
         <button class="middle__button"type="button" (click)="addTask(newTaskInput.value, false)">Add</button>
         <ng-container class="middle__list" *ngIf="(fetchTasks$ | async) as tasks">
             <ol class="list__container">
-                <li class="list__container-element" *ngFor="let task of tasks">
+                <li class="list__container-element"  *ngFor="let task of tasks">
                     <app-task 
                         [task]="task"
                         (deleteChange)="delete($event)"
                         (updateChange)="update($event, newTaskInput.value); newTaskInput.value = ''"
+                        
                     ></app-task>
                 </li>
             </ol>

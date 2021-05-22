@@ -1,0 +1,30 @@
+.main__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.container__description {
+    justify-content: center;
+    /* text-decoration: line-through */
+    
+}
+
+.container__buttons > button {
+    margin:5px;
+    border-radius: 25px;
+}
+
+.container__buttons-delete:hover {
+
+    background-color: red;
+    color: white
+}
+
+.container__buttons-update:hover {
+    background-color: yellow;
+    
+}
+

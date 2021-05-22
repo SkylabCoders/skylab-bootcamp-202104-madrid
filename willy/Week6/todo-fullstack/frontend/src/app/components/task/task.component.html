@@ -1,3 +1,8 @@
-<p>{{task.description}}</p>
-<button type="button" (click)="deleteChange.emit(task._id)">delete</button>
-<button type="button" (click)="updateChange.emit(task._id)">update</button>
+<main class="main__container">
+    <p class="container__description" [class.tachado]="">{{task.description}}</p>
+    <div class="container__buttons">
+        <button class="container__buttons-delete" type="button" (click)="deleteChange.emit(task._id)">Delete</button>
+        <button class="container__buttons-update "type="button" (click)="updateChange.emit(task._id)">Update</button>
+      
+    </div>
+</main>

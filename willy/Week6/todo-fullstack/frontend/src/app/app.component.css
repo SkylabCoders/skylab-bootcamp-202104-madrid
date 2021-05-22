@@ -21,6 +21,7 @@
 }
 .middle__button {
     border-radius: 25px;
+    margin: 5px;
    
 }
 
@@ -44,9 +45,7 @@
 
 .list__container-element {
     border-top: 1px solid rgb(131, 131, 226);
-    border-bottom: 1px solid rgb(131, 131, 226);
-    
-    
+    border-bottom: 1px solid rgb(131, 131, 226);  
    
 }
 

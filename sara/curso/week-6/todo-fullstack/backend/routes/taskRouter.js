@@ -8,6 +8,9 @@ function taskRouter() {
     .route('/')
     .get(taskController.getAll);
 
+  taskRouters
+    .route('/:taskId');
+
   return taskRouters;
 }
 

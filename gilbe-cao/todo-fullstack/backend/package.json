@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "DEBUG=app,app:* nodemon index.js",
+    "dev:debug": "nodemon --inspect-brk index.js",
+    "test": "jest --watchAll --collect-coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.1",
     "cors": "^2.8.5",
     "debug": "^4.3.1",
     "dotenv": "^9.0.2",
-    "eslint": "^7.26.0",
     "express": "^4.17.1",
     "jest": "^26.6.3",
     "mongoose": "^5.12.10",
@@ -20,16 +28,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.2"
   },
-  "scripts": {
-    "test": "jest --watchAll --collect-coverage",
-    "dev": "set DEBUG=app,app:* && nodemon index.js",
-    "debug": "nodemon --inspect-brk index.js",
-    "start": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "jest": {
+  "jest":{
     "testEnvironment": "node"
   }
 }

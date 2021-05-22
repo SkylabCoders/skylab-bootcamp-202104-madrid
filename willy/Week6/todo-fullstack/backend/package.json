@@ -23,5 +23,8 @@
     "mongoose": "^5.12.10",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
+  },
+  "jest":{
+    "testEnvironment": "node"
   }
 }

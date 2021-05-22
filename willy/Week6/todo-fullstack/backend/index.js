@@ -19,6 +19,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
-app.use('/api/tasks', tasksRoutes);
 app.use(morgan('dev'));
+app.use('/api/tasks', taskRoutes);
+
 app.listen(port, () => debug(`Server is running in ${chalk.green(`http://localhost:${port}`)}`));

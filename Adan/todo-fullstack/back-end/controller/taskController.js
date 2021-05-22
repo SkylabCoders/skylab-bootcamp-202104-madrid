@@ -1,3 +1,4 @@
+const debug = require('debug')('app:taskController');
 const Task = require('../models/taskModel');
 
 function taskController() {
@@ -11,13 +12,54 @@ function taskController() {
       res.send(error);
     }
   }
-  async function create() {
-
+  async function create(req, res) {
+    try {
+      const newTask = await Task.create({
+        ...req.body
+      });
+      res.json(newTask);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+  async function getTaskById(req, res) {
+    try {
+      const { taskId } = req.params;
+      const task = await Task.getTaskById(taskId);
+      res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+  async function updateById(req, res) {
+    try {
+      const { taskId } = req.params;
+      const taskUpdated = req.body;
+      const task = await Task.findByIdAndUpdate(
+        taskId,
+        taskUpdated,
+        { new: true }
+      );
+      res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+  async function deleteById(req, res) {
+    const { taskId } = req.params;
+    await Task.findByIdAndDelete(taskId);
+    res.status(204);
+    res.json();
   }
   return {
     getAll,
-    create
-
+    create,
+    getTaskById,
+    updateById,
+    deleteById
   };
 }
-module.exports = taskController;
+module.exports = taskController();

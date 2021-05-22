@@ -1,7 +1,7 @@
 const { Router } = require('express');
-const traskController = require('../controllers/traskController');
+const traskController = require('../controllers/taskController');
 
-const taskController = require('../controllers/traskController');
+const taskController = require('../controllers/taskController');
 
 function taskRouter() {
   const taskRoutes = Router();

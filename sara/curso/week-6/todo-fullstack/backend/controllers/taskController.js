@@ -10,4 +10,14 @@ module.exports = {
       res.send(error);
     }
   },
+  findTaskById: async (req, res) => {
+    const { taskId } = req.params('taskId');
+    try {
+      const task = Task.findById(taskId);
+      res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  },
 };

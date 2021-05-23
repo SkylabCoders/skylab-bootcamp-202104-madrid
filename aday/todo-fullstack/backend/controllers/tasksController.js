@@ -23,7 +23,12 @@ function tasksController() {
 
   async function update(req, res) {
     try {
-      const task = await Task.findByIdAndUpdate(req.params.taskId, req.body, { new: true });
+      const task = await Task.findByIdAndUpdate(
+        req.params.taskId,
+        req.body,
+        { new: true, useFindAndModify: false },
+      );
+      res.json(task);
     } catch (error) {
       res.status(500);
       res.send(error);

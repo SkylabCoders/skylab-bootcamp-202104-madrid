@@ -2,5 +2,7 @@ const { model, Schema } = require('mongoose');
 
 const taskSchema = Schema({
   description: String,
-  isCompil
+  isCompleted: Boolean
 });
+
+module.exports = model('Task', taskSchema);

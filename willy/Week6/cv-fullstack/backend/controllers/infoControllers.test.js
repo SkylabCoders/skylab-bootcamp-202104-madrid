@@ -124,7 +124,7 @@ describe('controllerInfo', () => {
 
           await updateById(req, res);
         });
-        test('Then call Info.create', () => {
+        test('Then call Info.findByIdAndUpdate', () => {
           expect(Info.findByIdAndUpdate).toHaveBeenCalled();
         });
         test('Then call res.json', () => {
@@ -176,7 +176,7 @@ describe('controllerInfo', () => {
 
           await deleteById(req, res);
         });
-        test('Then call Info.create', () => {
+        test('Then call Info.findByIdAndDelete', () => {
           expect(Info.findByIdAndDelete).toHaveBeenCalled();
         });
         test('Then call res.status with 204', () => {

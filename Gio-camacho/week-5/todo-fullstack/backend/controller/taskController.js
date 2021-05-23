@@ -28,10 +28,11 @@ function taskController() {
         req.body,
         { new: true, useFindAndModify: false }
       );
+
       res.json(task);
     } catch (error) {
       res.status(500);
-      res.sen(error);
+      res.send(error);
     }
   }
 

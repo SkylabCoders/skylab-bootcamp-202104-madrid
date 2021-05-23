@@ -10,7 +10,7 @@ function taksRouter() {
     .post(taskController.create);
 
   taskRoutes
-    .route('/')
+    .route('/:taskId')
     .put(taskController.update);
 
   return taskRoutes;

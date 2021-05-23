@@ -21,6 +21,16 @@ function tasksController() {
     }
   }
 
+  async function getById(req, res) {
+    try {
+      const task = await Task.findById(req.params.taskId);
+      res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+
   async function update(req, res) {
     try {
       const task = await Task.findByIdAndUpdate(
@@ -51,6 +61,7 @@ function tasksController() {
     create,
     update,
     deleteTask,
+    getById,
   };
 }
 

@@ -7,9 +7,13 @@ import Task from 'src/app/models/task';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent  {
-  
+  isDone = false
   @Input() task!: Task;
   @Output() deleteChange = new EventEmitter();
   @Output() updateChange = new EventEmitter();
-  @Output() done = new EventEmitter();
+ 
+
+  done(id:string){
+    this.isDone = !this.isDone
+  }
 }

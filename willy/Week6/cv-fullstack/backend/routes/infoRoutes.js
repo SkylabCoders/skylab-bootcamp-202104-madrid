@@ -1,17 +1,20 @@
 const { Router } = require('express');
+const {
+  getAll, create, updateById, deleteById
+} = require('../controllers/infoControllers');
 
 function infoRouter() {
   const infoRoutes = Router();
 
   infoRoutes
     .route('/')
-    .get()
-    .post();
+    .get(getAll)
+    .post(create);
 
   infoRoutes
     .route('/:InfoId')
-    .put()
-    .delete();
+    .put(updateById)
+    .delete(deleteById);
 
   return infoRoutes; // fundamental que esta funcion retorne las tareas
 }

@@ -5,6 +5,7 @@ const debug = require('debug')('app');
 require('dotenv').config();
 const { connect } = require('mongoose');
 const morgan = require('morgan');
+const infoRoutes = require('./routes/infoRoutes');
 
 connect(
   process.env.DDBB_URL,
@@ -19,5 +20,6 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
+app.use('/api/info', infoRoutes);
 
 app.listen(port, () => debug(`Server is running in ${chalk.green(`http://localhost:${port}`)}`));

@@ -16,12 +16,11 @@ export class TaskService {
     return this.httpClient.get<Task[]>(environment.taskApiUrl)
   }
 
-  addTask(description: string, isCompleted:boolean): Observable<Task> {
+  addTask(description: string): Observable<Task> {
     return this.httpClient.post<Task>(
       environment.taskApiUrl, 
       {
-        description,
-        isCompleted
+        description
         
       }
     )

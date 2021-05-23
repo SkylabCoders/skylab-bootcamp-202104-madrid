@@ -26,8 +26,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.refresh$.next();
   }
 
-  addTask(value: string, status:boolean) {
-    this.taskService.addTask(value, status)
+  addTask(value: string) {
+    this.taskService.addTask(value)
     .pipe(
       tap(() => this.refresh$.next())
     )

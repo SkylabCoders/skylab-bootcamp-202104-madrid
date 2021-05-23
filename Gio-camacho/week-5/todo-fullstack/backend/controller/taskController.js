@@ -1,4 +1,3 @@
-const debug = require('debug');
 const Task = require('../models/taskModel');
 
 function taskController() {
@@ -15,7 +14,20 @@ function taskController() {
   async function create(req, res) {
     try {
       const task = await Task.create(req.body);
-      debug(req.body);
+      res.json(task);
+    } catch (error) {
+      res.status(500);
+      res.sen(error);
+    }
+  }
+
+  async function update(req, res) {
+    try {
+      const task = await Task.findByIdAndUpdate(
+        req.params.taskId,
+        req.body,
+        { new: true, useFindAndModify: false }
+      );
       res.json(task);
     } catch (error) {
       res.status(500);
@@ -25,7 +37,8 @@ function taskController() {
 
   return {
     create,
-    getAll
+    getAll,
+    update
   };
 }
 

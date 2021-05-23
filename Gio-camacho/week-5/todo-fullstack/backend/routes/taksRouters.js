@@ -9,6 +9,10 @@ function taksRouter() {
     .get(taskController.getAll)
     .post(taskController.create);
 
+  taskRoutes
+    .route('/')
+    .put(taskController.update);
+
   return taskRoutes;
 }
 

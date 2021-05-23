@@ -12,7 +12,7 @@ function infoRouter() {
     .post(create);
 
   infoRoutes
-    .route('/:InfoId')
+    .route('/:infoId')
     .put(updateById)
     .delete(deleteById);
 

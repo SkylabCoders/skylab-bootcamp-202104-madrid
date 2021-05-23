@@ -1,7 +1,7 @@
 const Info = require('../model/infoModel');
 
 function controllerInfo() {
-  async function getAll(res, req) {
+  async function getAll(req, res) {
     try {
       const info = await Info.find(req.query);
       res.json(info);
@@ -11,7 +11,7 @@ function controllerInfo() {
     }
   }
 
-  async function create(res, req) {
+  async function create(req, res) {
     try {
       const info = await Info.create(req.body);
       res.json(info);
@@ -21,7 +21,7 @@ function controllerInfo() {
     }
   }
 
-  async function updateById(res, req) {
+  async function updateById(req, res) {
     try {
       const info = await Info.findByIdAndUpdate(
         req.params.infoId,

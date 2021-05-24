@@ -2,10 +2,10 @@ export default interface Info {
 
     _id: string,
     name: string,
-    number: number,
+    surname: string,
+    phone: number,
+    address: string,
     email: string,
     linkedin: string,
-    img: string,
-    skill: string,
-    description: string,
-}
+    img: string
+};

@@ -16,7 +16,7 @@ import User from '../models/user';
 export class UserService {
   constructor(private httpClient: HttpClient) { }
 
-  fetchUsers(): Observable<any> {
-    return this.httpClient.get(environment.cvApiUrl);
+  fetchUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(environment.cvApiUrl);
   }
 }

@@ -1,9 +1,9 @@
-<p>HOLA MUNDO</p>
 <ng-container *ngIf="(fetchCV$ | async) as cvs">
-  <ul>
-    <li *ngFor="let cv of cvs">
-      {{cv.skills}}
-    </li>
-  </ul>
-
+  <div *ngFor="let cv of cvs">
+      <h1>{{cv.info.name.toUpperCase()}}</h1>
+      <h3>{{jobPosition.toUpperCase()}}</h3>
+      <p>{{cv.info.phoneNumber}}</p>
+      <p>{{cv.info.email}}</p>
+      <p>{{cv.skills}}</p>
+  </div>
 </ng-container>

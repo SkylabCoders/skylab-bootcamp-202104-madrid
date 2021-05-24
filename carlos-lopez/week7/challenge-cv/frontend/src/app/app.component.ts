@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
 
   fetchCV$!: Observable<any>;
 
+  jobPosition = 'Full Stack Developer'
+
   constructor(public userService: UserService) {}
 
   ngOnInit() {

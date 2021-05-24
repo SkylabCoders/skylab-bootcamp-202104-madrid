@@ -10,7 +10,6 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
 );
-const { Server } = require('ws');
 const cvRouter = require('./routes/cvRouter');
 
 const app = express();

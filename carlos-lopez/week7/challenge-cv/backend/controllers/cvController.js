@@ -34,9 +34,14 @@ function controller() {
 
   const updateById = async (req, res) => {
     const { cvId } = req.params;
+    const dataToUpdate = req.body;
     try {
-      const user = await Cv.findByIdAndUpdate(cvId);
-      res.json(user);
+      const userUpdated = await Cv.findByIdAndUpdate(
+        cvId,
+        dataToUpdate,
+        { new: true, useFindAndModify: false },
+      );
+      res.json(userUpdated);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -46,7 +51,7 @@ function controller() {
   const deleteById = async (req, res) => {
     const { cvId } = req.params;
     try {
-      const user = await Cv.findByIdAndDelete(cvId);
+      await Cv.findByIdAndDelete(cvId);
       res.status(204);
       res.json();
     } catch (error) {

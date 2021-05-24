@@ -4,21 +4,21 @@ const {
   create,
   updateById,
   deleteById
-} = require('../controller/controllerPersonalInfo');
+} = require('../controller/contactMe');
 
-function controllerPersonalInfo() {
-  const personalInfoRoutes = Router();
+function contactMeRouter() {
+  const contactMeRoutes = Router();
 
-  personalInfoRoutes
+  contactMeRoutes
     .route('/')
     .get(getAll)
     .post(create);
 
-  personalInfoRoutes
-    .route('/:infoId')
+  contactMeRoutes
+    .route('/:contactId')
     .put(updateById)
     .delete(deleteById);
-  return personalInfoRoutes;
+  return contactMeRoutes;
 }
 
-module.exports = controllerPersonalInfo();
+module.exports = contactMeRouter();

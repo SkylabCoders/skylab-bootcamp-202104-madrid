@@ -10,6 +10,7 @@ function cvRouter() {
   cvRoutes
     .route('/:cvId')
     .get(cvController.getCvById);
+    .put(cvController.updateById);
   return cvRoutes;
 }
 module.exports = cvRouter();

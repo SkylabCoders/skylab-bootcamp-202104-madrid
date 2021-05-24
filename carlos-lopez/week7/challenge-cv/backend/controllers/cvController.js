@@ -31,10 +31,22 @@ function controller() {
       res.send(error);
     }
   };
+
+  const updateById = async (req, res) => {
+    const { cvId } = req.params;
+    try {
+      const user = await Cv.findByIdAndUpdate(cvId);
+      res.json(user);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
   return {
     getAll,
     createInfo,
     getCvById,
+    updateById,
   };
 }
 

@@ -38,7 +38,7 @@ function cvController() {
       const cv = await Cv.findByIdAndUpdate(
         parameter,
         dataToUpdate,
-        { new: true }
+        { new: true, useFindAndModify: false }
       );
       res.json(cv);
     } catch (error) {

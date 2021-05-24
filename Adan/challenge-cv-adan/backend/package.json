@@ -19,7 +19,10 @@
     "eslint-plugin-import": "^2.23.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "dev": "set DEBUG=app,app:* nodemon index.js",
+    "dev:debug": "nodemon --inspect-brk index.js",
+    "test": "jest --watchAll --collect-coverage"
   },
   "keywords": [],
   "author": "",

@@ -8,7 +8,7 @@ import { HttpService } from './http.service';
 export class MainService {
 
   currentUser = this.srvLogin.currentUser;
-  url = "https://rickandmortyapi.com/api/character?page=1"
+  url = "https://rickandmortyapi.com/api/character?page=1" 
   amIInList = false;
   detailsCharacter:any
   favorites:Array<object> = []

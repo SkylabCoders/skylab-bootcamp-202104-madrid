@@ -1,5 +1,14 @@
 export default interface Cv {
     _id: string;
-    description: string;
-    isCompleted: boolean
+    skills: String,
+    info: {
+      name: String,
+      phoneNumber: Number,
+      email: String
+    },
+    knowledge: {
+      language: String,
+      academy: String,
+      year: Number
+    }
 }

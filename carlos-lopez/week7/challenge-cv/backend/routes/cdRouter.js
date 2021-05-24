@@ -9,7 +9,7 @@ function cvRouter() {
     .post(cvController.createInfo);
   cvRoutes
     .route('/:cvId')
-    .get(cvController.getCvById);
+    .get(cvController.getCvById)
     .put(cvController.updateById);
   return cvRoutes;
 }

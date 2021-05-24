@@ -42,11 +42,24 @@ function controller() {
       res.send(error);
     }
   };
+
+  const deleteById = async (req, res) => {
+    const { cvId } = req.params;
+    try {
+      const user = await Cv.findByIdAndDelete(cvId);
+      res.status(204);
+      res.json();
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
   return {
     getAll,
     createInfo,
     getCvById,
     updateById,
+    deleteById,
   };
 }
 

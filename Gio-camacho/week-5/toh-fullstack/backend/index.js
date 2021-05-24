@@ -2,6 +2,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const debug = require('debug')('server');
+const chalk = require('chalk');
+const morgan = require('morgan');
 
 require('dotenv').config();
 
@@ -12,13 +15,18 @@ const server = express();
 
 server.use(cors());
 
+server.use(morgan('dev'));
+
 server.use(express.json());
 
 const heroRouter = require('./routes/heroRouter');
-const marvelRouter = require('./routes/marvelRouter');
+// const marvelRouter = require('./routes/marvelRouter');
 
 server.use('/api/heroes', heroRouter);
-server.use('/api/marvel', marvelRouter);
+// server.use('/api/marvel', marvelRouter);
 
 const port = 4002;
-server.listen(port, () => console.log(`Server is running on port http://localhost:${port}`));
+server.listen(port,
+  () => debug(
+    `${chalk.yellow('Server')} is ${chalk.blue('running cool')} on port http://localhost:${port}`
+  ));

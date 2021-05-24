@@ -1,1 +1,9 @@
 <p>HOLA MUNDO</p>
+<ng-container *ngIf="(fetchCV$ | async) as cvs">
+  <ul>
+    <li *ngFor="let cv of cvs">
+      {{cv.skills}}
+    </li>
+  </ul>
+
+</ng-container>

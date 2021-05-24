@@ -4,8 +4,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 import { Observable, Subject } from 'rxjs';
-import { OnInit, Component } from '@angular/core';
-import { switchMap, tap } from 'rxjs/operators';
+import { OnInit, Component, AfterViewInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -26,5 +26,9 @@ export class AppComponent implements OnInit {
       .pipe(
         switchMap(() => this.userService.fetchUsers()),
       );
+  }
+
+  ngAfterViewInit() {
+    this.refresh$.next();
   }
 }

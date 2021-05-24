@@ -60,7 +60,7 @@ describe('taskController', () => {
           expect(res.status).toHaveBeenCalledWith(500);
         });
 
-        test('Then call \'find error\'', () => {
+        test('Then call \'res.send with find error\'', () => {
           expect(res.send).toHaveBeenCalledWith('find error');
         });
       });
@@ -89,15 +89,15 @@ describe('taskController', () => {
           expect(res.json).toHaveBeenCalled();
         });
 
-        test('Then call \'taskModel.find\'', () => {
-          expect(taskModel.find).toHaveBeenCalled();
+        test('Then call \'taskModel.create\'', () => {
+          expect(taskModel.create).toHaveBeenCalled();
         });
       });
 
       describe('And there is errors', () => {
         beforeEach(async () => {
           req = {
-            query: null
+            body: null
           };
 
           res = {
@@ -115,7 +115,7 @@ describe('taskController', () => {
           expect(res.status).toHaveBeenCalledWith(500);
         });
 
-        test('Then call \'find error\'', () => {
+        test('Then call \'res.send with create error\'', () => {
           expect(res.send).toHaveBeenCalledWith('create error');
         });
       });
@@ -163,7 +163,7 @@ describe('taskController', () => {
             send: jest.fn()
           };
 
-          taskModel.findByIdAndUpdate.mockRejectedValueOnce('findByIdAndUpdate error');
+          taskModel.findByIdAndUpdate.mockRejectedValueOnce('update error');
 
           await taskController.update(req, res);
         });
@@ -172,8 +172,8 @@ describe('taskController', () => {
           expect(res.status).toHaveBeenCalledWith(500);
         });
 
-        test('Then call \'findByIdAndUpdate error\'', () => {
-          expect(res.send).toHaveBeenCalledWith('findByIdAndUpdate error');
+        test('Then call \'update error\'', () => {
+          expect(res.send).toHaveBeenCalledWith('update error');
         });
       });
     });
@@ -202,7 +202,11 @@ describe('taskController', () => {
           expect(res.send).toHaveBeenCalled();
         });
 
-        test('Then call \'taskModel.findByIdAndDelete\'', () => {
+        test('Then call res.status once', () => {
+          expect(res.status).toHaveBeenCalledWith(204);
+        });
+
+        test('Then call \'taskModel.deleteByid\'', () => {
           expect(taskModel.findByIdAndDelete).toHaveBeenCalled();
         });
       });

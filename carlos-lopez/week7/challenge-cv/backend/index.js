@@ -10,4 +10,14 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
 );
+const { Server } = require('ws');
 const cvRouter = require('./routes/cvRouter');
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/cv', cvRouter);
+
+const port = 4000;
+app.listen(port, () => debug(`Server is runnning in http://localhost:${port}`));

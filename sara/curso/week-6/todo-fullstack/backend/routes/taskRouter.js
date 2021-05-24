@@ -6,7 +6,14 @@ function taskRouter() {
 
   taskRouters
     .route('/')
-    .get(taskController.iAmWorking);
+    .get(taskController.getAll)
+    .post(taskController.createTask);
+
+  taskRouters
+    .route('/:taskId')
+    .get(taskController.findTaskById)
+    .put(taskController.updateTask)
+    .delete(taskController.deleteTask);
 
   return taskRouters;
 }

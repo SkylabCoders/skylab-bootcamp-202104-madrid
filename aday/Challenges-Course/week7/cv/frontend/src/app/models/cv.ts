@@ -1,8 +1,8 @@
 export interface Cv {
-  dni: Number,
+  dni: number,
   birthdate: Date,
-  name: String,
-  surname: String,
-  phone: Number,
-  linkedin: String,
+  name: string,
+  surname: string,
+  phone: number,
+  linkedin: string,
 }

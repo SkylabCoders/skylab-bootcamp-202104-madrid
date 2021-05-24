@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  cvApiUrl: 'http://localhost:4000/api/cv',
 };

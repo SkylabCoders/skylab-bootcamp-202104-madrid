@@ -1,0 +1,9 @@
+<p>CV</p>
+
+<ng-container *ngIf="(fetchCv$ | async) as cvs">
+    <ul>
+        <li *ngFor="let user of cvs">
+            {{cvs.userInfo.name}}
+        </li>
+    </ul>
+</ng-container>

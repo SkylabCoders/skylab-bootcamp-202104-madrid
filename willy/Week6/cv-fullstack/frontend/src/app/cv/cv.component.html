@@ -1,11 +1,16 @@
-<p>cv works!</p>
-<div *ngFor="let data of personalData">
-    {{data.name}}
-    {{data.surname}}
-    {{data.address}}
-    {{data.phone}}
-    {{data.linkedin}}
-    {{data.email}}
-   <img src="{{data.img}}" alt=""> 
-</div>
+<main class="main__container">
+    <h1 class="container__title">Curriculum Vitae</h1>
+    <div class="container__data" *ngFor="let data of personalData">
+        <!-- <input type="text" placeholder="write your new data here" #newData> -->
+        <img class="data__img" src="{{data.img}}" alt="">
+        <p>Name: {{data.name}}</p>
+        <p>Surname: {{data.surname}}</p>
+        <p>Phone: {{data.phone}}</p>
+        <p>Address: {{data.address}} </p>
+        <p>Email: {{data.email}} </p>
+        <!-- <p>linkedin:{{data.linkedin}} </p> -->
+        <!-- <button (click)="update(data.name, newData.value)">Update</button>
+        <button (click)="delete(data._id)">Delete</button> -->
+    </div>
+</main>
 

@@ -3,7 +3,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import Cv from ''
+import Cv from '../models/cv'
 import { environment } from '../../environments/environment'
 
 @Injectable({
@@ -14,5 +14,14 @@ export class CvService {
 
   fetchCv (): Observable<Cv[]> {
     return this.httpClient.get<Cv[]>(environment.apiUrl)
+  }
+
+  postCv (value: string): Observable<Cv> {
+    return this.httpClient.post<Cv>(
+      environment.apiUrl,
+      {
+        value
+      }
+    )
   }
 }

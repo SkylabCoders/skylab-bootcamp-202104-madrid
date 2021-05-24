@@ -7,7 +7,7 @@ function taskController() {
       res.json(task);
     } catch (error) {
       res.status(500);
-      res.sen(error);
+      res.send(error);
     }
   }
 

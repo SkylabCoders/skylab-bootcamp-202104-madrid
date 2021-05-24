@@ -1,10 +1,10 @@
 const Skills = require('../models/skills');
 
-function controllerAboutMe() {
+function controllerSkills() {
   async function getAll(req, res) {
     try {
-      const about = await Skills.find(req.query);
-      res.json(about);
+      const skills = await Skills.find(req.query);
+      res.json(skills);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -13,8 +13,8 @@ function controllerAboutMe() {
 
   async function create(req, res) {
     try {
-      const about = await Skills.create(req.body);
-      res.json(about);
+      const skills = await Skills.create(req.body);
+      res.json(skills);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -23,13 +23,13 @@ function controllerAboutMe() {
 
   async function updateById(req, res) {
     try {
-      const about = await Skills.findByIdAndUpdate(
+      const skills = await Skills.findByIdAndUpdate(
         req.params.skillsId,
         req.body,
         { new: true, useFindAndModify: false }
       );
 
-      res.json(about);
+      res.json(skills);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -38,11 +38,11 @@ function controllerAboutMe() {
 
   async function deleteById(req, res) {
     try {
-      const about = await Skills.findByIdAndDelete(
+      const skills = await Skills.findByIdAndDelete(
         req.params.skillsId
       );
 
-      res.send(about);
+      res.send(skills);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -57,4 +57,4 @@ function controllerAboutMe() {
   };
 }
 
-module.exports = controllerAboutMe();
+module.exports = controllerSkills();

@@ -7,7 +7,7 @@ const {
   deleteById
 } = require('../controller/controllerSkills');
 
-function controllerPersonalInfo() {
+function skillsRouters() {
   const skillsRoutes = Router();
 
   skillsRoutes
@@ -23,4 +23,4 @@ function controllerPersonalInfo() {
   return skillsRoutes;
 }
 
-module.exports = controllerPersonalInfo();
+module.exports = skillsRouters();

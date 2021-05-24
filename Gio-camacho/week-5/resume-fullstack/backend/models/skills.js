@@ -1,6 +1,7 @@
 const { model, Schema } = require('mongoose');
 
 const skillsSchema = Schema({
+  title: String,
   html: String,
   css: String,
   javascript: String,

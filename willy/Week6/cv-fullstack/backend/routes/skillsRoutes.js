@@ -12,7 +12,7 @@ function skillRouter() {
     .post(create);
 
   skillRoutes
-    .route('/:expId')
+    .route('/:skillId')
     .put(updateById)
     .delete(deleteById);
 

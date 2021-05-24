@@ -3,8 +3,8 @@ const Skills = require('../model/skills');
 function controllerSkills() {
   async function getAll(req, res) {
     try {
-      const info = await Skills.find(req.query);
-      res.json(info);
+      const skill = await Skills.find(req.query);
+      res.json(skill);
     } catch (error) {
       res.status(500);
       res.send(error);

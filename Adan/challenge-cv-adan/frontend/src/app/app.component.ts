@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { CvService } from './service/cv.service';
+import { AfterViewInit, Component, OnInit } from '@angular/core'
+import { Observable, Subject } from 'rxjs'
+import { CvService } from './service/cv.service'
 
 @Component({
   selector: 'app-root',
@@ -14,13 +14,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   fetchCv$!: Observable<any>;
 
   // eslint-disable-next-line no-useless-constructor
-  constructor(public cvService: CvService) {}
+  constructor (public cvService: CvService) {}
 
-  ngOnInit() {
+  ngOnInit () {
 
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit () {
 
   }
 }

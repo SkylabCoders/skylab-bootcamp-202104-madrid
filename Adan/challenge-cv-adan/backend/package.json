@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "set DEBUG=app,app:* nodemon index.js",
+    "dev": "set DEBUG=app,app:* && nodemon index.js",
     "dev:debug": "nodemon --inspect-brk index.js",
     "test": "jest --watchAll --collect-coverage"
   },

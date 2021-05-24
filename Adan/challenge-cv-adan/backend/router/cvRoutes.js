@@ -1,10 +1,14 @@
 const { Router } = require('express');
 
-const taskController = require('../controllers/cvController');
+const cvController = require('../controllers/cvController');
 
-function taskRouter() {
-  const taskRoutes = Router();
+function cvRouter() {
+  const cvRoutes = Router();
 
-  taskRoutes
-    .route('/');
+  cvRoutes
+    .route('/')
+    .get(cvController.getAll);
+  return cvRoutes;
 }
+
+module.exports = cvRouter();

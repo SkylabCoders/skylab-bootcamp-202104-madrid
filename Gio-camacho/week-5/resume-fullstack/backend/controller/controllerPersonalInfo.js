@@ -1,10 +1,10 @@
-const PersonalInfo = require('../models/personalInfo');
+const ContactMe = require('../models/contactMe');
 
-function controllerPersonalInfo() {
+function contactMe() {
   async function getAll(req, res) {
     try {
-      const info = await PersonalInfo.find(req.query);
-      res.json(info);
+      const contact = await ContactMe.find(req.query);
+      res.json(contact);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -13,8 +13,8 @@ function controllerPersonalInfo() {
 
   async function create(req, res) {
     try {
-      const info = await PersonalInfo.create(req.body);
-      res.json(info);
+      const contact = await ContactMe.create(req.body);
+      res.json(contact);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -23,13 +23,13 @@ function controllerPersonalInfo() {
 
   async function updateById(req, res) {
     try {
-      const info = await PersonalInfo.findByIdAndUpdate(
+      const contact = await ContactMe.findByIdAndUpdate(
         req.params.infoId,
         req.body,
         { new: true, useFindAndModify: false }
       );
 
-      res.json(info);
+      res.json(contact);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -38,7 +38,7 @@ function controllerPersonalInfo() {
 
   async function deleteById(req, res) {
     try {
-      await PersonalInfo.findByIdAndDelete(req.params.infoId);
+      await ContactMe.findByIdAndDelete(req.params.infoId);
       res.status(204);
       res.send();
     } catch (error) {
@@ -55,4 +55,4 @@ function controllerPersonalInfo() {
   };
 }
 
-module.exports = controllerPersonalInfo();
+module.exports = contactMe();

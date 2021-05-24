@@ -24,7 +24,7 @@ function contactMe() {
   async function updateById(req, res) {
     try {
       const contact = await ContactMe.findByIdAndUpdate(
-        req.params.infoId,
+        req.params.contactId,
         req.body,
         { new: true, useFindAndModify: false }
       );
@@ -38,7 +38,7 @@ function contactMe() {
 
   async function deleteById(req, res) {
     try {
-      await ContactMe.findByIdAndDelete(req.params.infoId);
+      await ContactMe.findByIdAndDelete(req.params.contactId);
       res.status(204);
       res.send();
     } catch (error) {

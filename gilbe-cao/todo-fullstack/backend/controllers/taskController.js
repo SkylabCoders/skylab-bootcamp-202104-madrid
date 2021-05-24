@@ -26,7 +26,7 @@ function taskController() {
       const task = await Task.findByIdAndUpdate(
         req.params.taskId,
         req.body,
-        { new: true, useFindAndModify: false },
+        { new: true, useFindAndModify: false }
       );
 
       res.json(task);
@@ -51,7 +51,7 @@ function taskController() {
     getAll,
     create,
     update,
-    deleteById,
+    deleteById
   };
 }
 

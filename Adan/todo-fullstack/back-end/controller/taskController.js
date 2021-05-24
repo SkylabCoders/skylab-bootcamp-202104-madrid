@@ -40,7 +40,7 @@ function taskController() {
       const task = await Task.findByIdAndUpdate(
         taskId,
         taskUpdated,
-        { new: true }
+        { new: true, useFindAndModify: false }
       );
       res.json(task);
     } catch (error) {

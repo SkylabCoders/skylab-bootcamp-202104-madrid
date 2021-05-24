@@ -29,7 +29,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.taskService.addTask(value)
     .pipe(
       tap(() => this.refresh$.next())
-    ).subscribe()
+    )
+    .subscribe()
   }
  
   delete(id: string) {

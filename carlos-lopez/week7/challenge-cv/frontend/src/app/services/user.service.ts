@@ -19,4 +19,13 @@ export class UserService {
   fetchUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(environment.cvApiUrl);
   }
+
+  addExperience(name:string): Observable<User> {
+    return this.httpClient.post<User>(
+      environment.cvApiUrl,
+      {
+        name,
+      },
+    );
+  }
 }

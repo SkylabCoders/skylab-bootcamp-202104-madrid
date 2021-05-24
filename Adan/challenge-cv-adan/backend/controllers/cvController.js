@@ -11,8 +11,19 @@ function cvController() {
       res.send(error);
     }
   }
+
+  async function create(req, res) {
+    try {
+      const cv = await Cv.create(req.body);
+      res.json(cv);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
   return {
-    getAll
+    getAll,
+    create
   };
 }
 

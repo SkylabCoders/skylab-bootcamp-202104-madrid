@@ -121,4 +121,61 @@ describe('taskController', () => {
       });
     });
   });
+
+  describe('Given a \'update\' function', () => {
+    describe('When is invoked', () => {
+      let req;
+      let res;
+
+      describe('And there is no errors', () => {
+        beforeEach(async () => {
+          req = {
+            body: null,
+            params: { taskId: null }
+          };
+
+          res = {
+            json: jest.fn()
+          };
+
+          await taskController.update(req, res);
+        });
+
+        test('Then call res.json once', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+
+        test('Then call \'taskModel.findByIdAndUpdate\'', () => {
+          expect(taskModel.findByIdAndUpdate).toHaveBeenCalled();
+        });
+      });
+
+      describe('And there is errors', () => {
+        beforeEach(async () => {
+          req = {
+            body: null,
+            params: { taskId: null }
+          };
+
+          res = {
+            json: jest.fn(),
+            status: jest.fn(),
+            send: jest.fn()
+          };
+
+          taskModel.findByIdAndUpdate.mockRejectedValueOnce('findByIdAndUpdate error');
+
+          await taskController.update(req, res);
+        });
+
+        test('Then call res.status with 500', () => {
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+
+        test('Then call \'findByIdAndUpdate error\'', () => {
+          expect(res.send).toHaveBeenCalledWith('findByIdAndUpdate error');
+        });
+      });
+    });
+  });
 });

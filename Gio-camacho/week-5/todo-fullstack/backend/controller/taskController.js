@@ -40,7 +40,7 @@ function taskController() {
     try {
       await Task.findByIdAndDelete(req.params.taskId);
       res.status(204);
-      res.json();
+      res.send();
     } catch (error) {
       res.status(500);
       res.send(error);

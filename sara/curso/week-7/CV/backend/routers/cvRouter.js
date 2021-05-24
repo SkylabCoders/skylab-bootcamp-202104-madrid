@@ -6,13 +6,13 @@ function cvRouter() {
 
   cvRouters
     .route('/')
-    .get(cvController.getAll)
+    // .get(cvController.getAll)
     .post(cvController.createUserCV);
 
   cvRouters
-    .route('/:name')
-    .get(cvController.getCV)
-    .put(cvController.updateCV);
+    .route('/:userId')
+    .get(cvController.getUserData)
+    .put(cvController.updateUserCV);
 
   return cvRouters;
 }

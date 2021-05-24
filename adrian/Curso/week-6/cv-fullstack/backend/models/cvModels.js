@@ -6,7 +6,7 @@ const userSchema = Schema({
   education: Array,
   userInfo: {
     name: String,
-    address: String,
+    mail: String,
     phone: Number
   }
 });

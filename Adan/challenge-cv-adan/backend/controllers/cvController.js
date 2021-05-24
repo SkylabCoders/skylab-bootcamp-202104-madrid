@@ -21,9 +21,37 @@ function cvController() {
       res.send(error);
     }
   }
+  async function updateById(req, res) {
+    try {
+      const parameter = req.params.id;
+      const dataToUpdate = req.body;
+      const cv = await Cv.findByIdAndUpdate(
+        parameter,
+        dataToUpdate,
+        { new: true }
+      );
+      res.json(cv);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+  async function deleteById(req, res) {
+    try {
+      await Cv.findByIdAndDelete(req.params.id);
+      res.status(204);
+      res.send();
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+
   return {
     getAll,
-    create
+    create,
+    deleteById,
+    updateById
   };
 }
 

@@ -11,8 +11,9 @@ function cvRouter() {
     .post(cvController.create);
 
   cvRoutes
-    .route('/cvId')
-    .post(cvController.create);
+    .route('/:id')
+    .delete(cvController.deleteById);
+
   return cvRoutes;
 }
 

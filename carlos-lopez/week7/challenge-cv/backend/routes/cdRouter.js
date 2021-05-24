@@ -7,6 +7,9 @@ function cvRouter() {
     .route('/')
     .get(cvController.getAll)
     .post(cvController.createInfo);
+  cvRoutes
+    .route('/:cvId')
+    .get(cvController.getCvById);
   return cvRoutes;
 }
 module.exports = cvRouter();

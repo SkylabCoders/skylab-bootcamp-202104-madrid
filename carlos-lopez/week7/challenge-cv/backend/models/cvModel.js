@@ -1,6 +1,4 @@
 const { model, Schema } = require('mongoose');
-// const Info = require('./infoModel');
-// const Knowledge = require('./knowledgeModel');
 
 const cvSchema = Schema({
   skills: String,
@@ -9,11 +7,11 @@ const cvSchema = Schema({
     phoneNumber: Number,
     email: String,
   },
-  knowledge: {
+  knowledge: [{
     language: String,
     academy: String,
     year: Number,
-  },
+  }],
 });
 
 module.exports = model('Cv', cvSchema);

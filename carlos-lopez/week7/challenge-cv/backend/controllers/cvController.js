@@ -20,9 +20,21 @@ function controller() {
     });
     res.json(newInfo);
   };
+
+  const getCvById = async (req, res) => {
+    const { cvId } = req.params;
+    try {
+      const user = await Cv.findById(cvId);
+      res.json(user);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  };
   return {
     getAll,
     createInfo,
+    getCvById,
   };
 }
 

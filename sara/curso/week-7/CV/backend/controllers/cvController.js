@@ -1,6 +1,17 @@
 const User = require('../models/cvModel');
 
 module.exports = {
+
+  getAll: async (req, res) => {
+    try {
+      const user = await User.find(req.query);
+      res.json(user);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  },
+
   getUserData: async (req, res) => {
     const { userId } = req.params;
     try {

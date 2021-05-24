@@ -6,7 +6,7 @@ function cvRouter() {
 
   cvRouters
     .route('/')
-    // .get(cvController.getAll)
+    .get(cvController.getAll)
     .post(cvController.createUserCV);
 
   cvRouters

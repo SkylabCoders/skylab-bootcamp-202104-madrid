@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const personalInfo = require('./routes/personalInfoRouters');
+const contactMe = require('./routes/contactMeRouters');
 const aboutMe = require('./routes/aboutRouters');
 const skills = require('./routes/skillsRouters');
 const experience = require('./routes/experiencesRouters');
@@ -18,7 +18,7 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(morgan('dev'));
 
-app.use('/api/info', personalInfo);
+app.use('/api/contact', contactMe);
 app.use('/api/about', aboutMe);
 app.use('/api/skills', skills);
 app.use('/api/experiences', experience);

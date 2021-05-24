@@ -10,3 +10,4 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
 );
+const cvRouter = require('./routes/cvRouter');

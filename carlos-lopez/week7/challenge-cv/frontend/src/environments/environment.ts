@@ -5,7 +5,7 @@
 // eslint-disable-next-line import/prefer-default-export
 export const environment = {
   production: false,
-  taskApiUrl: 'http://localhost:4000/api/cv',
+  cvApiUrl: 'http://localhost:4000/api/cv',
 };
 /*
  * For easier debugging in development mode, you can import the following file

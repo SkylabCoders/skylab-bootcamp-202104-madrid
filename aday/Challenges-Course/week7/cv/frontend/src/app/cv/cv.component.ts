@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { CvService } from '../services/cv.service';
+import CvService from '../services/cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -8,14 +8,13 @@ import { CvService } from '../services/cv.service';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-cvData:any;
+  // cvData:any;
 
-constructor(private cvService: CvService) { }
+  constructor(private cvService: CvService) { }
 
-ngOnInit(): void {
-  const obs$ = this.cvService.getAllCvs(environment.urlApi).subscribe((res:any) => {
-    console.log(res);
-    this.cvData = res;
-  });
-}
+  ngOnInit(): void {
+    const obs$ = this.cvService.getAllCvs(environment.urlApi).subscribe((res:any) => {
+      console.log(res);
+    });
+  }
 }

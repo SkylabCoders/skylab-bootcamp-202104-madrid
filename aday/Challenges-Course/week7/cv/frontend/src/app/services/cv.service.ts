@@ -6,9 +6,8 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-// eslint-disable-next-line import/prefer-default-export
-export class CvService {
-  // eslint-disable-next-line no-useless-constructor
+
+export default class CvService {
   constructor(private httpClient: HttpClient) { }
 
   getAllCvs() {

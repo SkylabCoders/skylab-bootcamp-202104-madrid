@@ -1,9 +1,22 @@
 <ng-container *ngIf="(fetchCV$ | async) as cvs">
-  <div *ngFor="let cv of cvs">
-      <h1>{{cv.info.name.toUpperCase()}}</h1>
-      <h3>{{jobPosition.toUpperCase()}}</h3>
-      <p>{{cv.info.phoneNumber}}</p>
-      <p>{{cv.info.email}}</p>
-      <p>{{cv.skills}}</p>
-  </div>
-</ng-container>
+    <div *ngFor="let cv of cvs">
+        <h1>{{cv.info.name.toUpperCase()}}</h1>
+        <h3>{{jobPosition.toUpperCase()}}</h3>
+        <p>{{cv.info.phoneNumber}}</p>
+        <p>{{cv.info.email}}</p>
+        <h3>EXPERIENCE</h3>
+        <input type="text" #newExperienceInput />
+        <button type="button" (click)="addExperience(newExperienceInput.value)">add</button>
+        <div *ngFor="let knowledge of cv.knowledge">
+            <p>{{knowledge.year}}</p>
+            <p>{{knowledge.language}}</p>
+            <p>{{knowledge.academy}}</p>
+            
+            <app-funcionality
+            [cv]="cv"
+            (deleteChange)="delete($event)"
+            (updateChange)="update($event, newExperienceInput.value); newExperienceInput.value = ''"
+            ></app-funcionality>
+        </div>
+    </div>
+</ng-container> 

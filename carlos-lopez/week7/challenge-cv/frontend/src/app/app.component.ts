@@ -5,7 +5,7 @@
 /* eslint-disable import/no-unresolved */
 import { Observable, Subject } from 'rxjs';
 import { OnInit, Component, AfterViewInit } from '@angular/core';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -32,5 +32,32 @@ export class AppComponent implements OnInit {
 
   ngAfterViewInit() {
     this.refresh$.next();
+  }
+
+  addExperience(value:string) {
+    this.userService.addExperience(value)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
+  delete(id: string) {
+    this.userService.deleteUser(id)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
+  update(id: string, skills: string) {
+    if (!skills.trim()) {
+      return;
+    }
+    this.userService.updateExperience(id, skills)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
   }
 }

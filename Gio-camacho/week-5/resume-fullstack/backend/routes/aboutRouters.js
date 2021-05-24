@@ -5,7 +5,7 @@ const {
   create,
   updateById,
   deleteById
-} = require('../controller/controllerAboutMe');
+} = require('../controller/aboutMe');
 
 function controllerPersonalInfo() {
   const aboutRoutes = Router();

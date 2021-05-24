@@ -21,6 +21,16 @@ function cvController() {
       res.send(error);
     }
   }
+  async function getById(req, res) {
+    try {
+      const cv = await Cv.findById(req.params.id);
+      res.json(cv);
+    } catch (error) {
+      res.status(500);
+      res.send(error);
+    }
+  }
+
   async function updateById(req, res) {
     try {
       const parameter = req.params.id;
@@ -51,7 +61,8 @@ function cvController() {
     getAll,
     create,
     deleteById,
-    updateById
+    updateById,
+    getById
   };
 }
 

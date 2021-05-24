@@ -12,7 +12,9 @@ function cvRouter() {
 
   cvRoutes
     .route('/:id')
-    .delete(cvController.deleteById);
+    .delete(cvController.deleteById)
+    .put(cvController.updateById)
+    .get(cvController.getById);
 
   return cvRoutes;
 }

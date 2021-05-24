@@ -7,7 +7,8 @@ function cvRouter() {
 
   cvRoutes
     .route('/')
-    .get(cvController.getAll);
+    .get(cvController.getAll)
+    .post(cvController.create);
 
   cvRoutes
     .route('/cvId')

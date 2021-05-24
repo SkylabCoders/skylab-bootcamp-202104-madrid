@@ -1,13 +1,19 @@
+/* eslint-disable no-empty-function */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable import/prefer-default-export */
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import Task from '../models/task';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
+  // eslint-disable-next-line no-useless-constructor
   constructor(private httpClient: HttpClient) { }
 
   fetchTasks(): Observable<Task[]> {

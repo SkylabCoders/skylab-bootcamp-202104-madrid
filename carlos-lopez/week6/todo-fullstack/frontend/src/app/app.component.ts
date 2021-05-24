@@ -1,3 +1,7 @@
+/* eslint-disable no-empty-function */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable import/no-extraneous-dependencies */
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { switchMap, tap } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
@@ -14,6 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   fetchTasks$!: Observable<any>;
 
+  // eslint-disable-next-line no-unused-vars
   constructor(public taskService: TaskService) {}
 
   ngOnInit() {

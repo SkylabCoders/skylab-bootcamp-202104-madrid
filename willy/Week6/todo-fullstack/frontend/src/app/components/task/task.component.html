@@ -1,0 +1,9 @@
+<main class="main__container">
+    <p class="container__description" *ngIf="!isDone">{{task.description}}</p>
+    <p class="container__description--strikethrough" *ngIf="isDone">{{task.description}}</p>
+    <div class="container__buttons">
+        <button class="container__buttons-delete" type="button" (click)="deleteChange.emit(task._id)">Delete</button>
+        <button class="container__buttons-update" type="button" (click)="updateChange.emit(task._id)">Update</button>
+        <button class="container__buttons-done" type="button" (click)="done(task._id)">Done</button>
+    </div>
+</main>

@@ -1,13 +1,11 @@
 const { model, Schema } = require('mongoose');
 
-const personalInfoSchema = Schema({
-  name: String,
-  surname: String,
-  phone: String,
+const contactMeSchema = Schema({
+  title: String,
   address: String,
-  email: String,
-  linkedIn: String,
-  img: String
+  phone: String,
+  mobile: String,
+  email: String
 });
 
-module.exports = model('PersonalInfo', personalInfoSchema);
+module.exports = model('ContactMe', contactMeSchema);

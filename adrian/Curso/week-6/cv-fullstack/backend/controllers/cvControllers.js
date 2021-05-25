@@ -1,14 +1,13 @@
-const debug = require('debug')('app');
 const User = require('../models/cvModels');
 
 module.exports = {
 
   createCv: async (req, res) => {
     try {
-      debug(req.body);
       const user = await User.create(req.body);
       res.json(user);
     } catch (error) {
+      res.status(500);
       res.send(error);
     }
   },
@@ -19,6 +18,7 @@ module.exports = {
       const user = await User.findById(userId);
       res.json(user);
     } catch (error) {
+      res.status(500);
       res.send(error);
     }
   },
@@ -42,6 +42,7 @@ module.exports = {
       res.json(user);
     } catch (error) {
       res.status(500);
+      res.send(error);
     }
   }
 };

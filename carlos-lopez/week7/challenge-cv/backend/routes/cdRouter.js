@@ -10,7 +10,8 @@ function cvRouter() {
   cvRoutes
     .route('/:cvId')
     .get(cvController.getCvById)
-    .put(cvController.updateById);
+    .put(cvController.updateById)
+    .delete(cvController.deleteById);
   return cvRoutes;
 }
 module.exports = cvRouter();

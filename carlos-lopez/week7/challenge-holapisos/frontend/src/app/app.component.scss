@@ -1,12 +1,27 @@
 main{
     display: flex;
     flex-wrap: wrap;
+    background-color: rgb(248, 248, 248);
 }
 .flatCard{
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border-radius: 1em;
+    margin: 2rem;
+    align-items: center;
+
     img{
         width: 10rem;
         height: auto;
     }
+    h3, h4, h5{
+        color:rgb(20, 50, 74)
+    }
+}
+button{
+    background-color: rgb(205, 105, 42);
+    color: white;
+    border-radius: 1em;
+    margin-left: 50%;
 }

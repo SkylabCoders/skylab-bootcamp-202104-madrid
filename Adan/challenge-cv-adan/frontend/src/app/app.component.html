@@ -1,13 +1,9 @@
 <input type="text" #newCvInput />
 <button type="button" (click)="addCv(newCvInput.value)">ADD</button>
-
-<ng-container *ngIf="fetchCv$ | async as Cv">
+<ng-container *ngIf="(fetchCv$ | async) as Cv">
   <ul>
     <li *ngFor="let property of Cv">
-      <p>
-        {{ property.info.name }}
-        {{ property.skills }}
-      </p>
+      {{ property.info.name }}
     </li>
   </ul>
 </ng-container>

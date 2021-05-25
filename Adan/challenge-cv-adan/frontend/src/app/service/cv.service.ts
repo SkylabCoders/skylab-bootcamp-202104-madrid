@@ -25,7 +25,7 @@ export class CvService {
     )
   }
 
-  updateCv (id: string, info: Object) {
+  updateCv (id: string, info: any) {
     return this.httpClient.put<Cv>(
       `${environment.apiUrl}/${id}`,
       {

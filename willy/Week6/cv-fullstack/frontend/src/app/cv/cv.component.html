@@ -1,6 +1,6 @@
 <main class="main__container">
-    <div class="container__izq">
-        <div class="izq__data" *ngFor="let data of personalData">
+    <div class="container__left">
+        <div class="left__data" *ngFor="let data of personalData">
             
             <img class="data__img" src="{{data.img}}" alt="Stan Lee">
             <p>Name: {{data.name}}</p>
@@ -8,29 +8,29 @@
             <p>☎️: {{data.phone}}</p>
             <p>🏠: {{data.address}} </p>
             <p>📧: {{data.email}} </p>
-            <p><i class="fab fa-linkedin"></i></p>
+            <p><em class="fab fa-linkedin"></em></p>
         </div>
-        <div class="izq__about" *ngFor="let data of aboutMe">
+        <div class="left__about" *ngFor="let data of aboutMe">
             <h2>Description</h2>
             <p>{{data.description}}</p>
         </div>
     </div>
-    <div class="container__dcha">
-        <div class="dcha__exp" *ngFor="let data of experienceList">
+    <div class="container__right">
+        <div class="right__exp" *ngFor="let data of experienceList">
             <h2>Experience</h2>
             <p>Company: {{data.company}}</p>
             <p>Date: {{data.date}}</p>
             <p>Position: {{data.position}}</p>
         </div>
-        <div class="dcha__skills" *ngFor="let skill of skillList">
+        <div class="right__skills" *ngFor="let skill of skillList">
             <h2>Skills</h2>
-            <p><i class="fab fa-html5"></i> {{skill.html}}</p>
-            <p><i class="fab fa-css3"></i>  {{skill.css}}</p>
-            <p><i class="fab fa-js"></i>  {{skill.javascript}}</p>
-            <p><i class="fab fa-python"></i>  {{skill.python}}</p>
-            <p><i class="fab fa-angular"></i>  {{skill.angular}}</p>
-            <p><i class="fab fa-node-js"></i> {{skill.nodejs}}</p>
-            <p><i class="fas fa-database"></i> {{skill.mongoDB}}</p>
+            <p><em class="fab fa-html5"></em> {{skill.html}}</p>
+            <p><em class="fab fa-css3"></em>  {{skill.css}}</p>
+            <p><em class="fab fa-js"></em>  {{skill.javascript}}</p>
+            <p><em class="fab fa-python"></em>  {{skill.python}}</p>
+            <p><em class="fab fa-angular"></em>  {{skill.angular}}</p>
+            <p><em class="fab fa-node-js"></em> {{skill.nodejs}}</p>
+            <p><em class="fas fa-database"></em> {{skill.mongoDB}}</p>
         </div>
     </div>
 </main>

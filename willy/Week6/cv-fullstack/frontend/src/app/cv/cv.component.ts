@@ -19,7 +19,7 @@ export class CvComponent implements OnInit {
 
   constructor (public infoSvr: InfoService) { }
 
-  ngOnInit (): void {
+  ngOnInit () {
     this.getAllInfo(environment.infoApiUrl)
     this.getAllAbout(environment.aboutMeApiUrl)
     this.getAllExp(environment.expApiUrl)

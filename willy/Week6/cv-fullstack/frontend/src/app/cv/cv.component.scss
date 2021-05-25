@@ -6,20 +6,20 @@
 }
 
 
-.container__izq {
+.container__left {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.izq__data {
+.left__data {
     background-color: rgb(171,235,174);
     text-align: center;
     padding: 20px;
  
 }
 
-.izq__data > p:hover {
+.left__data > p:hover {
    transform: scale(1.1);
 }
 
@@ -33,7 +33,7 @@
     transform: scale(1.5); 
 }
 
-.izq__about {
+.left__about {
     background-color: rgb(171,235,174);
     text-align: center;
     padding: 20px;
@@ -43,43 +43,43 @@
     
 }
 
-.izq__about > h2 {
+.left__about > h2 {
     font-size: 20px;
     
 }
  
 
-.container__dcha {
+.container__right {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.dcha__exp {
+.right__exp {
     background-color: rgb(255,255,157);
     text-align: center;
     padding: 20px;  
 }
 
-.dcha__exp >h2 {
+.right__exp >h2 {
     font-size: 20px;
 }
 
-.dcha__exp > p:hover {
+.right__exp > p:hover {
     transform: scale(1.1);
  }
 
-.dcha__skills {
+.right__skills {
     background-color:rgb(255,255,157);
     text-align: center;
     padding: 20px;
 }
 
-.dcha__skills > p:hover {
+.right__skills > p:hover {
     transform: scale(1.1);
  }
 
- .dcha__skills >h2 {
+ .right__skills >h2 {
     font-size: 20px;
 }
 

@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
       .subscribe(
         (res) => {
           this.cardData = res
-          console.log(res)
+          console.log(this.cardData)
           obs$.unsubscribe()
         }
       )

@@ -21,7 +21,6 @@ export class AboutComponent implements OnInit {
     this.httpClient.get(url).subscribe(
       (res) => {
         this.aboutMe = res
-        console.log(this.aboutMe)
       }
     )
   }

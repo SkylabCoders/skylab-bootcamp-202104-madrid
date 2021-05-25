@@ -1,1 +1,29 @@
-<p>skills works!</p>
+<div class="skills" *ngFor="let data of skills">
+    <h1 class="skills__title">{{data.title}}</h1>
+    <ul class="skills__list">
+        <li class="skills__items">
+            <i class="fab fa-html5"></i>
+            <span class="skills__html">{{data.html | uppercase}}</span>
+        </li>
+        <li class="skills__items">
+            <i class="fab fa-css3-alt"></i>
+            <span class="skills__css">{{data.css | uppercase}}</span>
+        </li>
+        <li class="skills__items">
+            <i class="fab fa-js"></i>
+            <span class="skills__js">{{data.javascript | uppercase}}</span>
+        </li>
+        <li class="skills__items">
+            <i class="fab fa-react"></i>
+            <span class="skills__react">{{data.angular | uppercase}}</span>
+        </li>
+        <li class="skills__items">
+            <i class="fab fa-node-js"></i>
+            <span class="skills__node">{{data.node | uppercase}}</span>
+        </li>
+        <li class="skills__items">
+            <i class="fas fa-database"></i>
+            <span class="skills__node">{{data.mongoDB | uppercase}}</span>
+        </li>
+    </ul>
+</div>

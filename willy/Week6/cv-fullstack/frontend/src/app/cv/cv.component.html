@@ -1,19 +1,18 @@
 <main class="main__container">
     <div class="container__izq">
         <div class="izq__data" *ngFor="let data of personalData">
-            <!-- <input type="text" placeholder="write your new data here" #newData> -->
+            
             <img class="data__img" src="{{data.img}}" alt="Stan Lee">
             <p>Name: {{data.name}}</p>
             <p>Surname: {{data.surname}}</p>
             <p>☎️: {{data.phone}}</p>
             <p>🏠: {{data.address}} </p>
             <p>📧: {{data.email}} </p>
-            <!-- <p>linkedin:{{data.linkedin}} </p> -->
-            <!-- <button (click)="update(data.name, newData.value)">Update</button>
-            <button (click)="delete(data._id)">Delete</button> -->
+            <p><i class="fab fa-linkedin"></i></p>
         </div>
         <div class="izq__about" *ngFor="let data of aboutMe">
-            <p>Description: {{data.description}}</p>
+            <h2>Description</h2>
+            <p>{{data.description}}</p>
         </div>
     </div>
     <div class="container__dcha">
@@ -25,13 +24,13 @@
         </div>
         <div class="dcha__skills" *ngFor="let skill of skillList">
             <h2>Skills</h2>
-            <p>HTML: {{skill.html}}</p>
-            <p>CSS:  {{skill.css}}</p>
-            <p>JS:  {{skill.javascript}}</p>
-            <p>Python:  {{skill.python}}</p>
-            <p>Angular:  {{skill.angular}}</p>
-            <p>Node JS: {{skill.nodejs}}</p>
-            <p>MongoDB: {{skill.mongoDB}}</p>
+            <p><i class="fab fa-html5"></i> {{skill.html}}</p>
+            <p><i class="fab fa-css3"></i>  {{skill.css}}</p>
+            <p><i class="fab fa-js"></i>  {{skill.javascript}}</p>
+            <p><i class="fab fa-python"></i>  {{skill.python}}</p>
+            <p><i class="fab fa-angular"></i>  {{skill.angular}}</p>
+            <p><i class="fab fa-node-js"></i> {{skill.nodejs}}</p>
+            <p><i class="fas fa-database"></i> {{skill.mongoDB}}</p>
         </div>
     </div>
 </main>

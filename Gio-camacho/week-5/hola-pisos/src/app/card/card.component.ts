@@ -23,8 +23,8 @@ export class CardComponent implements OnInit {
     const obs$ = this.httpServices.getData(url)
       .subscribe(
         (res:any) => {
-          this.cardData = res
-          this.next = this.cardData.links.next.href
+          this.cardData = res.data
+          this.next = res.links.next.href
           obs$.unsubscribe()
         }
       )
@@ -35,7 +35,7 @@ export class CardComponent implements OnInit {
       this.httpServices.getData(this.next).subscribe(
         (res:any) => {
           this.next = res.links.next.href
-          this.cardData = res
+          this.cardData = res.data
         }
       )
     }

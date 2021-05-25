@@ -61,9 +61,6 @@ export class AppComponent implements OnInit {
   }
 
   updateLanguage(id: string, knowledgeArr:any, i:any, skills: string) {
-    if (!skills.trim()) {
-      return;
-    }
     const myArr = knowledgeArr;
     myArr[i].language = skills;
     this.userService.updateExperience(id, myArr)
@@ -74,9 +71,6 @@ export class AppComponent implements OnInit {
   }
 
   updateAcademy(id: string, knowledgeArr:any, i:any, skills: any) {
-    if (!skills.trim()) {
-      return;
-    }
     const myArr = knowledgeArr;
     myArr[i].academy = skills;
     this.userService.updateExperience(id, myArr)
@@ -87,9 +81,6 @@ export class AppComponent implements OnInit {
   }
 
   updateYear(id: string, knowledgeArr:any, i:any, skills: any) {
-    if (!skills.trim()) {
-      return;
-    }
     const myArr = knowledgeArr;
     myArr[i].year = skills;
     this.userService.updateExperience(id, myArr)

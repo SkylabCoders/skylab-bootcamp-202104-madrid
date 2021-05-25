@@ -1,6 +1,6 @@
 const Experience = require('../model/experience');
 
-function controllerInfo() {
+function controllerExperience() {
   async function getAll(req, res) {
     try {
       const experience = await Experience.find(req.query);
@@ -51,4 +51,4 @@ function controllerInfo() {
   };
 }
 
-module.exports = controllerInfo();
+module.exports = controllerExperience();

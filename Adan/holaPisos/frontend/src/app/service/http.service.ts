@@ -14,4 +14,8 @@ export class HttpService {
   getApi ():Observable<{}> {
     return this.httpClient.get(this.url)
   }
+
+  getApiMostrar (url:string):Observable<{}> {
+    return this.httpClient.get(url)
+  }
 }

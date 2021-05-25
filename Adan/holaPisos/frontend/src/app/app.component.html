@@ -1,4 +1,13 @@
-
-  <div *ngFor= 'let flat of fetch.data'>
+<main>
+  <div class="main__container" *ngFor= 'let flat of results'>
     <img src="{{flat.attributes.field_inmu_imag_arra[0]}}" alt="">
-  </div>
+    <div class= 'main__container--card'>
+      <h2>{{flat.attributes.field_inmu_prec}}</h2>
+      <h2>{{flat.attributes.field_inmu_pobl}}</h2>
+    </div>
+    </div>
+   
+</main>
+<div class="main__showmore">
+  <button type='button' (click)='showMore()'>Mostrar más</button>
+</div>

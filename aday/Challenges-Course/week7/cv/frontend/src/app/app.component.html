@@ -1,5 +1,5 @@
 <input type="text" #newCvInput/>
-<!--TO DO <button type="button" (click)="addCv(newCvInput.value)">add</button> -->
+<!-- <button type="button" (click)="addCv(newCvInput.value)">add</button> -->
 
 <ng-container *ngIf="(getAllCvs$ | async) as cvs">
     <ul>
@@ -7,6 +7,7 @@
             <app-cv 
             [cv]="cv"
             (deleteChange)="delete($event)"
+            (updateChange)="update($event, newCvInput.value) ; newCvInput.value = ''"
             >
             </app-cv>
         </li>

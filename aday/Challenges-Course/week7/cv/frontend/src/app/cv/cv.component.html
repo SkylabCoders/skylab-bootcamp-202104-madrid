@@ -1,6 +1,6 @@
-<p>{{cv.name}}</p>
-<h1>{{cv.name}}</h1>
-<h3>{{cv.dni}}</h3>
+<h1>Name: {{cv.name}} {{cv.surname}}</h1>
+<h3>DNI: {{cv.dni}}</h3>
+<h4>LinkedIn Profile: {{cv.linkedin}}</h4>
 <button type="button" (click)="deleteChange.emit(cv.dni)">delete</button>
 <button type="button" (click)="updateChange.emit(cv.dni)">update</button>
 

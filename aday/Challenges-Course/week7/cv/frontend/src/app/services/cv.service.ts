@@ -19,7 +19,9 @@ export default class CvService {
     return this.httpClient.delete<void>(`${environment.urlApi}/${dni}`)
   }
 
-  /* updateCv (dni: number): Observable<Cv> {
-     return this.httpClient.put<Cv>(`${environment.urlApi}/${dni}`)
-   } TO DO */
+  updateCv (dni: number, linkedin: string): Observable<Cv[]> {
+    return this.httpClient.put<Cv[]>(`${environment.urlApi}/${dni}`,
+      { linkedin }
+    )
+  }
 }

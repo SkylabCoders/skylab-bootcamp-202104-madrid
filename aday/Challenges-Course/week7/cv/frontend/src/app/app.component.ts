@@ -32,4 +32,15 @@ export class AppComponent implements OnInit, AfterViewInit {
       )
       .subscribe()
   }
+
+  update (dni: number, linkedin: string) {
+    if (!linkedin.trim()) {
+      return
+    }
+    this.cvService.updateCv(dni, linkedin)
+      .pipe(
+        tap(() => this.refresh$.next())
+      )
+      .subscribe()
+  }
 }

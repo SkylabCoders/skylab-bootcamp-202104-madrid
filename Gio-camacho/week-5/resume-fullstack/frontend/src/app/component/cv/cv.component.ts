@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-cv',
@@ -6,10 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cv.component.scss']
 })
 export class CvComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

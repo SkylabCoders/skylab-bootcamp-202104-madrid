@@ -13,15 +13,15 @@
         <h6>YEAR</h6>
         <input type="text" #newExperienceInputYear/>
 
-        <button type="button" (click)="addExperience(cv._id, cv.knowledge, newExperienceInput.value, newExperienceInputYear.value, newExperienceInputAcademy.value)">add</button>
+        <button type="button" (click)="addExperience(cv._id, cv.knowledge, newExperienceInput.value, newExperienceInputYear.value, newExperienceInputAcademy.value); newExperienceInputAcademy.value = ''">add</button>
         <div *ngFor="let knowledge of cv.knowledge, let i = index">
             <p>{{knowledge.language}}</p>
-            <button type="button" (click)="updateLanguage(cv._id, cv.knowledge, i, newExperienceInput.value)">update</button>
+            <button type="button" (click)="updateLanguage(cv._id, cv.knowledge, i, newExperienceInput.value); newExperienceInputAcademy.value = ''">update</button>
             <p>{{knowledge.academy}}</p>
-            <button type="button" (click)="updateAcademy(cv._id, cv.knowledge, i, newExperienceInputAcademy.value)">update</button>
+            <button type="button" (click)="updateAcademy(cv._id, cv.knowledge, i, newExperienceInputAcademy.value); newExperienceInputAcademy.value = ''">update</button>
             <p>{{knowledge.year}}</p>
-            <button type="button" (click)="updateYear(cv._id, cv.knowledge, i, newExperienceInputYear.value)">update</button>
-            <button type="button" (click)="delete(cv._id, cv.knowledge, i) ">Delete all experience</button>
+            <button type="button" (click)="updateYear(cv._id, cv.knowledge, i, newExperienceInputYear.value); newExperienceInputAcademy.value = ''">update</button>
+            <button type="button" (click)="delete(cv._id, cv.knowledge, i); newExperienceInputAcademy.value = '' ">Delete all experience</button>
         </div>
     </div>
 </ng-container> 

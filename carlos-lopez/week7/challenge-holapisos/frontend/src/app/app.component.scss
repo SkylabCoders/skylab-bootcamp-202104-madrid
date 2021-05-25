@@ -1,0 +1,12 @@
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flatCard{
+    display: flex;
+    flex-direction: column;
+    img{
+        width: 10rem;
+        height: auto;
+    }
+}

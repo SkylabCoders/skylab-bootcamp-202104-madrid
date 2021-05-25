@@ -10,7 +10,11 @@ import { Observable } from 'rxjs'
 export class HttpService {
   constructor (private httpClient: HttpClient) { }
 
-  getTheApi ():Observable<Object> {
+  getTheApi ():Observable<any> {
     return this.httpClient.get(environment.realEstateApiUrl)
+  }
+
+  getTheApiNext (url:string):Observable<any> {
+    return this.httpClient.get(url)
   }
 }

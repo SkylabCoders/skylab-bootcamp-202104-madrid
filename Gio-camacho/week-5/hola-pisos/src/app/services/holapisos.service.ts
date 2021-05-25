@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class HolapisosService {
+  // eslint-disable-next-line no-useless-constructor
   constructor (public httpClient: HttpClient) { }
 
   getData (url:string) {

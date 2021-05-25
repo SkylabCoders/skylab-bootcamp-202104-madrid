@@ -17,6 +17,6 @@ module.exports = {
   ],
   rules: {
     'comma-dangle': [2, 'never'],
-    'No-useless-constructor': 'on'
+    'No-useless-constructor': 'off'
   }
 }

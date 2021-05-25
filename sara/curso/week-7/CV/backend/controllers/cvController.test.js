@@ -148,4 +148,53 @@ describe('cvController', () => {
       });
     });
   });
+  describe('Given a updateUserCV function', () => {
+    describe('When is invoked', () => {
+      let req;
+      let res;
+      describe('And there is no error', () => {
+        beforeEach(async () => {
+          req = {
+            params: { userId: 'myId' },
+            body: {},
+          };
+          res = {
+            json: jest.fn(),
+          };
+          await updateUserCV(req, res);
+        });
+        test('Then call res.json', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+        test('Then call User.create', () => {
+          expect(User.findByIdAndUpdate).toHaveBeenCalled();
+        });
+        test('Then call User.findByIdAndUpdate with \'myId\' ', () => {
+          expect(User.findByIdAndUpdate).toHaveBeenCalledWith('myId', {}, { new: true });
+        });
+      });
+      describe('And there is an error', () => {
+        beforeEach(async () => {
+          req = {
+            params: { userId: 'myId' },
+          };
+          res = {
+            json: jest.fn(),
+            send: jest.fn(),
+            status: jest.fn(),
+          };
+
+          User.findByIdAndUpdate.mockRejectedValueOnce('update error');
+
+          await updateUserCV(req, res);
+        });
+        test('Then call status with 500', () => {
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+        test('Then call res.send with update error', () => {
+          expect(res.send).toHaveBeenCalledWith('update error');
+        });
+      });
+    });
+  });
 });

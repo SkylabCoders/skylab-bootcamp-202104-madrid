@@ -40,4 +40,8 @@ export class CardComponent implements OnInit {
       )
     }
   }
+
+  previousPage () {
+
+  }
 }

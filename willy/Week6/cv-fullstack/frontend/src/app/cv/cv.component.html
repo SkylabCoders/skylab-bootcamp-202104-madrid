@@ -1,16 +1,38 @@
 <main class="main__container">
-    <h1 class="container__title">Curriculum Vitae</h1>
-    <div class="container__data" *ngFor="let data of personalData">
-        <!-- <input type="text" placeholder="write your new data here" #newData> -->
-        <img class="data__img" src="{{data.img}}" alt="">
-        <p>Name: {{data.name}}</p>
-        <p>Surname: {{data.surname}}</p>
-        <p>Phone: {{data.phone}}</p>
-        <p>Address: {{data.address}} </p>
-        <p>Email: {{data.email}} </p>
-        <!-- <p>linkedin:{{data.linkedin}} </p> -->
-        <!-- <button (click)="update(data.name, newData.value)">Update</button>
-        <button (click)="delete(data._id)">Delete</button> -->
+    <div class="container__izq">
+        <div class="izq__data" *ngFor="let data of personalData">
+            <!-- <input type="text" placeholder="write your new data here" #newData> -->
+            <img class="data__img" src="{{data.img}}" alt="Stan Lee">
+            <p>Name: {{data.name}}</p>
+            <p>Surname: {{data.surname}}</p>
+            <p>☎️: {{data.phone}}</p>
+            <p>🏠: {{data.address}} </p>
+            <p>📧: {{data.email}} </p>
+            <!-- <p>linkedin:{{data.linkedin}} </p> -->
+            <!-- <button (click)="update(data.name, newData.value)">Update</button>
+            <button (click)="delete(data._id)">Delete</button> -->
+        </div>
+        <div class="izq__about" *ngFor="let data of aboutMe">
+            <p>Description: {{data.description}}</p>
+        </div>
+    </div>
+    <div class="container__dcha">
+        <div class="dcha__exp" *ngFor="let data of experienceList">
+            <h2>Experience</h2>
+            <p>Company: {{data.company}}</p>
+            <p>Date: {{data.date}}</p>
+            <p>Position: {{data.position}}</p>
+        </div>
+        <div class="dcha__skills" *ngFor="let skill of skillList">
+            <h2>Skills</h2>
+            <p>HTML: {{skill.html}}</p>
+            <p>CSS:  {{skill.css}}</p>
+            <p>JS:  {{skill.javascript}}</p>
+            <p>Python:  {{skill.python}}</p>
+            <p>Angular:  {{skill.angular}}</p>
+            <p>Node JS: {{skill.nodejs}}</p>
+            <p>MongoDB: {{skill.mongoDB}}</p>
+        </div>
     </div>
 </main>
 

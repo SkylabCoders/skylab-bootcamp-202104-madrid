@@ -1,28 +1,26 @@
 .main__container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: grey;
+    justify-content: center; 
+    background-color: rgb(52,66,66);
+}
+
+
+.container__izq {
+    display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-.container__title {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    
-    
-
-}
-
-.container__data {
-    background-color: rgb(188, 188, 209);
+.izq__data {
+    background-color: rgb(171,235,174);
     text-align: center;
     padding: 20px;
+ 
 }
 
-.container__data > p:hover {
+.izq__data > p:hover {
    transform: scale(1.1);
-
 }
 
 .data__img {
@@ -34,3 +32,57 @@
 .data__img:hover {
     transform: scale(1.5); 
 }
+
+.izq__about {
+    background-color: rgb(171,235,174);
+    text-align: center;
+    padding: 20px;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
+}
+ 
+
+.container__dcha {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dcha__exp {
+    background-color: rgb(255,255,157);
+    text-align: center;
+    padding: 20px;  
+}
+
+.dcha__exp >h2 {
+    font-size: 20px;
+}
+
+.dcha__exp > p:hover {
+    transform: scale(1.1);
+ }
+
+.dcha__skills {
+    background-color:rgb(255,255,157);
+    text-align: center;
+    padding: 20px;
+}
+
+.dcha__skills > p:hover {
+    transform: scale(1.1);
+ }
+
+ .dcha__skills >h2 {
+    font-size: 20px;
+}
+
+ @media (max-width: 600px) {
+    .main__container {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        flex-direction: column;
+    }
+ } 

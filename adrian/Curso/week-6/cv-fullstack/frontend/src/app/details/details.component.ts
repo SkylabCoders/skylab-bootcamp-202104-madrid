@@ -31,62 +31,102 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     this.refresh$.next();
   }
 
-  updateName(user:any, newInfo:string) {
-    const newUserInfo = { ...user, name: newInfo };
-    this.httpService.updateCv({ userInfo: newUserInfo })
-      .pipe(
-        tap(() => this.refresh$.next())
-      )
-      .subscribe();
+  updatePersonalInfo(propierty: string, user:any, newInfo:string) {
+    let newUserInfo;
+    switch (propierty) {
+      case 'name':
+        newUserInfo = { ...user, name: newInfo };
+        this.httpService.updateCv({ userInfo: newUserInfo })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      case 'mail':
+        newUserInfo = { ...user, mail: newInfo };
+        this.httpService.updateCv({ userInfo: newUserInfo })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      default:
+        break;
+    }
   }
 
-  updateExperience(arrayToChange:Array<any>, i:number, newInfo:string) {
-    this.newInfoArray = arrayToChange;
-    this.newInfoArray[i] = newInfo;
-    this.httpService.updateCv({ experience: this.newInfoArray })
-      .pipe(
-        tap(() => this.refresh$.next())
-      )
-      .subscribe();
+  add(propierty: string, arrayToChange:Array<any>, newInfo:string) {
+    switch (propierty) {
+      case 'ex':
+        this.newInfoArray = arrayToChange;
+        this.newInfoArray.push(newInfo);
+        this.httpService.updateCv({ experience: this.newInfoArray })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      case 'ed':
+        this.newInfoArray = arrayToChange;
+        this.newInfoArray.push(newInfo);
+        this.httpService.updateCv({ education: this.newInfoArray })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      default:
+        break;
+    }
   }
 
-  updateEducation(arrayToChange:Array<any>, i:number, newInfo:string) {
-    this.newInfoArray = arrayToChange;
-    this.newInfoArray[i] = newInfo;
-    this.httpService.updateCv({ education: this.newInfoArray })
-      .pipe(
-        tap(() => this.refresh$.next())
-      )
-      .subscribe();
+  update(propierty: string, arrayToChange:Array<any>, i:number, newInfo: string) {
+    switch (propierty) {
+      case 'ex':
+        this.newInfoArray = arrayToChange;
+        this.newInfoArray[i] = newInfo;
+        this.httpService.updateCv({ education: this.newInfoArray })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      case 'ed':
+        this.newInfoArray = arrayToChange;
+        this.newInfoArray[i] = newInfo;
+        this.httpService.updateCv({ education: this.newInfoArray })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      default:
+        break;
+    }
   }
 
-  addEducation(arrayToChange:Array<any>, newInfo:string) {
-    this.newInfoArray = arrayToChange;
-    this.newInfoArray.push(newInfo);
-    this.httpService.updateCv({ education: this.newInfoArray })
-      .pipe(
-        tap(() => this.refresh$.next())
-      )
-      .subscribe();
-  }
-
-  deleteEducation(arrayToChange:Array<any>, i:number) {
-    this.newInfoArray = arrayToChange;
-    this.newInfoArray.splice(i, 1);
-    this.httpService.updateCv({ education: this.newInfoArray })
-      .pipe(
-        tap(() => this.refresh$.next())
-      )
-      .subscribe();
-  }
-
-  deleteExperience(arrayToChange:Array<any>, i:number) {
-    this.newInfoArray = arrayToChange;
-    this.newInfoArray.splice(i, 1);
-    this.httpService.updateCv({ experience: this.newInfoArray })
-      .pipe(
-        tap(() => this.refresh$.next())
-      )
-      .subscribe();
+  delete(iterado: string, arrayToChange:Array<any>, i:number) {
+    switch (iterado) {
+      case 'ex':
+        this.newInfoArray = arrayToChange;
+        this.newInfoArray.splice(i, 1);
+        this.httpService.updateCv({ experience: this.newInfoArray })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      case 'ed':
+        this.newInfoArray = arrayToChange;
+        this.newInfoArray.splice(i, 1);
+        this.httpService.updateCv({ education: this.newInfoArray })
+          .pipe(
+            tap(() => this.refresh$.next())
+          )
+          .subscribe();
+        break;
+      default:
+        break;
+    }
   }
 }

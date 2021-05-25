@@ -1,26 +1,29 @@
 <h1>CV:</h1>
 <ng-container *ngIf="(fetchCv$ | async) as user">
     <input type="text" #newInfo>
-        <h2 (click)="updateName(user.userInfo, newInfo.value)">{{ user.userInfo.name }}</h2>
-        <button (click)="updateName(user, newInfo.value)">Update</button>
+        <h2>{{ user.userInfo.name }}</h2>
+        <button (click)="updatePersonalInfo('name', user, newInfo.value)">Update</button>
+        <h2 >{{ user.userInfo.mail }}</h2>
+        <button (click)="updatePersonalInfo('name', user, newInfo.value)">Update</button>
         <div class="main__container--skills">
             <h5>Experience</h5>
             <ul class="skills-container__list">
+                <button type="button" (click)= "add('ex', user.experience, newInfo.value)">Add</button>
                 <li class="list__element" *ngFor="let experience of user.experience, let i = index">
                     {{experience}}
-                    <button type="button" (click)= "updateExperience(user.experience, i , newInfo.value)">Update</button>
-                    <button type="button" (click)= "deleteExperience(user.experience, i)">Delete</button>
+                    <button type="button" (click)= "update('ex', user.experience, i , newInfo.value)">Update</button>
+                    <button type="button" (click)= "delete('ex', user.experience, i)">Delete</button>
                 </li>
             </ul>
         </div>   
         <div class="main__container--experience">
             <h5>Education</h5>
             <ul class="education-container__list">
-                <button type="button" (click)= "addEducation(user.education, newInfo.value)">Add</button>
+                <button type="button" (click)= "add('ed', user.education, newInfo.value)">Add</button>
                 <li class="education-list__element" *ngFor="let education of user.education, let i = index">
                     {{education}}
-                    <button type="button" (click)= "updateEducation(user.education, i, newInfo.value)">Update</button>
-                    <button type="button" (click)= "deleteEducation(user.education, i)">Delete</button>
+                    <button type="button" (click)= "update('ed', user.education, i, newInfo.value)">Update</button>
+                    <button type="button" (click)= "delete('ed', user.education, i)">Delete</button>
                 </li>
             </ul>
         </div>

@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   fetchCV$!: Observable<any>;
 
-  jobPosition = 'Full Stack Developer'
+  jobPosition = 'Full Stack Developer';
 
   constructor(public userService: UserService) {}
 
@@ -34,8 +34,17 @@ export class AppComponent implements OnInit {
     this.refresh$.next();
   }
 
-  addExperience(value:string) {
-    this.userService.addExperience(value)
+  addExperience(
+    id:string, knowledgeArr:any, valueExp:string, valueYear: any, valueAcademy:any,
+  ) {
+    const myArr = knowledgeArr;
+    myArr.push({
+      language: valueExp,
+      academy: valueAcademy,
+      year: valueYear,
+    });
+    console.log(myArr);
+    this.userService.addExperience(id, myArr)
       .pipe(
         tap(() => this.refresh$.next()),
       )

@@ -20,14 +20,13 @@ export class UserService {
     return this.httpClient.get<User[]>(environment.cvApiUrl);
   }
 
-  addExperience(language:string): Observable<User> {
-    return this.httpClient.post<User>(
-      environment.cvApiUrl,
+  addExperience(
+    id:string, language:string,
+  ): Observable<User> {
+    return this.httpClient.put<User>(
+      `${environment.cvApiUrl}/${id}`,
       {
-        knowledge: [{
-          language,
-        },
-        ],
+        knowledge: language,
       },
     );
   }

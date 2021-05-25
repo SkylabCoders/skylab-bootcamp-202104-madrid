@@ -32,12 +32,14 @@ export class AppComponent implements OnInit {
   goToPrev() {
     if (this.housesForPagination.links.prev) {
       this.url = this.housesForPagination.links.prev.href;
+      this.paint(this.url);
     }
   }
 
   goToNext() {
     if (this.housesForPagination.links.next) {
       this.url = this.housesForPagination.links.next.href;
+      this.paint(this.url);
     }
   }
 }

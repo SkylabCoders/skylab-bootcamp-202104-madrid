@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { Realstate } from '../../models/realstate'
 import { environment } from '../../../environments/environment'
+import { RealstateService } from '../../services/realstate.service'
 
 @Component({
   selector: 'app-realstate',
@@ -8,16 +9,15 @@ import { environment } from '../../../environments/environment'
   styleUrls: ['./realstate.component.scss']
 })
 export class RealstateComponent implements OnInit {
+realState: Realstate
 
-realState; <Realstate>
-  constructor(public srvMain:RealstateService) { }
+constructor (public srvMain:RealstateService) { }
 
-  ngOnInit(): void {
-    const obs$ = this.srvMain.getApi(environment.urlApi).subscribe((res:any) => {
-      this.realState = res;
-      console.log(res);
-      obs$.unsubscribe();
-    })
-  }
-
+ngOnInit (): void {
+  const obs$ = this.srvMain.getApi(environment.urlApi).subscribe((res:any) => {
+    this.realState = res.data
+    console.log(res.data)
+    obs$.unsubscribe()
+  })
+}
 }

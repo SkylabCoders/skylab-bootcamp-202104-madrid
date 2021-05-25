@@ -8,7 +8,7 @@ import { environment } from '../../../../../environments/environment'
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  aboutMe:any
+  contact:any
 
   // eslint-disable-next-line no-useless-constructor
   constructor (public httpClient: HttpClient) { }
@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
   fetchInfo (url:string) {
     this.httpClient.get(url).subscribe(
       (res) => {
-        this.aboutMe = res
+        this.contact = res
       }
     )
   }

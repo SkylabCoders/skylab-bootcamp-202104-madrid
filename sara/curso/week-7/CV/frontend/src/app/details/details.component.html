@@ -1,43 +1,59 @@
-<h1>CV</h1>
-
-<input type="text" #newInfo>
-
-
-<ng-container *ngIf="(fetchCv$ | async) as user">
-    <h2>{{user.userInfo.name}}</h2><button type="button" (click)= "updateCvUserInfo('name', user.userInfo, newInfo.value); newInfo.value=''" >Update</button>
-    <h6>{{user.userInfo.mail}}</h6><button type="button" (click)= "updateCvUserInfo('mail', user.userInfo, newInfo.value); newInfo.value=''" >Update</button>
-    <h6>{{user.userInfo.phone}}</h6><button type="button" (click)= "updateCvUserInfo( 'phone', user.userInfo, newInfo.value); newInfo.value=''" >Update</button>
-    <div class="main__container--experience">
-        <h5>Experience</h5>
-        <button type="button" (click)="addCvInfo('experience', user.experience, newInfo.value); newInfo.value=''" >Add</button>
-        <ul class="experience-container__list">
-            <li class="experience-list__element" *ngFor="let experience of user.experience, let i = index">
-                {{experience}}
-                <button type="button" (click)= "updateCvInfo('experience', user.experience, i , newInfo.value); newInfo.value=''" >Update</button>
-                <button type="button" (click)= "deleteCvInfo('experience', user.experience, i); newInfo.value=''">Delete</button>
-            </li>
-        </ul>
-    </div>
-    <div class="main__container--skills">
-        <h5>Skills</h5>
-        <button type="button" (click)="addCvInfo('skills', user.skills, newInfo.value); newInfo.value=''" >Add</button>
-        <ul class="skill-container__list">
-            <li class="skill-list__element" *ngFor="let skill of user.skills, let i = index">
-                {{skill}}
-                <button type="button" (click)= "updateCvInfo('skills', user.skills, i , newInfo.value); newInfo.value=''" >Update</button>
-                <button type="button" (click)= "deleteCvInfo('skills', user.experience, i); newInfo.value=''">Delete</button>
-            </li>
-        </ul>
-    </div>
-    <div class="main__container--education">
-        <h5>Educacion</h5>
-        <button type="button" (click)="addCvInfo('education', user.education, newInfo.value)" >Add</button>
-        <ul class="education-container__list">
-            <li class="education-list__element" *ngFor="let education of user.education, let i = index">
-                {{education}}
-                <button type="button" (click)= "updateCvInfo('education', user.education, i , newInfo.value); newInfo.value=''" >Update</button>
-                <button type="button" (click)= "deleteCvInfo('education', user.experience, i); newInfo.value=''">Delete</button>
-            </li>
-        </ul>
-    </div>
-</ng-container>
+<body>
+    <h1>CV</h1>
+    
+    <input type="text" #newInfo>
+    
+    
+    <ng-container *ngIf="(fetchCv$ | async) as user">
+        <div class="main__container--userInfo">
+            <p>{{user.userInfo.name}}
+                <button type="button" (click)= "updateCvUserInfo('name', user.userInfo, newInfo.value); newInfo.value=''" >Update</button>
+            </p>
+            <p>{{user.userInfo.mail}}
+                <button type="button" (click)= "updateCvUserInfo('mail', user.userInfo, newInfo.value); newInfo.value=''" >Update</button>
+            </p>
+            <p>{{user.userInfo.phone}}
+                <button type="button" (click)= "updateCvUserInfo( 'phone', user.userInfo, newInfo.value); newInfo.value=''" >Update</button>
+            </p>
+        </div>
+        <div class="main__container--experience">
+            <div class="experience-title">
+                <h5>Experience</h5>
+                <button type="button" (click)="addCvInfo('experience', user.experience, newInfo.value); newInfo.value=''" >Add</button>
+            </div>
+            <ul class="experience-container__list">
+                <li class="experience-list__element" *ngFor="let experience of user.experience, let i = index">
+                    {{experience}}
+                    <button type="button" (click)= "updateCvInfo('experience', user.experience, i , newInfo.value); newInfo.value=''" >Update</button>
+                    <button type="button" (click)= "deleteCvInfo('experience', user.experience, i); newInfo.value=''">Delete</button>
+                </li>
+            </ul>
+        </div>
+        <div class="main__container--experience">
+            <div class="experience-title">
+                <h5>Skills</h5>
+                <button type="button" (click)="addCvInfo('skills', user.skills, newInfo.value); newInfo.value=''" >Add</button>
+            </div>
+            <ul class="skill-container__list">
+                <li class="skill-list__element" *ngFor="let skill of user.skills, let i = index">
+                    {{skill}}
+                    <button type="button" (click)= "updateCvInfo('skills', user.skills, i , newInfo.value); newInfo.value=''" >Update</button>
+                    <button type="button" (click)= "deleteCvInfo('skills', user.experience, i); newInfo.value=''">Delete</button>
+                </li>
+            </ul>
+        </div>
+        <div class="main__container--experience">
+            <div class="experience-title">
+                <h5>Educacion</h5>
+                <button type="button" (click)="addCvInfo('education', user.education, newInfo.value)" >Add</button>
+            </div>
+            <ul class="education-container__list">
+                <li class="education-list__element" *ngFor="let education of user.education, let i = index">
+                    {{education}}
+                    <button type="button" (click)= "updateCvInfo('education', user.education, i , newInfo.value); newInfo.value=''" >Update</button>
+                    <button type="button" (click)= "deleteCvInfo('education', user.experience, i); newInfo.value=''">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+</body>

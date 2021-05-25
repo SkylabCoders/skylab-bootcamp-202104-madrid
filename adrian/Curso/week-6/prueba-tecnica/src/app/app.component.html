@@ -1,0 +1,10 @@
+<h1>hola</h1>
+<button (click)="getPrevius()">Prevoius</button>
+<button (click)="getNext()">Next</button>
+<ul>
+  <li class="homes" *ngFor="let data of houses.data">
+    <h2>{{data.attributes.field_inmu_nomb_call}}</h2>
+    <img src="{{data.attributes.field_inmu_imag_arra[0]}}" alt="">
+    <p>{{data.attributes.field_inmu_prec}}</p>
+  </li>
+</ul>

@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-    'comma-dangle': [2, 'never']
+    'comma-dangle': [2, 'never'],
+    'No-useless-constructor': 'on'
   }
 }

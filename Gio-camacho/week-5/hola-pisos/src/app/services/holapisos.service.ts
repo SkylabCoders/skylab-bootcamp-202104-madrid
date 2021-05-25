@@ -6,4 +6,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class HolapisosService {
   constructor (public httpClient: HttpClient) { }
+
+  getData (url:string) {
+    return this.httpClient.get(url)
+  }
 }

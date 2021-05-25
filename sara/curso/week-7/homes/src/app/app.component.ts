@@ -26,23 +26,18 @@ export class AppComponent implements OnInit {
     this.httpService.getAll(url).subscribe((res:any) => {
       this.houses = res.data;
       this.housesForPagination = res;
-      console.log(this.housesForPagination);
     });
   }
 
   goToPrev() {
     if (this.housesForPagination.links.prev) {
       this.url = this.housesForPagination.links.prev.href;
-      this.paint(this.url);
-      this.paint(this.url);
     }
   }
 
   goToNext() {
     if (this.housesForPagination.links.next) {
       this.url = this.housesForPagination.links.next.href;
-      console.log(this.url);
-      this.paint(this.url);
     }
   }
 }

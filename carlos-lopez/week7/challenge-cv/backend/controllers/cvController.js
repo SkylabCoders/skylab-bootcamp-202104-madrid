@@ -55,7 +55,6 @@ function controller() {
       res.status(204);
       res.json();
     } catch (error) {
-      console.log(error);
       res.status(500);
       res.send(error);
     }

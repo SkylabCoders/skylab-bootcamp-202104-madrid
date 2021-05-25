@@ -1,10 +1,10 @@
 const AboutMe = require('../model/aboutMeModels');
 
-function controllerAbouteMe() {
+function controllerAboutMe() {
   async function getAll(req, res) {
     try {
-      const info = await AboutMe.find(req.query);
-      res.json(info);
+      const about = await AboutMe.find(req.query);
+      res.json(about);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -13,8 +13,8 @@ function controllerAbouteMe() {
 
   async function create(req, res) {
     try {
-      const info = await AboutMe.create(req.body);
-      res.json(info);
+      const about = await AboutMe.create(req.body);
+      res.json(about);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -23,12 +23,12 @@ function controllerAbouteMe() {
 
   async function updateById(req, res) {
     try {
-      const info = await AboutMe.findByIdAndUpdate(
+      const about = await AboutMe.findByIdAndUpdate(
         req.params.aboutMeId,
         req.body,
         { new: true }
       );
-      res.json(info);
+      res.json(about);
     } catch (error) {
       res.status(500);
       res.send(error);
@@ -51,4 +51,4 @@ function controllerAbouteMe() {
   };
 }
 
-module.exports = controllerAbouteMe();
+module.exports = controllerAboutMe();

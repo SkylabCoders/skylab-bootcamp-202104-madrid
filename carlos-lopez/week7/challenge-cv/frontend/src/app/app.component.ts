@@ -43,7 +43,6 @@ export class AppComponent implements OnInit {
       academy: valueAcademy,
       year: valueYear,
     });
-    console.log(myArr);
     this.userService.addExperience(id, myArr)
       .pipe(
         tap(() => this.refresh$.next()),
@@ -59,11 +58,39 @@ export class AppComponent implements OnInit {
       .subscribe();
   }
 
-  update(id: string, skills: string) {
+  updateLanguage(id: string, knowledgeArr:any, i:any, skills: string) {
     if (!skills.trim()) {
       return;
     }
-    this.userService.updateExperience(id, skills)
+    const myArr = knowledgeArr;
+    myArr[i].language = skills;
+    this.userService.updateExperience(id, myArr)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
+  updateAcademy(id: string, knowledgeArr:any, i:any, skills: any) {
+    if (!skills.trim()) {
+      return;
+    }
+    const myArr = knowledgeArr;
+    myArr[i].academy = skills;
+    this.userService.updateExperience(id, myArr)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
+  updateYear(id: string, knowledgeArr:any, i:any, skills: any) {
+    if (!skills.trim()) {
+      return;
+    }
+    const myArr = knowledgeArr;
+    myArr[i].year = skills;
+    this.userService.updateExperience(id, myArr)
       .pipe(
         tap(() => this.refresh$.next()),
       )

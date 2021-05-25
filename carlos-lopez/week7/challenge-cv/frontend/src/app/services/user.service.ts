@@ -35,10 +35,12 @@ export class UserService {
     return this.httpClient.delete<void>(`${environment.cvApiUrl}/${id}`);
   }
 
-  updateExperience(id: string, skills:string): Observable<User> {
+  updateExperience(id: string, language:any): Observable<User> {
     return this.httpClient.put<User>(
       `${environment.cvApiUrl}/${id}`,
-      { skills },
+      {
+        knowledge: language,
+      },
     );
   }
 }

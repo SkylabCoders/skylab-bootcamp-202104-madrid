@@ -1,5 +1,5 @@
 <ng-container *ngIf="(fetchCV$ | async) as cvs">
-    <div *ngFor="let cv of cvs, let i = index">
+    <div *ngFor="let cv of cvs">
         <h1>{{cv.info.name.toUpperCase()}}</h1>
         <h3>{{jobPosition.toUpperCase()}}</h3>
         <p>{{cv.info.phoneNumber}}</p>
@@ -14,10 +14,15 @@
         <input type="text" #newExperienceInputYear/>
 
         <button type="button" (click)="addExperience(cv._id, cv.knowledge, newExperienceInput.value, newExperienceInputYear.value, newExperienceInputAcademy.value)">add</button>
-        <div *ngFor="let knowledge of cv.knowledge">
-            <p>{{knowledge.year}}</p>
+        <div *ngFor="let knowledge of cv.knowledge, let i = index">
             <p>{{knowledge.language}}</p>
+            <button type="button" (click)="updateLanguage(cv._id, cv.knowledge, i, newExperienceInput.value)">update</button>
             <p>{{knowledge.academy}}</p>
+            <button type="button" (click)="updateAcademy(cv._id, cv.knowledge, i, newExperienceInputAcademy.value)">update</button>
+            <p>{{knowledge.year}}</p>
+            <button type="button" (click)="updateYear(cv._id, cv.knowledge, i, newExperienceInputYear.value)">update</button>
+
+
             
             <!-- <app-funcionality
             [cv]="cv"

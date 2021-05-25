@@ -16,11 +16,20 @@ export class CvService {
     return this.httpClient.get<Cv[]>(environment.apiUrl)
   }
 
-  postCv (value: string): Observable<Cv> {
+  postCv (skills: string): Observable<Cv> {
     return this.httpClient.post<Cv>(
       environment.apiUrl,
       {
-        value
+        skills
+      }
+    )
+  }
+
+  updateCv (id: string, info: Object) {
+    return this.httpClient.put<Cv>(
+      `${environment.apiUrl}/${id}`,
+      {
+        info
       }
     )
   }

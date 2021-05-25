@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-useless-constructor */
-import { Component } from '@angular/core'
 import { HttpService } from './services/http.service'
-import { OnInit } from '@angular/core'
+import { Observable, Subject } from 'rxjs'
+import { OnInit, Component, AfterViewInit } from '@angular/core'
+import { switchMap, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,19 @@ import { OnInit } from '@angular/core'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  refresh$ = new Subject();
+
+  fetchCV$!: Observable<any>;
   constructor (public httpService: HttpService) {}
   title = 'frontend';
   ngOnInit () {
-    this.httpService.getTheApi()
+    this.fetchCV$ = this.refresh$
+      .pipe(
+        switchMap(() => this.httpService.getTheApi())
+      )
+  }
+
+  ngAfterViewInit () {
+    this.refresh$.next()
   }
 }

@@ -31,8 +31,13 @@ export class UserService {
     );
   }
 
-  deleteUser(id:string): Observable<void> {
-    return this.httpClient.delete<void>(`${environment.cvApiUrl}/${id}`);
+  deleteExperience(id:string, knowledgeArr:any): Observable<void> {
+    return this.httpClient.put<any>(
+      `${environment.cvApiUrl}/${id}`,
+      {
+        knowledge: knowledgeArr,
+      },
+    );
   }
 
   updateExperience(id: string, language:any): Observable<User> {

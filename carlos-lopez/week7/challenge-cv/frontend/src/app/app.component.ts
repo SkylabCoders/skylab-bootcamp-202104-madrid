@@ -50,8 +50,10 @@ export class AppComponent implements OnInit {
       .subscribe();
   }
 
-  delete(id: string) {
-    this.userService.deleteUser(id)
+  delete(id: string, knowledgeArr:any, i:any) {
+    const myArr = knowledgeArr;
+    myArr.splice(i, 1);
+    this.userService.deleteExperience(id, myArr)
       .pipe(
         tap(() => this.refresh$.next()),
       )

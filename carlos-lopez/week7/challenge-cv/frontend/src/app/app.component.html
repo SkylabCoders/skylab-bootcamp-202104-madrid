@@ -21,6 +21,7 @@
             <button type="button" (click)="updateAcademy(cv._id, cv.knowledge, i, newExperienceInputAcademy.value)">update</button>
             <p>{{knowledge.year}}</p>
             <button type="button" (click)="updateYear(cv._id, cv.knowledge, i, newExperienceInputYear.value)">update</button>
+            <button type="button" (click)="delete(cv._id, cv.knowledge, i) ">Delete all experience</button>
         </div>
     </div>
 </ng-container> 

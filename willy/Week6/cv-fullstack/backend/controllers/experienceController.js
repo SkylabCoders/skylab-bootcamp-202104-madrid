@@ -37,7 +37,7 @@ function controllerInfo() {
 
   async function deleteById(req, res) {
     try {
-      await Experience.findByIdAndDelete(req.params.expId);
+      await Experience.findByIdAndDelete(req.params.experienceId);
       res.status(204);
       res.send();
     } catch (error) {

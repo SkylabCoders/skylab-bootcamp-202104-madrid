@@ -12,7 +12,7 @@ function experienceRouter() {
     .post(create);
 
   experienceRoutes
-    .route('/:expId')
+    .route('/:experienceId')
     .put(updateById)
     .delete(deleteById);
 

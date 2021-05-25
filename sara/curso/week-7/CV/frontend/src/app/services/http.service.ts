@@ -14,10 +14,10 @@ export class HttpService {
   constructor(private http:HttpClient) { }
 
   fechtCV(): Observable<User> {
-    return this.http.get<User>(`${this.url}/60ab90bf68e61fde6705a6e1`);
+    return this.http.get<User>(this.url);
   }
 
   updateCV(change:any):Observable<any> {
-    return this.http.put(`${this.url}/60ab90bf68e61fde6705a6e1`, change);
+    return this.http.put(this.url, change);
   }
 }

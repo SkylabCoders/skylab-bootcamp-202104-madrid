@@ -6,7 +6,8 @@ import { CvComponent } from './component/cv/cv.component'
 import { AsideComponent } from './component/cv/aside/aside.component'
 import { MainComponent } from './component/cv/main/main.component'
 import { ProfileComponent } from './component/cv/aside/profile/profile.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './component/cv/aside/contact/contact.component'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http'
     CvComponent,
     AsideComponent,
     MainComponent,
-    ProfileComponent
+    ProfileComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@ const userSchema = new Schema({
   userInfo: {
     name: String,
     mail: String,
-    phone: Number,
+    phone: String,
   },
   skills: Array,
   education: Array,

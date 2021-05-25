@@ -30,30 +30,26 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     this.refresh$.next();
   }
 
+  callHttpService(newInfo:object) {
+    this.HttpService.updateCV(newInfo)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
   updateCvInfo(keyName:String, arrayToChange:Array<any>, i:number, newInfo:string) {
     this.newInfoArray = arrayToChange;
     this.newInfoArray[i] = newInfo;
     switch (keyName) {
       case 'experience':
-        this.HttpService.updateCV({ experience: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ experience: this.newInfoArray });
         break;
       case 'skills':
-        this.HttpService.updateCV({ skills: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ skills: this.newInfoArray });
         break;
       case 'education':
-        this.HttpService.updateCV({ education: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ education: this.newInfoArray });
         break;
       default:
         break;
@@ -65,25 +61,13 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     this.newInfoArray.push(newInfo);
     switch (keyName) {
       case 'experience':
-        this.HttpService.updateCV({ experience: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ experience: this.newInfoArray });
         break;
       case 'skills':
-        this.HttpService.updateCV({ skills: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ skills: this.newInfoArray });
         break;
       case 'education':
-        this.HttpService.updateCV({ education: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ education: this.newInfoArray });
         break;
       default:
         break;
@@ -95,25 +79,39 @@ export class DetailsComponent implements OnInit, AfterViewInit {
     this.newInfoArray.splice(i, 1);
     switch (keyName) {
       case 'experience':
-        this.HttpService.updateCV({ experience: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ experience: this.newInfoArray });
         break;
       case 'skills':
-        this.HttpService.updateCV({ skills: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ skills: this.newInfoArray });
         break;
       case 'education':
-        this.HttpService.updateCV({ education: this.newInfoArray })
-          .pipe(
-            tap(() => this.refresh$.next()),
-          )
-          .subscribe();
+        this.callHttpService({ education: this.newInfoArray });
+        break;
+      default:
+        break;
+    }
+  }
+
+  updateCvUserInfo(property:string, obj : Object, propertyValue: string) {
+    let newUserInfo;
+    let name;
+    let mail;
+    let phone;
+    switch (property) {
+      case 'name':
+        name = propertyValue;
+        newUserInfo = { ...obj, name };
+        this.callHttpService({ userInfo: newUserInfo });
+        break;
+      case 'mail':
+        mail = propertyValue;
+        newUserInfo = { ...obj, mail };
+        this.callHttpService({ userInfo: newUserInfo });
+        break;
+      case 'phone':
+        phone = propertyValue;
+        newUserInfo = { ...obj, phone };
+        this.callHttpService({ userInfo: newUserInfo });
         break;
       default:
         break;

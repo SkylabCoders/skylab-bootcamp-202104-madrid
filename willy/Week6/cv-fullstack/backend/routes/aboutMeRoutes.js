@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const {
   getAll, create, updateById, deleteById
-} = require('../controllers/aboutMe');
+} = require('../controllers/aboutMeController');
 
 function aboutMeRouter() {
   const infoRoutes = Router();

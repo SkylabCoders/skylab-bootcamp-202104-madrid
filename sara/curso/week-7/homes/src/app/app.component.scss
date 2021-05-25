@@ -2,10 +2,20 @@
 main{
     display: flex;
     flex-direction: column;
-    background-color: rgb(244, 245, 242);
+    background-color:rgb(244, 245, 242);
     margin: 0;
     box-sizing: border-box;
     align-items: center;
+
+    h1{
+        background-color: rgb(229, 243, 199);
+        color: black;
+        padding: 1.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
     ul{
         display: flex;
         flex-wrap: wrap;
@@ -25,7 +35,7 @@ main{
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            background-color: #e7e6e1;
+            background-color: rgb(255, 255, 255);
             
             img{
                 max-height: 14rem;
@@ -50,6 +60,8 @@ main{
     div {
         display: flex;
         justify-content: space-evenly;
+        width: 100%;
+        padding: 1rem;
 
         button{
             height: 2rem;

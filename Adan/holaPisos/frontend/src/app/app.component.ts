@@ -1,5 +1,6 @@
+/* eslint-disable no-useless-constructor */
 import { Component } from '@angular/core'
-import {}
+import { HttpService } from './service/http.service'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,6 @@ import {}
 })
 export class AppComponent {
   title = 'frontend';
+
+  constructor (public httpService: HttpService) { }
 }

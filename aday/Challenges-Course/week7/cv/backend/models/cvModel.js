@@ -3,12 +3,14 @@ const Information = require('./experienceModel');
 
 const cvSchema = Schema({
   dni: Number,
-  birthdate: Date,
   name: String,
   surname: String,
   phone: Number,
   linkedin: String,
-},
-{ experience: [Information] });
+  experience: [{
+    type: Object,
+    ref: [Information],
+  }],
+});
 
 module.exports = model('Cv', cvSchema);

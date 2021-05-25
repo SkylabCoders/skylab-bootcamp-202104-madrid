@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { environment } from '../../../../../environments/environment'
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  aboutMe:any
 
-  constructor() { }
+  // eslint-disable-next-line no-useless-constructor
+  constructor (public httpClient: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.fetchInfo(environment.contactUrl)
   }
 
+  fetchInfo (url:string) {
+    this.httpClient.get(url).subscribe(
+      (res) => {
+        this.aboutMe = res
+      }
+    )
+  }
 }

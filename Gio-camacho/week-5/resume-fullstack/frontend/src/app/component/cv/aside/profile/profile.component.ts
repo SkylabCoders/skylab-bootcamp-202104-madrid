@@ -20,7 +20,6 @@ export class ProfileComponent implements OnInit {
     this.httpClient.get(url).subscribe(
       (res) => {
         this.profile = res
-        console.log(this.profile)
       }
     )
   }

@@ -1,20 +1,20 @@
-<div class="contact">
-    <h2 class="contact__subtitle">Contact Me</h2>
+<div class="contact" *ngFor="let data of aboutMe">
+    <h2 class="contact__subtitle">{{data.title}}</h2>
     <p class="contact__addres">
         <em class="fas fa-home"></em>
-        <span class="contact__addres-span">24 Acton Lane, London</span>
+        <span class="contact__addres-span">{{data.address}}</span>
     </p>
     <p class="contact__telephone">
         <em class="fas fa-phone-alt"></em>
-        <span class="contact__telephone-span">012-3456-7685</span>
+        <span class="contact__telephone-span">{{data.phone}}</span>
     </p>
     <p class="contact__mobile">
         <em class="fas fa-mobile-alt"></em>
-        <span class="contact__mobile-span">06-1342-2567</span>
+        <span class="contact__mobile-span">{{data.mobile}}</span>
     </p>
     <p class="contact__email">
         <em class="far fa-envelope"></em>
-        <span class="contact__email-span">name@skylab.com</span>
+        <span class="contact__email-span">{{data.email}}</span>
     </p>
     <div class="contact__social">
         <a href="#" class="contact__link">

@@ -1,4 +1,4 @@
-export interface Profile {
+export default interface Profile {
     _id: string,
     image: string,
     title: string,

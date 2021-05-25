@@ -1,5 +1,4 @@
 const debug = require('debug')('app');
-const { find } = require('../models/cvModels');
 const User = require('../models/cvModels');
 
 module.exports = {

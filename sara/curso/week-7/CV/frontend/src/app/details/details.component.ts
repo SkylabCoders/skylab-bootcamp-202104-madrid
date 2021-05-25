@@ -94,23 +94,18 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   updateCvUserInfo(property:string, obj : Object, propertyValue: string) {
     let newUserInfo;
-    let name;
-    let mail;
-    let phone;
+
     switch (property) {
       case 'name':
-        name = propertyValue;
-        newUserInfo = { ...obj, name };
+        newUserInfo = { ...obj, name: propertyValue };
         this.callHttpService({ userInfo: newUserInfo });
         break;
       case 'mail':
-        mail = propertyValue;
-        newUserInfo = { ...obj, mail };
+        newUserInfo = { ...obj, mail: propertyValue };
         this.callHttpService({ userInfo: newUserInfo });
         break;
       case 'phone':
-        phone = propertyValue;
-        newUserInfo = { ...obj, phone };
+        newUserInfo = { ...obj, phone: propertyValue };
         this.callHttpService({ userInfo: newUserInfo });
         break;
       default:

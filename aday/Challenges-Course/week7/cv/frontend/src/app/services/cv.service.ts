@@ -19,7 +19,7 @@ export default class CvService {
     return this.httpClient.delete<void>(`${environment.urlApi}/${dni}`)
   }
 
-  // updateCv (dni: number): Observable<Cv> {
-  //   return this.httpClient.put<Cv>(`${environment.urlApi}/${dni}`)
-  // }
+  /* updateCv (dni: number): Observable<Cv> {
+     return this.httpClient.put<Cv>(`${environment.urlApi}/${dni}`)
+   } TO DO */
 }

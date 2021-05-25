@@ -1,6 +1,6 @@
 const { model, Schema } = require('mongoose');
 
-const information = Schema(
+const informationSchema = Schema(
   {
     company: String,
     years: Number,
@@ -8,4 +8,4 @@ const information = Schema(
   },
 );
 
-module.exports = model('Information', information);
+module.exports = model('Information', informationSchema);

@@ -1,17 +1,8 @@
-<div class="main-container--cv">
-    <div>
-        <h1>Curriculum Vitae</h1>
-        <h2>Nombre: {{cvData[0].name}} {{cvData[0].surname}}</h2>
-        <h4>DNI: {{cvData[0].dni}}</h4>
-        <h4>Teléfono: {{cvData[0].phone}}</h4>
-        <h4>LinkedIn: {{cvData[0].linkedin}}</h4>
-        <ul>
-            <li *ngFor="let prueba of cvData; let i = index">
-
-            </li>
-        </ul>
-    </div>
-</div>
+<p>{{cv.name}}</p>
+<h1>{{cv.name}}</h1>
+<h3>{{cv.dni}}</h3>
+<button type="button" (click)="deleteChange.emit(cv.dni)">delete</button>
+<button type="button" (click)="updateChange.emit(cv.dni)">update</button>
 
 
 

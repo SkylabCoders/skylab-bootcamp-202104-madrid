@@ -1,2 +1,15 @@
-<app-cv></app-cv>
-<router-outlet></router-outlet>
+<input type="text" #newCvInput/>
+<!-- <button type="button" (click)="addCv(newCvInput.value)">add</button> -->
+
+<ng-container *ngIf="(getAllCvs$ | async) as cvs">
+    <ul>
+        <li *ngFor="let cv of cvs">
+            <app-cv 
+            [cv]="cv"
+            (deleteChange)="delete($event)"
+            >
+            </app-cv>
+        </li>
+    </ul>
+</ng-container>
+

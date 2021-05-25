@@ -7,7 +7,7 @@ const {
   deleteById
 } = require('../controller/controllerExperiences');
 
-function controllerPersonalInfo() {
+function experiencesRouters() {
   const experiencesRoutes = Router();
 
   experiencesRoutes
@@ -23,4 +23,4 @@ function controllerPersonalInfo() {
   return experiencesRoutes;
 }
 
-module.exports = controllerPersonalInfo();
+module.exports = experiencesRouters();

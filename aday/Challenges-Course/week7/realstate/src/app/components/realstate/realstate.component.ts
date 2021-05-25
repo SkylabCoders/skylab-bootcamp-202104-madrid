@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Realstate } from '../../models/realstate'
+import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-realstate',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RealstateComponent implements OnInit {
 
-  constructor() { }
+realState; <Realstate>
+  constructor(public srvMain:RealstateService) { }
 
   ngOnInit(): void {
+    const obs$ = this.srvMain.getApi(environment.urlApi).subscribe((res:any) => {
+      this.realState = res;
+      console.log(res);
+      obs$.unsubscribe();
+    })
   }
 
 }

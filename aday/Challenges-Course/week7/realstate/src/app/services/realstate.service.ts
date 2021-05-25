@@ -9,6 +9,6 @@ export class RealstateService {
   constructor (private httppClient: HttpClient) { }
 
   getApi (url: string):any {
-    return this.httppClient.get(environment.urlApi)
+    return this.httppClient.get(url)
   }
 }

@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CvComponent } from './component/cv/cv.component';
 import { AsideComponent } from './component/cv/aside/aside.component';
 import { MainComponent } from './component/cv/main/main.component';
+import { ProfileComponent } from './component/cv/aside/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CvComponent,
     AsideComponent,
-    MainComponent
+    MainComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule

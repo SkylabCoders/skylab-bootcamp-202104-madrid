@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { HolapisosService } from '../services/holapisos.service'
 import { environment } from '../../environments/environment'
 
 @Component({
@@ -9,22 +9,35 @@ import { environment } from '../../environments/environment'
 })
 export class CardComponent implements OnInit {
   cardData: any
+  next: any
+  currency: string = '€'
 
   // eslint-disable-next-line no-useless-constructor
-  constructor (public httpClient: HttpClient) { }
+  constructor (public httpServices: HolapisosService) { }
 
   ngOnInit (): void {
     this.fetch(environment.url)
   }
 
   fetch (url:string) {
-    const obs$ = this.httpClient.get(url)
+    const obs$ = this.httpServices.getData(url)
       .subscribe(
-        (res) => {
+        (res:any) => {
           this.cardData = res
-          console.log(this.cardData)
+          this.next = this.cardData.links.next.href
           obs$.unsubscribe()
         }
       )
+  }
+
+  nextPage () {
+    if (this.next) {
+      this.httpServices.getData(this.next).subscribe(
+        (res:any) => {
+          this.next = res.links.next.href
+          this.cardData = res
+        }
+      )
+    }
   }
 }

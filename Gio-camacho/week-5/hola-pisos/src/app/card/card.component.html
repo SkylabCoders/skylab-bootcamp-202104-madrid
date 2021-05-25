@@ -1,23 +1,36 @@
-<div>
-    <article *ngFor="let data of cardData.data">
-        <img src="{{data.attributes.field_inmu_imag_arra[0]}}" alt="{{data.attributes.field_inmu_pobl}}">
-        <span>
-            {{data.attributes.field_inmu_prec}}
-        </span>
-        <h2>
-            {{data.attributes.field_inmu_pobl}}
-        </h2>
+<div class="wrapper">
+    <article class="card" *ngFor="let data of cardData.data">
+        <img class="card__img" src="{{data.attributes.field_inmu_imag_arra[0]}}"
+            alt="{{data.attributes.field_inmu_pobl}}">
+        <div class="card__description">
 
-        <ul>
-            <li>
-                {{data.attributes.field_inmu_area_cons}}
-            </li>
-            <li>
-                {{data.attributes.field_inmu_nume_habi}}
-            </li>
-            <li>
-                {{data.attributes.field_inmu_tipo_sin_agru}}
-            </li>
-        </ul>
+            <span class="card__price">
+                {{data.attributes.field_inmu_prec}} {{currency}}
+            </span>
+            <h2 class="card__title">
+                {{data.attributes.field_inmu_tipo_sin_agru}} en
+                {{data.attributes.field_inmu_tipo_via}}
+                {{data.attributes.field_inmu_nomb_call}}
+            </h2>
+
+            <ul class="card-list">
+                <li class="card-list__item">
+                    <em class="far fa-map"></em>
+                    {{data.attributes.field_inmu_area_cons}}
+                </li>
+                <li class="card-list__item">
+                    <em class="fas fa-bed"></em>
+                    {{data.attributes.field_inmu_nume_habi}}
+                </li>
+                <li class="card-list__item">
+                    <em class="fas fa-bath"></em>
+                    {{data.attributes.field_inmu_nume_habi}}
+                </li>
+            </ul>
+        </div>
     </article>
+
+    <div class="wrapper">
+        <button class="btn" (click)="nextPage()">Mostrar Mas</button>
+    </div>
 </div>

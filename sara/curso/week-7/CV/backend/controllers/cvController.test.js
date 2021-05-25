@@ -72,8 +72,11 @@ describe('cvController', () => {
         test('Then call res.json', () => {
           expect(res.json).toHaveBeenCalled();
         });
-        test('Then call User.find', () => {
+        test('Then call User.findById', () => {
           expect(User.findById).toHaveBeenCalled();
+        });
+        test('Then call User.findById with \'myId\' ', () => {
+          expect(User.findById).toHaveBeenCalledWith('myId');
         });
       });
       describe('And there is an error', () => {
@@ -96,6 +99,51 @@ describe('cvController', () => {
         });
         test('Then call res.send with getUserData error', () => {
           expect(res.send).toHaveBeenCalledWith('getUserData error');
+        });
+      });
+    });
+  });
+  describe('Given a createUserCV function', () => {
+    describe('When is invoked', () => {
+      let req;
+      let res;
+      describe('And there is no error', () => {
+        beforeEach(async () => {
+          req = {
+            body: {},
+          };
+          res = {
+            json: jest.fn(),
+          };
+          await createUserCV(req, res);
+        });
+        test('Then call res.json', () => {
+          expect(res.json).toHaveBeenCalled();
+        });
+        test('Then call User.create', () => {
+          expect(User.create).toHaveBeenCalled();
+        });
+      });
+      describe('And there is an error', () => {
+        beforeEach(async () => {
+          req = {
+            body: {},
+          };
+          res = {
+            json: jest.fn(),
+            send: jest.fn(),
+            status: jest.fn(),
+          };
+
+          User.create.mockRejectedValueOnce('create error');
+
+          await createUserCV(req, res);
+        });
+        test('Then call status with 500', () => {
+          expect(res.status).toHaveBeenCalledWith(500);
+        });
+        test('Then call res.send with create error', () => {
+          expect(res.send).toHaveBeenCalledWith('create error');
         });
       });
     });

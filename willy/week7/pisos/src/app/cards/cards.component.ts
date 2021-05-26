@@ -23,7 +23,6 @@ getAllData (url:string) {
     this.httpSvr.getData(url).subscribe((res:any) => {
       this.cardData = res.data
       this.nextUrl = res.links.next.href
-
       obs$.unsubscribe()
     })
 }

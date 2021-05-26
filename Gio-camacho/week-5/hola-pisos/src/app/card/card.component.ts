@@ -10,8 +10,8 @@ import { environment } from '../../environments/environment'
 export class CardComponent implements OnInit {
   cardData: any
   next!: string
-  previous!: string
   currency: string = '€'
+  previous!: string
 
   // eslint-disable-next-line no-useless-constructor
   constructor (public httpServices: HolapisosService) { }

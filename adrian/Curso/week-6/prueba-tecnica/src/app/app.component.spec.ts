@@ -24,7 +24,7 @@ describe('AppComponent', () => {
   });
 
   it('Should call onInit', ()=>{
-    comp.ngOnInit();
+    ngOnInit();
     expect(fetchApi()).toHaveBeencalled()
   });
 

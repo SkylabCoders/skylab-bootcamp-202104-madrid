@@ -16,7 +16,6 @@ function infoRouter() {
     .put(updateById)
     .delete(deleteById);
 
-  return infoRoutes; // fundamental que esta funcion retorne las tareas
+  return infoRoutes;
 }
-
 module.exports = infoRouter();

@@ -1,8 +1,5 @@
-/* eslint-disable no-empty-function */
 /* eslint-disable no-useless-constructor */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-unresolved */
+
 import { Observable, Subject } from 'rxjs'
 import { OnInit, Component, AfterViewInit } from '@angular/core'
 import { switchMap, tap } from 'rxjs/operators'
@@ -14,7 +11,7 @@ import { UserService } from './services/user.service'
   styleUrls: ['./app.component.scss']
 })
 // eslint-disable-next-line import/prefer-default-export
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   refresh$ = new Subject();
 
   fetchCV$!: Observable<any>;

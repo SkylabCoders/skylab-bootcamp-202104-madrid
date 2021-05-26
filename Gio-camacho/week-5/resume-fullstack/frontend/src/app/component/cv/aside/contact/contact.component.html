@@ -1,0 +1,33 @@
+<div class="contact" *ngFor="let data of contact">
+    <h2 class="contact__subtitle">{{data.title}}</h2>
+    <p class="contact__addres">
+        <em class="fas fa-home"></em>
+        <span class="contact__addres-span">{{data.address}}</span>
+    </p>
+    <p class="contact__telephone">
+        <em class="fas fa-phone-alt"></em>
+        <span class="contact__telephone-span">{{data.phone}}</span>
+    </p>
+    <p class="contact__mobile">
+        <em class="fas fa-mobile-alt"></em>
+        <span class="contact__mobile-span">{{data.mobile}}</span>
+    </p>
+    <p class="contact__email">
+        <em class="far fa-envelope"></em>
+        <span class="contact__email-span">{{data.email}}</span>
+    </p>
+    <div class="contact__social">
+        <a href="#" class="contact__link">
+            <em class="fab fa-facebook-f"></em>
+        </a>
+        <a href="#" class="contact__link">
+            <em class="fab fa-linkedin-in"></em>
+        </a>
+        <a href="#" class="contact__link">
+            <em class="fab fa-twitter"></em>
+        </a>
+        <a href="#" class="contact__link">
+            <em class="fab fa-instagram"></em>
+        </a>
+    </div>
+</div>

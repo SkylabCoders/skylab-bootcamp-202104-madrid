@@ -1,0 +1,15 @@
+
+main{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+    .main__container{
+        display: flex;
+        flex-direction: column;
+        img{
+         width: 12rem;
+         height: auto; 
+    }
+}
+}

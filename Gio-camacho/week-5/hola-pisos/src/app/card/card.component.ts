@@ -31,20 +31,6 @@ export class CardComponent implements OnInit {
       )
   }
 
-  // nextPage () {
-  //   if (this.next) {
-  //     this.httpServices.getData(this.next).subscribe(
-  //       (res:any) => {
-  //         this.next = res.links.next.href
-  //         this.previous = res.links.prev.href
-  //         console.log(this.previous)
-  //         console.log(this.next)
-  //         this.cardData = res.data
-  //       }
-  //     )
-  //   }
-  // }
-
   nextPage () {
     if (this.next) {
       this.httpServices.getData(this.next).subscribe((res:any) => {

@@ -1,8 +1,30 @@
 ul{
     display: flex;
     flex-wrap: wrap;
+    border-radius: 3px;
 }
+
+.button-box{
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    background-color: yellowgreen;
+    height: 3rem;
+    width: 8rem;
+    border: transparent;
+    border-radius: 2px;
+}
+
 .homes{
-    border: 2px solid black;
-    margin: 2%;
+    list-style: none;
+    height: 10rem;
+    img{
+        height: 90%;
+        border: 12px solid rgb(162, 162, 206);
+        border-radius: 5px;
+    }
+    border: 2px solid rgb(162, 162, 206);
+    margin: 4%;
 }

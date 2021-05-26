@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpService } from './services/http.service'
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -22,10 +23,9 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('prueba-tecnica');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('prueba-tecnica app is running!');
+  it('Should call onInit', ()=>{
+    comp.ngOnInit();
+    expect(fetchApi()).toHaveBeencalled()
   });
+
 });

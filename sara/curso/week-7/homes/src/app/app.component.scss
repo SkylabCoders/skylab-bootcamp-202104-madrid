@@ -2,13 +2,13 @@
 main{
     display: flex;
     flex-direction: column;
-    background-color:rgb(244, 245, 242);
+    background-color:rgb(248, 248, 248);
     margin: 0;
     box-sizing: border-box;
     align-items: center;
 
     h1{
-        background-color: rgb(229, 243, 199);
+        background-color: rgb(248, 248, 248);
         color: black;
         padding: 1.5rem;
         width: 100%;
@@ -25,10 +25,9 @@ main{
 
         li {
             list-style: none;
-            padding: 1rem;
             margin: 1rem;
-            border: 2px solid black;
-            border-radius: 5%;
+            border-bottom-left-radius: 2%;
+            border-bottom-right-radius: 2%;
             height: 20rem;
             width: 15rem;
             display: flex;
@@ -38,9 +37,7 @@ main{
             background-color: rgb(255, 255, 255);
             
             img{
-                max-height: 14rem;
-                max-width: 14rem;
-                border: 2px solid black;
+                width: 15rem;
             }
 
             div{

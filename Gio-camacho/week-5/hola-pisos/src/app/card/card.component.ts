@@ -9,7 +9,8 @@ import { environment } from '../../environments/environment'
 })
 export class CardComponent implements OnInit {
   cardData: any
-  next: any
+  next!: string
+  previous!: string
   currency: string = '€'
 
   // eslint-disable-next-line no-useless-constructor
@@ -30,18 +31,38 @@ export class CardComponent implements OnInit {
       )
   }
 
+  // nextPage () {
+  //   if (this.next) {
+  //     this.httpServices.getData(this.next).subscribe(
+  //       (res:any) => {
+  //         this.next = res.links.next.href
+  //         this.previous = res.links.prev.href
+  //         console.log(this.previous)
+  //         console.log(this.next)
+  //         this.cardData = res.data
+  //       }
+  //     )
+  //   }
+  // }
+
   nextPage () {
     if (this.next) {
-      this.httpServices.getData(this.next).subscribe(
-        (res:any) => {
-          this.next = res.links.next.href
-          this.cardData = res.data
-        }
-      )
+      this.httpServices.getData(this.next).subscribe((res:any) => {
+        this.next = res.links.next.href
+        this.previous = res.links.prev.href
+        this.cardData = res.data
+      })
     }
   }
 
   previousPage () {
-
+    if (this.previous !== environment.startUrl) {
+      this.httpServices.getData(this.previous).subscribe((res:any) => {
+        this.previous = res.links.prev.href
+        this.cardData = res.data
+      })
+    } else {
+      this.ngOnInit()
+    }
   }
 }

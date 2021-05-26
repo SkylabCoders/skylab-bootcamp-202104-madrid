@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { HolapisosService } from './holapisos.service';
+import { HolapisosService } from './holapisos.service'
 
 describe('HolapisosService', () => {
-  let service: HolapisosService;
+  let service: HolapisosService
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HolapisosService);
-  });
+    TestBed.configureTestingModule({})
+    service = TestBed.inject(HolapisosService)
+  })
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+    expect(service).toBeTruthy()
+  })
+})

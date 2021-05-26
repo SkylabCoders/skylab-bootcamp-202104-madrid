@@ -8,7 +8,7 @@
 
 .card {
     width: 280px;
-    height: 380px;
+    min-height: 380px;
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
@@ -32,17 +32,25 @@
     &__title {
         color: #003B59;
         text-transform: capitalize;
+        font-size: 20px;
     }
 }
 
 .card-list {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 3px;
 
     &__item {
+        font-size: 13px;
+        font-weight: 300;
         list-style: none;
         color: #003B59;
+    }
+
+    &__icon {
+        font-size: 16px;
     }
 }
 
@@ -61,6 +69,7 @@
     margin: 30px 10px;
     transition: opacity 200ms ease-in;
     cursor: pointer;
+    outline: none;
 
     &:hover {
         opacity: .85;

@@ -5,7 +5,7 @@
         <div class="card__description">
 
             <span class="card__price">
-                {{data.attributes.field_inmu_prec}} {{currency}}
+                {{data.attributes.field_inmu_prec | number:'':'es'}} {{currency}}
             </span>
             <h2 class="card__title">
                 {{data.attributes.field_inmu_tipo_sin_agru}} en
@@ -16,7 +16,7 @@
             <ul class="card-list">
                 <li class="card-list__item">
                     <em class="far fa-map card-list__icon"></em>
-                    {{data.attributes.field_inmu_area_cons}} m<sup>2</sup>
+                    {{data.attributes.field_inmu_area_cons | number : '1.0-0'}} m<sup>2</sup>
                 </li>
                 <li class="card-list__item">
                     <em class="fas fa-bed card-list__icon"></em>
@@ -31,7 +31,6 @@
     </article>
 
     <div class="wrapper">
-        <button class="btn" (click)="previousPage()">Previous</button>
-        <button class="btn" (click)="nextPage()">Next</button>
+        <button class="btn" (click)="showMore()">Mostrar Mas</button>
     </div>
 </div>

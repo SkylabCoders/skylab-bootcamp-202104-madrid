@@ -3,20 +3,20 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jasmine: true,
+    jasmine: true
   },
   extends: [
-    'airbnb-base',
+    'standard'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: [
-    '@typescript-eslint',
+    '@typescript-eslint'
   ],
   rules: {
-    'No-useless-constructor': 'off',
-  },
-};
+    'No-useless-constructor': 'off'
+  }
+}

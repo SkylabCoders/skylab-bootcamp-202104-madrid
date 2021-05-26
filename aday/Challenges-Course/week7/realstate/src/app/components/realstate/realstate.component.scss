@@ -1,0 +1,26 @@
+*{
+    font-family: sans-serif;
+    color: #003b59;
+    background: #f8f8f8;
+
+}
+
+.grid__container{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: repeat(8, 300px);
+    column-gap: 10px;
+    row-gap: 15px;
+    align-content: center;
+}
+
+.container__data{
+    text-align: justify;
+}
+
+img{
+   width: 100%;
+   height: 180px;
+}
+

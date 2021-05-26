@@ -11,8 +11,8 @@ connect(
   process.env.DDBB_URL,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
+    useUnifiedTopology: true
+  }
 );
 
 const app = express();
@@ -25,5 +25,5 @@ app.use('/api/tasks', taskRoutes);
 
 app.listen(
   port,
-  () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`),
+  () => debug(`Server is running on ${chalk.yellow(`http://localhost:${port}`)}`)
 );

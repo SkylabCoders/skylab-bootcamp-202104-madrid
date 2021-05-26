@@ -1,0 +1,29 @@
+<main >
+    <div class="main__container">
+        <div class="container__data" *ngFor="let data of cardData">
+            <div class="data__img">
+                <img src="{{data.attributes.field_inmu_imag_arra[0]}}" alt="Casa">
+            </div>
+            <div class="data__price">
+                <div>{{data.attributes.field_inmu_prec}} €</div>
+            </div>
+            <div class="data__address">
+                <div>{{data.attributes.field_inmu_tipo_via}} {{data.attributes.field_inmu_nomb_call}}</div>
+            </div>
+            <div class="data__city">
+                <div>{{data.attributes.field_inmu_pobl}}</div>
+            </div>
+            <div class="data__features">
+                <em class="fas fa-pencil-ruler"></em>
+                <div>{{data.attributes.field_inmu_area_cons}} m2</div>
+                <em class="fas fa-bed"></em>
+                <div>{{data.attributes.field_inmu_nume_habi}} Hab.</div>
+            </div>
+        </div>
+    </div>
+    <div class="container__button">
+        <button (click)="prevPage()">Prev</button>
+        <button (click)="nextPage()">Next</button>
+    </div>
+    
+</main>

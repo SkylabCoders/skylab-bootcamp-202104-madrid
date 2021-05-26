@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const {
   getAll, create, updateById, deleteById
-} = require('../controllers/infoControllers');
+} = require('../controllers/aboutMeController');
 
-function infoRouter() {
+function aboutMeRouter() {
   const infoRoutes = Router();
 
   infoRoutes
@@ -12,10 +12,10 @@ function infoRouter() {
     .post(create);
 
   infoRoutes
-    .route('/:infoId')
+    .route('/:aboutMeId')
     .put(updateById)
     .delete(deleteById);
 
   return infoRoutes;
 }
-module.exports = infoRouter();
+module.exports = aboutMeRouter();

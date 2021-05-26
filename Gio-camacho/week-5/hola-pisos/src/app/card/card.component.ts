@@ -58,6 +58,7 @@ export class CardComponent implements OnInit {
   previousPage () {
     if (this.previous !== environment.startUrl) {
       this.httpServices.getData(this.previous).subscribe((res:any) => {
+        this.next = res.links.next.href
         this.previous = res.links.prev.href
         this.cardData = res.data
       })

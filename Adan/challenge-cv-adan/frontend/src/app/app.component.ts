@@ -1,39 +1,92 @@
-/* eslint-disable import/prefer-default-export */
-import { AfterViewInit, Component, OnInit } from '@angular/core'
-import { Observable, Subject } from 'rxjs'
-import { CvService } from './service/cv.service'
-import { switchMap, tap } from 'rxjs/operators'
+/* eslint-disable no-empty-function */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
+import { Observable, Subject } from 'rxjs';
+import { OnInit, Component, AfterViewInit } from '@angular/core';
+import { switchMap, tap } from 'rxjs/operators';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+// eslint-disable-next-line import/prefer-default-export
+export class AppComponent implements OnInit {
   refresh$ = new Subject();
 
-  fetchCv$!: Observable<any>;
+  fetchCV$!: Observable<any>;
 
-  // eslint-disable-next-line no-useless-constructor
-  constructor (public cvService: CvService) {}
+  jobPosition = 'Full Stack Developer';
 
-  ngOnInit () {
-    this.fetchCv$ = this.refresh$
+  constructor(public userService: UserService) {}
+
+  ngOnInit() {
+    this.fetchCV$ = this.refresh$
       .pipe(
-        switchMap(() => this.cvService.fetchCv())
+        switchMap(() => this.userService.fetchUsers()),
+      );
+  }
+
+  ngAfterViewInit() {
+    this.refresh$.next();
+  }
+
+  addExperience(
+    id:string, knowledgeArray:any, valueExp:string, valueYear: any, valueAcademy:any,
+  ) {
+    const newKnowledgeArray = knowledgeArray;
+    newKnowledgeArray.push({
+      language: valueExp,
+      academy: valueAcademy,
+      year: valueYear,
+    });
+    this.userService.addExperience(id, newKnowledgeArray)
+      .pipe(
+        tap(() => this.refresh$.next()),
       )
+      .subscribe();
   }
 
-  ngAfterViewInit () {
-    this.refresh$.next()
-  }
-
-  addCv (value:string) {
-    this.cvService.postCv(value)
+  delete(id: string, knowledgeArray:any, i:any) {
+    const newKnowledgeArray = knowledgeArray;
+    newKnowledgeArray.splice(i, 1);
+    this.userService.deleteExperience(id, newKnowledgeArray)
       .pipe(
-        tap(() => this.refresh$.next())
-      ).subscribe()
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
   }
 
-  // updateExperience(id:string,)
+  updateLanguage(id: string, knowledgeArray:any, i:any, skills: string) {
+    const newKnowledgeArray = knowledgeArray;
+    newKnowledgeArray[i].language = skills;
+    this.userService.updateExperience(id, newKnowledgeArray)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
+  updateAcademy(id: string, knowledgeArray:any, i:any, skills: any) {
+    const newKnowledgeArray = knowledgeArray;
+    newKnowledgeArray[i].academy = skills;
+    this.userService.updateExperience(id, newKnowledgeArray)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
+
+  updateYear(id: string, knowledgeArray:any, i:any, skills: any) {
+    const newKnowledgeArray = knowledgeArray;
+    newKnowledgeArray[i].year = skills;
+    this.userService.updateExperience(id, newKnowledgeArray)
+      .pipe(
+        tap(() => this.refresh$.next()),
+      )
+      .subscribe();
+  }
 }

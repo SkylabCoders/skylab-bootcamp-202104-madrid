@@ -15,6 +15,9 @@ export class CardComponent implements OnInit {
   currency: string = '€'
   previous!: string
   moreInfo:Array<{}> = []
+  /* I could not find any solution at the momment, I am work on it */
+  bolt: string = 'https://inmueble.s3.eu-west-1.amazonaws.com/fotos_inmuebles/5/0/4/6/5046650.pdf'
+  length: any = length - 1
 
   // eslint-disable-next-line no-useless-constructor
   constructor (public httpServices: HolapisosService) { }
@@ -45,7 +48,7 @@ export class CardComponent implements OnInit {
         this.moreInfo.push(...res.data)
         this.cardData = this.moreInfo
         // console.log(this.cardData)
-        console.log(this.moreInfo)
+        // console.log(this.moreInfo)
       })
     }
   }

@@ -27,6 +27,16 @@
         color: #003B59;
         font-weight: 800;
         font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        
+        & > a {
+            color: #003B59;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
     }
 
     &__title {

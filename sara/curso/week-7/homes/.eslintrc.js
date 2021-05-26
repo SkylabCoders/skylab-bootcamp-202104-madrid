@@ -3,9 +3,10 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jasmine: true,
   },
   extends: [
-    'airbnb-base',
+    'standard',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

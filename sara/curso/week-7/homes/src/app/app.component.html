@@ -1,16 +1,14 @@
 <main>
-  <h1>Find your HOME</h1>
   <ul>
     <li *ngFor="let house of houses">
       <img src="{{house.attributes.field_inmu_imag_arra[0]}}" alt="House">
       <div>
-        <h2>{{house.attributes.field_inmu_prec}}</h2>
+        <h2>{{house.attributes.field_inmu_prec | number: '1.0-0' | commaToDot}}</h2>
         <h3>{{house.attributes.field_inmu_tipo_via}}/ {{house.attributes.field_inmu_nomb_call}}</h3>
       </div>
     </li>
   </ul>
   <div>
-    <button type="button" (click)="goToPrev()">Prev</button>
-    <button type="button" (click)="goToNext()">Next</button>
+    <button type="button" (click)="loadMore()">Next</button>
   </div>
 </main>

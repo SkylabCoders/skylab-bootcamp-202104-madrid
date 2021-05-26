@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   chargePage () {
-    this.httpService.getApi().subscribe((res) => {
+    this.httpService.getApi().subscribe((res:Object) => {
       this.fetch = res
       this.results = this.fetch.data
       this.nextUrl = this.fetch.links.next.href

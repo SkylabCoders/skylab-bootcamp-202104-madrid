@@ -41,7 +41,7 @@ getNext() {
 
 getPrevius() {
   if (this.houses.links.prev) {
-    this.url = this.houses.links.next.href;
+    this.url = this.houses.links.prev.href;
     this.updateFetch();
   }
 }

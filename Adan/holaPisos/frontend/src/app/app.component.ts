@@ -8,7 +8,6 @@ import { HttpService } from './service/http.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'frontend';
   fetch: any
   results: any
   nextUrl!: string
@@ -20,7 +19,7 @@ export class AppComponent implements OnInit {
   }
 
   chargePage () {
-    this.httpService.getApi().subscribe((res:Object) => {
+    this.httpService.getApi().subscribe((res) => {
       this.fetch = res
       this.results = this.fetch.data
       this.nextUrl = this.fetch.links.next.href
@@ -28,10 +27,12 @@ export class AppComponent implements OnInit {
   }
 
   showMore () {
-    this.httpService.getApiMostrar(this.nextUrl).subscribe((res) => {
-      this.fetch = res
-      this.results = this.fetch.data
-      this.nextUrl = this.fetch.links.next.href
-    })
+    if (this.nextUrl) {
+      this.httpService.getApiMostrar(this.nextUrl).subscribe((res) => {
+        this.fetch = res
+        this.results = this.fetch.data
+        this.nextUrl = this.fetch.links.next.href
+      })
+    }
   }
 }

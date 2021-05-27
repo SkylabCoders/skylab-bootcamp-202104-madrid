@@ -7,11 +7,10 @@ export default interface User {
         phoneNumber: number,
         email: string
     },
-    knowledge: [
+    knowledge:
         {
             language: string
             academy: string
             year: number;
         }
-    ]
 }

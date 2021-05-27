@@ -1,0 +1,17 @@
+body {
+  padding: 10px;
+  margin: 8px;
+  cursor: pointer;
+  background-image: url("https://www.nintendo.com/content/dam/noa/en_US/wallpapers/arms/arms-3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+body a {
+  text-decoration: none;
+  color: blue;
+}
+/*# sourceMappingURL=detail.class.css.map */

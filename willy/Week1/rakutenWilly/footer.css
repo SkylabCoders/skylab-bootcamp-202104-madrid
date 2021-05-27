@@ -1,0 +1,170 @@
+.container__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #212121;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info__rakuten {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  width: 400px;
+  margin-top: 20px;
+}
+
+.info__rakuten > h2 {
+  color: white;
+  text-align: center;
+}
+
+.info__rakuten > p {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.info__rakuten2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 50px;
+  margin-right: 60px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.rakuten__work {
+  width: 400px;
+}
+
+.rakuten__work > a {
+  color: white;
+  text-align: center;
+}
+
+.rakuten__work > p {
+  color: grey;
+  text-align: center;
+  font-size: 14px;
+}
+
+#HowItWokrs {
+  width: 100px;
+  height: 100px;
+}
+
+.rakuten__pay {
+  width: 300px;
+}
+
+.rakuten__pay > a {
+  color: white;
+  text-align: center;
+}
+
+.rakuten__pay > p {
+  color: grey;
+  text-align: center;
+  font-size: 14px;
+}
+
+#Payment {
+  width: 150px;
+  height: 50px;
+}
+
+.rakuten__support {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+}
+
+.rakuten__support > a {
+  color: white;
+  text-align: center;
+}
+
+.rakuten__support > p {
+  color: grey;
+  text-align: center;
+  font-size: 14px;
+}
+
+.rakuten__support > img {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#Support {
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.footer__policy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #171717;
+}
+
+.policy__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.policy__info > a {
+  color: #c0ccc6;
+}
+
+.policy__info > svg {
+  margin-right: 10px;
+}
+
+.policy__info a:hover {
+  color: white;
+}
+
+.policy__copyright {
+  margin-left: 15px;
+  color: rgba(128, 128, 128, 0.815);
+}
+/*# sourceMappingURL=footer.css.map */

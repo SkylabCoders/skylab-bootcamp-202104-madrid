@@ -1,0 +1,23 @@
+.main__modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40%;
+  width: 40%;
+  position: absolute;
+  bottom: 50%;
+  border-radius: 5px;
+  background-color: #171717;
+  color: white;
+  z-index: -1;
+  font-family: NotoSans-Bold,Arial,sans-serif;
+  font-size: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ul__img--modal:hover .main__modal {
+  z-index: 1;
+}
+/*# sourceMappingURL=style_modal.css.map */

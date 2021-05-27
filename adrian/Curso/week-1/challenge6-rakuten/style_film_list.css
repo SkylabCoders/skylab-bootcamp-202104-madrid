@@ -1,0 +1,32 @@
+.main__film-list {
+  width: auto;
+}
+
+.main__film-list header h2 {
+  margin-left: 1%;
+  font-family: NotoSans-Bold,Arial,sans-serif;
+  color: white;
+}
+
+.main__film-list img:hover {
+  border: solid 4px #dfc500;
+}
+
+.main__film-list ul {
+  padding-left: 0;
+  margin-left: 1%;
+  overflow-x: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.main__film-list ul img {
+  margin: 5px;
+}
+/*# sourceMappingURL=style_film_list.css.map */

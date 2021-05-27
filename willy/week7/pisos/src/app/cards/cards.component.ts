@@ -12,13 +12,10 @@ import es from '@angular/common/locales/es'
 export class CardsComponent implements OnInit {
 cardData:any
 nextUrl!:string
-energyInfo:any
 cardDataList:Array<{}> = []
 currency:string = '€'
 squareMeter:string = 'm2'
 rooms:string = 'Hab.'
-length:string = '[field_inmu_imag_arra.length -1]'
-// prevUrl!:string
 
 constructor (private httpSvr: HttpService) { }
 
@@ -32,7 +29,6 @@ getAllData (url:string) {
     this.httpSvr.getData(url).subscribe((res:any) => {
       this.cardData = res.data
       this.nextUrl = res.links.next.href
-      console.log(this.energyInfo)
       this.cardDataList.push(...res.data)
       obs$.unsubscribe()
     })
@@ -42,10 +38,8 @@ showMore () {
   if (this.nextUrl) {
     this.httpSvr.getData(this.nextUrl).subscribe((res:any) => {
       this.nextUrl = res.links.next.href
-      this.energyInfo = res.data.attributes.field_inmu_imag_arra
       this.cardDataList.push(...res.data)
       this.cardData = this.cardDataList
-      console.log(this.cardDataList)
     })
   }
 }

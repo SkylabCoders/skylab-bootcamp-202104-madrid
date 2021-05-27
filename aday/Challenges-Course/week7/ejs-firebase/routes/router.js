@@ -1,8 +1,5 @@
-const express = require('express')
 const index = require('../index')
-
-const admin = require("firebase-admin");
-const database = admin.database()
+const express = require('express')
 
 function router() {
 const routes = express.Router()
@@ -22,12 +19,11 @@ routes
 routes
 .route('/home')
 .post((req, res) => {
-    console.log(req.body)
     const newUser = {
         name: req.body.name,
         password: req.body.password
     }
-    database.ref('user').push(newUser)
+    index.database.ref('user').push(newUser)
     res.send('Has sido registrado correctamente!')
 })
 

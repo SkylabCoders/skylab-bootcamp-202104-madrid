@@ -26,3 +26,5 @@ server.use('/', routes)
 
 const PORT = process.env.PORT || 4000
 server.listen(PORT, () =>(`Server is running at PORT ${PORT}`))
+
+module.exports.database = database

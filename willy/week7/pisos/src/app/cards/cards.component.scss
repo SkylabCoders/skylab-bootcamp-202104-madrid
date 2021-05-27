@@ -33,12 +33,22 @@
 
 .data__price {
     padding-left: 15px;
+    padding-right: 15px;
     color: $colorCard;
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
     font-weight: 800;
     margin-top: 5px;
     margin-bottom: 5px;
+    justify-content: space-between;
+
+    & em {
+        color:$colorCard
+    }
+
+    & em:hover {
+        color: yellow;
+    }
 }
 
 .data__address {

@@ -31,6 +31,7 @@ app.post('/home', (req, res) => {
     console.log(userCredential)
       const user = userCredential.user
       console.log('Log in' + user)
+      console.log('Esto es lo que buscas ' + userCredential.user + '*********')
     // ...
     })
     .catch((error) => {

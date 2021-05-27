@@ -1,24 +1,15 @@
-<div class="grid__container">
-        <div class="container__data" *ngFor="let home of realState">
-            <div class="data__img">
-                <img src="{{home.attributes.field_inmu_imag_arra[0]}}" alt="Home">
-            </div>
-            <div class="data__price">
-                {{home.attributes.field_inmu_prec}} €
-            </div>
-            <div class="data__address">
-                {{home.attributes.field_inmu_tipo_via}} {{home.attributes.field_inmu_nom_call}}
-            </div>
-            <div class="data__city">
-                {{home.attributes.field_inmu_pobl}}
-            </div>
-            <div class="data__features">
-                <i class="fas fa-pencil-ruler"></i>
-                <div>{{home.attributes.field_inmu_area_cons}}</div>
-                <em class="fas fa-bed"></em>
-                <div>{{home.attributes.field_inmu_nume_habi}}</div>
-            </div>
+<main class="grid__container">
+    <div class="container__data" *ngFor="let home of realState">
+        <div>
+            <img src="{{home.attributes.field_inmu_imag_arra[0]}}" alt="Home">
+            <p>{{home.attributes.field_inmu_prec | number}} €</p>
+            <p>Piso en {{home.attributes.field_inmu_tipo_via}} {{home.attributes.field_inmu_nomb_call}} {{home.attributes.field_inmu_area_cons | number}}</p>
+            <p>{{home.attributes.field_inmu_pobl}}</p>
         </div>
     </div>
-    <button (click)="prevPage()">prev</button>
-    <button (click)="nextPage()">next</button>
+</main>
+<div class="container__button">
+    <button (click)="showMore()">Mostrar más</button>
+</div>
+    <!-- <button (click)="prevPage()">prev</button>
+    <button (click)="nextPage()">next</button> -->

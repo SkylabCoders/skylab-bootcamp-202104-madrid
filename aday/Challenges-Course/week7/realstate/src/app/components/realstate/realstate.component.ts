@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { Realstate } from '../../models/realstate'
 import { environment } from '../../../environments/environment'
 import { RealstateService } from '../../services/realstate.service'
 
@@ -9,7 +8,7 @@ import { RealstateService } from '../../services/realstate.service'
   styleUrls: ['./realstate.component.scss']
 })
 export class RealstateComponent implements OnInit {
-realState: Realstate
+realState:Array<{}> = []
 nextUrl: any
 prevUrl: any
 
@@ -28,11 +27,20 @@ chargePage () {
   })
 }
 
-nextPage () {
+showMore () {
   const obs$ = this.srvMain.getApi(this.nextUrl).subscribe((res:any) => {
     this.nextUrl = res.links.next.href
     this.prevUrl = res.links.prev.href
+    this.realState.push(...res.data)
+    obs$.unsubscribe()
+  })
+}
+
+nextPage () {
+  const obs$ = this.srvMain.getApi(this.prevUrl).subscribe((res:any) => {
+    this.nextUrl = res.links.next.href
     this.realState = res.data
+    this.prevUrl = res.links.prev.href
     obs$.unsubscribe()
   })
 }

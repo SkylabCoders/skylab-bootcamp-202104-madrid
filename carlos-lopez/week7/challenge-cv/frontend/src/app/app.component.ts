@@ -1,92 +1,87 @@
-/* eslint-disable no-empty-function */
 /* eslint-disable no-useless-constructor */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-unresolved */
-import { Observable, Subject } from 'rxjs';
-import { OnInit, Component, AfterViewInit } from '@angular/core';
-import { switchMap, tap } from 'rxjs/operators';
-import { UserService } from './services/user.service';
+import { Observable, Subject } from 'rxjs'
+import { OnInit, Component, AfterViewInit } from '@angular/core'
+import { switchMap, tap } from 'rxjs/operators'
+import { UserService } from './services/user.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
-// eslint-disable-next-line import/prefer-default-export
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   refresh$ = new Subject();
 
   fetchCV$!: Observable<any>;
 
   jobPosition = 'Full Stack Developer';
 
-  constructor(public userService: UserService) {}
+  constructor (public userService: UserService) {}
 
-  ngOnInit() {
+  ngOnInit () {
     this.fetchCV$ = this.refresh$
       .pipe(
-        switchMap(() => this.userService.fetchUsers()),
-      );
+        switchMap(() => this.userService.fetchUsers())
+      )
   }
 
-  ngAfterViewInit() {
-    this.refresh$.next();
+  ngAfterViewInit () {
+    this.refresh$.next()
   }
 
-  addExperience(
-    id:string, knowledgeArray:any, valueExp:string, valueYear: any, valueAcademy:any,
+  addExperience (
+    id:string, knowledgeArray:any, valueExp:string, valueYear: any, valueAcademy:any
   ) {
-    const newKnowledgeArray = knowledgeArray;
+    const newKnowledgeArray = knowledgeArray
     newKnowledgeArray.push({
       language: valueExp,
       academy: valueAcademy,
-      year: valueYear,
-    });
+      year: valueYear
+    })
     this.userService.addExperience(id, newKnowledgeArray)
       .pipe(
-        tap(() => this.refresh$.next()),
+        tap(() => this.refresh$.next())
       )
-      .subscribe();
+      .subscribe()
   }
 
-  delete(id: string, knowledgeArray:any, i:any) {
-    const newKnowledgeArray = knowledgeArray;
-    newKnowledgeArray.splice(i, 1);
+  delete (id: string, knowledgeArray:any, i:any) {
+    const newKnowledgeArray = knowledgeArray
+    newKnowledgeArray.splice(i, 1)
     this.userService.deleteExperience(id, newKnowledgeArray)
       .pipe(
-        tap(() => this.refresh$.next()),
+        tap(() => this.refresh$.next())
       )
-      .subscribe();
+      .subscribe()
   }
 
-  updateLanguage(id: string, knowledgeArray:any, i:any, skills: string) {
-    const newKnowledgeArray = knowledgeArray;
-    newKnowledgeArray[i].language = skills;
+  updateLanguage (id: string, knowledgeArray:any, i:any, skills: string) {
+    const newKnowledgeArray = knowledgeArray
+    newKnowledgeArray[i].language = skills
     this.userService.updateExperience(id, newKnowledgeArray)
       .pipe(
-        tap(() => this.refresh$.next()),
+        tap(() => this.refresh$.next())
       )
-      .subscribe();
+      .subscribe()
   }
 
-  updateAcademy(id: string, knowledgeArray:any, i:any, skills: any) {
-    const newKnowledgeArray = knowledgeArray;
-    newKnowledgeArray[i].academy = skills;
+  updateAcademy (id: string, knowledgeArray:any, i:any, skills: any) {
+    const newKnowledgeArray = knowledgeArray
+    newKnowledgeArray[i].academy = skills
     this.userService.updateExperience(id, newKnowledgeArray)
       .pipe(
-        tap(() => this.refresh$.next()),
+        tap(() => this.refresh$.next())
       )
-      .subscribe();
+      .subscribe()
   }
 
-  updateYear(id: string, knowledgeArray:any, i:any, skills: any) {
-    const newKnowledgeArray = knowledgeArray;
-    newKnowledgeArray[i].year = skills;
+  updateYear (id: string, knowledgeArray:any, i:any, skills: any) {
+    const newKnowledgeArray = knowledgeArray
+    newKnowledgeArray[i].year = skills
     this.userService.updateExperience(id, newKnowledgeArray)
       .pipe(
-        tap(() => this.refresh$.next()),
+        tap(() => this.refresh$.next())
       )
-      .subscribe();
+      .subscribe()
   }
 }

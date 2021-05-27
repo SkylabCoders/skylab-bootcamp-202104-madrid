@@ -1,0 +1,87 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    min-height: 380px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+
+    &__description {
+       width: 80%;
+       margin: 20px auto;
+    }
+
+    &__img {
+        height: 180px;
+    }
+
+    &__price {
+        color: #003B59;
+        font-weight: 800;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        
+        & > a {
+            color: #003B59;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+
+    &__title {
+        color: #003B59;
+        text-transform: capitalize;
+        font-size: 20px;
+    }
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3px;
+
+    &__item {
+        font-size: 13px;
+        font-weight: 300;
+        list-style: none;
+        color: #003B59;
+    }
+
+    &__icon {
+        font-size: 16px;
+    }
+}
+
+.btn {
+    width: 100%;
+    max-width: 140px;
+    height: 46px;
+    font-size: 14px;
+    font-family: 'Nunito',sans-serif;
+    font-weight: 600;
+    background-color: #f25c0f;
+    border-radius: 24px;
+    color: white;
+    border: none;
+    text-align: center;
+    margin: 30px 10px;
+    transition: opacity 200ms ease-in;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        opacity: .85;
+    }
+}

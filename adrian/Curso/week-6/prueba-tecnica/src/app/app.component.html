@@ -1,0 +1,10 @@
+<main>
+  <ul class="main__ul">
+    <li class="ul__house" *ngFor="let data of houses">
+      <h2>{{data.attributes.field_inmu_nomb_call}}</h2>
+      <img src="{{data.attributes.field_inmu_imag_arra[0]}}" alt="">
+      <p>{{data.attributes.field_inmu_prec  | number: '1.0-0' | changeNumber }}€</p>
+    </li>
+  </ul>
+  <button (click)="getNext()">Next</button>
+</main>

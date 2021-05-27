@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <article class="card" *ngFor="let data of cardData">
+        <img class="card__img" src="{{data.attributes.field_inmu_imag_arra[0]}}"
+            alt="{{data.attributes.field_inmu_pobl}}">
+        <div class="card__description">
+
+            <div class="card__price">
+                <span>
+                    {{data.attributes.field_inmu_prec | number:'':'es'}} {{currency}}
+                </span>
+
+                <a class="fas fa-bolt" href="{{bolt}}" target="_blank"></a>
+            </div>
+            <h2 class="card__title">
+                {{data.attributes.field_inmu_tipo_sin_agru}} en
+                {{data.attributes.field_inmu_tipo_via}}
+                {{data.attributes.field_inmu_nomb_call}}
+            </h2>
+
+            <ul class="card-list">
+                <li class="card-list__item">
+                    <em class="far fa-map card-list__icon"></em>
+                    {{data.attributes.field_inmu_area_cons | number : '1.0-0'}} m<sup>2</sup>
+                </li>
+                <li class="card-list__item">
+                    <em class="fas fa-bed card-list__icon"></em>
+                    {{data.attributes.field_inmu_nume_habi}} Hab.
+                </li>
+                <li class="card-list__item">
+                    <em class="fas fa-bath card-list__icon"></em>
+                    {{data.attributes.field_inmu_nume_habi}} Baño.
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <div class="wrapper">
+        <button class="btn" (click)="showMore()">Mostrar Mas</button>
+    </div>
+</div>

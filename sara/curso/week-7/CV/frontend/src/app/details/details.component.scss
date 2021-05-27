@@ -1,0 +1,46 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .main__container--userInfo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        font-size: 0.8rem;
+        p{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 6rem;
+            width: 6rem;
+            margin: 2rem;
+        }
+        button {
+            height: 1.4rem;
+            margin: 1rem;
+        }
+    }
+    .main__container--experience {
+        display: flex;
+        flex-direction: column;
+        .experience-title {
+            display: flex;
+            align-items: center;
+            h5{
+                font-size: 1.4rem;
+            }
+            button{
+                height: 1.2rem;
+            }
+        }
+        ul {
+            list-style: none;
+        }
+    }
+
+}

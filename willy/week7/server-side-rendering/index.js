@@ -3,10 +3,12 @@ const debug = require('debug')('server')
 const cors = require('cors')
 const admin = require('firebase-admin')
 
+
 admin.initializeApp({
     credential: admin.credential.applicationDefault(),
     databaseURL: 'https://challenge-serversiderendering-default-rtdb.firebaseio.com/'
 })
+
 
 const dataBase = admin.database()
 
@@ -16,6 +18,7 @@ server.use(express.urlencoded({extended:false}))
 server.use(express.json())
 
 server.set('view engine', 'ejs')
+
 
 server.get('/', (req, res) => {
     res.render('index')
@@ -43,12 +46,13 @@ server.get('/form', (req, res) => {
  */
 
  server.post('/home', (req, res) => {
+    
     const newUser = {
         name: req.body.name,
         surname: req.body.surname
     }
+   
     dataBase.ref('user').push(newUser) 
-    
     res.send('Registered!')
  })
 

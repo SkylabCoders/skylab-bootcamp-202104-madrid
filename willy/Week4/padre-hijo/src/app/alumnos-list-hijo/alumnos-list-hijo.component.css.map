@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "alumnos-list-hijo.component.scss"
+    ],
+    "names": [],
+    "file": "alumnos-list-hijo.component.css"
+}

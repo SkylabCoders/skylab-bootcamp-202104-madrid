@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "star-wars.component.scss"
+    ],
+    "names": [],
+    "file": "star-wars.component.css"
+}

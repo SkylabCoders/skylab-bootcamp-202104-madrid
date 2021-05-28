@@ -1,0 +1,66 @@
+* {
+  font-family: sans-serif;
+  color: #003b59;
+  background-color: #f8f8f8;
+  text-transform: capitalize;
+}
+
+.grid__container {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+}
+
+img {
+  width: 280px;
+  height: 192px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.container__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button {
+  width: 100%;
+  max-width: 140px;
+  height: 46px;
+  border-radius: 24px;
+  background-color: #f25c0f;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  .grid__container {
+    -ms-grid-columns: 33% 33% 33%;
+        grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media (max-width: 950px) {
+  .grid__container {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 650px) {
+  .grid__container {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+}
+/*# sourceMappingURL=realstate.component.css.map */

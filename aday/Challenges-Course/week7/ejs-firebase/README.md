@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/aday/Documents/bootcamp/skylab-bootcamp-202104-madrid/aday/challenges-course/week7/ejs-firebase/serviceAccountKey.json.json"

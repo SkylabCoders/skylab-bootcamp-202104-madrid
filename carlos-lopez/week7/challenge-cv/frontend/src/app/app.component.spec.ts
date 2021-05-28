@@ -67,9 +67,32 @@ describe('AppComponent', () => {
     }] as User []
 
     const spyFn = spyOn(component.userService, 'addExperience').and.returnValue(of())
-    const spyFnPipe = spyOn(component.refresh$, 'next').and.callThrough()
     component.addExperience(prueba[0]._id, prueba[0].knowledge, prueba[0].info.email, prueba[0].knowledge[0].year, prueba[0].knowledge[0].academy)
     component.userService.addExperience(prueba[0]._id, prueba[0].knowledge[0].language)
     expect(spyFn).toHaveBeenCalled()
+  })
+  it('should call ngOnInit', () => {
+    const prueba = [{
+      _id: 'string',
+      skills: 'string',
+      info: {
+        name: 'string',
+        phoneNumber: 22,
+        email: 'string'
+      },
+      knowledge: [
+        {
+          language: 'string',
+          academy: 'string',
+          year: 22
+        }
+      ]
+    }] as User []
+    const spyFn = spyOn(component.userService, 'fetchUsers').and.returnValue(of(prueba))
+    const spyFnPrueba = spyOn(component.refresh$, 'next').and.returnValue()
+
+    component.userService.fetchUsers()
+    component.refresh$.next()
+    expect(spyFnPrueba).toHaveBeenCalled()
   })
 })

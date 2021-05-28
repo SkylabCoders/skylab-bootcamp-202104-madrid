@@ -3,6 +3,7 @@ import { AppComponent } from './app.component'
 import { UserService } from './services/user.service'
 import { of } from 'rxjs'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
+import User from './models/user'
 
 describe('AppComponent', () => {
   let component: AppComponent
@@ -41,11 +42,14 @@ describe('AppComponent', () => {
               academy: 'string',
               year: 2021
             }
-    }]
+    }] as User[]
     const spyFn = spyOn(component.userService, 'addExperience').and.returnValue(of())
-    // const spyFnPipe = spyOn(component.refresh$, 'next').and.callThrough()
     component.addExperience(prueba[0]._id, prueba[0].knowledge, prueba[0].info.email, prueba[0].knowledge.year, prueba[0].knowledge.academy)
     component.userService.addExperience(prueba[0]._id, prueba[0].knowledge.language)
     expect(spyFn).toHaveBeenCalled()
+  })
+  it('should create', () => {
+    const spyFnPipe = spyOn(component.refresh$, 'next').and.returnValue()
+    expect(spyFnPipe()).toHaveBeenCalledWith('next')
   })
 })

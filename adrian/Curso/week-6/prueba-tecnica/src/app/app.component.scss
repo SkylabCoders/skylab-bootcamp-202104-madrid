@@ -1,0 +1,41 @@
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main__ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+button{
+    margin-top: 2%;
+    align-self: center;
+    background-color: yellowgreen;
+    height: 3rem;
+    width: 8rem;
+    border: transparent;
+    border-radius: 2px;
+}
+
+.ul__house{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(220, 220, 220);
+    list-style: none;
+    height: 20rem;
+    max-width: 15rem;
+    img{
+        display: flex;
+        align-self: center;
+        height: 40%;
+        border: 12px solid rgb(0, 0, 0);
+        border-radius: 5px;
+    }
+    border: 2px solid rgb(0, 0, 0);
+    margin: 4%;
+    font-size: x-large;
+    border-radius: 3px;
+}

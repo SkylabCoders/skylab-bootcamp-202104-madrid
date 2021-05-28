@@ -1,39 +1,63 @@
-import { Component } from '@angular/core'
-import { TestBed } from '@angular/core/testing'
+import { TestBed, ComponentFixture } from '@angular/core/testing'
 import { AppComponent } from './app.component'
 import { HttpService } from './service/http.service'
-
+import { of } from 'rxjs'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 describe('AppComponent', () => {
-  let comp: Component
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      // provide the component-under-test and dependent service
+  let component: AppComponent
+  let fixture: ComponentFixture<AppComponent>
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+      imports: [HttpClientTestingModule],
       providers: [
-        AppComponent,
-        { provide: HttpService }
+        HttpService
       ]
-    })
-    // inject both the component and the dependent service.
-    comp = TestBed.inject(AppComponent)
-    httpService = TestBed.inject(HttpService)
+    }).compileComponents()
   })
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app).toBeTruthy()
-  })
-
-  it('should have as title \'frontend\'', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app.title).toEqual('frontend')
-  })
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent)
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent)
+    component = fixture.componentInstance
     fixture.detectChanges()
-    const compiled = fixture.nativeElement
-    expect(compiled.querySelector('.content span').textContent).toContain('frontend app is running!')
+  })
+  it('should create', () => {
+    expect(component).toBeTruthy()
+  })
+  it('#chargePage should be called', () => {
+    const fetch = {
+      info: 'string',
+      street: 'string',
+      price: 'string',
+      img: 'string'
+    }
+    const spyFn = spyOn(component.httpService, 'getApi').and.returnValue(of(fetch))
+    component.chargePage()
+    expect(spyFn).toHaveBeenCalled()
+  })
+  it('getNextPage should be called', () => {
+    const fetch = {
+      info: 'string',
+      street: 'string',
+      price: 'string',
+      img: 'string'
+    }
+    component.nextUrl = 'www.mock.com'
+    const spyFn = spyOn(component.httpService, 'getApiMostrar').and.returnValue(of(fetch))
+    component.showMore()
+    expect(spyFn).toHaveBeenCalled()
+  })
+  it('getNextPage should be called', () => {
+    const fetch = {
+      info: 'string',
+      street: 'string',
+      price: 'string',
+      img: 'string'
+    }
+    component.nextUrl = ''
+    const spyFn = spyOn(component.httpService, 'getApiMostrar').and.returnValue(of(fetch))
+    component.showMore()
+    expect(spyFn).not.toHaveBeenCalled()
   })
 })

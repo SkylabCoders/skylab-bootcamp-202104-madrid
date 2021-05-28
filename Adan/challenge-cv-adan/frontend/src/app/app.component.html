@@ -1,9 +1,27 @@
-<input type="text" #newCvInput />
-<button type="button" (click)="addCv(newCvInput.value)">ADD</button>
-<ng-container *ngIf="(fetchCv$ | async) as Cv">
-  <ul>
-    <li *ngFor="let property of Cv">
-      {{ property.info.name }}
-    </li>
-  </ul>
-</ng-container>
+<ng-container *ngIf="(fetchCV$ | async) as cvs">
+    <div *ngFor="let cv of cvs">
+        <h1>{{cv.info.name.toUpperCase()}}</h1>
+        <h3>{{jobPosition.toUpperCase()}}</h3>
+        <p>{{cv.info.phoneNumber}}</p>
+        <p>{{cv.info.email}}</p>
+
+        <h3>EXPERIENCE</h3>
+        <h6>LANGUAGE</h6>
+        <input type="text" #newExperienceInput />
+        <h6>ACADEMY</h6>
+        <input type="text" #newExperienceInputAcademy/>
+        <h6>YEAR</h6>
+        <input type="text" #newExperienceInputYear/>
+
+        <button type="button" (click)="addExperience(cv._id, cv.knowledge, newExperienceInput.value, newExperienceInputYear.value, newExperienceInputAcademy.value); newExperienceInputAcademy.value = ''">add</button>
+        <div *ngFor="let knowledge of cv.knowledge, let i = index">
+            <p>{{knowledge.language}}</p>
+            <button type="button" (click)="updateLanguage(cv._id, cv.knowledge, i, newExperienceInput.value); newExperienceInputAcademy.value = ''">update</button>
+            <p>{{knowledge.academy}}</p>
+            <button type="button" (click)="updateAcademy(cv._id, cv.knowledge, i, newExperienceInputAcademy.value); newExperienceInputAcademy.value = ''">update</button>
+            <p>{{knowledge.year}}</p>
+            <button type="button" (click)="updateYear(cv._id, cv.knowledge, i, newExperienceInputYear.value); newExperienceInputAcademy.value = ''">update</button>
+            <button type="button" (click)="delete(cv._id, cv.knowledge, i); newExperienceInputAcademy.value = '' ">Delete all experience</button>
+        </div>
+    </div>
+</ng-container> 

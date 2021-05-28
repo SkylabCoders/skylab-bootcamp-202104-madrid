@@ -1,0 +1,1 @@
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\acrop\Documents\Willy\Programacion\proyectos\skylab-bootcamp-202104-madrid\willy\week7\server-side-rendering\challenge-serversiderendering-firebase-adminsdk-l93wa-fcddbdb4de.json"

@@ -50,6 +50,6 @@ describe('AppComponent', () => {
   })
   it('should create', () => {
     const spyFnPipe = spyOn(component.refresh$, 'next').and.returnValue()
-    expect(spyFnPipe).toHaveBeenCalled()
+    expect(spyFnPipe()).toHaveBeenCalledWith('next')
   })
 })

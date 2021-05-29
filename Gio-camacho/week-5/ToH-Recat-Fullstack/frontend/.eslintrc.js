@@ -7,23 +7,21 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    'airbnb'
   ],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: [
-    'react',
+    'react'
   ],
   rules: {
-    rules: {
-      // 'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-      // 'comma-dangle': [2, 'never'],
-      // 'react/prop-types': 'off',
-    },
-  },
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'comma-dangle': ['error', 'never'],
+    'react/prop-types': 'off'
+  }
 };

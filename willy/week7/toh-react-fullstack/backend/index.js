@@ -5,6 +5,7 @@ const cors = require('cors')
 const chalk = require('chalk')
 require('dotenv').config()
 const {connect} = require('mongoose')
+const heroRoutes = require('./routes/heroRoutes')
 
 connect(process.env.DDBB_URL,
     {
@@ -18,6 +19,7 @@ connect(process.env.DDBB_URL,
     app.use(cors())
     app.use(express.json())
     app.use(morgan('dev'))
+    app.use('/api/hero', heroRoutes)
 
     app.listen(PORT, () =>
     debug(`Server is running in ${PORT}`))

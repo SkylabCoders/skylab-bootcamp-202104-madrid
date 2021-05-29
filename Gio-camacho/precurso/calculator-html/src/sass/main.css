@@ -1,0 +1,188 @@
+@-webkit-keyframes backInDown {
+  0% {
+    -webkit-transform: translateY(-1200px) scale(0.7);
+            transform: translateY(-1200px) scale(0.7);
+    opacity: 0.7;
+  }
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+            transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes backInDown {
+  0% {
+    -webkit-transform: translateY(-1200px) scale(0.7);
+            transform: translateY(-1200px) scale(0.7);
+    opacity: 0.7;
+  }
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+            transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.6rem;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #9c9c9c;
+  background-color: #dddddd;
+  outline: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+.wrapper {
+  background-color: #ecf2f8;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7rem 1rem;
+}
+
+.box {
+  -webkit-animation: backInDown 1s;
+          animation: backInDown 1s;
+  width: 32.2rem;
+  height: 42rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "display display display display" "clear clear reset division" "seven eight nine multiplier" "four five six substraction" "one two three add" "zero zero comma equal";
+}
+
+.box .box__display {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: display;
+  background-color: #2b3244;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding-right: 2rem;
+}
+
+.box .box__previousNum {
+  font-size: 2rem;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.box .box__currentNum {
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.box__AC {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: clear;
+}
+
+.box__number--zero {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: zero;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.box__equal {
+  border-bottom-right-radius: 0.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+}
+
+.fas {
+  font-size: 2rem;
+}
+
+#division,
+#multiplier,
+#substraction,
+#add,
+#equal {
+  background-color: #f08e33;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */

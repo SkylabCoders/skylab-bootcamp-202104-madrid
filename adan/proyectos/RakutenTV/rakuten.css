@@ -1,5 +1,6 @@
 body {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   width: 100%;
   height: 100%;
@@ -11,65 +12,102 @@ body {
 
 .navbar {
   background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px grey;
   height: 20%;
 }
 
 .navbar__left {
   list-style-position: inside;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin: 0;
 }
+
 .navbar__left li a {
   font-weight: bold;
   font-size: 15px;
-  font-family: NotoSans-Bold, Arial, sans-serif;
+  font-family: NotoSans-Bold,Arial,sans-serif;
   text-decoration: none;
   padding: 9px 15px;
   border: 0.5px 0.5px solid #000000;
   text-transform: uppercase;
   color: grey;
 }
+
 .navbar__left a:hover {
   cursor: pointer;
   color: #ffe300 RGB(255, 227, 0);
 }
 
 .navbar__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
   margin: 0;
 }
 
 .navbar__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style-position: inside;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin: 0;
 }
+
 .navbar__right li a {
   font-weight: bold;
   font-size: 15px;
-  font-family: NotoSans-Bold, Arial, sans-serif;
+  font-family: NotoSans-Bold,Arial,sans-serif;
   text-decoration: none;
   padding: 9px 15px;
   border: 0.5px 0.5px solid #000000;
   text-transform: uppercase;
   color: white;
 }
+
 .navbar__right a.navbar__anchor {
   text-decoration: none;
   border: 1px solid grey;
@@ -78,10 +116,12 @@ body {
   font-weight: bold;
   color: black;
 }
+
 .navbar__right a:hover {
   cursor: pointer;
   color: #ffe300 RGB(255, 227, 0);
 }
+
 .navbar__right a.navbar__anchor:hover {
   text-shadow: white;
 }
@@ -92,8 +132,10 @@ body {
   height: 70vh;
   background-color: #000000;
   background-position: center;
-  transition: all 0.1s ease-out;
-  animation: banner 28s infinite linear;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+  -webkit-animation: banner 28s infinite linear;
+          animation: banner 28s infinite linear;
 }
 
 .main__slider--top--info {
@@ -103,11 +145,21 @@ body {
   height: 100%;
   color: #FFF;
   background-color: rgba(0, 22, 40, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .main__slider--top--info a {
   text-decoration: none;
   color: darkgray;
@@ -115,51 +167,135 @@ body {
   margin-bottom: 10px;
   border: 1px solid #FFF;
   text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
+
 .main__slider--top--info a:hover {
   color: #ffe300 RGB(255, 227, 0);
   background-color: #171717 RGB(23, 23, 23);
+}
+
+@-webkit-keyframes banner {
+  0% {
+    background-image: url("./imgs/2001-una-odisea-del-espacio-1558427202-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  25% {
+    background-image: url("imgs/2001-una-odisea-del-espacio-1558427202-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  26% {
+    background-image: url("./imgs/bienvenidos-a-zombieland-1562145472-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  50% {
+    background-image: url("./imgs/bienvenidos-a-zombieland-1562145472-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  51% {
+    background-image: url("./imgs/apocalypse-now-1562145057-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  75% {
+    background-image: url("./imgs/apocalypse-now-1562145057-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  76% {
+    background-image: url("./imgs/abominable-2019-1575383024-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+  100% {
+    background-image: url("./imgs/abominable-2019-1575383024-width217-quality80.jpeg");
+    background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
 }
 
 @keyframes banner {
   0% {
     background-image: url("./imgs/2001-una-odisea-del-espacio-1558427202-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   25% {
     background-image: url("imgs/2001-una-odisea-del-espacio-1558427202-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   26% {
     background-image: url("./imgs/bienvenidos-a-zombieland-1562145472-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   50% {
     background-image: url("./imgs/bienvenidos-a-zombieland-1562145472-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   51% {
     background-image: url("./imgs/apocalypse-now-1562145057-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   75% {
     background-image: url("./imgs/apocalypse-now-1562145057-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   76% {
     background-image: url("./imgs/abominable-2019-1575383024-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   100% {
     background-image: url("./imgs/abominable-2019-1575383024-width217-quality80.jpeg");
     background-repeat: no-repeat;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
+
 .contenedor-titulo-controles {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 .contenedor-titulo-controles h3 {
@@ -187,11 +323,17 @@ body {
 .peliculas-recomendadas {
   margin-bottom: 70px;
 }
+
 .peliculas-recomendadas .contenedor-principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha .flecha-izquierda {
   position: absolute;
   border: none;
@@ -204,14 +346,18 @@ body {
   color: #fff;
   cursor: pointer;
   z-index: 500;
-  transition: 0.2s ease all;
+  -webkit-transition: .2s ease all;
+  transition: .2s ease all;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha {
   right: 0;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
   left: 0;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover .flecha-izquierda:hover {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -223,25 +369,37 @@ body {
   overflow: hidden;
   scroll-behavior: smooth;
 }
+
 .peliculas-recomendadas .contenedor-carousel .carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
+
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
   min-width: 20%;
-  transition: 0.3s ease all;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
   width: 100%;
   vertical-align: top;
 }
+
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula img:hover {
   border: 1px 1px bold yellow;
 }
+
 .peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
-  transform: scale(1.2);
-  transform-origin: center;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 /* ---- ----- ----- Media Queries ----- ----- ----- */
@@ -249,21 +407,27 @@ body {
   .peliculas-recomendadas .contenedor-carousel {
     overflow: visible;
   }
-
   .peliculas-recomendadas .indicadores,
-.peliculas-recomendadas .flecha-izquierda,
-.peliculas-recomendadas .flecha-derecha {
+  .peliculas-recomendadas .flecha-izquierda,
+  .peliculas-recomendadas .flecha-derecha {
     display: none;
   }
 }
+
 .peliculas-recomendadas {
   margin-bottom: 70px;
 }
+
 .peliculas-recomendadas .contenedor-principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha .flecha-izquierda {
   position: absolute;
   border: none;
@@ -276,14 +440,18 @@ body {
   color: #fff;
   cursor: pointer;
   z-index: 500;
-  transition: 0.2s ease all;
+  -webkit-transition: .2s ease all;
+  transition: .2s ease all;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha {
   right: 0;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
   left: 0;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover .flecha-izquierda:hover {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -295,46 +463,64 @@ body {
   overflow: hidden;
   scroll-behavior: smooth;
 }
+
 .peliculas-masvistas .contenedor-carousel .carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
+
 .peliculas-masvistas .contenedor-carousel .carousel .pelicula {
   min-width: 20%;
-  transition: 0.3s ease all;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 .peliculas-masvistas .contenedor-carousel .carousel .pelicula img {
   width: 100%;
   vertical-align: top;
 }
+
 .peliculas-masvistas .contenedor-carousel .carousel .pelicula img:hover {
   border: 1px 1px solid yellow;
 }
+
 .peliculas-masvistas .contenedor-carousel .carousel .pelicula.hover {
-  transform: scale(1.2);
-  transform-origin: center;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 @media screen and (max-width: 800px) {
   .peliculas-recomendadas .contenedor-carousel {
     overflow: visible;
   }
-
   .peliculas-recomendadas .indicadores,
-.peliculas-recomendadas .flecha-izquierda,
-.peliculas-recomendadas .flecha-derecha {
+  .peliculas-recomendadas .flecha-izquierda,
+  .peliculas-recomendadas .flecha-derecha {
     display: none;
   }
 }
+
 .peliculas-recomendadas {
   margin-bottom: 70px;
 }
+
 .peliculas-recomendadas .contenedor-principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha .flecha-izquierda {
   position: absolute;
   border: none;
@@ -347,14 +533,18 @@ body {
   color: #fff;
   cursor: pointer;
   z-index: 500;
-  transition: 0.2s ease all;
+  -webkit-transition: .2s ease all;
+  transition: .2s ease all;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha {
   right: 0;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda {
   left: 0;
 }
+
 .peliculas-recomendadas .contenedor-principal .flecha-derecha:hover .flecha-izquierda:hover {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -366,52 +556,80 @@ body {
   overflow: hidden;
   scroll-behavior: smooth;
 }
+
 .peliculas-masvistas .contenedor-carousel2 .carousel2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
+
 .peliculas-masvistas .contenedor-carousel2 .carousel2 .pelicula {
   min-width: 20%;
-  transition: 0.3s ease all;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 .peliculas-masvistas .contenedor-carousel2 .carousel2 .pelicula img {
   width: 100%;
   vertical-align: top;
 }
+
 .peliculas-masvistas .contenedor-carousel2 .carousel2 .pelicula img:hover {
   border: 1px 1px solid yellow;
 }
+
 .peliculas-masvistas .contenedor-carousel2 .carousel2 .pelicula.hover {
-  transform: scale(1.2);
-  transform-origin: center;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 .div__generos-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 30px 30px;
 }
 
 .peliculas-masvistas {
   margin-bottom: 70px;
 }
+
 .peliculas-masvistas .contenedor-secundario {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
 .footer {
   background-color: lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 25rem;
 }
+
 .footer .fa {
   background: grey;
   color: black;
 }
+
 .footer .fa:hover {
   opacity: 0.7;
   color: darkgreen;
@@ -419,36 +637,64 @@ body {
 }
 
 .footer__div--moneyicons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: auto;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding: 10px 10px;
 }
+
 .footer__div--moneyicons .footer__div--moneyicons-ayuda {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 10px;
 }
 
 .footer__div--editorial {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .footer__div--editorial p {
   margin: 2rem auto;
   font-weight: bold;
 }
 
 .footer__div--conditions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   height: 20px;
   background: #000000;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 1rem 5rem;
   padding: 10px 10px;
 }
@@ -461,29 +707,44 @@ body {
 }
 
 .div__generos-icons .div__generos-icons-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-transform: uppercase;
 }
+
 .div__generos-icons .div__generos-icons-icon small:hover {
   color: yellow;
   opacity: 0.7;
   background-color: #000000;
   cursor: pointer;
 }
+
 .div__generos-icons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: white;
   color: black;
 }
+
 .div__generos-icons a:hover {
   color: yellow;
   opacity: 0.7;
   background-color: black;
 }
+
 .div__generos-icons .div__generos-p {
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -492,11 +753,14 @@ body {
 }
 
 .fa {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px;
   font-size: 40px;
   width: 40px;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
@@ -504,19 +768,21 @@ body {
 
 @media screen and (max-width: 600px) {
   .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-
   .peliculas-masvistas .contenedor-carousel2 {
     overflow: visible;
   }
-
   .peliculas-masvistas .indicadores,
-.peliculas-masvistas .flecha-izquierda,
-.peliculas-masvistas .flecha-derecha {
+  .peliculas-masvistas .flecha-izquierda,
+  .peliculas-masvistas .flecha-derecha {
     display: none;
   }
 }
-
 /*# sourceMappingURL=rakuten.css.map */

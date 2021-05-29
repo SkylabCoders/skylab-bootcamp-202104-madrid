@@ -1,0 +1,18 @@
+{
+  "name": "rgcqprint",
+  "version": "1.0.0",
+  "description": "print some console.log",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rencito"
+  ],
+  "author": "papichulo",
+  "license": "ISC",
+  "dependencies": {
+    "renszoprint": "^1.0.0",
+    "willyprint": "^1.0.0"
+  }
+}

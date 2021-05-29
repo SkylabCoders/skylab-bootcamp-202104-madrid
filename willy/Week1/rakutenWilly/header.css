@@ -1,0 +1,202 @@
+.container__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: black;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  background-color: black;
+}
+
+.header__nav > a {
+  font-size: 14px;
+  padding-right: 5px;
+  color: gray;
+}
+
+.nav__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 12px;
+  margin-top: 15px;
+}
+
+.nav__logo--img {
+  height: auto;
+  width: 100%;
+}
+
+#rakutenNav {
+  height: 42px;
+  width: 190px;
+}
+
+.nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5px;
+}
+
+.menu__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__options a {
+  padding-left: 14px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 14px;
+}
+
+/*
+.menu__options ul {
+    list-style: none;
+    margin-top: 2%;
+    
+}
+
+.menu__options ul li {
+    background-color: black;
+    width: 170px;
+    border: 1px solid black;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    float:left;
+    color:white;
+    font-size: 14px;
+    position: relative;
+    
+   
+}
+
+.menu__options ul li:hover {
+    color:yellow;
+    background-color: black;
+}
+
+
+.menu-options__dropdown1 {
+    display: none;
+    
+}
+.menu__options ul li:hover .menu-options__dropdown1 {
+    display: block;
+    position: absolute;
+    left:0;
+}
+
+.menu__options ul li:hover .menu-options__dropdown1 ul {
+    display: block;
+}
+
+.menu__options ul li:hover .menu-options__dropdown1 ul li {
+    padding-left: 2px;
+}
+
+
+
+.nav__menu--options ul ul{
+    display: none;
+}
+
+.nav__menu--options ul li:hover > ul {
+    display: block;
+    
+ }*/
+.nav__menu--options li {
+  display: inline;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*
+.nav__menu > ul li {
+    display: inline-flex;
+    width: 25%;
+    background: #FF7361;
+} */
+a {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.nav__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 2px;
+}
+
+#searchIcon {
+  position: absolute;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: transparent;
+  color: #99988c;
+}
+
+#searchBar {
+  background-color: #333333;
+}
+
+.nav__login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 15px;
+}
+
+#enter {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
+}
+
+#enter:hover {
+  cursor: pointer;
+  color: yellow;
+}
+
+#register {
+  background-color: yellow;
+  color: black;
+  font-size: 14px;
+  border-radius: 5%;
+}
+/*# sourceMappingURL=header.css.map */

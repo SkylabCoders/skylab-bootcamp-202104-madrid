@@ -1,0 +1,9 @@
+.container__title {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  background-color: #344242;
+  color: white;
+  padding: 5px;
+}
+/*# sourceMappingURL=app.component.css.map */

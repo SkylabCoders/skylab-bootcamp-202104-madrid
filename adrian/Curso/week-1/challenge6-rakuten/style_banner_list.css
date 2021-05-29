@@ -1,0 +1,59 @@
+.main__banner-list {
+  width: 100%;
+}
+
+.main__banner-list ul {
+  width: 97%;
+  margin: 0;
+  margin-top: 5%;
+  padding-right: 0;
+  padding-left: 1%;
+  background-color: #171717;
+  padding-bottom: 4%;
+}
+
+.main__banner-list ul a {
+  max-width: 253.8px;
+  max-height: 170.77px;
+}
+
+.main__banner-list ul img {
+  border: solild 4px transparent;
+  max-width: 253.8px;
+  margin: auto;
+}
+
+.main__banner-list ul img:hover {
+  border: solid 4px #dfc500;
+}
+
+/*
+MEDIA QUERYS
+*/
+@media screen and (max-width: 1320px) {
+  .main__banner-list {
+    width: auto;
+  }
+  .main__banner-list a {
+    margin: 5px;
+  }
+  .main__banner-list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+/*# sourceMappingURL=style_banner_list.css.map */

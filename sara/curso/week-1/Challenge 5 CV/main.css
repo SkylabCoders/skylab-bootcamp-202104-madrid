@@ -3,7 +3,8 @@
 *::before {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -13,8 +14,13 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Raleway;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*
@@ -33,11 +39,17 @@ header
 .header__nav {
   background-color: #cae4db;
   height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 0%;
-  align-items: center;
-  justify-content: space-around;
-  box-shadow: 0 0 1.5rem 1.5rem #cae4db;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-shadow: 0 0 1.5rem 1.5rem #cae4db;
+          box-shadow: 0 0 1.5rem 1.5rem #cae4db;
 }
 
 .header-nav__anchor {
@@ -56,12 +68,19 @@ footer
 */
 footer {
   background-color: #cae4db;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: #00303f;
   height: 4rem;
-  justify-content: space-between;
-  align-items: flex-end;
-  box-shadow: 0 0 1.5rem 1.5rem #cae4db;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-shadow: 0 0 1.5rem 1.5rem #cae4db;
+          box-shadow: 0 0 1.5rem 1.5rem #cae4db;
   margin-top: 40px;
 }
 
@@ -86,9 +105,16 @@ footer {
 home-main
 */
 .home-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 30px;
 }
 
@@ -114,14 +140,26 @@ home-main
 Contact main
 */
 .contact-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 5rem;
 }
 
@@ -146,9 +184,16 @@ textarea {
 CV main
 */
 .cv-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 30px;
 }
 
@@ -165,24 +210,27 @@ Media query
 */
 @media only screen and (min-width: 600px) {
   .home-main,
-.cv-main {
-    margin-top: 8rem;
-    flex-direction: row;
-    justify-content: center;
-  }
-
   .cv-main {
-    flex-wrap: wrap;
+    margin-top: 8rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-
+  .cv-main {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
   .cv-main__container {
     height: 50rem;
     max-width: 40rem;
   }
-
   .home-main__container--left,
-.home-main__container--center,
-.home-main__container--right {
+  .home-main__container--center,
+  .home-main__container--right {
     margin: 5% 2%;
     max-width: 25%;
     height: 60rem;
@@ -190,20 +238,16 @@ Media query
     border: 2px solid #00303f;
     padding: 1%;
   }
-
   .header__img {
     width: 100%;
     max-height: 40rem;
   }
-
   .footer__container-left,
-.footer__container-right {
+  .footer__container-right {
     padding: 2rem 5rem;
   }
-
   footer {
     height: 6rem;
   }
 }
-
 /*# sourceMappingURL=main.css.map */

@@ -1,14 +1,20 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 import './App.scss';
 
 function App() {
   return (
-    <>
-
-      <h1>Hola</h1>
-
-      {/* Dashboard */}
-    </>
+    <Router>
+      <Switch>
+        <Route path="/">
+          {/* Dashboard */}
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

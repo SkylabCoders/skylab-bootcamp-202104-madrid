@@ -2,7 +2,12 @@ import React from 'react';
 
 function App() {
   return (
-    <h1>Hola</h1>
+    <div>
+
+      <h1>Tour of Heroes</h1>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/list">List</a>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 function List() {
   return (
     <div>
-      <h1>List works!</h1>
+      <h2>My Heroes</h2>
     </div>
   );
 }

@@ -3,7 +3,9 @@ import './Dashboard.scss';
 
 function Dashboard() {
   return (
-    <div className="dashboard" />
+    <div className="dashboard">
+      dashboard works!
+    </div>
   );
 }
 

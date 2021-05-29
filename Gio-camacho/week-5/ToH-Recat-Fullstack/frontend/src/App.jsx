@@ -3,7 +3,12 @@ import './App.scss';
 
 function App() {
   return (
-    <h1>Hola soy react</h1>
+    <>
+
+      <h1>Hola</h1>
+
+      {/* Dashboard */}
+    </>
   );
 }
 

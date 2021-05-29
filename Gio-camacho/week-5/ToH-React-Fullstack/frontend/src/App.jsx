@@ -1,13 +1,18 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
   return (
-    <div>
-
-      <h1>Tour of Heroes</h1>
-      <a href="/dashboard">Dashboard</a>
-      <a href="/list">List</a>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Dashboard} />
+      </Switch>
+    </Router>
   );
 }
 

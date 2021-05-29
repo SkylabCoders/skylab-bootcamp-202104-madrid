@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.css';
@@ -10,6 +9,8 @@ import {
   Link,
 } from 'react-router-dom';
 import heroes from './data/heroesData';
+import HeroesList from './components/HeroesList';
+import HeroesDetail from './components/HeroesDetail';
 
 let listHeroes;
 function getRandomHeroes(list) {
@@ -24,6 +25,12 @@ function App() {
     <header>
       <h1>Tour of heroes</h1>
       <ul>{listToRender}</ul>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HeroesList} />
+          <Route exact path="/" component={HeroesDetail} />
+        </Switch>
+      </Router>
     </header>
   );
 }

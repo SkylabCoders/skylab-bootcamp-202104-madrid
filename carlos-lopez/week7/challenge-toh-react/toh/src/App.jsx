@@ -2,6 +2,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  Link,
+} from 'react-router-dom';
 import heroes from './data/heroesData';
 
 let listHeroes;
@@ -12,12 +19,12 @@ function getRandomHeroes(list) {
 function App() {
   getRandomHeroes(heroes);
   const randomHeroes = listHeroes.slice(0, 4);
-  const prueba = randomHeroes.map((heroe) => <li key={heroe.id}>{heroe.name}</li>);
+  const listToRender = randomHeroes.map((heroe) => <li key={heroe.id}>{heroe.name}</li>);
   return (
-    <div>
+    <header>
       <h1>Tour of heroes</h1>
-      <ul>{prueba}</ul>
-    </div>
+      <ul>{listToRender}</ul>
+    </header>
   );
 }
 export default App;

@@ -2,17 +2,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import heroes from '../data/heroesData';
+import './HeroesList.css';
 
 function HeroesList() {
   const completeList = heroes.map((heroe) => (
-    <li key={heroe.id}>
-      <Link to={`/heroesDetail/${heroe.id}`}>
+    <li className="list_li" key={heroe.id}>
+      <Link class="hero_names" to={`/heroesDetail/${heroe.id}`}>
         {heroe.name}
       </Link>
     </li>
   ));
   return (
-    <ul>
+    <ul className="list_ul">
       {completeList}
     </ul>
   );

@@ -18,9 +18,10 @@ function App() {
     <header>
       <h1>Tour of heroes</h1>
       <Router>
-        <Link to="/">Dashboard</Link>
-        <Link to="/heroesList">List</Link>
-        <Link to="/heroesDetail" />
+        <div>
+          <Link to="/">Dashboard</Link>
+          <Link to="/heroesList">List</Link>
+        </div>
         <Switch>
           <Route exact path="/" component={HeroesDashboard} />
           <Route exact path="/heroesList" component={HeroesList} />

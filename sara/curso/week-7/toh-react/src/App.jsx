@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
-import HeroesList from './components/HeroesList';
-import HeroDetail from './components/HeroDetail';
-import heroes from './data/heroesData';
+/* eslint-disable no-unused-vars */
+import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+  Link,
+} from 'react-router-dom';
+import HeroesDashboard from './components/HeroDashboard';
+import HeroesList from './components/HeroesList';
+import HeroesDetail from './components/HeroDetail';
 
 function App() {
-  const [selectedHero, setSelectedHero] = useState(null);
+  const list = HeroesDashboard();
   return (
-    <div className="App">
-      <h1>Tour of Heroes</h1>
-      <HeroesList heroesList={heroes} setSelectedHero={setSelectedHero} />
-      {selectedHero && (<HeroDetail hero={selectedHero} />) }
-    </div>
+    <header>
+      <h1>Tour of heroes</h1>
+      <Router>
+        <Link to="/">Dashboard</Link>
+        <Link to="/heroesList">List</Link>
+        <Link to="/heroesDetail">Detail</Link>
+        <Switch>
+          <Route exact path="/" component={HeroesDashboard} />
+          <Route exact path="/heroesList" component={HeroesList} />
+          <Route exact path="/heroesDetail/:heroId" component={HeroesDetail} />
+        </Switch>
+      </Router>
+    </header>
   );
 }
-
 export default App;

@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+
 import Dashboard from './components/Dashboard/Dashboard';
 import List from './components/List/List';
 
@@ -14,7 +15,7 @@ function App() {
       <h1>Tour of Heroes</h1>
       <nav>
         <Link to="/">Dashboard</Link>
-        <Link to="list">List</Link>
+        <Link to="/list">List</Link>
       </nav>
       <Switch>
         <Route path="/" exact component={Dashboard} />

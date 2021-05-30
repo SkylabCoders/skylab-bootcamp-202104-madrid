@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/Dashboard';
+import Details from './components/Details/Details';
 import List from './components/List/List';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       </nav>
       <Switch>
         <Route path="/" exact component={Dashboard} />
+        <Route path="/details/:id" exact component={Details} />
         <Route path="/list" exact component={List} />
       </Switch>
     </Router>

@@ -7,13 +7,14 @@
     <title>Login</title>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js" defer ></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js" defer ></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js" defer ></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer ></script>
 </head>
 <body>
     <h1>Login</h1>
     <div>
         <form action="/home" method="POST">
-            <input type="text" name="username" placeholder="Username" value="Username"><br>
+            <input type="email" name="email" placeholder="Email" value="Email"><br>
             <input type="password" name="password" placeholder="Password" value="Password"><br><br>
             <button type="submit">Login</button>
         </form>

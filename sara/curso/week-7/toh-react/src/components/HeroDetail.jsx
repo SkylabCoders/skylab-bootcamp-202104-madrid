@@ -4,7 +4,7 @@ import heroes from '../data/heroesData';
 
 function HeroesDetail() {
   const { heroId } = useParams();
-  const currentHero = heroes.find((hero) => hero.id === heroId);
+  const currentHero = heroes.find((hero) => hero.id.toString() === heroId);
   return (
     <ul>
       <li>

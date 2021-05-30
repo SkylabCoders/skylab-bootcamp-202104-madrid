@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Link to="/">Dashboard</Link>
         <Link to="/heroesList">List</Link>
-        <Link to="/heroesDetail">Detail</Link>
+        <Link to="/heroesDetail" />
         <Switch>
           <Route exact path="/" component={HeroesDashboard} />
           <Route exact path="/heroesList" component={HeroesList} />

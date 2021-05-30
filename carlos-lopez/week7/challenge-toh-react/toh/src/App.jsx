@@ -8,27 +8,23 @@ import {
   Redirect,
   Link,
 } from 'react-router-dom';
-import heroes from './data/heroesData';
+import HeroesDashboard from './components/HeroesDashboard';
 import HeroesList from './components/HeroesList';
 import HeroesDetail from './components/HeroesDetail';
 
-let listHeroes;
-function getRandomHeroes(list) {
-  listHeroes = list.sort(() => Math.random() - 0.5);
-}
-
 function App() {
-  getRandomHeroes(heroes);
-  const randomHeroes = listHeroes.slice(0, 4);
-  const listToRender = randomHeroes.map((heroe) => <li key={heroe.id}>{heroe.name}</li>);
+  const list = HeroesDashboard();
   return (
     <header>
       <h1>Tour of heroes</h1>
-      <ul>{listToRender}</ul>
       <Router>
+        <Link to="/">Dashboard</Link>
+        <Link to="/heroesList">List</Link>
+        <Link to="/heroesDetail">Detail</Link>
         <Switch>
-          <Route exact path="/" component={HeroesList} />
-          <Route exact path="/" component={HeroesDetail} />
+          <Route exact path="/" component={HeroesDashboard} />
+          <Route exact path="/heroesList" component={HeroesList} />
+          <Route exact path="/heroesDetail/:heroId" component={HeroesDetail} />
         </Switch>
       </Router>
     </header>

@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import heroes from '../data/heroesData';
 
 function HeroesList() {
   const completeList = heroes.map((heroe) => (
     <li key={heroe.id}>
-      {heroe.name}
-      <button type="button">Further details</button>
+      <Link to={`/heroesDetail/${heroe.id}`}>
+        {heroe.name}
+      </Link>
     </li>
   ));
   return (

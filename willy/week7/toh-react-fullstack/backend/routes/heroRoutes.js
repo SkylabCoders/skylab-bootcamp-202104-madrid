@@ -1,19 +1,23 @@
-const {Router} = require('express')
-const {getAllHeroes, getById, createHero, updateById, deleteById} = require('./../controllers/heroController')
+const { Router } = require('express');
+const {
+  getAllHeroes, getById, createHero, updateById, deleteById
+} = require('../controllers/heroController');
 
-function heroRouter () {
-    const heroRoutes = Router()
+function heroRouter() {
+  const heroRoutes = Router();
 
-    heroRoutes
+  heroRoutes
     .route('/')
     .get(getAllHeroes)
-    .post(createHero)
+    .post(createHero);
 
-    heroRoutes
+  heroRoutes
     .route('/:heroId')
     .get(getById)
     .put(updateById)
-    .delete(deleteById)
+    .delete(deleteById);
+
+  return heroRoutes;
 }
 
-module.exports = heroRoutes();
+module.exports = heroRouter();

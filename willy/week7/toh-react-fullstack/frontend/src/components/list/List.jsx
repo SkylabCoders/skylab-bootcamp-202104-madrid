@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function List() {
   const [data, setData] = useState(null);
@@ -28,15 +29,19 @@ function List() {
   if (error) return 'Error!';
   return (
     <>
-
-      {data.map((hero) => (
-        <p
+      <div className="listLink">
+        {data.map((hero) => (
+          <Link
+          // eslint-disable-next-line no-underscore-dangle
+            to={`details/${hero._id}`}
             // eslint-disable-next-line no-underscore-dangle
-          key={hero._id}
-        >
-          {hero.name}
-        </p>
-      ))}
+            key={hero._id}
+          >
+            {hero.name}
+
+          </Link>
+        ))}
+      </div>
     </>
   );
 }

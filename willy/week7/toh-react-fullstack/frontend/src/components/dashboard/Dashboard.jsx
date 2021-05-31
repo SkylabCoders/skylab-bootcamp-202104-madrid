@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function dashboard() {
   const [data, setData] = useState(null);
@@ -35,12 +36,14 @@ function dashboard() {
       </h2>
       {
         data.slice(0, 4).map((hero) => (
-          <p
+          <Link
+            // eslint-disable-next-line no-underscore-dangle
+            to={`details/${hero._id}`}
             // eslint-disable-next-line no-underscore-dangle
             key={hero._id}
           >
             {hero.name}
-          </p>
+          </Link>
         ))
       }
     </>

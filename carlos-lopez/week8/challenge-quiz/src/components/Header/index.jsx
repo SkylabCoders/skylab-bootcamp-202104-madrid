@@ -4,7 +4,7 @@ import Authors from '../../constants/Authors';
 
 function Header() {
   return (
-    <h3>{Authors[0].author}</h3>
+    <h1>Choose the correct answer</h1>
   );
 }
 export default Header;

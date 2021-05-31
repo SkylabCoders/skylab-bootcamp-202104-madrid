@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './Book.scss';
 
 function Book({ title, validateAnswer, styles }) {
   return (

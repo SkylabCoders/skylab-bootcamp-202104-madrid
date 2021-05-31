@@ -1,5 +1,6 @@
 .quiz-section {
     display: flex;
+    align-items: center;
     margin: 20px 40px;
 
     &__image {
@@ -29,6 +30,10 @@
 
         & li:not(:first-child){
             margin-top: 15px;
+        }
+        
+        &--bg-danger {
+            background-color: red;
         }
     }
 }

@@ -6,12 +6,34 @@ import './Main.scss';
 function Main() {
   const [correctAnswer] = useState(books[books.length - 1].title);
   const [isCorrect, setIsCorrect] = useState('');
+
   function validateAnswer(title) {
     if (correctAnswer === title) {
       setIsCorrect(true);
     } else {
       setIsCorrect(false);
     }
+  }
+
+  function getBackgroundCorrect(answer) {
+    let backgroundColor = '';
+
+    switch (answer) {
+      case true:
+        backgroundColor = 'bg-success';
+        break;
+
+      case false:
+        backgroundColor = 'bg-error';
+        break;
+
+      case null:
+      default:
+        backgroundColor = '';
+        break;
+    }
+
+    return backgroundColor;
   }
 
   return (
@@ -24,7 +46,7 @@ function Main() {
               books.sort(() => Math.random() - 0.5).slice(0, 4).map((book) => (
                 <Book
                   key={book.title}
-                  styles={isCorrect ? 'bg-succes' : 'bg-danger'}
+                  styles={getBackgroundCorrect(isCorrect)}
                   title={book.title}
                   validateAnswer={validateAnswer}
                 />

@@ -1,20 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Authors from '../../constants/Authors';
+import './list.css';
 
 function List() {
   return (
     <div className="List">
-      <ul>
-        {
-          Authors.map((author) => (
-            <li>
-              <img src="{author.authorImg}" alt="authors" />
-              <span>{author.author}</span>
-            </li>
-          ))
-        }
-      </ul>
+      <img src={Authors[0].authorImg} alt="authors" />
+      <span>{Authors[0].author}</span>
     </div>
   );
 }

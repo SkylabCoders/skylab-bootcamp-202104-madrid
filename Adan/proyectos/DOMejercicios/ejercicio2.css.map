@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAA;EACR,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CAEzB;;AACD,AAAA,MAAM,CAAA;EACF,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,YAAY;CAChC",
+    "sources": [
+        "ejercicio2.scss"
+    ],
+    "names": [],
+    "file": "ejercicio2.css"
+}

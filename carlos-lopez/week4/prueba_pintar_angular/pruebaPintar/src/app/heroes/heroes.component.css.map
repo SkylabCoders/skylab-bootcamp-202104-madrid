@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACH,KAAK,EAAE,MAAM;EACb,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,IAAI;CAAG",
+    "sources": [
+        "heroes.component.sass"
+    ],
+    "names": [],
+    "file": "heroes.component.css"
+}

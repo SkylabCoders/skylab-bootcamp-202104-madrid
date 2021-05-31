@@ -1,0 +1,15 @@
+{
+  "name": "willyprint",
+  "version": "1.0.0",
+  "description": "print something",
+  "main": "index.js",
+  "dependencies": {
+    "adayarananpm": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "willy",
+  "license": "ISC"
+}

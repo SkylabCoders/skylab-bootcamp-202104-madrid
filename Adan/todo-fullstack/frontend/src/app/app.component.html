@@ -1,0 +1,16 @@
+<input type="text" #newTaskInput />
+<button type="button" (click)="addTask(newTaskInput.value)">add</button>
+
+<ng-container *ngIf="fetchTasks$ | async as tasks">
+  <ul>
+    <li *ngFor="let task of tasks">
+      <app-task
+        [task]="task"
+        (deleteChange)="delete($event)"
+        (updateChange)="
+          update($event, newTaskInput.value); newTaskInput.value = ''
+        "
+      ></app-task>
+    </li>
+  </ul>
+</ng-container>

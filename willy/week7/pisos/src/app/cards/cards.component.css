@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+img {
+  width: 100%;
+}
+
+.main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #f8f8f8;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  background-color: white;
+}
+
+.container__data div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.data__img {
+  width: 280px;
+  height: 180px;
+}
+
+.data__price {
+  padding-left: 15px;
+  color: #003b59;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.data__address {
+  padding-left: 15px;
+  font-family: 'Nunito', sans-serif;
+  color: #003b59;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.data__city {
+  padding-left: 15px;
+  font-family: 'Nunito', sans-serif;
+  color: #003b59;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.data__features {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: 5px;
+  display: inline;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.container__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f8f8;
+}
+
+.container__button button {
+  width: 100%;
+  max-width: 140px;
+  height: 46px;
+  font-size: 14px;
+  font-family: 'Nunito',sans-serif;
+  font-weight: 600;
+  background-color: #f25c0f;
+  border-radius: 24px;
+  color: white;
+  border: none;
+  text-align: center;
+  margin: 30px 10px;
+  -webkit-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+  cursor: pointer;
+}
+
+.container__button button:hover {
+  opacity: 0.85;
+}
+/*# sourceMappingURL=cards.component.css.map */

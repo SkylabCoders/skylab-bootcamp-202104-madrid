@@ -1,0 +1,27 @@
+.list_ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list_li{
+    height: 2rem;
+    width: 8rem;
+    margin: 0.2rem;
+}
+
+.hero_names {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list_li:hover{
+    background-color: rgb(108, 128, 129);
+    cursor: pointer;
+}

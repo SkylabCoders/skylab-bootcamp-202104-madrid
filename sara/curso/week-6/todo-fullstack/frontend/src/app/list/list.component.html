@@ -1,0 +1,12 @@
+<div>
+    <div class="main__container--add">
+      <input class="container__input" type="text" placeholder="Create a new Task" #newTask>
+      <button type="button" class="container__button--ADD" (click)="addNewTask(newTask.value)">ADD</button>
+    </div>
+    <ul class="main__list">
+      <li class="list__elemnt" *ngFor="let task of tasks">{{task.description}} 
+        <button type="button" class="list__button--delete" (click)="deleteTask(task._id)">Delete</button> 
+          <button type="button"  class="list__button--update" (click)="update(task._id, newTask.value)">Update</button> 
+      </li>
+    </ul>
+</div>

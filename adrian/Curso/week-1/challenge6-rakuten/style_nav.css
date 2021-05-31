@@ -1,0 +1,146 @@
+/*
+CLASS SELECTORS
+*/
+.body__header--principal {
+  height: 60px;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: NotoSans-Bold,Arial,sans-serif;
+  font-weight: 800;
+}
+
+.header__nav--left {
+  margin-right: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.header__nav--left a {
+  font-family: NotoSans-Bold,Arial,sans-serif;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  margin-left: 4%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.header__nav--left a:hover {
+  color: #ffe300;
+}
+
+.header__nav--left input {
+  font-weight: 600;
+  color: #756a51;
+  background-color: #333333;
+  margin-left: 8%;
+  border-radius: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 25px;
+  border: none;
+}
+
+.header__nav--left .ul__a--cinema {
+  margin-left: 0%;
+}
+
+.nav__svg--rakuten {
+  margin-left: 2%;
+}
+
+.nav__ul--left {
+  margin-left: 0%;
+  padding-left: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+}
+
+.header__nav--rigth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 35%;
+  font-size: 14px;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav--rigth button {
+  margin-left: 4%;
+  font-weight: 800;
+  width: auto;
+  height: 40px;
+  background-color: #ffe300;
+  border-radius: 5px;
+  border: none;
+}
+
+.header__nav--rigth button:hover {
+  background-color: #dfc500;
+}
+
+.header__nav--rigth a {
+  text-decoration: none;
+  font-family: NotoSans-Bold,Arial,sans-serif;
+  margin-left: 4%;
+  color: white;
+}
+
+.header__nav--rigth a:hover {
+  color: #ffe300;
+}
+
+.header__nav--rigth .a__nav--grey {
+  color: #779999;
+}
+
+/*
+MEDIA QUERYS
+*/
+@media screen and (max-width: 1210px) {
+  .a__nav--grey {
+    width: 30%;
+    margin-left: 0%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .body__header--principal {
+    height: 0;
+  }
+  .nav__svg--rakuten {
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+  }
+}
+/*# sourceMappingURL=style_nav.css.map */

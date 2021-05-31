@@ -1,0 +1,25 @@
+<app-header></app-header>
+<main class="main__container">
+    <div class="container__left">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/968/805/non_2x/pencil-with-eraser-cartoon-isolated-free-vector.jpg" alt="pencil">
+    </div>
+    <div class="container__middle">
+        <input class="middle__input" type="text" #newTaskInput />
+        <button class="middle__button"type="button" (click)="addTask(newTaskInput.value)">Add</button>
+        <ng-container class="middle__list" *ngIf="(fetchTasks$ | async) as tasks">
+            <ol class="list__container">
+                <li class="list__container-element"  *ngFor="let task of tasks">
+                    <app-task 
+                        [task]="task"
+                        (deleteChange)="delete($event)"
+                        (updateChange)="update($event, newTaskInput.value); newTaskInput.value = ''"
+                    ></app-task>
+                </li>
+            </ol>
+        </ng-container>
+    </div>
+    <div class="container__right">
+        <img src="https://www.vippng.com/png/detail/480-4804163_utiles-escolares-animados-escolar-animado-goma-de-borrar.png" alt="rubber">
+    </div>
+
+</main>

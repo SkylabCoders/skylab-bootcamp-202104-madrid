@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'HoustonComic';
+  src: url("../../resources/HoustonComicsPersonalUse-6Yea1.ttf");
+}
+
+@font-face {
+  font-family: 'Avengeance';
+  src: url("../../resources/Avengeance-YolO.ttf");
+}
+
+.main-container {
+  padding-top: 5px;
+  background-color: #131313;
+  min-height: 100vh;
+}
+
+.main-container__svg {
+  display: block;
+  height: 50px;
+  margin: 2%;
+}
+
+.main-container__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container__image {
+  height: 207px;
+  width: 100%;
+  margin-bottom: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-container__title {
+  display: none;
+}
+
+.main-container__top-heros {
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container__list {
+  margin: auto;
+  margin-top: 10%;
+  list-style: none;
+  width: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.main-container__anchors {
+  cursor: pointer;
+}
+
+.main-container__list-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 120px;
+}
+
+@media only screen and (min-width: 800px) {
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background-color: #131313;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-container__svg {
+    display: none;
+  }
+  .main-container__image {
+    display: none;
+  }
+  .main-container__title {
+    display: block;
+    margin: 2%;
+    font-family: 'Avengeance',Arial, Helvetica, sans-serif;
+    color: white;
+    letter-spacing: 3px;
+  }
+  .main-container__top-heros {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  .main-container__list {
+    margin-top: 3%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .main-container__hero {
+    width: 150px;
+    height: 160px;
+  }
+  .main-container__anchors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin: 2%;
+  }
+  .main-container__list-img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 240px;
+    height: 430px;
+    overflow: hidden;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  }
+  .main-container__list-img:hover {
+    border: 5px solid #fcf211;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+/*# sourceMappingURL=dashboard.component.css.map */

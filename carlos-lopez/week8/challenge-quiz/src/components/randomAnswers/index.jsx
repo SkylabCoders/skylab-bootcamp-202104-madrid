@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import Authors from '../../constants/Authors';
+import './randomAnswers.css';
 
 function RandomAnswers() {
   let shuffledAuthors = [...Authors];
@@ -13,12 +14,14 @@ function RandomAnswers() {
   }
   randomIndex();
   return (
-    <div>
+    <div className="container">
       <h3>{arrayAnswers[currentIndex].author}</h3>
-      <img src={arrayAnswers[currentIndex].authorImg} alt="authors" />
-      <ul>
-        {arrayAnswers.map((author) => <li>{author.title}</li>)}
-      </ul>
+      <section className="container--data">
+        <img src={arrayAnswers[currentIndex].authorImg} alt="authors" />
+        <ul>
+          {arrayAnswers.map((author) => <li key={author}>{author.title}</li>)}
+        </ul>
+      </section>
     </div>
   );
 }

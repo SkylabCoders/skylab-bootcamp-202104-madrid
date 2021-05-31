@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Authors from '../../constants/Authors';
+import './header.css';
 
 function Header() {
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
@@ -5,23 +6,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Hello from './components/Hello';
-import Sum from './components/Sum';
-import Clicker from './components/Clicker';
+import Quiz from './components/Quiz';
 
 ReactDOM.render(
-  <>
-    <Hello name="Gilbe">
-      <ul>
-        <li>Esto es un elemento hijo</li>
-        <li>Esto es otro elemento hijo</li>
-      </ul>
-    </Hello>
-    <p>
-      <Sum a={5} b={4} />
-    </p>
-    <Clicker handleClick={(letter) => console.log(letter)} />
-  </>,
+  <Quiz />,
   document.getElementById('root'),
 );
 

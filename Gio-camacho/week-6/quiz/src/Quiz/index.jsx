@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from './Header';
+import Main from './Main';
 
 function Quiz() {
   return (
-    <section>
+    <>
       <Header />
-      {/* <Books /> */}
-    </section>
+      <Main />
+    </>
   );
 }
 

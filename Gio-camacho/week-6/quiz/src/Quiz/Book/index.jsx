@@ -2,11 +2,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-function Book({ title }) {
+function Book({ title, validateAnswer, styles }) {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <li
+      className={styles}
       key={title}
+      onClick={() => validateAnswer(title)}
     >
       {title}
     </li>

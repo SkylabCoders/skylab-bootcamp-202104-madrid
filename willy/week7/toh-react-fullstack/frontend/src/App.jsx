@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './components/dashboard/Dashboard';
 import List from './components/list/List';
+import Details from './components/details/Details';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
       <Link to="/">Dashboard</Link>
       <Link to="/list">List</Link>
       <Switch>
-        <Route exact path="/list" component={List} />
         <Route path="/" exact component={Dashboard} />
+        <Route exact path="/details/:id" component={Details} />
+        <Route exact path="/list" component={List} />
       </Switch>
     </Router>
 

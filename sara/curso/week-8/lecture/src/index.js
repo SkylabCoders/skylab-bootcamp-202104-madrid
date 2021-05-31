@@ -1,15 +1,26 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Hello from './components/Hello';
 import './index.css';
+import Sum from './components/Suma';
+import Clicker from './components/Clicker';
 
 import reportWebVitals from './reportWebVitals';
 
+const clickBack = (letter) => alert(letter);
+
 ReactDOM.render(
   <>
-    <h1>Skylab mola!!</h1>
-    <br />
-    <p>Holiii</p>
+    <Hello name="Sara">
+      <p>
+        Esto es un hijo
+      </p>
+    </Hello>
+    <p>
+      <Sum a={4} b={4} />
+    </p>
+    <Clicker handleClick={clickBack} />
   </>,
   document.getElementById('root'),
 );

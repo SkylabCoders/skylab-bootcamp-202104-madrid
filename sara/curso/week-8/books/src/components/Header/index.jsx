@@ -2,7 +2,11 @@ import React from 'react';
 
 function Quiz() {
   return (
-    <h1>Header</h1>
+    <header>
+      <h1>Autor Quiz</h1>
+      <h3>Select the Book written by the author shown</h3>
+    </header>
+
   );
 }
 

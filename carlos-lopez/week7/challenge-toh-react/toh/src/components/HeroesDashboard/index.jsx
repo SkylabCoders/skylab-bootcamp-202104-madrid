@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heroes from '../data/heroesData';
+import heroes from '../../data/heroesData';
 
 function HeroesDashboard() {
   let listHeroes = [...heroes];

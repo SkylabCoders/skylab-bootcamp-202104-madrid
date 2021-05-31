@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import heroes from '../data/heroesData';
+import heroes from '../../data/heroesData';
 
 function HeroesDetail() {
   const { heroId } = useParams();

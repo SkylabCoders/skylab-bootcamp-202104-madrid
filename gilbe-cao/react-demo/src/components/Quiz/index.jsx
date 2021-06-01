@@ -19,7 +19,7 @@ function Quiz() {
 
   function setNextQuizData() {
     const valuesForNextQuiz = nextQuiz();
-    debugger;
+
     setBooks(valuesForNextQuiz.books);
     setImgSrc(valuesForNextQuiz.authorImg);
     setAuthorName(valuesForNextQuiz.author);
@@ -69,6 +69,7 @@ function Quiz() {
           <>
             <Header />
             <section
+              data-testid="quiz-section"
               className={`d-flex flex-sm-column flex-md-row p-5 mb-3 ${getCorrectBackground(isCorrect)}`}
             >
               <img className="mb-5" src={imgSrc} alt={authorName} />
@@ -89,6 +90,7 @@ function Quiz() {
       <div className="d-flex flex-row-reverse quiz-actions">
         { isCorrect && (
         <button
+          data-testid="quiz-next-button"
           className="btn btn-primary"
           type="button"
           onClick={() => { setNextQuizData(); setIsCorrect(null); }}

@@ -13,6 +13,7 @@ function Home({ nextQuiz }) {
           type="button"
           onClick={nextQuiz}
           className="btn btn-primary"
+          data-testid="home-start-button"
         >
           Start quiz
         </button>

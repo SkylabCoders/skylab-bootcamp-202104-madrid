@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Form() {
   const [name, setName] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    // console.log(`Hola ${name}`);
-    // <Details
-    //   name={name}
-    // />;
+    event.target.reset();
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">
@@ -20,11 +19,12 @@ function Form() {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      <input
-        id="name"
+      <Link
         type="submit"
-        value="Submit"
-      />
+        to="/details"
+      >
+        Submit
+      </Link>
     </form>
 
   );

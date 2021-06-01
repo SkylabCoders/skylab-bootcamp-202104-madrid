@@ -1,39 +1,29 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-debugger */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import Header from './Header';
 import Book from './Book';
+import Home from './Home';
 import './Quiz.css';
-import booksData from '../../constants/booksData';
+import {
+  nextQuiz,
+} from '../../utils/utils';
 
 function Quiz() {
-  /**
-   * TODO Set this initial values random
-   */
-  const [books, setBooks] = useState([
-    booksData[4].title,
-    booksData[booksData.length - 1].title,
-    booksData[1].title,
-    booksData[2].title,
-  ]);
-  const [imgSrc, setImgSrc] = useState(booksData[booksData.length - 1].authorImg);
-  const [authorName, setAuthorName] = useState(booksData[booksData.length - 1].author);
-  const [correctAnswer, setCorrectAnswer] = useState(booksData[booksData.length - 1].title);
+  const [books, setBooks] = useState();
+  const [imgSrc, setImgSrc] = useState();
+  const [authorName, setAuthorName] = useState();
+  const [correctAnswer, setCorrectAnswer] = useState();
 
-  /**
-   * TODO Set the next quiz values random
-   */
-  function nextQuiz() {
-    const {
-      author,
-      authorImg,
-      title,
-    } = booksData[0];
-
-    setBooks([title, ...booksData.slice(1, 4).map((book) => book.title)].sort());
-    setImgSrc(authorImg);
-    setAuthorName(author);
-    setCorrectAnswer(title);
+  function setNextQuizData() {
+    const valuesForNextQuiz = nextQuiz();
+    debugger;
+    setBooks(valuesForNextQuiz.books);
+    setImgSrc(valuesForNextQuiz.authorImg);
+    setAuthorName(valuesForNextQuiz.author);
+    setCorrectAnswer(valuesForNextQuiz.title);
   }
 
   const [isCorrect, setIsCorrect] = useState(null);
@@ -74,27 +64,34 @@ function Quiz() {
 
   return (
     <div className="container">
-      <Header />
-      <section
-        className={`d-flex flex-sm-column flex-md-row p-5 mb-3 ${getCorrectBackground(isCorrect)}`}
-      >
-        <img className="mb-5" src={imgSrc} alt={authorName} />
-        <ul>
-          { books.map((book, index) => (
-            <Book
-              validateAnswer={validateAnswer}
-              title={book}
-              key={index}
-            />
-          ))}
-        </ul>
-      </section>
+      {
+        books ? (
+          <>
+            <Header />
+            <section
+              className={`d-flex flex-sm-column flex-md-row p-5 mb-3 ${getCorrectBackground(isCorrect)}`}
+            >
+              <img className="mb-5" src={imgSrc} alt={authorName} />
+              <ul>
+                { books && books.map((book, index) => (
+                  <Book
+                    validateAnswer={validateAnswer}
+                    title={book}
+                    key={index}
+                  />
+                ))}
+              </ul>
+            </section>
+          </>
+        ) : <Home nextQuiz={setNextQuizData} />
+      }
+
       <div className="d-flex flex-row-reverse quiz-actions">
         { isCorrect && (
         <button
           className="btn btn-primary"
           type="button"
-          onClick={() => { nextQuiz(); setIsCorrect(null); }}
+          onClick={() => { setNextQuizData(); setIsCorrect(null); }}
         >
           Next quiz
         </button>

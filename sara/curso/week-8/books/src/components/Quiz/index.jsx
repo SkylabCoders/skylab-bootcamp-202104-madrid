@@ -7,7 +7,9 @@ import BooksData from '../../constants/BooksData';
 import './quiz.css';
 
 function Quiz() {
-  let booksArray = [...BooksData].sort(() => Math.random() - 0.5).slice(0, 3);
+  let booksArray = [...BooksData];
+  booksArray.splice(0, 1);
+  booksArray = booksArray.sort(() => Math.random() - 0.5).slice(0, 3);
   booksArray.push(BooksData[0]);
   const [num, setNumValue] = useState(0);
   const [correct, setCorrect] = useState(BooksData[0].title);

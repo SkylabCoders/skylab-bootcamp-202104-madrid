@@ -1,10 +1,25 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 
 function Submit() {
+  const location = useLocation();
+  const {
+    name,
+    surname,
+  } = location.state;
   return (
-    <div>
-      <h1>Hola</h1>
-    </div>
+    <>
+      <h1>
+        Name:
+        {' '}
+        {name}
+      </h1>
+      <h2>
+        Surname:
+        {' '}
+        {surname}
+      </h2>
+    </>
   );
 }
 

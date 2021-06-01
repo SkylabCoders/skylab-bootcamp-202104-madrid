@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Form() {
   const [name, setName] = useState('');
-  const [send, setSend] = useState(false);
+  const [surname, setSurname] = useState('');
+  const [flight, setFlight] = useState('');
+
   function handleSubmit(event) {
     event.preventDefault();
-    setSend(true);
   }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -19,16 +22,45 @@ function Form() {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <input type="submit" value="Submit" />
-      </form>
-      {send
-      && (
-        <h1>
-          Hola
+        <label htmlFor="surname">
+          Surname:
+          <input
+            id="surname"
+            type="text"
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}
+          />
+        </label>
+        <label htmlFor="fligh">
+          Flight destination:
+          <input
+            id="flight"
+            type="text"
+            value={flight}
+            onChange={(e) => setFlight(e.target.value)}
+          />
+        </label>
+        <button type="submit" value="Submit">
           {' '}
-          {name}
-        </h1>
-      )}
+          <Link to={
+            {
+              pathname: '/detail',
+              state: {
+                name,
+                surname,
+                flight,
+              },
+            }
+        }
+          >
+            {' '}
+            Submit
+            {' '}
+
+          </Link>
+          {' '}
+        </button>
+      </form>
     </>
   );
 }

@@ -1,8 +1,27 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { useLocation } from 'react-router';
 
 function Detail() {
+  const location = useLocation();
+  const { name, surname, flight } = location.state;
   return (
-    <div>Hola Detail</div>
+    <>
+      <h2>
+        Thanks for the booking
+        {' '}
+        {name}
+        {' '}
+        {surname}
+        !
+      </h2>
+      <h5>
+        Your destination is
+        {' '}
+        {flight}
+      </h5>
+
+    </>
   );
 }
 

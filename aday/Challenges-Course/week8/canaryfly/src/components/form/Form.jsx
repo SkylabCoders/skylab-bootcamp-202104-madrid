@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Form() {
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
+  const [name, setName] = useState();
+  const [surname, setSurname] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();

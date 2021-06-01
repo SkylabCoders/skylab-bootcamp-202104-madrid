@@ -1,0 +1,16 @@
+img {
+    width: 10rem;
+    height: 10rem;
+}
+
+li {
+    border: 2px solid black;
+    list-style: none;
+    height: 2rem;
+    width: 10rem;
+    margin: 1rem;
+}
+
+li:hover {
+    background-color: lightblue;
+}

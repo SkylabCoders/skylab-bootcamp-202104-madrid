@@ -1,0 +1,10 @@
+img {
+    flex: 1;
+    max-width: 350px;
+    max-height: 350px;
+}
+
+ul {
+    flex: 1;
+    list-style: none;
+}

@@ -1,3 +1,8 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
@@ -8,11 +13,11 @@ import { randomIndex } from '../../utils';
 function RandomAnswers() {
   let shuffledAuthors = [...Authors];
   const [arrayAnswers, setArrayAnswers] = useState(shuffledAuthors.slice(0, 4));
+  const [isCorrect, setIsCorrect] = useState(null);
   let currentIndex = randomIndex();
   function shuffledQuiz() {
     shuffledAuthors = [...Authors];
     shuffledAuthors = shuffledAuthors.sort(() => Math.random() - 0.5).slice(0, 4);
-    console.log(shuffledAuthors);
     currentIndex = randomIndex();
     setArrayAnswers(shuffledAuthors);
   }
@@ -22,11 +27,9 @@ function RandomAnswers() {
       <section className="container--data">
         <img src={arrayAnswers[currentIndex].authorImg} alt="authors" />
         <ul>
-          {arrayAnswers.map((author, index) => (
-            <li
-              key={`a+${index}`}
-            >
-              {author.title}
+          {arrayAnswers.map((book) => (
+            <li>
+              {book.title}
             </li>
           ))}
         </ul>

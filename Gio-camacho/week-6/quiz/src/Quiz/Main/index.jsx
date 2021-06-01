@@ -41,12 +41,12 @@ function Main() {
       <div className="quiz-section__image">
         <img src={books[0].authorImg} alt={books.author} />
       </div>
-      <ul className="quiz-section__list">
+      <ul className="quiz-list">
         {
               books.sort(() => Math.random() - 0.5).slice(0, 4).map((book) => (
                 <Book
                   key={book.title}
-                  styles={getBackgroundCorrect(isCorrect)}
+                  styles={`${getBackgroundCorrect(isCorrect)} quiz-list__item`}
                   title={book.title}
                   validateAnswer={validateAnswer}
                 />

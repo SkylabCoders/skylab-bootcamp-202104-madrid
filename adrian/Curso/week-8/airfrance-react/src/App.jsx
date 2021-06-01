@@ -1,9 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './components/home/Home';
-import Form from './components/form/Form';
-import Details from './components/details/Details';
+import Home from './components/home';
+import Form from './components/form';
+import Details from './components/details';
 
 function App() {
   return (

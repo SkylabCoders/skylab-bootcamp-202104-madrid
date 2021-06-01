@@ -5,7 +5,14 @@ import React from 'react';
 import './Book.css';
 
 function Book({ title, validateAnswer }) {
-  return <li onClick={() => validateAnswer(title)}>{title}</li>;
+  return (
+    <li
+      data-testid={`book-title-item-${title}`}
+      onClick={() => validateAnswer(title)}
+    >
+      {title}
+    </li>
+  );
 }
 
 export default Book;

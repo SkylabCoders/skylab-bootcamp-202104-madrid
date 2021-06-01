@@ -1,13 +1,15 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import BrowserRouter from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import Home from './components/index';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Home />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

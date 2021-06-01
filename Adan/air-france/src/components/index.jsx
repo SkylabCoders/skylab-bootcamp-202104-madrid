@@ -1,20 +1,15 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import Form from './Form';
 
 function Home() {
-  <button type="button">Go to List </button>;
-
-
-
   return (
-<Switch>
-    
-
-
-
-
-</Switch>;
-  )
+    <>
+      <Link to="/form">
+        Go to Form
+      </Link>
+    </>
+  );
 }
 
 export default Home;

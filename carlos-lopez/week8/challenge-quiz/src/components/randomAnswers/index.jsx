@@ -1,22 +1,24 @@
-/* eslint-disable no-const-assign */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-shadow */
 /* eslint-disable no-console */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import Authors from '../../constants/Authors';
 import './randomAnswers.css';
 
+let currentIndex;
+let shuffledAuthors = [...Authors];
+
+function randomIndex() {
+  currentIndex = Math.floor(Math.random() * 4);
+  return currentIndex;
+}
 function RandomAnswers() {
-  let shuffledAuthors = [...Authors];
-  let currentIndex;
-  shuffledAuthors = shuffledAuthors.sort(() => Math.random() - 0.5);
-  const [arrayAnswers, setArrayAnswers] = useState(shuffledAuthors);
-  function randomIndex() {
-    currentIndex = Math.floor(Math.random() * arrayAnswers.length);
-    return currentIndex;
+  const [arrayAnswers, setArrayAnswers] = useState(shuffledAuthors.slice(0, 4));
+  function prueba() {
+    shuffledAuthors = [...Authors];
+    shuffledAuthors = shuffledAuthors.sort(() => Math.random() - 0.5).slice(0, 4);
+    console.log(shuffledAuthors);
+    randomIndex();
+    setArrayAnswers(shuffledAuthors);
   }
   randomIndex();
   return (
@@ -28,16 +30,13 @@ function RandomAnswers() {
           {arrayAnswers.map((author, index) => (
             <li
               key={`a+${index}`}
-              onClick={setArrayAnswers(() => {
-                arrayAnswers = shuffledAuthors.slice(0, 4);
-              })}
             >
               {author.title}
             </li>
           ))}
         </ul>
       </section>
-      <button type="button">NEXT</button>
+      <button type="button" onClick={prueba}>NEXT</button>
     </div>
   );
 }

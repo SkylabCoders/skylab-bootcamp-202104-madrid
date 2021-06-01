@@ -10,8 +10,9 @@ export default function Quiz() {
   function validateAnswer(title) {
     if (title === correctAnswer) {
       setCorrectAnswer(true);
+    } else {
+      setCorrectAnswer(false);
     }
-    setCorrectAnswer(false);
   }
   return (
     <>

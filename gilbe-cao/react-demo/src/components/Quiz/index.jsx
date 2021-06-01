@@ -2,10 +2,9 @@
 /* eslint-disable no-debugger */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Book from './Book';
-import Home from './Home';
 import './Quiz.css';
 import {
   nextQuiz,
@@ -16,6 +15,7 @@ function Quiz() {
   const [imgSrc, setImgSrc] = useState();
   const [authorName, setAuthorName] = useState();
   const [correctAnswer, setCorrectAnswer] = useState();
+  const [isCorrect, setIsCorrect] = useState(null);
 
   function setNextQuizData() {
     const valuesForNextQuiz = nextQuiz();
@@ -26,7 +26,9 @@ function Quiz() {
     setCorrectAnswer(valuesForNextQuiz.title);
   }
 
-  const [isCorrect, setIsCorrect] = useState(null);
+  useEffect(() => {
+    setNextQuizData();
+  }, []);
 
   /**
    * null white
@@ -63,30 +65,23 @@ function Quiz() {
   }
 
   return (
-    <div className="container">
-      {
-        books ? (
-          <>
-            <Header />
-            <section
-              data-testid="quiz-section"
-              className={`d-flex flex-sm-column flex-md-row p-5 mb-3 ${getCorrectBackground(isCorrect)}`}
-            >
-              <img className="mb-5" src={imgSrc} alt={authorName} />
-              <ul>
-                { books && books.map((book, index) => (
-                  <Book
-                    validateAnswer={validateAnswer}
-                    title={book}
-                    key={index}
-                  />
-                ))}
-              </ul>
-            </section>
-          </>
-        ) : <Home nextQuiz={setNextQuizData} />
-      }
-
+    <>
+      <Header />
+      <section
+        data-testid="quiz-section"
+        className={`d-flex flex-sm-column flex-md-row p-5 mb-3 ${getCorrectBackground(isCorrect)}`}
+      >
+        <img className="mb-5" src={imgSrc} alt={authorName} />
+        <ul>
+          { books && books.map((book, index) => (
+            <Book
+              validateAnswer={validateAnswer}
+              title={book}
+              key={index}
+            />
+          ))}
+        </ul>
+      </section>
       <div className="d-flex flex-row-reverse quiz-actions">
         { isCorrect && (
         <button
@@ -99,7 +94,7 @@ function Quiz() {
         </button>
         )}
       </div>
-    </div>
+    </>
   );
 }
 

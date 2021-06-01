@@ -18,18 +18,8 @@ describe('Quiz component', () => {
     });
   });
 
-  test('renders start button', () => {
-    render(<Quiz />);
-    const startButton = screen.getByTestId('home-start-button');
-    expect(startButton).toBeInTheDocument();
-  });
-
   test('renders quiz section', () => {
     render(<Quiz />);
-
-    const startButton = screen.getByTestId('home-start-button');
-
-    fireEvent.click(startButton);
 
     const quizSection = screen.getByTestId('quiz-section');
     expect(quizSection).toBeInTheDocument();
@@ -38,12 +28,7 @@ describe('Quiz component', () => {
   test('should click on correct answer', () => {
     render(<Quiz />);
 
-    const startButton = screen.getByTestId('home-start-button');
-
-    fireEvent.click(startButton);
-
     const firtBookTitle = screen.getByTestId('book-title-item-title1');
-
     fireEvent.click(firtBookTitle);
 
     const quizNextButton = screen.getByTestId('quiz-next-button');
@@ -54,9 +39,6 @@ describe('Quiz component', () => {
   test('should not render next button', () => {
     render(<Quiz />);
 
-    const startButton = screen.getByTestId('home-start-button');
-    fireEvent.click(startButton);
-
     const wrongBookTitle = screen.getByTestId('book-title-item-title2');
     fireEvent.click(wrongBookTitle);
 
@@ -66,9 +48,6 @@ describe('Quiz component', () => {
 
   test('should click on next button', () => {
     render(<Quiz />);
-
-    const startButton = screen.getByTestId('home-start-button');
-    fireEvent.click(startButton);
 
     const firtBookTitle = screen.getByTestId('book-title-item-title1');
     fireEvent.click(firtBookTitle);

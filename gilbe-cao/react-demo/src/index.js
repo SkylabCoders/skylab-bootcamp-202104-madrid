@@ -3,13 +3,22 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import Quiz from './components/Quiz';
+import Home from './components/Quiz/Home';
 
 ReactDOM.render(
-  <Quiz />,
+  <div className="container">
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/quiz" component={Quiz} />
+      </Switch>
+    </BrowserRouter>
+  </div>,
   document.getElementById('root'),
 );
 

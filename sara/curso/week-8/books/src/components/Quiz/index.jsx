@@ -37,10 +37,7 @@ function Quiz() {
 
   function createArray() {
     if (num < BooksData.length) {
-      console.log('entro');
       setNumValue(num + 1);
-      console.log(num + 1);
-      console.log(num);
       booksArray = [...BooksData];
       const thisTimeBook = BooksData[num + 1];
       booksArray.splice(num + 1, 1);
@@ -50,7 +47,6 @@ function Quiz() {
       setNewArr(booksArray);
       setIsCorrect(false);
       setCorrect(BooksData[num + 1].title);
-      console.log(correct);
     }
   }
 

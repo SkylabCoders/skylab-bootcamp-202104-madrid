@@ -1,0 +1,45 @@
+.quiz-section {
+    display: flex;
+    align-items: center;
+    margin: 20px 40px;
+
+    &__image {
+        width: 350px;
+
+        & img {
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+}
+
+.quiz-list {
+    width: 100%;
+    list-style: none;
+    margin-left: 40px;
+
+
+        &__item {
+            padding: 30px;
+            background-color: lightgray;
+            border-left: 5px solid gray;
+            cursor: pointer;
+
+            &:hover {
+                background-color: gray;
+            }
+        }
+
+        &__item:not(:first-child){
+            margin-top: 15px;
+        }
+}
+
+        
+.bg-error {
+    background-color: red ;
+}
+
+.bg-success {
+    background-color: green ;
+}

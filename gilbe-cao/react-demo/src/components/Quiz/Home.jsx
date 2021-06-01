@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Home({ nextQuiz }) {
+function Home() {
   return (
     <>
       <div className="p-5 mb-4 bg-light rounded-3">
@@ -9,13 +10,13 @@ function Home({ nextQuiz }) {
         <p>Click the button to start</p>
       </div>
       <div>
-        <button
-          type="button"
-          onClick={nextQuiz}
+        <Link
+          to="/quiz"
+          data-testid="home-start-button"
           className="btn btn-primary"
         >
           Start quiz
-        </button>
+        </Link>
       </div>
     </>
   );

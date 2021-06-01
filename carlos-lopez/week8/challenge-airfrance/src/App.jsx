@@ -4,23 +4,22 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom';
-import Form from '../form';
-import Contract from '../contract';
+import Form from './components/form';
+import Contract from './components/contract';
+import Dashboard from './components/home';
 
 function App() {
   return (
-    <section>
+    <>
       <Router>
         <Switch>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={Dashboard} />
           <Route exact path="/form" component={Form} />
-          <Route exact path="/form" component={Contract} />
+          <Route exact path="/contract" component={Contract} />
         </Switch>
       </Router>
-      <Link to="/form">FILL THE GAPS</Link>
-    </section>
+    </>
   );
 }
 

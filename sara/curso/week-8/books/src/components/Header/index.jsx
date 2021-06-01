@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Quiz() {
+function Header() {
   return (
     <header>
       <h1>Autor Quiz</h1>
-      <h3>Select the Book written by the author shown</h3>
+      <h6>Select the Book written by the author shown</h6>
     </header>
 
   );
 }
 
-export default Quiz;
+export default Header;

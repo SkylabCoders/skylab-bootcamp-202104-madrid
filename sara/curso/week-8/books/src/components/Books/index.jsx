@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-function Quiz() {
+function Books({ title, validateAnswer }) {
   return (
-    <h1>Books</h1>
+    <li onClick={() => validateAnswer(title)}>{title}</li>
   );
 }
 
-export default Quiz;
+export default Books;

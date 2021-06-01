@@ -7,6 +7,14 @@ li{
     font-size: 3rem;
     list-style: none;
 }
+li:hover{
+    background-color: lightskyblue;
+    cursor:pointer
+}
+button:hover{
+    background-color: lightseagreen;
+    cursor: pointer
+}
 .container{
     display: flex;
     flex-direction: column;

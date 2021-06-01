@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-function Details() {
+function Details({ name }) {
   return (
-    <div>Details</div>
+    <div>
+      <h1>Hola Details</h1>
+      <p>{name}</p>
+    </div>
   );
 }
 

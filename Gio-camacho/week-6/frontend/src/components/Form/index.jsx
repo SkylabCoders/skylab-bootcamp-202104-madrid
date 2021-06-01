@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 
 function Form() {
   const [name, setName] = useState('');
-  function handleSubmit() {
-    console.log(`Hola ${name}`);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    // console.log(`Hola ${name}`);
+    // <Details
+    //   name={name}
+    // />;
   }
   return (
     <form onSubmit={handleSubmit}>

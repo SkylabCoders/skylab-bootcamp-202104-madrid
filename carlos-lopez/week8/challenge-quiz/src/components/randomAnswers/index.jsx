@@ -3,24 +3,19 @@
 import React, { useState } from 'react';
 import Authors from '../../constants/Authors';
 import './randomAnswers.css';
+import { randomIndex } from '../../utils';
 
-let currentIndex;
-let shuffledAuthors = [...Authors];
-
-function randomIndex() {
-  currentIndex = Math.floor(Math.random() * 4);
-  return currentIndex;
-}
 function RandomAnswers() {
+  let shuffledAuthors = [...Authors];
   const [arrayAnswers, setArrayAnswers] = useState(shuffledAuthors.slice(0, 4));
-  function prueba() {
+  let currentIndex = randomIndex();
+  function shuffledQuiz() {
     shuffledAuthors = [...Authors];
     shuffledAuthors = shuffledAuthors.sort(() => Math.random() - 0.5).slice(0, 4);
     console.log(shuffledAuthors);
-    randomIndex();
+    currentIndex = randomIndex();
     setArrayAnswers(shuffledAuthors);
   }
-  randomIndex();
   return (
     <div className="container">
       <h3>{arrayAnswers[currentIndex].author}</h3>
@@ -36,7 +31,7 @@ function RandomAnswers() {
           ))}
         </ul>
       </section>
-      <button type="button" onClick={prueba}>NEXT</button>
+      <button type="button" onClick={shuffledQuiz}>NEXT</button>
     </div>
   );
 }

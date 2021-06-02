@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // eslint-disable-next-line import/no-named-as-default
+import { Provider } from 'react-redux';
 import Main from './components';
 import reportWebVitals from './reportWebVitals';
+import configureStore from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <Provider store={configureStore()}>
+      <Main />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

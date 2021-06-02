@@ -2,4 +2,7 @@ export default {
   NEXT_QUIZ: 'NEXT_QUIZ',
   START_QUIZ: 'START_QUIZ',
   END_QUIZ: 'END_QUIZ',
+  NEW_VALUES: 'NEW_VALUES',
+  LOGIN: 'LOGIN',
+  LOGOUT: 'LOGOUT',
 };

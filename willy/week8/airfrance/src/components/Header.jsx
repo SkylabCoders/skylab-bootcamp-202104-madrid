@@ -21,19 +21,25 @@ function Header() {
                 type="button"
                 onClick={() => dispatch(logout())}
                 className="btn btn-primary"
+                data-testid="logout-button"
               >
                 Logout
               </button>
+
             </>
           )
           : (
-            <button
-              type="button"
-              onClick={() => dispatch(login('jorobate@flanders.com', '1234'))}
-              className="btn btn-primary"
-            >
-              Login
-            </button>
+            <>
+              <button
+                type="button"
+                onClick={() => dispatch(login(user.email, user.password))}
+                className="btn btn-primary"
+                data-testid="logout-button"
+              >
+                Login
+              </button>
+
+            </>
           )
       }
 

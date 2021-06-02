@@ -1,17 +1,21 @@
+/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypeS';
 
 export function login(email, password) {
-  return async (dispatch) => {
-    const { data } = await axios.post(
-      (process.env.APIURL),
-      { email, password }
-    );
+  debugger;
+  return {
+    type: actionTypes.LOGIN,
+    user: {
+      email,
+      password
+    }
+  };
+}
 
-    dispatch({
-      type: actionTypes.LOGOUT,
-      user: data
-    });
+export function logout() {
+  return {
+    type: actionTypes.LOGOUT
   };
 }
 

@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+
 import Form from './components/form';
 import Contract from './components/contract';
 import Dashboard from './components/home';

@@ -6,6 +6,7 @@ import { login, logout } from '../../redux/actions/actionCreators';
 function Header() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const [isAuthenticated] = useState(true);
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 
@@ -14,7 +15,7 @@ function Header() {
   }
 
   function checkAuth() {
-    dispatch(login(name, password, true));
+    dispatch(login(name, password, isAuthenticated));
   }
   return (
     <>

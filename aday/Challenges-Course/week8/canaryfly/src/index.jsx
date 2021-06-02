@@ -6,6 +6,7 @@ import App from './components/home/App';
 import reportWebVitals from './reportWebVitals';
 import FormComponent from './components/form/Form';
 import SubmitComponent from './components/submit/Submit';
+import ProtectedRoute from './components/protected-route/ProtectedRoute';
 import configureStore from './redux/store';
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route path="/" exact component={App} />
         <Route path="/form" exact component={FormComponent} />
         <Route path="/submit" exact component={SubmitComponent} />
+        <ProtectedRoute path="/" exact component={App} />
       </Switch>
     </Router>
   </Provider>,

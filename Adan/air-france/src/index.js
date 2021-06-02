@@ -3,18 +3,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Home from './components/index';
 import Form from './components/Form';
 import Details from './components/Details';
+import configureStore from './redux/store';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/form" exact component={Form} />
-      <Route path="/details" exact component={Details} />
-    </Switch>
-  </BrowserRouter>,
+  <Provider store={configureStore()}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/form" exact component={Form} />
+        <Route path="/details" exact component={Details} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

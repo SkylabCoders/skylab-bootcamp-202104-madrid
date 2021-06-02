@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './components/home/App';
 import reportWebVitals from './reportWebVitals';
 import FormComponent from './components/form/Form';
 import SubmitComponent from './components/submit/Submit';
+import configureStore from './redux/store';
 
 ReactDOM.render(
-  <Router>
-    <Switch>
-      <Route path="/" exact component={App} />
-      <Route path="/form" exact component={FormComponent} />
-      <Route path="/submit" exact component={SubmitComponent} />
-    </Switch>
-  </Router>,
+  <Provider store={configureStore()}>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={App} />
+        <Route path="/form" exact component={FormComponent} />
+        <Route path="/submit" exact component={SubmitComponent} />
+      </Switch>
+    </Router>
+  </Provider>,
   document.getElementById('root'),
 );
 

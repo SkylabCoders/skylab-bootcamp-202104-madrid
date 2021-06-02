@@ -14,13 +14,13 @@ function Form() {
       <form onSubmit={manageSubmit}>
 
         <label htmlFor="vuelo">
-          Flight
+          Flight:
 
           <input type="text" name="vuelo" placeholder="Escribe un vuelo" onChange={(event) => setFlight(event.target.value)} value={flight} />
         </label>
 
         <label htmlFor="name">
-          Name
+          Name:
 
           <input type="text" name="name" placeholder="Escribe un vuelo" onChange={(event) => setName(event.target.value)} value={name} />
         </label>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, login } from '../redux/actions/actionCreators';
@@ -13,7 +14,6 @@ function Header() {
                 <>
                   <h1>
                     Welcome
-
                     {user.email}
                   </h1>
                   <button

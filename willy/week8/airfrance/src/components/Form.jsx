@@ -10,30 +10,31 @@ function Form() {
     event.preventDefault();
   }
   return (
-    <div>
+    <>
       <Header />
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </label>
-        <label htmlFor="surname">
-          Surname:
-          <input
-            type="text"
-            name="surname"
-            value={surname}
-            onChange={(event) => setSurname(event.target.value)}
-          />
-        </label>
-        <button type="submit" value="Submit">
-          {' '}
-          <Link to={
+      <div className="container">
+        <form onSubmit={handleSubmit} className="container__form">
+          <label htmlFor="name">
+            Name:
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </label>
+          <label htmlFor="surname">
+            Surname:
+            <input
+              type="text"
+              name="surname"
+              value={surname}
+              onChange={(event) => setSurname(event.target.value)}
+            />
+          </label>
+          <button type="submit" value="Submit">
+            {' '}
+            <Link to={
             {
               pathname: '/details',
               state: {
@@ -42,17 +43,18 @@ function Form() {
               }
             }
         }
-          >
-            {' '}
-            Register
-            {' '}
+            >
+              {' '}
+              Register
+              {' '}
 
-          </Link>
-          {' '}
-        </button>
+            </Link>
+            {' '}
+          </button>
 
-      </form>
-    </div>
+        </form>
+      </div>
+    </>
   );
 }
 

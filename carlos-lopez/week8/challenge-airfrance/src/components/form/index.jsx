@@ -38,7 +38,6 @@ function Form() {
         SUBMIT
 
       </Link>
-      <h1>{name}</h1>
     </>
   );
 }

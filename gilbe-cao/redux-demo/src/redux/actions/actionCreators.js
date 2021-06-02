@@ -1,8 +1,8 @@
-import axios from 'axios';
+// import axios from 'axios';
 import actionTypes from './actionTypes';
 
 export function login(email, password) {
-  return async (dispatch) => {
+  /* return async (dispatch) => {
     const { data } = await axios.post(
       process.env.REACT_APP_API_URL,
       { email, password },
@@ -12,6 +12,14 @@ export function login(email, password) {
       type: actionTypes.LOGIN,
       user: data,
     });
+  }; */
+
+  return {
+    type: actionTypes.LOGIN,
+    user: {
+      email,
+      password,
+    },
   };
 }
 
@@ -22,7 +30,7 @@ export function logout() {
 }
 
 export function bookFlight(formData) {
-  return async (dispatch) => {
+/*   return async (dispatch) => {
     const { data } = await axios.post(
       process.env.REACT_APP_API_URL,
       formData,
@@ -32,5 +40,10 @@ export function bookFlight(formData) {
       type: actionTypes.BOOK_FLIGHT,
       flightData: data,
     });
+  }; */
+
+  return {
+    type: actionTypes.BOOK_FLIGHT,
+    flightData: formData,
   };
 }

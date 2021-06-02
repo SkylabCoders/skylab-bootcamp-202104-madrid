@@ -28,7 +28,7 @@ export function bookFlight(formData) {
     );
     dispatch({
       type: actionTypes.BOOK_FLIGHT,
-      data,
+      flightData: data,
     });
   };
 }

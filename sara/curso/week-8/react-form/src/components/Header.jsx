@@ -8,20 +8,20 @@ function Header() {
   return (
     <div>
       {
-      user?.name
+      user?.email
         ? (
           <>
             <h1>
               Welcome
               {' '}
-              {user.name}
+              {user.email}
             </h1>
-            <button type="button" onClick={dispatch(logout())}>
+            <button type="button" onClick={() => dispatch(logout())}>
               Log Out
             </button>
           </>
         ) : (
-          <button type="button" onClick={dispatch(login())}>
+          <button type="button" onClick={() => dispatch(login('email@email.com', '1234'))}>
             Log In
           </button>
         )

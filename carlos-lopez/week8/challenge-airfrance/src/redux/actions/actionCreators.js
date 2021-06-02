@@ -2,7 +2,7 @@
 // import axios from 'axios';
 import actionTypes from './actionTypes';
 
-export function login(email, password) {
+export function login(email, password, isAuthenticated) {
   // return async (dispatch) => {
   //   const { data } = await axios.post(process.env.REACT_APP_API_URL, { email, password });
   //   dispatch({
@@ -15,6 +15,7 @@ export function login(email, password) {
     user: {
       email,
       password,
+      isAuthenticated,
     },
   };
 }

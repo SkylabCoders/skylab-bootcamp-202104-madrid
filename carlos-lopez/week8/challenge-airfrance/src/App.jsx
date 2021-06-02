@@ -13,10 +13,10 @@ import Header from './components/header/Header';
 function App() {
   return (
     <>
-      <Header />
       <Router>
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/" component={Header} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/form" component={Form} />
           <Route exact path="/contract" component={Contract} />
         </Switch>

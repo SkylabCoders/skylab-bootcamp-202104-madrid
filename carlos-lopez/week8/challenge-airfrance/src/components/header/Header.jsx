@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { login, logout } from '../../redux/actions/actionCreators';
 
 function Header() {
@@ -8,7 +9,7 @@ function Header() {
   return (
     <div className="p-5 mb-4 bg-light rounded-3">
       {
-                user?.email
+                user?.isAuthenticated
                   ? (
                     <>
                       <h1>
@@ -17,6 +18,7 @@ function Header() {
                         {' '}
                         {user.email}
                       </h1>
+                      <Link to="/dashboard"> GO TO FILL THE GAPS</Link>
                       <button
                         type="button"
                         className="btn btn-primary"
@@ -32,7 +34,7 @@ function Header() {
                       <button
                         type="button"
                         className="btn btn-primary"
-                        onClick={() => dispatch(login('carlos@gmail.com', '1234'))}
+                        onClick={() => dispatch(login('carlos@gmail.com', '1234', true))}
                       >
                         Login
                       </button>

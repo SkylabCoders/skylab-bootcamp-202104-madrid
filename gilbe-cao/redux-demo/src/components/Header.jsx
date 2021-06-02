@@ -21,6 +21,7 @@ function Header() {
                         type="button"
                         className="btn btn-primary"
                         onClick={() => dispatch(logout())}
+                        data-testid="logout-button"
                       >
                         Logout
                       </button>
@@ -31,6 +32,7 @@ function Header() {
                       type="button"
                       className="btn btn-primary"
                       onClick={() => dispatch(login('gilbe@skylabcoders.com', '1234'))}
+                      data-testid="login-button"
                     >
                       login
                     </button>

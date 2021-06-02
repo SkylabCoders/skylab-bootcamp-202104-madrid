@@ -1,8 +1,9 @@
-import { combineReducers } from 'redux';
-import bookingReducer from './rootReducer';
-import authReducer from './authReducer';
+import actionTypes from '../actions/actionTypes';
 
-export default combineReducers({
-  user: authReducer,
-  booking: bookingReducer
-});
+export default function bookingReducer(booking = {}, action) {
+  if (action.type === actionTypes.BOOK_FLIGHT) {
+    return action.flightData;
+  }
+
+  return booking;
+}

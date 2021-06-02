@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import Home from './components/Home';
 import Form from './components/Form';
 import Detail from './components/Detail';
+import configureStore from './redux/store';
 
 function App() {
   return (
-    <Provider>
+    <Provider store={configureStore()}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />

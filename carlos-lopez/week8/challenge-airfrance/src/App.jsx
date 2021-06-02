@@ -8,10 +8,12 @@ import {
 import Form from './components/form';
 import Contract from './components/contract';
 import Dashboard from './components/home';
+import Header from './components/header/Header';
 
 function App() {
   return (
     <>
+      <Header />
       <Router>
         <Switch>
           <Route exact path="/" component={Dashboard} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,16 +8,19 @@ import {
 import HeroesDashboard from './components/HeroDashboard';
 import HeroesList from './components/HeroList';
 import HeroDetail from './components/HeroDetail';
+import configureStore from './redux/store/index';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={HeroesDashboard} />
-        <Route exact path="/list" component={HeroesList} />
-        <Route exact path="/detail" component={HeroDetail} />
-      </Switch>
-    </Router>
+    <Provider store={configureStore()}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HeroesDashboard} />
+          <Route exact path="/list" component={HeroesList} />
+          <Route exact path="/detail" component={HeroDetail} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 

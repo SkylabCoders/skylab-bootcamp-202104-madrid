@@ -18,5 +18,18 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "set DEBUG=app,app:* && nodemon index.js",
+    "debug": "nodemon --inspect-brk index.js",
+    "test": "jest --watchAll --collect-coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

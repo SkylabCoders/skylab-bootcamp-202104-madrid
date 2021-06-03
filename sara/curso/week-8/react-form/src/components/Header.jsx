@@ -41,7 +41,8 @@ function Header() {
                   id="email"
                   type="email"
                   value={useremail}
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  data-testid="email-input"
+                  onChange={(event) => setUserEmail(event.target.value)}
                 />
               </label>
               <label htmlFor="password">
@@ -50,7 +51,8 @@ function Header() {
                   id="password"
                   type="password"
                   value={user.password}
-                  onChange={(e) => setUserPassword(e.target.value)}
+                  data-testid="password-input"
+                  onChange={(event) => setUserPassword(event.target.value)}
                 />
               </label>
               <button

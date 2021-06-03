@@ -35,6 +35,7 @@ describe('Header component with user', () => {
 describe('Header component with user', () => {
   test('should render log in button', () => {
     render(<Header />);
+
     login.mockReturnValueOnce({
       type: actionTypes.LOGIN,
       user: {
@@ -45,35 +46,25 @@ describe('Header component with user', () => {
     logout.mockReturnValueOnce({
       type: actionTypes.LOGOUT,
     });
+
+    const emailInput = screen.getByTestId('email-input');
+
+    fireEvent.change(emailInput, { target: { value: 'email@mail.com' } });
+
+    const passwordInput = screen.getByTestId('password-input');
+
+    fireEvent.change(passwordInput, { target: { value: 'email@mail.com' } });
 
     let loginButton = screen.getByTestId('login-button');
+
     fireEvent.click(loginButton);
+
     const logoutButton = screen.getByTestId('logout-button');
+
     fireEvent.click(logoutButton);
+
     loginButton = screen.getByTestId('login-button');
+
     expect(loginButton).toBeInTheDocument();
-  });
-});
-
-describe('Header component changing values', () => {
-  test('should render log in button', () => {
-    render(<Header />);
-    login.mockReturnValueOnce({
-      type: actionTypes.LOGIN,
-      user: {
-        email: 'email@mail.com',
-      },
-    });
-
-    const useremail = 'eee@ee.com';
-    useremail.setState('email@mail.com');
-
-    logout.mockReturnValueOnce({
-      type: actionTypes.LOGOUT,
-    });
-
-    const loginButton = screen.getByTestId('login-button');
-    fireEvent.click(loginButton);
-    expect(useremail).toBe('email@mail.com');
   });
 });

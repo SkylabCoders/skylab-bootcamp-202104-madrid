@@ -25,7 +25,7 @@ function controllerHeroes() {
     try {
       const hero = await Hero.findByIdAndUpdate(
         req.params.heroId,
-        req.bodoy,
+        req.body,
         { new: true },
       );
       res.json(hero);
@@ -37,7 +37,7 @@ function controllerHeroes() {
 
   async function deleteById(req, res) {
     try {
-      await Hero.findOneAndDelete(
+      await Hero.findByIdAndDelete(
         req.params.heroId,
       );
       res.status(204);

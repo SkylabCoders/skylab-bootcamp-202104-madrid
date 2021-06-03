@@ -1,13 +1,9 @@
 import React from 'react';
-import heroes from '../../data/heroesData';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
-  const heroesList = [...heroes];
   return (
-    <div>
-
-      <h2>{heroesList.name}</h2>
-    </div>
+    <Link to="/" className="App-link">Home</Link>
   );
 }
 

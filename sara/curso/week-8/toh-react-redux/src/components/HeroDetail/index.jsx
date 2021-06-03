@@ -5,7 +5,6 @@ import { getOne } from '../../redux/actions/actionCreators';
 
 export default function HeroDetail() {
   const { heroId } = useParams();
-  console.log(heroId);
   const dispatch = useDispatch();
   const hero = useSelector((store) => store.hero);
   useEffect(() => {

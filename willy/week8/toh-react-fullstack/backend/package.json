@@ -7,7 +7,7 @@
     "start": "nodemon index.js",
     "dev": "set DEBUG=app,app:* && nodemon index.js",
     "dev:debug": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --collect-coverage"
   },
   "keywords": [],
   "author": "",

@@ -8,7 +8,7 @@ export function getAll() {
     try {
       const { data } = await axios(url);
       dispatch({
-        type: actionTypes.GETALL,
+        type: actionTypes.GET_ALL,
         heroes: data
       });
     } catch (error) {
@@ -19,4 +19,12 @@ export function getAll() {
   };
 }
 
-export default getAll;
+export function getHeroById(heroId) {
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${heroId}`);
+    dispatch({
+      type: actionTypes.GET_BY_ID,
+      heroSelected: data
+    });
+  };
+}

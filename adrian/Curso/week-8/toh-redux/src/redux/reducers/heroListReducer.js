@@ -1,11 +1,11 @@
 import actionTypes from '../actions/actionTypes';
 
-function heroeListReducer(heroes = [], action) {
+function heroeListReducer(herosList = [], action) {
   switch (action.type) {
-    case actionTypes.GETALL:
+    case actionTypes.GET_ALL:
       return action.heroes;
     default:
-      return heroes;
+      return herosList;
   }
 }
 export default heroeListReducer;

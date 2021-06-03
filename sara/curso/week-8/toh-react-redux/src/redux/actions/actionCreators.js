@@ -12,3 +12,14 @@ export function getAll() {
     });
   };
 }
+
+export function getOne(heroId) {
+  const url = `http://localhost:4000/api/heroes/${heroId}`;
+  return async (dispatch) => {
+    const { data } = await axios(url);
+    dispatch({
+      type: actionTypes.GET_ONE,
+      hero: data,
+    });
+  };
+}

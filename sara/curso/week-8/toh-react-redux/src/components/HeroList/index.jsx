@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +10,11 @@ export default function HeroList() {
   useEffect(() => {
     if (!heroes.length) dispatch(getAll());
   }, []);
-  const completeList = heroes.map((heroe) => (
-    <li className="list_li" key={heroe.id}>
-      {heroe.name}
+  const completeList = heroes.map((hero) => (
+    <li className="list_li" key={hero._id}>
+      <Link to={`/detail/${hero._id}`}>
+        {hero.name}
+      </Link>
     </li>
   ));
   return (

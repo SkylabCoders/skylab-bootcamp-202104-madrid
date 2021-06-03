@@ -24,7 +24,11 @@ function Header() {
               {' '}
               {user.email}
             </h1>
-            <button type="button" onClick={() => dispatch(logout())}>
+            <button
+              type="button"
+              data-testid="logout-button"
+              onClick={() => dispatch(logout())}
+            >
               Log Out
             </button>
           </>
@@ -49,7 +53,14 @@ function Header() {
                   onChange={(e) => setUserPassword(e.target.value)}
                 />
               </label>
-              <button type="submit" value="Submit">Log in</button>
+              <button
+                type="submit"
+                value="Submit"
+                data-testid="login-button"
+              >
+                Log in
+
+              </button>
             </form>
           </>
         )

@@ -11,12 +11,13 @@ function Header() {
                 user?.email
                   ? (
                     <>
-                      <h1>
+                      <h1 className="d-grid gap-2">
                         Welcome
                         {' '}
                         {user.email}
                       </h1>
                       <button
+                        className="btn btn-light m-3 p-3"
                         type="button"
                         onClick={() => dispatch(logout())}
                       >
@@ -26,8 +27,9 @@ function Header() {
                   )
                   : (
                     <button
+                      className="btn btn-light m-3 p-3"
                       type="button"
-                      onClick={() => dispatch(login('Aday@canaryfly.com', '1234'))}
+                      onClick={() => dispatch(login('Aday', '1234'))}
                     >
                       Login
                     </button>

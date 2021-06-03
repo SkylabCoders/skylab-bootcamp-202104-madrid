@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { SubmitComponent } from '../submit/Submit';
 
 function ProtectedRoute({ component: Component, ...restOfProps }) {
   const isAuthenticated = localStorage.getItem('isAuthenticated');
@@ -11,7 +10,7 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
   return (
     <Route
       {...restOfProps}
-      render={(props) => (isAuthenticated ? <SubmitComponent {...props} /> : <Redirect to="/" />)}
+      render={(props) => (isAuthenticated ? <Component {...props} /> : <Redirect to="/" />)}
     />
   );
 }

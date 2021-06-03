@@ -14,9 +14,10 @@ function Form() {
   return (
     <>
       <form onSubmit={(e) => { handleSubmit(e); }}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name" className="mb-2 m-2 p-2">Name:</label>
         <br />
         <input
+          className="mb-2 m-2 p-2"
           name="name"
           type="text"
           id="name"
@@ -24,9 +25,10 @@ function Form() {
           onChange={(e) => setName(e.target.value)}
         />
         <br />
-        <label htmlFor="surname">Surname</label>
+        <label htmlFor="surname" className="mb-2 m-2 p-2">Surname:</label>
         <br />
         <input
+          className="mb-2 m-2 p-2"
           name="surname"
           type="text"
           id="surname"
@@ -43,9 +45,9 @@ function Form() {
       }}
       >
         <input
-          className="submitButton"
+          className="btn btn-light m-3 p-3"
           type="submit"
-          value="submit"
+          value="Submit"
         />
       </Link>
     </>

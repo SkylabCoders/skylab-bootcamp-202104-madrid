@@ -12,13 +12,14 @@ function App() {
       <h1>Tour of Heroes</h1>
       <Router>
         <div>
-          <Link to="/">Dashboard</Link>
+          <Link to="/dashboard" className="App-link">Dashboard</Link>
           {' '}
           <br />
-          <Link to="/details">Details</Link>
+          <Link to="/details" className="App-link">Details</Link>
         </div>
         <Switch>
-          <Route exact path="/" component={DashboardComponent} />
+          <Route exact path="/" component={App} />
+          <Route exact path="/dashboard" component={DashboardComponent} />
           <Route exact path="/details" component={DetailsComponent} />
         </Switch>
       </Router>

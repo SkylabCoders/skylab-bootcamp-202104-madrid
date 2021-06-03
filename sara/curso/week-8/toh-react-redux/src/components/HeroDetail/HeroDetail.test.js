@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '../../utils/test-utils';
 import HeroDetail from './index';
 
-describe('Header component', () => {
+describe('HeroDetail component', () => {
   test('should render Dasboard in it', () => {
     render(
       <MemoryRouter>

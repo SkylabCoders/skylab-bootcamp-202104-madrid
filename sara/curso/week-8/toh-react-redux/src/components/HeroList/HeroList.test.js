@@ -23,7 +23,7 @@ describe('List component ', () => {
     );
     expect(screen.getByText(/Dashboard/i)).toBeInTheDocument();
   });
-  test('should have Dashboard in it', () => {
+  test('should call getAll', () => {
     getAll.mockReturnValueOnce({ type: '' });
     render(
       <MemoryRouter>

@@ -5,17 +5,11 @@ const url = 'http://localhost:4000/api/heroes';
 
 export function getAll() {
   return async (dispatch) => {
-    try {
-      const { data } = await axios(url);
-      dispatch({
-        type: actionTypes.GET_ALL,
-        heroes: data
-      });
-    } catch (error) {
-      dispatch({
-        type: 'LOAD_HEROES_ERROR'
-      });
-    }
+    const { data } = await axios(url);
+    dispatch({
+      type: actionTypes.GET_ALL,
+      heroes: data
+    });
   };
 }
 

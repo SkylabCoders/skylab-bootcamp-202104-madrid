@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.container > a {
+    border: 3px solid black;
+    border-radius: 25px;
+    padding: 5px 5px;
+    text-decoration: inherit;
+    color: black;
+    background-color: white;
+    
+}
+
+
+

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getHeroes } from '../../redux/actions/actionCreators';
 
-function Dashboard() {
+function List() {
   const dispatch = useDispatch();
   const heroes = useSelector((store) => store.heroes);
   useEffect(() => {
@@ -15,9 +15,9 @@ function Dashboard() {
     <>
       <h2>Top Heroes</h2>
       <div className="heroes-menu">
-        {heroes.map((hero) => <Link key={hero.id} to={`/detail/${hero._id}`}>{hero.name}</Link>)}
+        {heroes.map((hero) => <Link key={hero.name} to={`/detail/${hero._id}`}>{hero.name}</Link>)}
       </div>
     </>
   );
 }
-export default Dashboard;
+export default List;

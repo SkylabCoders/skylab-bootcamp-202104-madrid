@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import Dashboard from './index';
+import List from './index';
 import { screen, render } from '../../test-utils';
 import { getHeroes } from '../../redux/actions/actionCreators';
 
@@ -13,7 +13,7 @@ describe('Dashboard component', () => {
         // arrange
         getHeroes.mockReturnValueOnce({ type: '' });
         // act
-        render(<Dashboard />, {
+        render(<List />, {
           initialState: {
             heroes: []
           }
@@ -25,7 +25,7 @@ describe('Dashboard component', () => {
         // arrange
         getHeroes.mockReturnValueOnce({ type: '' });
         // act
-        render(<Dashboard />, {
+        render(<List />, {
           initialState: {
             heroes: [{}, { name: 'Adan' }]
           }

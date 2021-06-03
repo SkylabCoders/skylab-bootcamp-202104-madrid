@@ -5,20 +5,14 @@ import { useLocation } from 'react-router';
 
 function Details() {
   const location = useLocation();
-  const { name } = location.state;
-  const { phone } = location.state;
+  const { email } = location.state;
   return (
     <section>
       <h1>
         Hello
         {' '}
-        {name}
+        {email}
       </h1>
-      <p>
-        Phone:
-        {' '}
-        {phone}
-      </p>
       <Link to="/">
         Back to home
       </Link>

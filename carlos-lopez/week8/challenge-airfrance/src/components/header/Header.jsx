@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -34,6 +35,7 @@ function Header() {
                       <button
                         type="button"
                         className="btn btn-primary"
+                        data-testid="logout-button"
                         onClick={() => dispatch(logout())}
                       >
                         Logout
@@ -56,6 +58,7 @@ function Header() {
                         <button
                           type="button"
                           className="btn btn-primary"
+                          data-testid="login-button"
                           onClick={checkAuth}
                         >
                           Login

@@ -2,13 +2,13 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '../../utils/test-utils';
-import HeroDetail from './index';
+import HeroList from './index';
 
-describe('Header component', () => {
-  test('should render Dasboard in it', () => {
+describe('List component ', () => {
+  test('should have Dashboard in it', () => {
     render(
       <MemoryRouter>
-        <HeroDetail />
+        <HeroList />
       </MemoryRouter>,
     );
     expect(screen.getByText(/Dashboard/i)).toBeInTheDocument();

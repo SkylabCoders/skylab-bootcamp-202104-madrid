@@ -5,9 +5,11 @@ import {
 
 function Home() {
   return (
-    <button type="button">
-      <Link to="/form"> Start Form </Link>
-    </button>
+    <>
+      <button type="button">
+        <Link to="/form"> Start Form </Link>
+      </button>
+    </>
   );
 }
 

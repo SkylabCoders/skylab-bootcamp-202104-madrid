@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout, login } from '../redux/actions/actionCreators';
 
 function Header() {
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   return (
@@ -13,6 +15,7 @@ function Header() {
               ? (
                 <>
                   <h1>
+                    {}
                     Welcome
                     {user.email}
                   </h1>

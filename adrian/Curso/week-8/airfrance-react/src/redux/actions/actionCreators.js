@@ -18,11 +18,11 @@ export function logout() {
   };
 }
 
-export function bookFlght(formData) {
+export function bookFlight(formData) {
   return async (dispatch) => {
     const { data } = await axios.post(
       process.env.REACT_APP_API_URL,
-      formData
+      { formData }
     );
 
     dispatch({

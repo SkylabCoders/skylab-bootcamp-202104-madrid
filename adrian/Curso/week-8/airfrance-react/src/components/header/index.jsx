@@ -22,10 +22,15 @@ function Header() {
       user?.email
         ? (
           <>
-            <h1>welcome</h1>
+            <h1>
+              welcome
+              {' '}
+              {user.email}
+            </h1>
             <button
               type="button"
               onClick={() => dispatch(logout())}
+              data-testid="logoutButton"
             >
               LogOut
 
@@ -38,6 +43,7 @@ function Header() {
               <label htmlFor="email">
                 email:
                 <input
+                  data-testid="emailInput"
                   id="email"
                   type="text"
                   value={email}
@@ -47,13 +53,14 @@ function Header() {
               <label htmlFor="password">
                 password:
                 <input
+                  data-testid="passwordInput"
                   id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </label>
-              <button type="submit" value="submit">
+              <button type="submit" value="submit" data-testid="loginButton">
                 Login
               </button>
             </form>

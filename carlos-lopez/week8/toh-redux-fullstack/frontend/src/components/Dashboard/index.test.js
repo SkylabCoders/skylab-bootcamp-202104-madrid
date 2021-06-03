@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import Dashboard from './index';

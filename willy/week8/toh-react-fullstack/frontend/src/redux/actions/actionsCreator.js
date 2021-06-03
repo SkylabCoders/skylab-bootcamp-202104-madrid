@@ -39,14 +39,14 @@ export function updateHero(hero) {
   };
 }
 
-export function deleteHero(hero) {
+export function deleteHero(id) {
   return async (dispatch) => {
-    const { data } = await axios.delete(
-      `${URL}${hero.id}`, hero
+    await axios.delete(
+      `${URL}${id}`
     );
     dispatch({
       type: actiontypes.DELETE_HERO_BY_ID,
-      hero: data
+      hero: id
     });
   };
 }

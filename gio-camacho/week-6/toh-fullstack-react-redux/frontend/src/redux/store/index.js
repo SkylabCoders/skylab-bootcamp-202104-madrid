@@ -1,8 +1,13 @@
-import { combineReducers } from 'redux';
-import heroesReducer from '../reducers/heroesReducer';
+import { applyMiddleware, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../reducers/rootReducer';
 
-const rootReducer = combineReducers({
-  heroes: heroesReducer,
-});
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default rootReducer;
+const configureStore = (initialState) => createStore(
+  rootReducer,
+  initialState,
+  composeEnhancers(applyMiddleware(thunk)),
+);
+
+export default configureStore;

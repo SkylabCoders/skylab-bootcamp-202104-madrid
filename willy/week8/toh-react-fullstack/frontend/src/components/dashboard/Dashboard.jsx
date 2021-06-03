@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function dashboard() {
   const [data, setData] = useState(null);
@@ -7,15 +9,9 @@ function dashboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/heroes/')
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
-      })
-      .then((newData) => {
-        setData(newData);
+    axios('http://localhost:4000/api/heroes/')
+      .then((res) => {
+        setData(res.data);
       })
       .catch((newError) => {
         setError(newError);
@@ -37,15 +33,15 @@ function dashboard() {
       {
         data.slice(0, 4).map((hero) => (
           <Link
-            // eslint-disable-next-line no-underscore-dangle
+              // eslint-disable-next-line no-underscore-dangle
             to={`details/${hero._id}`}
-            // eslint-disable-next-line no-underscore-dangle
+              // eslint-disable-next-line no-underscore-dangle
             key={hero._id}
           >
             {hero.name}
           </Link>
         ))
-      }
+  }
     </>
   );
 }

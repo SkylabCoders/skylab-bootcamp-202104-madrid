@@ -13,3 +13,13 @@ export function getList() {
     });
   };
 }
+
+export function getListElement(taskId) {
+  return async (dispatch) => {
+    const { data } = await axios(`${url}/${taskId}`);
+    dispatch({
+      type: actionTypes.GET_LIST_ELEMENT,
+      list: data,
+    });
+  };
+}

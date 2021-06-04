@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getList } from './actionCreators';
+import { getList, getListElement } from './actionCreators';
 
 jest.mock('axios');
 
@@ -13,6 +13,21 @@ describe('given a getList function', () => {
         },
       );
       await getList()(dispatch);
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+});
+
+describe('given a getListElement function', () => {
+  describe('when calling it', () => {
+    test('It should call dispatch', async () => {
+      const dispatch = jest.fn();
+      axios.mockResolvedValueOnce(
+        {
+          listElement: {},
+        },
+      );
+      await getListElement()(dispatch);
       expect(dispatch).toHaveBeenCalled();
     });
   });

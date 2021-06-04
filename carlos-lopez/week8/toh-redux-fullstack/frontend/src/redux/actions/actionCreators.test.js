@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import {
-  getHeroes, addHero, deleteHero, modifyHero,
+  getHeroes, addHero, deleteHero, modifyHero, getOneHero,
 } from './actionCreators';
 
 jest.mock('axios');
@@ -63,5 +63,29 @@ describe('modifyHero function tests', () => {
     await modifyHero(hero)(dispatch);
 
     expect(dispatch).toHaveBeenCalled();
+  });
+});
+
+describe('Given getOneHero fn', () => {
+  describe('When its invoked', () => {
+    test('Then should call getOneHero with dispatch', async () => {
+      const dispatch = jest.fn();
+      const hero = { name: 'Bayardo' };
+      axios.mockResolvedValue({
+        type: actionTypes.GET_ONE_HERO,
+        data: 'Mochila',
+      });
+      await getOneHero(hero)(dispatch);
+      expect(dispatch).toHaveBeenCalled();
+    });
+    test('getOneHero should throw error', async () => {
+      const dispatch = jest.fn();
+      axios.mockRejectedValueOnce('error');
+      try {
+        await getOneHero()(dispatch);
+      } catch (error) {
+        expect(error).toBe('error');
+      }
+    });
   });
 });

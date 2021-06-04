@@ -19,7 +19,17 @@ export function getListElement(taskId) {
     const { data } = await axios(`${url}/${taskId}`);
     dispatch({
       type: actionTypes.GET_LIST_ELEMENT,
-      list: data,
+      listElement: data,
+    });
+  };
+}
+
+export function createListElement(newTask) {
+  return async (dispatch) => {
+    const { data } = await axios.post(url, newTask);
+    dispatch({
+      type: actionTypes.CREATE_LIST_ELEMENT,
+      listElement: data,
     });
   };
 }

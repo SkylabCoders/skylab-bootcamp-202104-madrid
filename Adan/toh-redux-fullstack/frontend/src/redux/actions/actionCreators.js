@@ -19,11 +19,17 @@ export function getHeroes() {
 }
 export function addHero(hero) {
   return async (dispatch) => {
-    const { data } = await axios.post(url, hero);
-    dispatch({
-      type: actionTypes.POST_HERO,
-      hero: data
-    });
+    try {
+      const { data } = await axios.post(url, hero);
+      dispatch({
+        type: actionTypes.POST_HERO,
+        hero: data
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.HERO_ERROR
+      });
+    }
   };
 }
 export function deleteHero(heroId) {

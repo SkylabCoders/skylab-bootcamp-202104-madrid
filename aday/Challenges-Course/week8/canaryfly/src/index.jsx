@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import App from './components/home/App';
+import App from './components/home/Home';
 import reportWebVitals from './reportWebVitals';
 import FormComponent from './components/form/Form';
 import SubmitComponent from './components/submit/Submit';

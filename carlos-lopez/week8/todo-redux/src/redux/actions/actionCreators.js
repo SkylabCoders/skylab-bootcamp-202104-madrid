@@ -1,3 +1,5 @@
+/* eslint-disable no-debugger */
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -22,7 +24,17 @@ export function addTask(task) {
   return async (dispatch) => {
     const { data } = await axios.post(process.env.REACT_APP_API_URL, task);
     dispatch({
-      type: actionTypes.ADD_HERO,
+      type: actionTypes.ADD_TASK,
+      task: data,
+    });
+  };
+}
+export function updateTask(id, tarea) {
+  debugger;
+  return async (dispatch) => {
+    const { data } = await axios.put(`${process.env.REACT_APP_API_URL}/${id}`, tarea);
+    dispatch({
+      type: actionTypes.UPDATE_TASK,
       task: data,
     });
   };

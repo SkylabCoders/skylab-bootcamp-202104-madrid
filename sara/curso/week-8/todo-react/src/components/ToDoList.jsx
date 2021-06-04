@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getList, createTask, deleteTask, updateTask,
 } from '../redux/actions/actionCreators';
+import './ToDoList.css';
 
 export default function toDoList() {
   const dispatch = useDispatch();
@@ -12,7 +12,6 @@ export default function toDoList() {
   const list = useSelector((store) => store.list);
   const listElement = useSelector((store) => store.listElement);
   useEffect(() => {
-    debugger;
     dispatch(getList());
   }, [list.length, listElement]);
 
@@ -34,31 +33,34 @@ export default function toDoList() {
 
   return (
     <>
-      <input
-        id="newTaskValue"
-        type="text"
-        value={newTaskValue}
-        onChange={handleTask}
-      />
-      <button
-        type="button"
-        value="Submit"
-        data-testid="login-button"
-        onClick={addTask}
-      >
-        ADD
-      </button>
+      <div className="main">
 
-      <h1>TO DO</h1>
-      <ul>
-        {
+        <h1>TO DO</h1>
+        <input
+          id="newTaskValue"
+          type="text"
+          value={newTaskValue}
+          onChange={handleTask}
+        />
+        <button
+          type="button"
+          value="Submit"
+          data-testid="login-button"
+          onClick={addTask}
+        >
+          ADD
+        </button>
+
+        <ul>
+          {
       list && list.map((task) => (
         <li>
-          <div>
+          <div className="list-name">
             {task.description}
           </div>
           <button
             type="button"
+            data-testid="update-button"
             onClick={() => { updateListElement(task._id); }}
           >
             Update
@@ -73,7 +75,8 @@ export default function toDoList() {
         </li>
       ))
     }
-      </ul>
+        </ul>
+      </div>
     </>
   );
 }

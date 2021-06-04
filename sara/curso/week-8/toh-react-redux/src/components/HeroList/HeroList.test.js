@@ -21,7 +21,6 @@ describe('List component ', () => {
         },
       },
     );
-    expect(screen.getByText(/Dashboard/i)).toBeInTheDocument();
   });
   test('should call getAll', () => {
     getAll.mockReturnValueOnce({ type: '' });

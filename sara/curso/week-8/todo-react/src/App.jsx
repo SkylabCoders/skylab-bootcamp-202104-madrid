@@ -13,6 +13,7 @@ function App() {
     <Provider store={configureStore()}>
       <Router>
         <Route exact path="/" component={toDoList} />
+        <Route exact path="/:taskId" component={toDoList} />
       </Router>
     </Provider>
   );

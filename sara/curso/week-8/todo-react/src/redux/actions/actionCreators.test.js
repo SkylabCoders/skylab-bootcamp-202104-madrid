@@ -4,6 +4,7 @@ import {
   getListElement,
   createTask,
   deleteTask,
+  updateTask,
 } from './actionCreators';
 
 jest.mock('axios');
@@ -63,6 +64,21 @@ describe('given a deleteTask function', () => {
         },
       );
       await deleteTask()(dispatch);
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+});
+
+describe('given a updateTask function', () => {
+  describe('when calling it', () => {
+    test('It should call dispatch', async () => {
+      const dispatch = jest.fn();
+      axios.put.mockResolvedValueOnce(
+        {
+          listElement: {},
+        },
+      );
+      await updateTask()(dispatch);
       expect(dispatch).toHaveBeenCalled();
     });
   });

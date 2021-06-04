@@ -1,6 +1,8 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import { getHeroes, addHero, deleteHero } from './actionCreators';
+import {
+  getHeroes, addHero, deleteHero, modifyHero,
+} from './actionCreators';
 
 jest.mock('axios');
 describe('getHeroes function tests', () => {
@@ -27,7 +29,7 @@ describe('getHeroes function tests', () => {
 });
 
 describe('addHero function tests', () => {
-  test('should dispatch LOAD_HEROES', async () => {
+  test('should dispatch POST_HEROES', async () => {
     axios.post.mockResolvedValue({ type: actionTypes.POST_HERO, data: ['Madri'] });
     const dispatch = jest.fn();
     // act
@@ -41,8 +43,8 @@ describe('addHero function tests', () => {
 });
 
 describe('deleteHero function tests', () => {
-  test('should dispatch LOAD_HEROES', async () => {
-    axios.post.mockResolvedValue({ type: actionTypes.DELETE_HERO, data: ['Madri'] });
+  test('should dispatch DELETE_HEROES', async () => {
+    axios.delete.mockResolvedValue({ type: actionTypes.DELETE_HERO, data: ['Madri'] });
     const dispatch = jest.fn();
     // act
     await deleteHero()(dispatch);
@@ -50,5 +52,16 @@ describe('deleteHero function tests', () => {
     expect(dispatch).toHaveBeenCalledWith({
       type: actionTypes.DELETE_HERO,
     });
+  });
+});
+describe('modifyHero function tests', () => {
+  test('should dispatch PUT_HEROES', async () => {
+    const dispatch = jest.fn();
+    const hero = { name: 'mochilo' };
+    axios.put.mockResolvedValue({ type: actionTypes.PUT_HERO, data: 'Madri' });
+    // act
+    await modifyHero(hero)(dispatch);
+
+    expect(dispatch).toHaveBeenCalled();
   });
 });

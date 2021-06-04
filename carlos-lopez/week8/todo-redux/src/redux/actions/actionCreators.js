@@ -18,3 +18,12 @@ export function getTasks() {
     }
   };
 }
+export function addTask(task) {
+  return async (dispatch) => {
+    const { data } = await axios.post(process.env.REACT_APP_API_URL, task);
+    dispatch({
+      type: actionTypes.ADD_HERO,
+      task: data,
+    });
+  };
+}

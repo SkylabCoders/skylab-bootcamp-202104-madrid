@@ -1,9 +1,7 @@
-/* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypeS';
 
 export function login(email, password) {
-  debugger;
   return {
     type: actionTypes.LOGIN,
     user: {

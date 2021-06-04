@@ -4,26 +4,24 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { getAll } from '../../redux/actions/actionCreators';
 
-function Dashboard({ heroes, dispatch }) {
+function Heroes({ heroes, dispatch }) {
   useEffect(() => {
     if (!heroes.length) dispatch(getAll());
   }, []);
 
   return (
     <main className="container my-5">
-      <h2>Top Heroes</h2>
-      <div className="d-flex flex-column">
+      <h2>My Heroes</h2>
+      <div className="d-flex flex-column align-items-start">
         {
         heroes
-          .sort(() => Math.random() - 0.5)
-          .slice(1, 5)
           .map(
-            (hero) => (
+            (hero, index) => (
               <Link
-                className="btn btn-info my-1 text-center"
+                className="btn btn-info my-1 w-25 text-start"
                 to={`/detail/${hero.id}`}
               >
-                {hero.name}
+                {`${index + 1} - ${hero.name}`}
               </Link>
             ),
           )
@@ -33,7 +31,7 @@ function Dashboard({ heroes, dispatch }) {
   );
 }
 
-Dashboard.propTypes = {
+Heroes.propTypes = {
   heroes: PropTypes.shape([]).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
@@ -44,4 +42,4 @@ function mapStateToProps(store) {
   };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(Heroes);

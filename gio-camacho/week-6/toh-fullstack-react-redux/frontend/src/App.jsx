@@ -6,6 +6,7 @@ import {
   Link,
 } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import Heroes from './components/Heroes';
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
         <h1>Tour of Heroes</h1>
         <nav>
           <Link className="btn btn-secondary" to="/">Dashboad</Link>
-          <Link className="btn btn-secondary ms-3" to="/list">Heroes</Link>
+          <Link className="btn btn-secondary ms-3" to="/heroes">Heroes</Link>
         </nav>
       </div>
       <Switch>
         <Route path="/" exact component={Dashboard} />
+        <Route path="/heroes" component={Heroes} />
       </Switch>
     </Router>
   );

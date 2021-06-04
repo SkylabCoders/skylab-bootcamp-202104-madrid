@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { getList, getListElement, createListElement } from './actionCreators';
+import {
+  getList,
+  getListElement,
+  createTask,
+  deleteTask,
+} from './actionCreators';
 
 jest.mock('axios');
 
@@ -33,7 +38,7 @@ describe('given a getListElement function', () => {
   });
 });
 
-describe('given a createListElement function', () => {
+describe('given a createTask function', () => {
   describe('when calling it', () => {
     test('It should call dispatch', async () => {
       const dispatch = jest.fn();
@@ -42,7 +47,22 @@ describe('given a createListElement function', () => {
           listElement: {},
         },
       );
-      await createListElement()(dispatch);
+      await createTask()(dispatch);
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+});
+
+describe('given a deleteTask function', () => {
+  describe('when calling it', () => {
+    test('It should call dispatch', async () => {
+      const dispatch = jest.fn();
+      axios.delete.mockResolvedValueOnce(
+        {
+          listElement: {},
+        },
+      );
+      await deleteTask()(dispatch);
       expect(dispatch).toHaveBeenCalled();
     });
   });

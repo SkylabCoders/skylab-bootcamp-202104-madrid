@@ -44,9 +44,9 @@ export function deleteTask(taskId) {
   };
 }
 
-export function updateTask(taskId) {
+export function updateTask(taskId, description) {
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${taskId}`);
+    const { data } = await axios.put(`${url}/${taskId}`, description);
     dispatch({
       type: actionTypes.UPDATE_LIST_ELEMENT,
       listElement: data,

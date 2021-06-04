@@ -2,7 +2,9 @@
 /* eslint-disable no-debugger */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getList, createTask, deleteTask } from '../redux/actions/actionCreators';
+import {
+  getList, createTask, deleteTask, updateTask,
+} from '../redux/actions/actionCreators';
 
 export default function toDoList() {
   const dispatch = useDispatch();
@@ -24,6 +26,10 @@ export default function toDoList() {
 
   function deleteListElement(taskId) {
     dispatch(deleteTask(taskId));
+  }
+
+  function updateListElement(taskId) {
+    dispatch(updateTask(taskId, { description: newTaskValue }));
   }
 
   return (
@@ -53,7 +59,7 @@ export default function toDoList() {
           </div>
           <button
             type="button"
-            // onClick={() => { updateListElement(task._id); }}
+            onClick={() => { updateListElement(task._id); }}
           >
             Update
           </button>

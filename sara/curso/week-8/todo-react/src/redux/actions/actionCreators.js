@@ -33,3 +33,13 @@ export function createTask(newTask) {
     });
   };
 }
+
+export function deleteTask(taskId) {
+  return async (dispatch) => {
+    const { data } = await axios.delete(`${url}/${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_LIST_ELEMENT,
+      listElement: data,
+    });
+  };
+}

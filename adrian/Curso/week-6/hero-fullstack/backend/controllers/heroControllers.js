@@ -9,7 +9,6 @@ let maxheroId;
 
 module.exports = {
     getAll: async (req, res)=>{
-        debug('esto es getAll')
         try {
             const hero = await Hero.find(req.query)
             res.json(hero);

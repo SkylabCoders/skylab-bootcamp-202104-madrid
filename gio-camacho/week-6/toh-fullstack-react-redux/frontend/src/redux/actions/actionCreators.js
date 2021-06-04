@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = 'http://localhost:5000/api/heroes/';
+const url = process.env.REACT_APP_API_URL;
 
 export function getAll() {
   return async (dispatch) => {

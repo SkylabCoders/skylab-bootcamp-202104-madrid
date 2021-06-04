@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -34,6 +35,7 @@ function Header() {
                       <button
                         type="button"
                         className="btn btn-primary"
+                        data-testid="logout-button"
                         onClick={() => dispatch(logout())}
                       >
                         Logout
@@ -46,16 +48,17 @@ function Header() {
                       <form onSubmit={handleSubmit}>
                         <label htmlFor="name">
                           email:
-                          <input type="text" name="name" onChange={(e) => setName(e.target.value)} value={name} />
+                          <input type="text" name="name" data-testid="email-input" onChange={(e) => setName(e.target.value)} value={name} />
                         </label>
                         <label htmlFor="password">
                           Password:
-                          <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                          <input type="text" name="password" data-testid="password-input" onChange={(e) => setPassword(e.target.value)} value={password} />
                         </label>
 
                         <button
                           type="button"
                           className="btn btn-primary"
+                          data-testid="login-button"
                           onClick={checkAuth}
                         >
                           Login

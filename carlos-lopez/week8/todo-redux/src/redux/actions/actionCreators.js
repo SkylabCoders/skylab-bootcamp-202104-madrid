@@ -2,11 +2,10 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
-const url = process.env.REACT_APP_API_URL;
 export function getTasks() {
   return async (dispatch) => {
     try {
-      const { data } = await axios(url);
+      const { data } = await axios(process.env.REACT_APP_API_URL);
       dispatch({
         type: actionTypes.GET_TASKS,
         tasks: data,
@@ -14,6 +13,7 @@ export function getTasks() {
     } catch (error) {
       dispatch({
         type: actionTypes.GET_TASKS,
+        tasks: [],
       });
     }
   };

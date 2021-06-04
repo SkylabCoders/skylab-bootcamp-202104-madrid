@@ -5,17 +5,21 @@ import { getTasks } from '../../redux/actions/actionCreators';
 
 function Dashboard() {
   const dispatch = useDispatch();
-  const todos = useSelector((store) => store.todos);
+  const todos = useSelector((store) => store.tasks);
   useEffect(() => {
     dispatch(getTasks());
-  });
+  }, []);
   return (
     <>
       <div className="task-list">
         <h1>Soy el Dashboard</h1>
         <ul>
           {
-                todos.map((task) => <li>{task.name}</li>)
+                todos.map((task) => (
+                  <li>
+                    {task.name}
+                  </li>
+                ))
             }
         </ul>
       </div>

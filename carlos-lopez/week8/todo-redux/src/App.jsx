@@ -14,7 +14,6 @@ function App() {
     <Provider store={store()}>
       <Router>
         <h1>TO DO LIST</h1>
-        <Dashboard />
         <Switch>
           <Route path="/" exact component={Dashboard} />
         </Switch>

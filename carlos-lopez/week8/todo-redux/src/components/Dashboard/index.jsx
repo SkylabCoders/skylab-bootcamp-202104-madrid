@@ -19,6 +19,9 @@ function Dashboard() {
   function collectDataInputUpdate(id) {
     dispatch(updateTask(id, { name: taskInputComponent }));
   }
+  function collectDataInputDelete(id) {
+    dispatch(updateTask(id));
+  }
   return (
     <>
       <div className="task-list">
@@ -44,7 +47,6 @@ function Dashboard() {
                      type="button"
                      className="btn btn-secondary"
                      data-testid="update-button"
-                     id={task._id}
                      onClick={() => { collectDataInputUpdate(task._id); }}
                    >
                      UPDATE
@@ -53,9 +55,8 @@ function Dashboard() {
                    <button
                      type="button"
                      className="btn btn-secondary"
-                     data-testid="update-button"
-                     id={task._id}
-                     onClick={() => { collectDataInputUpdate(task._id); }}
+                     data-testid="delete-button"
+                     onClick={() => { collectDataInputDelete(task._id); }}
                    >
                      DELETE
                    </button>

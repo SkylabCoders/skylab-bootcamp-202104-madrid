@@ -39,3 +39,12 @@ export function updateTask(id, tarea) {
     });
   };
 }
+export function deleteTask(id) {
+  return async (dispatch) => {
+    await axios.delete(`${process.env.REACT_APP_API_URL}/${id}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      id,
+    });
+  };
+}

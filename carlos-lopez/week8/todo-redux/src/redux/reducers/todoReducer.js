@@ -10,6 +10,8 @@ function todoReducer(tasks = [], action) {
         ...tasks,
         action.task,
       ];
+    case actionTypes.DELETE_TASK:
+      return tasks.filter((task) => task._id !== action.taskId);
     default:
       return tasks;
   }

@@ -6,10 +6,10 @@ const url = 'http://localhost:4000/api/tasks';
 export function getTasks() {
   return async (dispatch) => {
     try {
-      const { data } = await axios;
+      const { data } = await axios(url);
       dispatch({
         type: actionTypes.GET_TASKS,
-        heroes: data
+        tasks: data
       });
     } catch (error) {
       dispatch({
@@ -25,7 +25,7 @@ export function getOneTask(taskId) {
     const { data } = await axios(`${url}/${taskId}`);
     dispatch({
       type: actionTypes.GET_ONE_TASK,
-      hero: data
+      task: data
     });
   };
 }
@@ -35,7 +35,7 @@ export function addTask(task) {
       const { data } = await axios.post(url, task);
       dispatch({
         type: actionTypes.UPDATE_TASK,
-        heroes: data
+        task: data
       });
     } catch (error) {
       dispatch({
@@ -44,12 +44,12 @@ export function addTask(task) {
     }
   };
 }
-export function modifyHero(task) {
+export function modifyTask(task) {
   return async (dispatch) => {
     const { data } = await axios.put(`${url}/${task.id}`, task);
     dispatch({
-      type: actionTypes.PUT_HERO,
-      hero: data
+      type: actionTypes.UPDATE_TASK,
+      task: data
     });
   };
 }

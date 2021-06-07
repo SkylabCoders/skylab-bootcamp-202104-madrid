@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import actionTypes from './actionTypes';
 
@@ -44,11 +45,21 @@ export function addTask(task) {
     }
   };
 }
-export function modifyTask(task) {
+export function modifyTask(taskId, description) {
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${task.id}`, task);
+    const { data } = await axios.put(`${url}/${taskId}`, description);
     dispatch({
       type: actionTypes.UPDATE_TASK,
+      task: data
+    });
+  };
+}
+export function deleteTask(taskId) {
+  // eslint-disable-next-line no-debugger
+  return async (dispatch) => {
+    const { data } = await axios.delete(`${url}/${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
       task: data
     });
   };

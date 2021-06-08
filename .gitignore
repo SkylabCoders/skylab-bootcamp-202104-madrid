@@ -316,6 +316,7 @@ auth-data.js
 
 # Firebase
 .firebase/
+serviceAccountKey.json
 
 # expo/
 

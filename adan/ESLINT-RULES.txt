@@ -14,7 +14,14 @@ RULES PARA ESLINT
 'comma-dangle': [2, 'never'],
  'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/prop-types': 'off'
-
+JEST IGNORE
+"jest": {
+    "watchPathIgnorePatterns": [
+      "<rootDir>/src/utils/test-utils.js",
+      "<rootDir>/src/index.jsx",
+      "<rootDir>/src/reportWebVitals.js "
+    ]
+  }
 
 ------------------------------------------
 E6ARDCG9VSLM8N

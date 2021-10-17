@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule)
-  }, 
+  },
   {
     path: 'loadingList', loadChildren: () => import('./loading-list/loading-list.module').then(m => m.LoadingListModule)
   }

@@ -1,24 +1,13 @@
-/* eslint-disable no-underscore-dangle */
 import actionTypes from '../Actions/actionTypes';
 
-function tasksReducer(tasks = [], action) {
-  // eslint-disable-next-line no-debugger
+function taskReducer(task = {}, action) {
   switch (action.type) {
-    case actionTypes.GET_TASKS:
-      return action.tasks;
     case actionTypes.POST_TASK:
-      return [
-        ...tasks,
-        action.task
-      ];
+      return action.task;
     case actionTypes.UPDATE_TASK:
-      return tasks.map(
-        (task) => (task._id === action.task._id
-          ? { ...task, ...action.task }
-          : task)
-      );
+      return action.task;
     default:
-      return tasks;
+      return task;
   }
 }
-export default tasksReducer;
+export default taskReducer;
